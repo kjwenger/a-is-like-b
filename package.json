@@ -1,0 +1,31 @@
+{
+  "name": "swift-is-like-kotlin",
+  "version": "0.0.2",
+  "description": "Swift is like Kotlin ------",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "jiyinyiyong, nilhcem",
+  "license": "MIT",
+  "devDependencies": {
+    "mission": "0.0.7",
+    "shelljs": "^0.3.0"
+  },
+  "dependencies": {
+    "mission": "^0.0.7",
+    "shelljs": "^0.3.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Nilhcem/swift-is-like-kotlin.git"
+  },
+  "keywords": [
+    "swift",
+    "kotlin"
+  ],
+  "bugs": {
+    "url": "https://github.com/Nilhcem/swift-is-like-kotlin/issues"
+  },
+  "homepage": "https://github.com/Nilhcem/swift-is-like-kotlin"
+}
