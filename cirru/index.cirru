@@ -2,7 +2,7 @@ doctype
 
 html
   head
-    title "Swift is like Kotlin"
+    title "Swift is like Kotlin, is like ..."
     meta (:charset utf-8)
     link (:rel stylesheet) (:href css/style.css)
     link (:rel stylesheet) (:href css/highlightjs-github.css)
@@ -14,7 +14,7 @@ html
       :href https://github.com/Nilhcem/swift-is-like-kotlin
       img#fork-me (:src http://nilhcem.github.io/swift-is-like-kotlin/fork-me.png)
     #note
-      = "Swift is like Kotlin"
+      = "Swift is like Kotlin, is like ..."
 
     .section
       .title BASICS

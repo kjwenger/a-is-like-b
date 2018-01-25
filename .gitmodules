@@ -1,0 +1,3 @@
+[submodule "submodule/swift-is-like-scala"]
+	path = submodule/swift-is-like-scala
+	url = https://github.com/leverich/swiftislikescala.git

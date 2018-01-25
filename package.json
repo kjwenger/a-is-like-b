@@ -1,11 +1,11 @@
 {
   "name": "swift-is-like-kotlin",
   "version": "0.0.2",
-  "description": "Swift is like Kotlin ------",
+  "description": "Swift is like Kotlin, is like ... ------",
   "main": "index.js",
   "scripts": {
     "make": "coffee make.coffee dev",
-    "watch": "coffee -w make.coffee dev",
+    "watch": "coffee make.coffee watch",
     "test": "standard .",
     "postinstall": "npm run make"
   },
