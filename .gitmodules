@@ -1,3 +1,6 @@
 [submodule "submodule/swift-is-like-scala"]
 	path = submodule/swift-is-like-scala
 	url = https://github.com/leverich/swiftislikescala.git
+[submodule "submodule/swift-is-like-kotlin"]
+	path = submodule/swift-is-like-kotlin
+	url = https://github.com/Nilhcem/swift-is-like-kotlin
