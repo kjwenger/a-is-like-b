@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "make": "coffee make.coffee dev",
+    "watch": "coffee -w make.coffee dev",
     "test": "standard ."
   },
   "author": "jiyinyiyong, nilhcem",

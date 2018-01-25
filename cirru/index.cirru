@@ -21,6 +21,9 @@ html
       .case (.name "Hello World") $ .pair
         .card (.lang Swift) $ pre.code $ code (@insert ../code/hello-world.swift)
         .card (.lang Kotlin) $ pre.code $ code (@insert ../code/hello-world.kt)
+        .card (.lang Java) $ pre.code $ code (@insert ../code/hello-world.java)
+        .card (.lang C) $ pre.code $ code (@insert ../code/hello-world.c)
+        .card (.lang C++) $ pre.code $ code (@insert ../code/hello-world.cpp)
       .case (.name "Variables And Constants") $ .pair
         .card (.lang Swift) $ pre.code $ code (@insert ../code/variables-and-constants.swift)
         .card (.lang Kotlin) $ pre.code $ code (@insert ../code/variables-and-constants.kt)
