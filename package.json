@@ -6,7 +6,8 @@
   "scripts": {
     "make": "coffee make.coffee dev",
     "watch": "coffee -w make.coffee dev",
-    "test": "standard ."
+    "test": "standard .",
+    "postinstall": "npm run make"
   },
   "author": "jiyinyiyong, nilhcem",
   "license": "MIT",
