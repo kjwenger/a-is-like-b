@@ -23,14 +23,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Nilhcem/swift-is-like-kotlin.git"
+    "url": "https://github.com/kjwenger/a-is-like-b.git.git"
   },
   "keywords": [
     "swift",
     "kotlin"
   ],
   "bugs": {
-    "url": "https://github.com/Nilhcem/swift-is-like-kotlin/issues"
+    "url": "https://github.com/kjwenger/a-is-like-b.git/issues"
   },
-  "homepage": "https://github.com/Nilhcem/swift-is-like-kotlin"
+  "homepage": "https://github.com/kjwenger/a-is-like-b.git"
 }

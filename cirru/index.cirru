@@ -11,7 +11,7 @@ html
 
   body
     a (:target _blank)
-      :href https://github.com/Nilhcem/swift-is-like-kotlin
+      :href https://github.com/kjwenger/a-is-like-b.git
       img#fork-me (:src http://nilhcem.github.io/swift-is-like-kotlin/fork-me.png)
     #note
       = "Swift is like Kotlin, is like ..."
@@ -22,8 +22,11 @@ html
         .card (.lang Swift) $ pre.code $ code (@insert ../code/hello-world.swift)
         .card (.lang Kotlin) $ pre.code $ code (@insert ../code/hello-world.kt)
         .card (.lang Java) $ pre.code $ code (@insert ../code/hello-world.java)
+        .card (.lang Go) $ pre.code $ code (@insert ../code/hello-world.go)
         .card (.lang C) $ pre.code $ code (@insert ../code/hello-world.c)
         .card (.lang C++) $ pre.code $ code (@insert ../code/hello-world.cpp)
+        .card (.lang Elixir) $ pre.code $ code (@insert ../code/hello-world.ex)
+        .card (.lang Erlang) $ pre.code $ code (@insert ../code/hello-world.erl)
       .case (.name "Variables And Constants") $ .pair
         .card (.lang Swift) $ pre.code $ code (@insert ../code/variables-and-constants.swift)
         .card (.lang Kotlin) $ pre.code $ code (@insert ../code/variables-and-constants.kt)

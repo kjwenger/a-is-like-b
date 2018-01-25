@@ -4,7 +4,7 @@
 Page: http://nilhcem.github.io/swift-is-like-kotlin/
 
 Programmatically inspired from:
-- [swift-is-like-kotlin](https://github.com/Nilhcem/swift-is-like-kotlin)
+- [swift-is-like-kotlin](https://github.com/kjwenger/a-is-like-b.git)
 - [swift-is-like-go](https://github.com/jiyinyiyong/swift-is-like-go)
 - [swiftislikescala](https://github.com/leverich/swiftislikescala)
 
