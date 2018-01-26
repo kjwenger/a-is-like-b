@@ -27,6 +27,7 @@
     "shelljs": "^0.3.0",
     "standard": "^10.0.3",
     "toffee-script": "^1.6.3-4",
+    "ts-node": "^4.1.0",
     "typescript": "^2.6.2"
   },
   "dependencies": {
