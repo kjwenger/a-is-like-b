@@ -17,7 +17,7 @@ html
     #note
       = "Programming language A is like B, is like ..."
 
-    .section (:style "position: -webkit-sticky; position: sticky; top: 0;")
+    .section (:style "position: -webkit-sticky; position: sticky; top: 0; background-color: #f4ffff;")
       .pair
         .card (.lang Pseudo) $ input (:id pseudo)(:type checkbox)(:checked true)(:disabled true)(:onclick "showHide(this);")
         .card (.lang C) $ input (:id c)(:type checkbox)(:onclick "showHide(this);")
