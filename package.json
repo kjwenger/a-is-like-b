@@ -4,14 +4,15 @@
   "description": "Swift is like Kotlin, is like ... ------",
   "main": "index.js",
   "engines": {
-    "node" : "^8.9.4",
-    "npm" : "^5.6.0"
+    "node": "^8.9.4",
+    "npm": "^5.6.0"
   },
   "scripts": {
     "make": "coffee make.coffee dev",
     "watch": "coffee make.coffee watch",
     "test": "standard .",
-    "postinstall": "npm run make"
+    "postinstall": "npm run make",
+    "start": "node server"
   },
   "author": "jiyinyiyong, nilhcem",
   "license": "MIT",
@@ -22,6 +23,7 @@
     "standard": "^10.0.3"
   },
   "dependencies": {
+    "express": "^4.16.2",
     "mission": "^0.0.7",
     "shelljs": "^0.3.0"
   },
