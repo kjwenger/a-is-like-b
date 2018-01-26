@@ -32,6 +32,7 @@ html
         .card (.lang Scala) $ input (:id scala)(:type checkbox)(:onclick "showHide(this);")
         .card (.lang Swift) $ input (:id swift)(:type checkbox)(:checked true)(:onclick "showHide(this);")
         .card (.lang ToffeeScript) $ input (:id toffeescript)(:type checkbox)(:onclick "showHide(this);")
+        .card (.lang TypeScript) $ input (:id typescript)(:type checkbox)(:onclick "showHide(this);")
 
     .section
       .title BASICS
@@ -39,13 +40,17 @@ html
         .card.pseudo (.lang Pseudo) $ pre.code $ code (@insert ../code/basics/hello-world.pseudo)
         .card.c (.lang C) $ pre.code $ code (@insert ../code/basics/hello-world.c)
         .card.cpp (.lang C++) $ pre.code $ code (@insert ../code/basics/hello-world.cpp)
+        .card.coffeescript (.lang CoffeeScript) $ pre.code $ code (@insert ../code/basics/hello-world.coffee)
         .card.elixir (.lang Elixir) $ pre.code $ code (@insert ../code/basics/hello-world.ex)
         .card.erlang (.lang Erlang) $ pre.code $ code (@insert ../code/basics/hello-world.erl)
         .card.go (.lang Go) $ pre.code $ code (@insert ../code/basics/hello-world.go)
         .card.java (.lang Java) $ pre.code $ code (@insert ../code/basics/hello-world.java)
+        .card.javascript (.lang JavaScript) $ pre.code $ code (@insert ../code/basics/hello-world.js)
         .card.kotlin (.lang Kotlin) $ pre.code $ code (@insert ../code/basics/hello-world.kt)
         .card.scala (.lang Scala) $ pre.code $ code (@insert ../code/basics/hello-world.scala)
         .card.swift (.lang Swift) $ pre.code $ code (@insert ../code/basics/hello-world.swift)
+        .card.toffeescript (.lang ToffeeScript) $ pre.code $ code (@insert ../code/basics/hello-world.toffee)
+        .card.typescript (.lang TypeScript) $ pre.code $ code (@insert ../code/basics/hello-world.ts)
       .case (.name "Variables And Constants") $ .pair
         .card.swift (.lang Swift) $ pre.code $ code (@insert ../code/variables-and-constants.swift)
         .card.kotlin (.lang Kotlin) $ pre.code $ code (@insert ../code/variables-and-constants.kt)
@@ -140,3 +145,4 @@ html
     script (:type "text/javascript") "showHide(document.getElementById('scala'));"
     script (:type "text/javascript") "showHide(document.getElementById('swift'));"
     script (:type "text/javascript") "showHide(document.getElementById('toffeescript'));"
+    script (:type "text/javascript") "showHide(document.getElementById('typescript'));"
