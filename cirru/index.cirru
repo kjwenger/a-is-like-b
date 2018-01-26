@@ -17,10 +17,8 @@ html
     #note
       = "Swift is like Kotlin, is like ..."
 
-
-    .section (:style "display: inline-block; vertical-align: top")
-      .title COMPARE
-      .case (.name "Language") $ .pair
+    .section (:style "position: -webkit-sticky; position: sticky; top: 0;")
+      .pair
         .card (.lang Pseudo) $ input (:id pseudo)(:type checkbox)(:checked true)(:disabled true)(:onclick "showHide(this);")
         .card (.lang Swift) $ input (:id swift)(:type checkbox)(:checked true)(:onclick "showHide(this);")
         .card (.lang Kotlin) $ input (:id kotlin)(:type checkbox)(:checked true)(:onclick "showHide(this);")
@@ -30,6 +28,7 @@ html
         .card (.lang C++) $ input (:id cpp)(:type checkbox)(:onclick "showHide(this);")
         .card (.lang Elixir) $ input (:id elixir)(:type checkbox)(:onclick "showHide(this);")
         .card (.lang Erlang) $ input (:id erlang)(:type checkbox)(:onclick "showHide(this);")
+
     .section
       .title BASICS
       .case (.name "Hello World") $ .pair
