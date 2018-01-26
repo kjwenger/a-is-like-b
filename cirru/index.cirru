@@ -26,7 +26,7 @@ html
         .card (.lang C) $ pre.code $ code (@insert ../code/basics/hello-world.c)
         .card (.lang C++) $ pre.code $ code (@insert ../code/basics/hello-world.cpp)
         .card (.lang Elixir) $ pre.code $ code (@insert ../code/basics/hello-world.ex)
-        .card (.lang Erlang .erlang) $ pre.code $ code (@insert ../code/basics/hello-world.erl)
+        .card (.erlang.lang Erlang) $ pre.code $ code (@insert ../code/basics/hello-world.erl)
       .case (.name "Variables And Constants") $ .pair
         .card (.lang Swift) $ pre.code $ code (@insert ../code/variables-and-constants.swift)
         .card (.lang Kotlin) $ pre.code $ code (@insert ../code/variables-and-constants.kt)

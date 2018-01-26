@@ -11,7 +11,8 @@
     "postinstall": "npm run make",
     "make": "coffee make.coffee dev",
     "postmake": "npm run clean",
-    "watch": "coffee make.coffee watch",
+    "watch:coffee": "coffee make.coffee watch",
+    "watch": "concurrently --kill-others 'npm run watch:coffee' 'npm start'",
     "test": "standard .",
     "start": "node server",
     "clean": "mv -f index.html index.tmp && cat index.tmp | html > index.html && rm -f index.tmp"
@@ -20,6 +21,7 @@
   "license": "MIT",
   "devDependencies": {
     "coffeescript": "^2.1.1",
+    "concurrently": "^3.5.1",
     "html": "^1.0.0",
     "mission": "0.0.7",
     "shelljs": "^0.3.0",
