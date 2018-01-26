@@ -29,6 +29,7 @@ html
         .card (.lang Java) $ input (:id java)(:type checkbox)(:onclick "showHide(this);")
         .card (.lang JavaScript) $ input (:id javascript)(:type checkbox)(:onclick "showHide(this);")
         .card (.lang Kotlin) $ input (:id kotlin)(:type checkbox)(:checked true)(:onclick "showHide(this);")
+        .card (.lang ObjectiveC) $ input (:id objectivec)(:type checkbox)(:onclick "showHide(this);")
         .card (.lang Scala) $ input (:id scala)(:type checkbox)(:onclick "showHide(this);")
         .card (.lang Swift) $ input (:id swift)(:type checkbox)(:checked true)(:onclick "showHide(this);")
         .card (.lang ToffeeScript) $ input (:id toffeescript)(:type checkbox)(:onclick "showHide(this);")
@@ -47,6 +48,7 @@ html
         .card.java (.lang Java) $ pre.code $ code (@insert ../code/basics/hello-world.java)
         .card.javascript (.lang JavaScript) $ pre.code $ code (@insert ../code/basics/hello-world.js)
         .card.kotlin (.lang Kotlin) $ pre.code $ code (@insert ../code/basics/hello-world.kt)
+        .card.objectivec (.lang ObjectiveC) $ pre.code $ code (@insert ../code/basics/hello-world.m)
         .card.scala (.lang Scala) $ pre.code $ code (@insert ../code/basics/hello-world.scala)
         .card.swift (.lang Swift) $ pre.code $ code (@insert ../code/basics/hello-world.swift)
         .card.toffeescript (.lang ToffeeScript) $ pre.code $ code (@insert ../code/basics/hello-world.toffee)
@@ -142,6 +144,7 @@ html
     script (:type "text/javascript") "showHide(document.getElementById('java'));"
     script (:type "text/javascript") "showHide(document.getElementById('javascript'));"
     script (:type "text/javascript") "showHide(document.getElementById('kotlin'));"
+    script (:type "text/javascript") "showHide(document.getElementById('objectivec'));"
     script (:type "text/javascript") "showHide(document.getElementById('scala'));"
     script (:type "text/javascript") "showHide(document.getElementById('swift'));"
     script (:type "text/javascript") "showHide(document.getElementById('toffeescript'));"
