@@ -2,7 +2,7 @@ doctype
 
 html
   head
-    title "Swift is like Kotlin, is like ..."
+    title "Programming language A is like B, is like ..."
     meta (:charset utf-8)
     link (:rel stylesheet) (:href css/style.css)
     link (:rel stylesheet) (:href css/highlightjs-github.css)
@@ -15,32 +15,32 @@ html
       :href https://github.com/kjwenger/a-is-like-b.git
       img#fork-me (:style "z-index: 1000;")(:src http://a-is-like-b.herokuapp.com/fork-me.png)
     #note
-      = "Swift is like Kotlin, is like ..."
+      = "Programming language A is like B, is like ..."
 
     .section (:style "position: -webkit-sticky; position: sticky; top: 0;")
       .pair
         .card (.lang Pseudo) $ input (:id pseudo)(:type checkbox)(:checked true)(:disabled true)(:onclick "showHide(this);")
-        .card (.lang Swift) $ input (:id swift)(:type checkbox)(:checked true)(:onclick "showHide(this);")
-        .card (.lang Kotlin) $ input (:id kotlin)(:type checkbox)(:checked true)(:onclick "showHide(this);")
-        .card (.lang Java) $ input (:id java)(:type checkbox)(:onclick "showHide(this);")
-        .card (.lang Go) $ input (:id go)(:type checkbox)(:onclick "showHide(this);")
         .card (.lang C) $ input (:id c)(:type checkbox)(:onclick "showHide(this);")
         .card (.lang C++) $ input (:id cpp)(:type checkbox)(:onclick "showHide(this);")
         .card (.lang Elixir) $ input (:id elixir)(:type checkbox)(:onclick "showHide(this);")
         .card (.lang Erlang) $ input (:id erlang)(:type checkbox)(:onclick "showHide(this);")
+        .card (.lang Go) $ input (:id go)(:type checkbox)(:onclick "showHide(this);")
+        .card (.lang Java) $ input (:id java)(:type checkbox)(:onclick "showHide(this);")
+        .card (.lang Kotlin) $ input (:id kotlin)(:type checkbox)(:checked true)(:onclick "showHide(this);")
+        .card (.lang Swift) $ input (:id swift)(:type checkbox)(:checked true)(:onclick "showHide(this);")
 
     .section
       .title BASICS
       .case (.name "Hello World") $ .pair
         .card.pseudo (.lang Pseudo) $ pre.code $ code (@insert ../code/basics/hello-world.pseudo)
-        .card.swift (.lang Swift) $ pre.code $ code (@insert ../code/basics/hello-world.swift)
-        .card.kotlin (.lang Kotlin) $ pre.code $ code (@insert ../code/basics/hello-world.kt)
-        .card.java (.lang Java) $ pre.code $ code (@insert ../code/basics/hello-world.java)
-        .card.go (.lang Go) $ pre.code $ code (@insert ../code/basics/hello-world.go)
         .card.c (.lang C) $ pre.code $ code (@insert ../code/basics/hello-world.c)
         .card.cpp (.lang C++) $ pre.code $ code (@insert ../code/basics/hello-world.cpp)
         .card.elixir (.lang Elixir) $ pre.code $ code (@insert ../code/basics/hello-world.ex)
         .card.erlang (.lang Erlang) $ pre.code $ code (@insert ../code/basics/hello-world.erl)
+        .card.go (.lang Go) $ pre.code $ code (@insert ../code/basics/hello-world.go)
+        .card.java (.lang Java) $ pre.code $ code (@insert ../code/basics/hello-world.java)
+        .card.kotlin (.lang Kotlin) $ pre.code $ code (@insert ../code/basics/hello-world.kt)
+        .card.swift (.lang Swift) $ pre.code $ code (@insert ../code/basics/hello-world.swift)
       .case (.name "Variables And Constants") $ .pair
         .card.swift (.lang Swift) $ pre.code $ code (@insert ../code/variables-and-constants.swift)
         .card.kotlin (.lang Kotlin) $ pre.code $ code (@insert ../code/variables-and-constants.kt)

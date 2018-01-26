@@ -1,5 +1,5 @@
 
-# Swift is like Kotlin, is like ...
+# Programming language A is like B, is like ...
 
 Page: http://a-is-like-b.herokuapp.com/
 
