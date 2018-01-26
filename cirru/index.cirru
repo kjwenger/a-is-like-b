@@ -27,6 +27,7 @@ html
         .card (.lang Go) $ input (:id go)(:type checkbox)(:onclick "showHide(this);")
         .card (.lang Java) $ input (:id java)(:type checkbox)(:onclick "showHide(this);")
         .card (.lang Kotlin) $ input (:id kotlin)(:type checkbox)(:checked true)(:onclick "showHide(this);")
+        .card (.lang Scala) $ input (:id scala)(:type checkbox)(:onclick "showHide(this);")
         .card (.lang Swift) $ input (:id swift)(:type checkbox)(:checked true)(:onclick "showHide(this);")
 
     .section
@@ -40,6 +41,7 @@ html
         .card.go (.lang Go) $ pre.code $ code (@insert ../code/basics/hello-world.go)
         .card.java (.lang Java) $ pre.code $ code (@insert ../code/basics/hello-world.java)
         .card.kotlin (.lang Kotlin) $ pre.code $ code (@insert ../code/basics/hello-world.kt)
+        .card.scala (.lang Scala) $ pre.code $ code (@insert ../code/basics/hello-world.scala)
         .card.swift (.lang Swift) $ pre.code $ code (@insert ../code/basics/hello-world.swift)
       .case (.name "Variables And Constants") $ .pair
         .card.swift (.lang Swift) $ pre.code $ code (@insert ../code/variables-and-constants.swift)
@@ -123,11 +125,12 @@ html
         .card.swift (.lang Swift) $ pre.code $ code (@insert ../code/extensions.swift)
         .card.kotlin (.lang Kotlin) $ pre.code $ code (@insert ../code/extensions.kt)
 
-    script (:type "text/javascript") "showHide(document.getElementById('swift'));"
-    script (:type "text/javascript") "showHide(document.getElementById('kotlin'));"
-    script (:type "text/javascript") "showHide(document.getElementById('java'));"
-    script (:type "text/javascript") "showHide(document.getElementById('go'));"
     script (:type "text/javascript") "showHide(document.getElementById('c'));"
     script (:type "text/javascript") "showHide(document.getElementById('cpp'));"
     script (:type "text/javascript") "showHide(document.getElementById('elixir'));"
     script (:type "text/javascript") "showHide(document.getElementById('erlang'));"
+    script (:type "text/javascript") "showHide(document.getElementById('go'));"
+    script (:type "text/javascript") "showHide(document.getElementById('java'));"
+    script (:type "text/javascript") "showHide(document.getElementById('kotlin'));"
+    script (:type "text/javascript") "showHide(document.getElementById('scala'));"
+    script (:type "text/javascript") "showHide(document.getElementById('swift'));"
