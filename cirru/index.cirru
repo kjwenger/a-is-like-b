@@ -8,6 +8,7 @@ html
     link (:rel stylesheet) (:href css/highlightjs-github.css)
     script (:src js/highlight.9.4.0.js)
     script "hljs.initHighlightingOnLoad();"
+    script (:type "text/javascript") "function showHide(checkbox) { const display = checkbox.checked ? 'block' : 'none'; const elements = document.getElementsByClassName(checkbox.id); for(let i = 0; i < elements.length; i++) { elements.item(i).style.display = display; } }"
 
   body
     a (:target _blank)
@@ -16,17 +17,29 @@ html
     #note
       = "Swift is like Kotlin, is like ..."
 
+
+    .section
+      .title COMPARE
+      .case (.name "Language") $ .pair
+        .card (.lang Swift) $ input (:id swift)(:type checkbox)(:checked true)(:onclick "showHide(this);")
+        .card (.lang Kotlin) $ input (:id kotlin)(:type checkbox)(:checked true)(:onclick "showHide(this);")
+        .card (.lang Java) $ input (:id java)(:type checkbox)(:checked true)(:onclick "showHide(this);")
+        .card (.lang Go) $ input (:id go)(:type checkbox)(:checked true)(:onclick "showHide(this);")
+        .card (.lang C) $ input (:id c)(:type checkbox)(:checked true)(:onclick "showHide(this);")
+        .card (.lang C++) $ input (:id cpp)(:type checkbox)(:checked true)(:onclick "showHide(this);")
+        .card (.lang Elixir) $ input (:id elixir)(:type checkbox)(:checked true)(:onclick "showHide(this);")
+        .card (.lang Erlang) $ input (:id erlang)(:type checkbox)(:checked true)(:onclick "showHide(this);")
     .section
       .title BASICS
       .case (.name "Hello World") $ .pair
-        .card (.lang Swift) $ pre.code $ code (@insert ../code/basics/hello-world.swift)
-        .card (.lang Kotlin) $ pre.code $ code (@insert ../code/basics/hello-world.kt)
-        .card (.lang Java) $ pre.code $ code (@insert ../code/basics/hello-world.java)
-        .card (.lang Go) $ pre.code $ code (@insert ../code/basics/hello-world.go)
-        .card (.lang C) $ pre.code $ code (@insert ../code/basics/hello-world.c)
-        .card (.lang C++) $ pre.code $ code (@insert ../code/basics/hello-world.cpp)
-        .card (.lang Elixir) $ pre.code $ code (@insert ../code/basics/hello-world.ex)
-        .card (.erlang.lang Erlang) $ pre.code $ code (@insert ../code/basics/hello-world.erl)
+        .card.swift (.lang Swift) $ pre.code $ code (@insert ../code/basics/hello-world.swift)
+        .card.kotlin (.lang Kotlin) $ pre.code $ code (@insert ../code/basics/hello-world.kt)
+        .card.java (.lang Java) $ pre.code $ code (@insert ../code/basics/hello-world.java)
+        .card.go (.lang Go) $ pre.code $ code (@insert ../code/basics/hello-world.go)
+        .card.c (.lang C) $ pre.code $ code (@insert ../code/basics/hello-world.c)
+        .card.cpp (.lang C++) $ pre.code $ code (@insert ../code/basics/hello-world.cpp)
+        .card.elixir (.lang Elixir) $ pre.code $ code (@insert ../code/basics/hello-world.ex)
+        .card.erlang (.lang Erlang) $ pre.code $ code (@insert ../code/basics/hello-world.erl)
       .case (.name "Variables And Constants") $ .pair
         .card (.lang Swift) $ pre.code $ code (@insert ../code/variables-and-constants.swift)
         .card (.lang Kotlin) $ pre.code $ code (@insert ../code/variables-and-constants.kt)
