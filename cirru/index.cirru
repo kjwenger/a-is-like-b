@@ -22,6 +22,7 @@ html
         .card (.lang Pseudo) $ input (:id pseudo)(:type checkbox)(:checked true)(:disabled true)(:onclick "showHide(this);")
         .card (.lang C) $ input (:id c)(:type checkbox)(:onclick "showHide(this);")
         .card (.lang C++) $ input (:id cpp)(:type checkbox)(:onclick "showHide(this);")
+        .card (.lang CoffeeScript) $ input (:id coffeescript)(:type checkbox)(:onclick "showHide(this);")
         .card (.lang Elixir) $ input (:id elixir)(:type checkbox)(:onclick "showHide(this);")
         .card (.lang Erlang) $ input (:id erlang)(:type checkbox)(:onclick "showHide(this);")
         .card (.lang Go) $ input (:id go)(:type checkbox)(:onclick "showHide(this);")
@@ -30,6 +31,7 @@ html
         .card (.lang Kotlin) $ input (:id kotlin)(:type checkbox)(:checked true)(:onclick "showHide(this);")
         .card (.lang Scala) $ input (:id scala)(:type checkbox)(:onclick "showHide(this);")
         .card (.lang Swift) $ input (:id swift)(:type checkbox)(:checked true)(:onclick "showHide(this);")
+        .card (.lang ToffeeScript) $ input (:id toffeescript)(:type checkbox)(:onclick "showHide(this);")
 
     .section
       .title BASICS
@@ -128,6 +130,7 @@ html
 
     script (:type "text/javascript") "showHide(document.getElementById('c'));"
     script (:type "text/javascript") "showHide(document.getElementById('cpp'));"
+    script (:type "text/javascript") "showHide(document.getElementById('coffeescript'));"
     script (:type "text/javascript") "showHide(document.getElementById('elixir'));"
     script (:type "text/javascript") "showHide(document.getElementById('erlang'));"
     script (:type "text/javascript") "showHide(document.getElementById('go'));"
@@ -136,3 +139,4 @@ html
     script (:type "text/javascript") "showHide(document.getElementById('kotlin'));"
     script (:type "text/javascript") "showHide(document.getElementById('scala'));"
     script (:type "text/javascript") "showHide(document.getElementById('swift'));"
+    script (:type "text/javascript") "showHide(document.getElementById('toffeescript'));"
