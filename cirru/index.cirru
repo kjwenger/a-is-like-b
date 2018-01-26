@@ -13,7 +13,7 @@ html
   body
     a (:target _blank)
       :href https://github.com/kjwenger/a-is-like-b.git
-      img#fork-me (:src http://nilhcem.github.io/swift-is-like-kotlin/fork-me.png)
+      img#fork-me (:src http://a-is-like-b.herokuapp.com/fork-me.png)
     #note
       = "Swift is like Kotlin, is like ..."
 

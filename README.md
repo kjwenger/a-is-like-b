@@ -1,7 +1,7 @@
 
 # Swift is like Kotlin, is like ...
 
-Page: http://nilhcem.github.io/swift-is-like-kotlin/
+Page: http://a-is-like-b.herokuapp.com/
 
 Programmatically inspired from:
 - [swift-is-like-kotlin](https://github.com/kjwenger/a-is-like-b.git)
