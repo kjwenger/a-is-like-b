@@ -19,14 +19,14 @@ html
     .section
       .title BASICS
       .case (.name "Hello World") $ .pair
-        .card (.lang Swift) $ pre.code $ code (@insert ../code/hello-world.swift)
-        .card (.lang Kotlin) $ pre.code $ code (@insert ../code/hello-world.kt)
-        .card (.lang Java) $ pre.code $ code (@insert ../code/hello-world.java)
-        .card (.lang Go) $ pre.code $ code (@insert ../code/hello-world.go)
-        .card (.lang C) $ pre.code $ code (@insert ../code/hello-world.c)
-        .card (.lang C++) $ pre.code $ code (@insert ../code/hello-world.cpp)
-        .card (.lang Elixir) $ pre.code $ code (@insert ../code/hello-world.ex)
-        .card (.lang Erlang) $ pre.code $ code (@insert ../code/hello-world.erl)
+        .card (.lang Swift) $ pre.code $ code (@insert ../code/basics/hello-world.swift)
+        .card (.lang Kotlin) $ pre.code $ code (@insert ../code/basics/hello-world.kt)
+        .card (.lang Java) $ pre.code $ code (@insert ../code/basics/hello-world.java)
+        .card (.lang Go) $ pre.code $ code (@insert ../code/basics/hello-world.go)
+        .card (.lang C) $ pre.code $ code (@insert ../code/basics/hello-world.c)
+        .card (.lang C++) $ pre.code $ code (@insert ../code/basics/hello-world.cpp)
+        .card (.lang Elixir) $ pre.code $ code (@insert ../code/basics/hello-world.ex)
+        .card (.lang Erlang .erlang) $ pre.code $ code (@insert ../code/basics/hello-world.erl)
       .case (.name "Variables And Constants") $ .pair
         .card (.lang Swift) $ pre.code $ code (@insert ../code/variables-and-constants.swift)
         .card (.lang Kotlin) $ pre.code $ code (@insert ../code/variables-and-constants.kt)

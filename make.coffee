@@ -24,7 +24,7 @@ target.watch = ->
 
   mission.watch
     files: ['cirru/', 'code/']
-    trigger: (filepath, extname) ->
+    trigger: () ->
       cirru inDev: yes
       station.reload project
 

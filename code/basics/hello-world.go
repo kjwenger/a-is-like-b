@@ -1,6 +1,6 @@
 // hello world program
 
-package main
+package basics
 
 import "fmt"
 
