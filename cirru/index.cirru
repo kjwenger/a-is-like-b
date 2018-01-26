@@ -26,6 +26,7 @@ html
         .card (.lang Erlang) $ input (:id erlang)(:type checkbox)(:onclick "showHide(this);")
         .card (.lang Go) $ input (:id go)(:type checkbox)(:onclick "showHide(this);")
         .card (.lang Java) $ input (:id java)(:type checkbox)(:onclick "showHide(this);")
+        .card (.lang JavaScript) $ input (:id javascript)(:type checkbox)(:onclick "showHide(this);")
         .card (.lang Kotlin) $ input (:id kotlin)(:type checkbox)(:checked true)(:onclick "showHide(this);")
         .card (.lang Scala) $ input (:id scala)(:type checkbox)(:onclick "showHide(this);")
         .card (.lang Swift) $ input (:id swift)(:type checkbox)(:checked true)(:onclick "showHide(this);")
@@ -131,6 +132,7 @@ html
     script (:type "text/javascript") "showHide(document.getElementById('erlang'));"
     script (:type "text/javascript") "showHide(document.getElementById('go'));"
     script (:type "text/javascript") "showHide(document.getElementById('java'));"
+    script (:type "text/javascript") "showHide(document.getElementById('javascript'));"
     script (:type "text/javascript") "showHide(document.getElementById('kotlin'));"
     script (:type "text/javascript") "showHide(document.getElementById('scala'));"
     script (:type "text/javascript") "showHide(document.getElementById('swift'));"
