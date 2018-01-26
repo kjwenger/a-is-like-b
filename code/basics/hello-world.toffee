@@ -1,3 +1,3 @@
 # hello world program
 
-console log "Hello, world!"
+console.log "Hello, world!"
