@@ -2,7 +2,7 @@ doctype
 
 html
   head
-    title "Programming language A is like B, is like ..."
+    title "Programming language 'A' is like 'B', is like ..."
     meta (:charset utf-8)
     link (:rel stylesheet) (:href css/style.css)
     link (:rel stylesheet) (:href css/highlightjs-github.css)
@@ -15,7 +15,7 @@ html
       :href https://github.com/kjwenger/a-is-like-b.git
       img#fork-me (:style "z-index: 1000;")(:src http://a-is-like-b.herokuapp.com/fork-me.png)
     #note
-      = "Programming language A is like B, is like ..."
+      = "Programming language 'A' is like 'B', is like ..."
 
     .section (:style "position: -webkit-sticky; position: sticky; top: 0; background-color: #f5deb3;")
       .pair
@@ -72,12 +72,12 @@ html
       .case (.name "Variables And Constants") $ .pair
         .card.pseudo (.lang Pseudo) $ pre.code $ code (@insert ../code/todo.pseudo)
         .card.c (.lang C) $ pre.code $ code (@insert ../code/todo.c)
-        .card.cpp (.lang C++) $ pre.code $ code (@insert ../code/todo.cpp)
-        .card.coffeescript (.lang CoffeeScript) $ pre.code $ code (@insert ../code/todo.coffee)
+        .card.cpp (.lang C++) $ pre.code $ code (@insert ../code/basics/variables-and-constants.cpp)
+        .card.coffeescript (.lang CoffeeScript) $ pre.code $ code (@insert ../code/basics/variables-and-constants.coffee)
         .card.elixir (.lang Elixir) $ pre.code $ code (@insert ../code/todo.ex)
         .card.erlang (.lang Erlang) $ pre.code $ code (@insert ../code/todo.erl)
         .card.go (.lang Go) $ pre.code $ code (@insert ../code/todo.go)
-        .card.java (.lang Java) $ pre.code $ code (@insert ../code/todo.java)
+        .card.java (.lang Java) $ pre.code $ code (@insert ../code/basics/variables-and-constants.java)
         .card.javascript (.lang JavaScript) $ pre.code $ code (@insert ../code/basics/variables-and-constants.js)
         .card.kotlin (.lang Kotlin) $ pre.code $ code (@insert ../code/basics/variables-and-constants.kt)
         .card.objectivec (.lang ObjectiveC) $ pre.code $ code (@insert ../code/todo.m)
@@ -87,18 +87,18 @@ html
         .card.typescript (.lang TypeScript) $ pre.code $ code (@insert ../code/todo.ts)
       .case (.name "Explicit Types") $ .pair
         .card.pseudo (.lang Pseudo) $ pre.code $ code (@insert ../code/todo.pseudo)
-        .card.c (.lang C) $ pre.code $ code (@insert ../code/todo.c)
-        .card.cpp (.lang C++) $ pre.code $ code (@insert ../code/todo.cpp)
+        .card.c (.lang C) $ pre.code $ code (@insert ../code/basics/explicit-types.c)
+        .card.cpp (.lang C++) $ pre.code $ code (@insert ../code/basics/explicit-types.cpp)
         .card.coffeescript (.lang CoffeeScript) $ pre.code $ code (@insert ../code/todo.coffee)
         .card.elixir (.lang Elixir) $ pre.code $ code (@insert ../code/todo.ex)
         .card.erlang (.lang Erlang) $ pre.code $ code (@insert ../code/todo.erl)
         .card.go (.lang Go) $ pre.code $ code (@insert ../code/todo.go)
-        .card.java (.lang Java) $ pre.code $ code (@insert ../code/todo.java)
+        .card.java (.lang Java) $ pre.code $ code (@insert ../code/basics/explicit-types.java)
         .card.javascript (.lang JavaScript) $ pre.code $ code (@insert ../code/todo.js)
-        .card.kotlin (.lang Kotlin) $ pre.code $ code (@insert ../code/explicit-types.kt)
+        .card.kotlin (.lang Kotlin) $ pre.code $ code (@insert ../code/basics/explicit-types.kt)
         .card.objectivec (.lang ObjectiveC) $ pre.code $ code (@insert ../code/todo.m)
         .card.scala (.lang Scala) $ pre.code $ code (@insert ../code/todo.scala)
-        .card.swift (.lang Swift) $ pre.code $ code (@insert ../code/explicit-types.swift)
+        .card.swift (.lang Swift) $ pre.code $ code (@insert ../code/basics/explicit-types.swift)
         .card.toffeescript (.lang ToffeeScript) $ pre.code $ code (@insert ../code/todo.toffee)
         .card.typescript (.lang TypeScript) $ pre.code $ code (@insert ../code/todo.ts)
       .case (.name "Type Coercion") $ .pair

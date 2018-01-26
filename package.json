@@ -1,7 +1,7 @@
 {
   "name": "swift-is-like-kotlin",
   "version": "0.0.2",
-  "description": "Programming language A is like B, is like ... ------",
+  "description": "Programming language 'A' is like 'B', is like ... ------",
   "main": "index.js",
   "engines": {
     "node": "^8.9.4",
