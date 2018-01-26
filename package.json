@@ -15,7 +15,7 @@
     "watch": "concurrently --kill-others 'npm run watch:coffee' 'npm start'",
     "test": "standard .",
     "start": "node server",
-    "clean": "mv -f index.html index.tmp && cat index.tmp | html > index.html && rm -f index.tmp"
+    "clean": "mv -f index.html index.tmp && cat index.tmp | npx html > index.html && rm -f index.tmp"
   },
   "author": "jiyinyiyong, nilhcem",
   "license": "MIT",
