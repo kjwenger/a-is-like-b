@@ -54,8 +54,9 @@ html
         .card.toffeescript (.lang ToffeeScript) $ pre.code $ code (@insert ../code/basics/hello-world.toffee)
         .card.typescript (.lang TypeScript) $ pre.code $ code (@insert ../code/basics/hello-world.ts)
       .case (.name "Variables And Constants") $ .pair
-        .card.swift (.lang Swift) $ pre.code $ code (@insert ../code/variables-and-constants.swift)
-        .card.kotlin (.lang Kotlin) $ pre.code $ code (@insert ../code/variables-and-constants.kt)
+        .card.swift (.lang Swift) $ pre.code $ code (@insert ../code/basics/variables-and-constants.swift)
+        .card.javascript (.lang JavaScript) $ pre.code $ code (@insert ../code/basics/variables-and-constants.js)
+        .card.kotlin (.lang Kotlin) $ pre.code $ code (@insert ../code/basics/variables-and-constants.kt)
       .case (.name "Explicit Types") $ .pair
         .card.swift (.lang Swift) $ pre.code $ code (@insert ../code/explicit-types.swift)
         .card.kotlin (.lang Kotlin) $ pre.code $ code (@insert ../code/explicit-types.kt)
