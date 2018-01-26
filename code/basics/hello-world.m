@@ -1,7 +1,5 @@
 // hello world program
-
 #import <Foundation/Foundation.h>
-
 int main (int argc, const char * argv[])
 {
   NSAutoreleasePool *pool =

@@ -1,5 +1,4 @@
 Rem hello world program
-
 Sub main()
   Print "Hello, world!"
 End Sub
