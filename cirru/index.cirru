@@ -191,7 +191,7 @@ html
         .card.typescript (.lang TypeScript) $ pre.code $ code (@insert ../code/todo.ts)
       .case (.name "Empty Collections") $ .pair
         .card.c (.lang C) $ pre.code $ code (@insert ../code/todo.c)
-        .card.cpp (.lang C++) $ pre.code $ code (@insert ../code/todo.cpp)
+        .card.cpp (.lang C++) $ pre.code $ code (@insert ../code/collections/empty-collections.cpp)
         .card.coffeescript (.lang CoffeeScript) $ pre.code $ code (@insert ../code/todo.coffee)
         .card.elixir (.lang Elixir) $ pre.code $ code (@insert ../code/todo.ex)
         .card.erlang (.lang Erlang) $ pre.code $ code (@insert ../code/todo.erl)
@@ -209,7 +209,7 @@ html
       .title FUNCTIONS
       .case (.name "Functions") $ .pair
         .card.c (.lang C) $ pre.code $ code (@insert ../code/todo.c)
-        .card.cpp (.lang C++) $ pre.code $ code (@insert ../code/todo.cpp)
+        .card.cpp (.lang C++) $ pre.code $ code (@insert ../code/functions/functions.cpp)
         .card.coffeescript (.lang CoffeeScript) $ pre.code $ code (@insert ../code/todo.coffee)
         .card.elixir (.lang Elixir) $ pre.code $ code (@insert ../code/todo.ex)
         .card.erlang (.lang Erlang) $ pre.code $ code (@insert ../code/todo.erl)
@@ -220,6 +220,21 @@ html
         .card.objectivec (.lang ObjectiveC) $ pre.code $ code (@insert ../code/todo.m)
         .card.scala (.lang Scala) $ pre.code $ code (@insert ../code/functions/functions.scala)
         .card.swift (.lang Swift) $ pre.code $ code (@insert ../code/functions/functions.swift)
+        .card.toffeescript (.lang ToffeeScript) $ pre.code $ code (@insert ../code/todo.toffee)
+        .card.typescript (.lang TypeScript) $ pre.code $ code (@insert ../code/todo.ts)
+      .case (.name "Procedures") $ .pair
+        .card.c (.lang C) $ pre.code $ code (@insert ../code/functions/procedures.c)
+        .card.cpp (.lang C++) $ pre.code $ code (@insert ../code/functions/procedures.cpp)
+        .card.coffeescript (.lang CoffeeScript) $ pre.code $ code (@insert ../code/todo.coffee)
+        .card.elixir (.lang Elixir) $ pre.code $ code (@insert ../code/todo.ex)
+        .card.erlang (.lang Erlang) $ pre.code $ code (@insert ../code/todo.erl)
+        .card.go (.lang Go) $ pre.code $ code (@insert ../code/todo.go)
+        .card.java (.lang Java) $ pre.code $ code (@insert ../code/todo.java)
+        .card.javascript (.lang JavaScript) $ pre.code $ code (@insert ../code/todo.js)
+        .card.kotlin (.lang Kotlin) $ pre.code $ code (@insert ../code/todo.kt)
+        .card.objectivec (.lang ObjectiveC) $ pre.code $ code (@insert ../code/todo.m)
+        .card.scala (.lang Scala) $ pre.code $ code (@insert ../code/todo.scala)
+        .card.swift (.lang Swift) $ pre.code $ code (@insert ../code/todo.swift)
         .card.toffeescript (.lang ToffeeScript) $ pre.code $ code (@insert ../code/todo.toffee)
         .card.typescript (.lang TypeScript) $ pre.code $ code (@insert ../code/todo.ts)
       .case (.name "Tuple Return") $ .pair
