@@ -4,7 +4,9 @@ void greet(
   const char* day,
   char[] out)
 {
-  sprintf(out, "Hello %s, today is %s.", name, day);
+  sprintf(out,
+    "Hello %s, today is %s.",
+    name, day);
 }
 int main() {
   char[1024] out;
