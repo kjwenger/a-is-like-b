@@ -2,5 +2,8 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/submodule/swift-is-like-go" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/submodule/swift-is-like-kotlin" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/submodule/swift-is-like-scala" vcs="Git" />
   </component>
 </project>
