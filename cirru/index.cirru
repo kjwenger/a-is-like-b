@@ -19,7 +19,6 @@ html
 
     .section (:style "position: -webkit-sticky; position: sticky; top: 0; background-color: #f5deb3;")
       .pair
-        .card (.lang Pseudo) $ input (:id pseudo)(:type checkbox)(:checked true)(:disabled true)(:onclick "showHide(this);")
         .card (.lang C) $ input (:id c)(:type checkbox)(:onclick "showHide(this);")
         .card (.lang C++) $ input (:id cpp)(:type checkbox)(:onclick "showHide(this);")
         .card (.lang CoffeeScript) $ input (:id coffeescript)(:type checkbox)(:onclick "showHide(this);")
@@ -38,7 +37,6 @@ html
     .section
       .title BASICS
       .case (.name "Hello World") $ .pair
-        .card.pseudo (.lang Pseudo) $ pre.code $ code (@insert ../code/basics/hello-world.pseudo)
         .card.c (.lang C) $ pre.code $ code (@insert ../code/basics/hello-world.c)
         .card.cpp (.lang C++) $ pre.code $ code (@insert ../code/basics/hello-world.cpp)
         .card.coffeescript (.lang CoffeeScript) $ pre.code $ code (@insert ../code/basics/hello-world.coffee)
@@ -54,7 +52,6 @@ html
         .card.toffeescript (.lang ToffeeScript) $ pre.code $ code (@insert ../code/basics/hello-world.toffee)
         .card.typescript (.lang TypeScript) $ pre.code $ code (@insert ../code/basics/hello-world.ts)
       .case (.name "Comments") $ .pair
-        .card.pseudo (.lang Pseudo) $ pre.code $ code (@insert ../code/basics/comments.pseudo)
         .card.c (.lang C) $ pre.code $ code (@insert ../code/basics/comments.c)
         .card.cpp (.lang C++) $ pre.code $ code (@insert ../code/basics/comments.cpp)
         .card.coffeescript (.lang CoffeeScript) $ pre.code $ code (@insert ../code/basics/comments.coffee)
@@ -70,8 +67,7 @@ html
         .card.toffeescript (.lang ToffeeScript) $ pre.code $ code (@insert ../code/basics/comments.toffee)
         .card.typescript (.lang TypeScript) $ pre.code $ code (@insert ../code/basics/comments.ts)
       .case (.name "Variables And Constants") $ .pair
-        .card.pseudo (.lang Pseudo) $ pre.code $ code (@insert ../code/todo.pseudo)
-        .card.c (.lang C) $ pre.code $ code (@insert ../code/todo.c)
+        .card.c (.lang C) $ pre.code $ code (@insert ../code/basics/variables-and-constants.c)
         .card.cpp (.lang C++) $ pre.code $ code (@insert ../code/basics/variables-and-constants.cpp)
         .card.coffeescript (.lang CoffeeScript) $ pre.code $ code (@insert ../code/basics/variables-and-constants.coffee)
         .card.elixir (.lang Elixir) $ pre.code $ code (@insert ../code/todo.ex)
@@ -86,7 +82,6 @@ html
         .card.toffeescript (.lang ToffeeScript) $ pre.code $ code (@insert ../code/todo.toffee)
         .card.typescript (.lang TypeScript) $ pre.code $ code (@insert ../code/todo.ts)
       .case (.name "Explicit Types") $ .pair
-        .card.pseudo (.lang Pseudo) $ pre.code $ code (@insert ../code/todo.pseudo)
         .card.c (.lang C) $ pre.code $ code (@insert ../code/basics/explicit-types.c)
         .card.cpp (.lang C++) $ pre.code $ code (@insert ../code/basics/explicit-types.cpp)
         .card.coffeescript (.lang CoffeeScript) $ pre.code $ code (@insert ../code/todo.coffee)
@@ -102,39 +97,36 @@ html
         .card.toffeescript (.lang ToffeeScript) $ pre.code $ code (@insert ../code/todo.toffee)
         .card.typescript (.lang TypeScript) $ pre.code $ code (@insert ../code/todo.ts)
       .case (.name "Type Coercion") $ .pair
-        .card.pseudo (.lang Pseudo) $ pre.code $ code (@insert ../code/todo.pseudo)
         .card.c (.lang C) $ pre.code $ code (@insert ../code/todo.c)
         .card.cpp (.lang C++) $ pre.code $ code (@insert ../code/todo.cpp)
-        .card.coffeescript (.lang CoffeeScript) $ pre.code $ code (@insert ../code/todo.coffee)
+        .card.coffeescript (.lang CoffeeScript) $ pre.code $ code (@insert ../code/basics/type-coercion.coffee)
         .card.elixir (.lang Elixir) $ pre.code $ code (@insert ../code/todo.ex)
         .card.erlang (.lang Erlang) $ pre.code $ code (@insert ../code/todo.erl)
         .card.go (.lang Go) $ pre.code $ code (@insert ../code/basics/type-coercion.go)
         .card.java (.lang Java) $ pre.code $ code (@insert ../code/todo.java)
-        .card.javascript (.lang JavaScript) $ pre.code $ code (@insert ../code/todo.js)
+        .card.javascript (.lang JavaScript) $ pre.code $ code (@insert ../code/basics/type-coercion.js)
         .card.kotlin (.lang Kotlin) $ pre.code $ code (@insert ../code/basics/type-coercion.kt)
         .card.objectivec (.lang ObjectiveC) $ pre.code $ code (@insert ../code/todo.m)
         .card.scala (.lang Scala) $ pre.code $ code (@insert ../code/todo.scala)
         .card.swift (.lang Swift) $ pre.code $ code (@insert ../code/basics/type-coercion.swift)
-        .card.toffeescript (.lang ToffeeScript) $ pre.code $ code (@insert ../code/todo.toffee)
-        .card.typescript (.lang TypeScript) $ pre.code $ code (@insert ../code/todo.ts)
+        .card.toffeescript (.lang ToffeeScript) $ pre.code $ code (@insert ../code/basics/type-coercion.toffee)
+        .card.typescript (.lang TypeScript) $ pre.code $ code (@insert ../code/basics/type-coercion.ts)
       .case (.name "String Interpolation") $ .pair
-        .card.pseudo (.lang Pseudo) $ pre.code $ code (@insert ../code/todo.pseudo)
-        .card.c (.lang C) $ pre.code $ code (@insert ../code/todo.c)
-        .card.cpp (.lang C++) $ pre.code $ code (@insert ../code/todo.cpp)
-        .card.coffeescript (.lang CoffeeScript) $ pre.code $ code (@insert ../code/todo.coffee)
+        .card.c (.lang C) $ pre.code $ code (@insert ../code/basics/string-interpolation.c)
+        .card.cpp (.lang C++) $ pre.code $ code (@insert ../code/basics/string-interpolation.cpp)
+        .card.coffeescript (.lang CoffeeScript) $ pre.code $ code (@insert ../code/basics/string-interpolation.coffee)
         .card.elixir (.lang Elixir) $ pre.code $ code (@insert ../code/todo.ex)
         .card.erlang (.lang Erlang) $ pre.code $ code (@insert ../code/todo.erl)
         .card.go (.lang Go) $ pre.code $ code (@insert ../code/basics/string-interpolation.go)
-        .card.java (.lang Java) $ pre.code $ code (@insert ../code/todo.java)
-        .card.javascript (.lang JavaScript) $ pre.code $ code (@insert ../code/todo.js)
+        .card.java (.lang Java) $ pre.code $ code (@insert ../code/basics/string-interpolation.java)
+        .card.javascript (.lang JavaScript) $ pre.code $ code (@insert ../code/basics/string-interpolation.js)
         .card.kotlin (.lang Kotlin) $ pre.code $ code (@insert ../code/basics/string-interpolation.kt)
         .card.objectivec (.lang ObjectiveC) $ pre.code $ code (@insert ../code/todo.m)
-        .card.scala (.lang Scala) $ pre.code $ code (@insert ../code/todo.scala)
+        .card.scala (.lang Scala) $ pre.code $ code (@insert ../code/basics/string-interpolation.scala)
         .card.swift (.lang Swift) $ pre.code $ code (@insert ../code/basics/string-interpolation.swift)
-        .card.toffeescript (.lang ToffeeScript) $ pre.code $ code (@insert ../code/todo.toffee)
-        .card.typescript (.lang TypeScript) $ pre.code $ code (@insert ../code/todo.ts)
+        .card.toffeescript (.lang ToffeeScript) $ pre.code $ code (@insert ../code/basics/string-interpolation.toffee)
+        .card.typescript (.lang TypeScript) $ pre.code $ code (@insert ../code/basics/string-interpolation.ts)
       .case (.name "Range Operator") $ .pair
-        .card.pseudo (.lang Pseudo) $ pre.code $ code (@insert ../code/todo.pseudo)
         .card.c (.lang C) $ pre.code $ code (@insert ../code/todo.c)
         .card.cpp (.lang C++) $ pre.code $ code (@insert ../code/todo.cpp)
         .card.coffeescript (.lang CoffeeScript) $ pre.code $ code (@insert ../code/todo.coffee)
@@ -150,7 +142,6 @@ html
         .card.toffeescript (.lang ToffeeScript) $ pre.code $ code (@insert ../code/todo.toffee)
         .card.typescript (.lang TypeScript) $ pre.code $ code (@insert ../code/todo.ts)
       .case (.name "Inclusive Range Operator") $ .pair
-        .card.pseudo (.lang Pseudo) $ pre.code $ code (@insert ../code/todo.pseudo)
         .card.c (.lang C) $ pre.code $ code (@insert ../code/todo.c)
         .card.cpp (.lang C++) $ pre.code $ code (@insert ../code/todo.cpp)
         .card.coffeescript (.lang CoffeeScript) $ pre.code $ code (@insert ../code/todo.coffee)
@@ -169,7 +160,6 @@ html
     .section
       .title COLLECTIONS
       .case (.name "Arrays") $ .pair
-        .card.pseudo (.lang Pseudo) $ pre.code $ code (@insert ../code/todo.pseudo)
         .card.c (.lang C) $ pre.code $ code (@insert ../code/todo.c)
         .card.cpp (.lang C++) $ pre.code $ code (@insert ../code/todo.cpp)
         .card.coffeescript (.lang CoffeeScript) $ pre.code $ code (@insert ../code/todo.coffee)
@@ -185,7 +175,6 @@ html
         .card.toffeescript (.lang ToffeeScript) $ pre.code $ code (@insert ../code/todo.toffee)
         .card.typescript (.lang TypeScript) $ pre.code $ code (@insert ../code/todo.ts)
       .case (.name "Maps") $ .pair
-        .card.pseudo (.lang Pseudo) $ pre.code $ code (@insert ../code/todo.pseudo)
         .card.c (.lang C) $ pre.code $ code (@insert ../code/todo.c)
         .card.cpp (.lang C++) $ pre.code $ code (@insert ../code/todo.cpp)
         .card.coffeescript (.lang CoffeeScript) $ pre.code $ code (@insert ../code/todo.coffee)
@@ -201,7 +190,6 @@ html
         .card.toffeescript (.lang ToffeeScript) $ pre.code $ code (@insert ../code/todo.toffee)
         .card.typescript (.lang TypeScript) $ pre.code $ code (@insert ../code/todo.ts)
       .case (.name "Empty Collections") $ .pair
-        .card.pseudo (.lang Pseudo) $ pre.code $ code (@insert ../code/todo.pseudo)
         .card.c (.lang C) $ pre.code $ code (@insert ../code/todo.c)
         .card.cpp (.lang C++) $ pre.code $ code (@insert ../code/todo.cpp)
         .card.coffeescript (.lang CoffeeScript) $ pre.code $ code (@insert ../code/todo.coffee)
@@ -220,7 +208,6 @@ html
     .section
       .title FUNCTIONS
       .case (.name "Functions") $ .pair
-        .card.pseudo (.lang Pseudo) $ pre.code $ code (@insert ../code/todo.pseudo)
         .card.c (.lang C) $ pre.code $ code (@insert ../code/todo.c)
         .card.cpp (.lang C++) $ pre.code $ code (@insert ../code/todo.cpp)
         .card.coffeescript (.lang CoffeeScript) $ pre.code $ code (@insert ../code/todo.coffee)
@@ -236,7 +223,6 @@ html
         .card.toffeescript (.lang ToffeeScript) $ pre.code $ code (@insert ../code/todo.toffee)
         .card.typescript (.lang TypeScript) $ pre.code $ code (@insert ../code/todo.ts)
       .case (.name "Tuple Return") $ .pair
-        .card.pseudo (.lang Pseudo) $ pre.code $ code (@insert ../code/todo.pseudo)
         .card.c (.lang C) $ pre.code $ code (@insert ../code/todo.c)
         .card.cpp (.lang C++) $ pre.code $ code (@insert ../code/todo.cpp)
         .card.coffeescript (.lang CoffeeScript) $ pre.code $ code (@insert ../code/todo.coffee)
@@ -252,7 +238,6 @@ html
         .card.toffeescript (.lang ToffeeScript) $ pre.code $ code (@insert ../code/todo.toffee)
         .card.typescript (.lang TypeScript) $ pre.code $ code (@insert ../code/todo.ts)
       .case (.name "Variable Number Of Arguments") $ .pair
-        .card.pseudo (.lang Pseudo) $ pre.code $ code (@insert ../code/todo.pseudo)
         .card.c (.lang C) $ pre.code $ code (@insert ../code/todo.c)
         .card.cpp (.lang C++) $ pre.code $ code (@insert ../code/todo.cpp)
         .card.coffeescript (.lang CoffeeScript) $ pre.code $ code (@insert ../code/todo.coffee)
@@ -268,7 +253,6 @@ html
         .card.toffeescript (.lang ToffeeScript) $ pre.code $ code (@insert ../code/todo.toffee)
         .card.typescript (.lang TypeScript) $ pre.code $ code (@insert ../code/todo.ts)
       .case (.name "Function Type") $ .pair
-        .card.pseudo (.lang Pseudo) $ pre.code $ code (@insert ../code/todo.pseudo)
         .card.c (.lang C) $ pre.code $ code (@insert ../code/todo.c)
         .card.cpp (.lang C++) $ pre.code $ code (@insert ../code/todo.cpp)
         .card.coffeescript (.lang CoffeeScript) $ pre.code $ code (@insert ../code/todo.coffee)
@@ -284,7 +268,6 @@ html
         .card.toffeescript (.lang ToffeeScript) $ pre.code $ code (@insert ../code/todo.toffee)
         .card.typescript (.lang TypeScript) $ pre.code $ code (@insert ../code/todo.ts)
       .case (.name "Map") $ .pair
-        .card.pseudo (.lang Pseudo) $ pre.code $ code (@insert ../code/todo.pseudo)
         .card.c (.lang C) $ pre.code $ code (@insert ../code/todo.c)
         .card.cpp (.lang C++) $ pre.code $ code (@insert ../code/todo.cpp)
         .card.coffeescript (.lang CoffeeScript) $ pre.code $ code (@insert ../code/todo.coffee)
@@ -300,7 +283,6 @@ html
         .card.toffeescript (.lang ToffeeScript) $ pre.code $ code (@insert ../code/todo.toffee)
         .card.typescript (.lang TypeScript) $ pre.code $ code (@insert ../code/todo.ts)
       .case (.name "Sort") $ .pair
-        .card.pseudo (.lang Pseudo) $ pre.code $ code (@insert ../code/todo.pseudo)
         .card.c (.lang C) $ pre.code $ code (@insert ../code/todo.c)
         .card.cpp (.lang C++) $ pre.code $ code (@insert ../code/todo.cpp)
         .card.coffeescript (.lang CoffeeScript) $ pre.code $ code (@insert ../code/todo.coffee)
@@ -316,7 +298,6 @@ html
         .card.toffeescript (.lang ToffeeScript) $ pre.code $ code (@insert ../code/todo.toffee)
         .card.typescript (.lang TypeScript) $ pre.code $ code (@insert ../code/todo.ts)
       .case (.name "Named Arguments") $ .pair
-        .card.pseudo (.lang Pseudo) $ pre.code $ code (@insert ../code/todo.pseudo)
         .card.c (.lang C) $ pre.code $ code (@insert ../code/todo.c)
         .card.cpp (.lang C++) $ pre.code $ code (@insert ../code/todo.cpp)
         .card.coffeescript (.lang CoffeeScript) $ pre.code $ code (@insert ../code/todo.coffee)
@@ -335,7 +316,6 @@ html
     .section
       .title CLASSES
       .case (.name "Declaration") $ .pair
-        .card.pseudo (.lang Pseudo) $ pre.code $ code (@insert ../code/todo.pseudo)
         .card.c (.lang C) $ pre.code $ code (@insert ../code/todo.c)
         .card.cpp (.lang C++) $ pre.code $ code (@insert ../code/todo.cpp)
         .card.coffeescript (.lang CoffeeScript) $ pre.code $ code (@insert ../code/todo.coffee)
@@ -351,7 +331,6 @@ html
         .card.toffeescript (.lang ToffeeScript) $ pre.code $ code (@insert ../code/todo.toffee)
         .card.typescript (.lang TypeScript) $ pre.code $ code (@insert ../code/todo.ts)
       .case (.name "Usage") $ .pair
-        .card.pseudo (.lang Pseudo) $ pre.code $ code (@insert ../code/todo.pseudo)
         .card.c (.lang C) $ pre.code $ code (@insert ../code/todo.c)
         .card.cpp (.lang C++) $ pre.code $ code (@insert ../code/todo.cpp)
         .card.coffeescript (.lang CoffeeScript) $ pre.code $ code (@insert ../code/todo.coffee)
@@ -367,7 +346,6 @@ html
         .card.toffeescript (.lang ToffeeScript) $ pre.code $ code (@insert ../code/todo.toffee)
         .card.typescript (.lang TypeScript) $ pre.code $ code (@insert ../code/todo.ts)
       .case (.name "Subclass") $ .pair
-        .card.pseudo (.lang Pseudo) $ pre.code $ code (@insert ../code/todo.pseudo)
         .card.c (.lang C) $ pre.code $ code (@insert ../code/todo.c)
         .card.cpp (.lang C++) $ pre.code $ code (@insert ../code/todo.cpp)
         .card.coffeescript (.lang CoffeeScript) $ pre.code $ code (@insert ../code/todo.coffee)
@@ -383,7 +361,6 @@ html
         .card.toffeescript (.lang ToffeeScript) $ pre.code $ code (@insert ../code/todo.toffee)
         .card.typescript (.lang TypeScript) $ pre.code $ code (@insert ../code/todo.ts)
       .case (.name "Checking Type") $ .pair
-        .card.pseudo (.lang Pseudo) $ pre.code $ code (@insert ../code/todo.pseudo)
         .card.c (.lang C) $ pre.code $ code (@insert ../code/todo.c)
         .card.cpp (.lang C++) $ pre.code $ code (@insert ../code/todo.cpp)
         .card.coffeescript (.lang CoffeeScript) $ pre.code $ code (@insert ../code/todo.coffee)
@@ -399,7 +376,6 @@ html
         .card.toffeescript (.lang ToffeeScript) $ pre.code $ code (@insert ../code/todo.toffee)
         .card.typescript (.lang TypeScript) $ pre.code $ code (@insert ../code/todo.ts)
       .case (.name "Pattern Matching") $ .pair
-        .card.pseudo (.lang Pseudo) $ pre.code $ code (@insert ../code/todo.pseudo)
         .card.c (.lang C) $ pre.code $ code (@insert ../code/todo.c)
         .card.cpp (.lang C++) $ pre.code $ code (@insert ../code/todo.cpp)
         .card.coffeescript (.lang CoffeeScript) $ pre.code $ code (@insert ../code/todo.coffee)
@@ -415,7 +391,6 @@ html
         .card.toffeescript (.lang ToffeeScript) $ pre.code $ code (@insert ../code/todo.toffee)
         .card.typescript (.lang TypeScript) $ pre.code $ code (@insert ../code/todo.ts)
       .case (.name "Downcasting") $ .pair
-        .card.pseudo (.lang Pseudo) $ pre.code $ code (@insert ../code/todo.pseudo)
         .card.c (.lang C) $ pre.code $ code (@insert ../code/todo.c)
         .card.cpp (.lang C++) $ pre.code $ code (@insert ../code/todo.cpp)
         .card.coffeescript (.lang CoffeeScript) $ pre.code $ code (@insert ../code/todo.coffee)
@@ -431,7 +406,6 @@ html
         .card.toffeescript (.lang ToffeeScript) $ pre.code $ code (@insert ../code/todo.toffee)
         .card.typescript (.lang TypeScript) $ pre.code $ code (@insert ../code/todo.ts)
       .case (.name "Protocol") $ .pair
-        .card.pseudo (.lang Pseudo) $ pre.code $ code (@insert ../code/todo.pseudo)
         .card.c (.lang C) $ pre.code $ code (@insert ../code/todo.c)
         .card.cpp (.lang C++) $ pre.code $ code (@insert ../code/todo.cpp)
         .card.coffeescript (.lang CoffeeScript) $ pre.code $ code (@insert ../code/todo.coffee)
@@ -447,7 +421,6 @@ html
         .card.toffeescript (.lang ToffeeScript) $ pre.code $ code (@insert ../code/todo.toffee)
         .card.typescript (.lang TypeScript) $ pre.code $ code (@insert ../code/todo.ts)
       .case (.name "Extensions") $ .pair
-        .card.pseudo (.lang Pseudo) $ pre.code $ code (@insert ../code/todo.pseudo)
         .card.c (.lang C) $ pre.code $ code (@insert ../code/todo.c)
         .card.cpp (.lang C++) $ pre.code $ code (@insert ../code/todo.cpp)
         .card.coffeescript (.lang CoffeeScript) $ pre.code $ code (@insert ../code/todo.coffee)
