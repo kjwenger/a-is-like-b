@@ -1,4 +1,4 @@
-#include <stdio>
+#include <stdio.h>
 const int apples = 3;
 const int oranges = 5;
 char[1024] fruitSummary;
