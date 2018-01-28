@@ -161,7 +161,7 @@ html
       .title COLLECTIONS
       .case (.name "Arrays") $ .pair
         .card.c (.lang C) $ pre.code $ code (@insert ../code/todo.c)
-        .card.cpp (.lang C++) $ pre.code $ code (@insert ../code/todo.cpp)
+        .card.cpp (.lang C++) $ pre.code $ code (@insert ../code/collections/arrays.cpp)
         .card.coffeescript (.lang CoffeeScript) $ pre.code $ code (@insert ../code/todo.coffee)
         .card.elixir (.lang Elixir) $ pre.code $ code (@insert ../code/todo.ex)
         .card.erlang (.lang Erlang) $ pre.code $ code (@insert ../code/todo.erl)
@@ -176,7 +176,7 @@ html
         .card.typescript (.lang TypeScript) $ pre.code $ code (@insert ../code/todo.ts)
       .case (.name "Maps") $ .pair
         .card.c (.lang C) $ pre.code $ code (@insert ../code/todo.c)
-        .card.cpp (.lang C++) $ pre.code $ code (@insert ../code/todo.cpp)
+        .card.cpp (.lang C++) $ pre.code $ code (@insert ../code/collections/maps.cpp)
         .card.coffeescript (.lang CoffeeScript) $ pre.code $ code (@insert ../code/todo.coffee)
         .card.elixir (.lang Elixir) $ pre.code $ code (@insert ../code/todo.ex)
         .card.erlang (.lang Erlang) $ pre.code $ code (@insert ../code/todo.erl)

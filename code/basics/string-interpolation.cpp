@@ -1,4 +1,4 @@
-#include <sstream>
+#include &lt;sstream&gt;
 const auto apples = 3;
 const auto oranges = 5;
 std::ostringstream oss;
