@@ -5,7 +5,9 @@ public:
   std::string simpleDescription()
   {
     std::osstringstream oss;
-    oss << "A shape with " << numberOfSides << " sides.";
+    oss << "A shape with "
+        << numberOfSides
+        << " sides.";
     return oss.str();
   }
 private:

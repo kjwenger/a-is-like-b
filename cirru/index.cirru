@@ -111,21 +111,6 @@ html
         .card.swift (.lang Swift) $ pre.code $ code (@insert ../code/basics/type-coercion.swift)
         .card.toffeescript (.lang ToffeeScript) $ pre.code $ code (@insert ../code/basics/type-coercion.toffee)
         .card.typescript (.lang TypeScript) $ pre.code $ code (@insert ../code/basics/type-coercion.ts)
-      .case (.name "String Interpolation") $ .pair
-        .card.c (.lang C) $ pre.code $ code (@insert ../code/basics/string-interpolation.c)
-        .card.cpp (.lang C++) $ pre.code $ code (@insert ../code/basics/string-interpolation.cpp)
-        .card.coffeescript (.lang CoffeeScript) $ pre.code $ code (@insert ../code/basics/string-interpolation.coffee)
-        .card.elixir (.lang Elixir) $ pre.code $ code (@insert ../code/todo.ex)
-        .card.erlang (.lang Erlang) $ pre.code $ code (@insert ../code/todo.erl)
-        .card.go (.lang Go) $ pre.code $ code (@insert ../code/basics/string-interpolation.go)
-        .card.java (.lang Java) $ pre.code $ code (@insert ../code/basics/string-interpolation.java)
-        .card.javascript (.lang JavaScript) $ pre.code $ code (@insert ../code/basics/string-interpolation.js)
-        .card.kotlin (.lang Kotlin) $ pre.code $ code (@insert ../code/basics/string-interpolation.kt)
-        .card.objectivec (.lang ObjectiveC) $ pre.code $ code (@insert ../code/todo.m)
-        .card.scala (.lang Scala) $ pre.code $ code (@insert ../code/basics/string-interpolation.scala)
-        .card.swift (.lang Swift) $ pre.code $ code (@insert ../code/basics/string-interpolation.swift)
-        .card.toffeescript (.lang ToffeeScript) $ pre.code $ code (@insert ../code/basics/string-interpolation.toffee)
-        .card.typescript (.lang TypeScript) $ pre.code $ code (@insert ../code/basics/string-interpolation.ts)
       .case (.name "Range Operator") $ .pair
         .card.c (.lang C) $ pre.code $ code (@insert ../code/todo.c)
         .card.cpp (.lang C++) $ pre.code $ code (@insert ../code/todo.cpp)
@@ -156,6 +141,39 @@ html
         .card.swift (.lang Swift) $ pre.code $ code (@insert ../code/basics/inclusive-range-operator.swift)
         .card.toffeescript (.lang ToffeeScript) $ pre.code $ code (@insert ../code/todo.toffee)
         .card.typescript (.lang TypeScript) $ pre.code $ code (@insert ../code/todo.ts)
+
+    .section
+      .title STRINGS
+      .case (.name "Multiline") $ .pair
+        .card.c (.lang C) $ pre.code $ code (@insert ../code/strings/multiline.c)
+        .card.cpp (.lang C++) $ pre.code $ code (@insert ../code/strings/multiline.cpp)
+        .card.coffeescript (.lang CoffeeScript) $ pre.code $ code (@insert ../code/strings/multiline.coffee)
+        .card.elixir (.lang Elixir) $ pre.code $ code (@insert ../code/todo.ex)
+        .card.erlang (.lang Erlang) $ pre.code $ code (@insert ../code/todo.erl)
+        .card.go (.lang Go) $ pre.code $ code (@insert ../code/todo.go)
+        .card.java (.lang Java) $ pre.code $ code (@insert ../code/todo.java)
+        .card.javascript (.lang JavaScript) $ pre.code $ code (@insert ../code/strings/multiline.js)
+        .card.kotlin (.lang Kotlin) $ pre.code $ code (@insert ../code/strings/multiline.kt)
+        .card.objectivec (.lang ObjectiveC) $ pre.code $ code (@insert ../code/todo.m)
+        .card.scala (.lang Scala) $ pre.code $ code (@insert ../code/todo.scala)
+        .card.swift (.lang Swift) $ pre.code $ code (@insert ../code/strings/multiline.swift)
+        .card.toffeescript (.lang ToffeeScript) $ pre.code $ code (@insert ../code/strings/multiline.toffee)
+        .card.typescript (.lang TypeScript) $ pre.code $ code (@insert ../code/todo.ts)
+      .case (.name "String Interpolation") $ .pair
+        .card.c (.lang C) $ pre.code $ code (@insert ../code/strings/string-interpolation.c)
+        .card.cpp (.lang C++) $ pre.code $ code (@insert ../code/strings/string-interpolation.cpp)
+        .card.coffeescript (.lang CoffeeScript) $ pre.code $ code (@insert ../code/strings/string-interpolation.coffee)
+        .card.elixir (.lang Elixir) $ pre.code $ code (@insert ../code/todo.ex)
+        .card.erlang (.lang Erlang) $ pre.code $ code (@insert ../code/todo.erl)
+        .card.go (.lang Go) $ pre.code $ code (@insert ../code/strings/string-interpolation.go)
+        .card.java (.lang Java) $ pre.code $ code (@insert ../code/strings/string-interpolation.java)
+        .card.javascript (.lang JavaScript) $ pre.code $ code (@insert ../code/strings/string-interpolation.js)
+        .card.kotlin (.lang Kotlin) $ pre.code $ code (@insert ../code/strings/string-interpolation.kt)
+        .card.objectivec (.lang ObjectiveC) $ pre.code $ code (@insert ../code/todo.m)
+        .card.scala (.lang Scala) $ pre.code $ code (@insert ../code/strings/string-interpolation.scala)
+        .card.swift (.lang Swift) $ pre.code $ code (@insert ../code/strings/string-interpolation.swift)
+        .card.toffeescript (.lang ToffeeScript) $ pre.code $ code (@insert ../code/strings/string-interpolation.toffee)
+        .card.typescript (.lang TypeScript) $ pre.code $ code (@insert ../code/strings/string-interpolation.ts)
 
     .section
       .title COLLECTIONS
