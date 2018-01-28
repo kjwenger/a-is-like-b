@@ -32,7 +32,7 @@ target.watch = ->
   station = mission.reload()
 
   mission.watch
-    files: ['cirru/', 'code/']
+    files: ['cirru/', 'code/', 'code/**/']
     trigger: () ->
       cirru inDev: yes
       pretty()
