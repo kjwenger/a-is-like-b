@@ -3,6 +3,7 @@
 project = 'a-is-like-b'
 
 require 'shelljs/make'
+shell = require 'shelljs'
 path = require 'path'
 mission = require 'mission'
 
@@ -16,8 +17,16 @@ cirru = (data) ->
     extname: '.html'
     data: data
 
+pretty = () ->
+  shell.mv('-f', 'index.html', 'index.tmp')
+  shell.cat('index.tmp').exec('html').to('index.html')
+  shell.rm('index.tmp')
+
 target.dev = ->
   cirru inDev: yes
+
+target.pretty = ->
+  pretty()
 
 target.watch = ->
   station = mission.reload()
@@ -26,6 +35,7 @@ target.watch = ->
     files: ['cirru/', 'code/']
     trigger: () ->
       cirru inDev: yes
+      pretty()
       station.reload project
 
 target.patch = ->

@@ -10,12 +10,12 @@
   "scripts": {
     "postinstall": "npm run make",
     "make": "coffee make.coffee dev",
-    "postmake": "npm run clean",
+    "postmake": "npm run pretty",
     "watch:coffee": "coffee make.coffee watch",
     "watch": "concurrently --kill-others 'npm run watch:coffee' 'npm start'",
     "test": "standard .",
     "start": "node server",
-    "clean": "mv -f index.html index.tmp && cat index.tmp | npx html > index.html && rm -f index.tmp"
+    "pretty": "mv -f index.html index.tmp && cat index.tmp | npx html > index.html && rm -f index.tmp"
   },
   "author": "jiyinyiyong, nilhcem",
   "license": "MIT",
@@ -24,16 +24,14 @@
     "concurrently": "^3.5.1",
     "html": "^1.0.0",
     "mission": "0.0.7",
-    "shelljs": "^0.3.0",
+    "shelljs": "^0.8.1",
     "standard": "^10.0.3",
     "toffee-script": "^1.6.3-4",
     "ts-node": "^4.1.0",
     "typescript": "^2.6.2"
   },
   "dependencies": {
-    "express": "^4.16.2",
-    "mission": "^0.0.7",
-    "shelljs": "^0.3.0"
+    "express": "^4.16.2"
   },
   "repository": {
     "type": "git",
