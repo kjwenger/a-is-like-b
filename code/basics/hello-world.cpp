@@ -1,8 +1,6 @@
 // hello world program
 #include &lt;iostream&gt;
-int main(
-  int argc,
-  char *argv[])
+int main()
 {
   std::cout < "Hello, world!";
 }
