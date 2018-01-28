@@ -10,7 +10,8 @@ void greet(
       << ", today is " << day << ".";
   out = oss.str();
 }
-int main() {
+int main()
+{
   std::string out;
   greet("Bob", "Tuesday", out);
 }

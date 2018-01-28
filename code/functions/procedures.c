@@ -8,7 +8,8 @@ void greet(
     "Hello %s, today is %s.",
     name, day);
 }
-int main() {
+int main()
+{
   char[1024] out;
   greet("Bob", "Tuesday", out);
 }
