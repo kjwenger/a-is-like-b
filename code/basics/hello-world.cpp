@@ -1,4 +1,3 @@
-// hello world program
 #include &lt;iostream&gt;
 int main()
 {

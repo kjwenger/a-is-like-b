@@ -1,4 +1,3 @@
-// hello world program
 package basics
 import "fmt"
 func main() {
