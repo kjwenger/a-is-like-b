@@ -5,7 +5,7 @@ for (auto
     iterator ++) {
   auto& current = *iterator;
   try {
-    Movie& movie = dynamic_cast<Movie&>(current);
+    Movie& movie = dynamic_cast&lt;Movie&&gt;(current);
     std::cout
       << "Movie: " << movie.name << ", "
       << "dir. " << movie.director;
