@@ -1,5 +1,6 @@
 for (index <- 1 to 5) {
-    println(s"$index times 5 is ${index * 5}")
+  println(
+    s"$index times 5 is ${index * 5}")
 }
 // 1 times 5 is 5
 // 2 times 5 is 10
