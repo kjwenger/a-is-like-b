@@ -1,7 +1,8 @@
 #include &lt;sstream&gt;
+using namespace std;
 const auto apples = 3;
 const auto oranges = 5;
-std::ostringstream oss;
+ostringstream oss;
 oss << "I have "
     << (apples + oranges)
     << " pieces of fruit.";

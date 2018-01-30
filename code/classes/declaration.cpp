@@ -1,11 +1,12 @@
 #include &lt;string&gt;
 #include &lt;sstream&gt;
+using namespace std;
 class Shape {
 private:
   int numberOfSides = 0;
 public:
-  std::string simpleDescription() {
-    std::osstringstream oss;
+  string simpleDescription() {
+    ostringstream oss;
     oss << "A shape with "
         << numberOfSides
         << " sides.";

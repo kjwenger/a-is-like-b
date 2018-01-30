@@ -1,4 +1,5 @@
 #include &lt;iostream&gt;
+using namespace std;
 for (auto
     iterator = someObjects.begin();
     iterator != someObjects.end();
@@ -6,10 +7,10 @@ for (auto
   auto& current = *iterator;
   try {
     Movie& movie = dynamic_cast&lt;Movie&&gt;(current);
-    std::cout
+    cout
       << "Movie: " << movie.name << ", "
       << "dir. " << movie.director;
-  } catch (const std::bad_cast& e) {
+  } catch (const bad_cast& e) {
       // Cast failed
   }
 }

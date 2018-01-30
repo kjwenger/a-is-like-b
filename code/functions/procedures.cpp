@@ -1,15 +1,16 @@
 #include &lt;string&gt;
 #include &lt;sstream&gt;
+using namespace std;
 void greet(
-    const std::string& name,
-    const std::string& day,
-    std::string& out) {
-  std::osstringstream oss;
+    const string& name,
+    const string& day,
+    string& out) {
+  ostringstream oss;
   oss << "Hello " << name
       << ", today is " << day << ".";
   out = oss.str();
 }
 int main() {
-  std::string out;
+  string out;
   greet("Bob", "Tuesday", out);
 }

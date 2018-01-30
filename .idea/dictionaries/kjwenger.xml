@@ -5,6 +5,9 @@
       <w>downcasting</w>
       <w>endl</w>
       <w>iostream</w>
+      <w>ostringstream</w>
+      <w>qsort</w>
+      <w>sstream</w>
     </words>
   </dictionary>
 </component>

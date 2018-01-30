@@ -6,9 +6,10 @@ array&lt;string&gt names = {
   "Anna", "Alex", "Brian", "Jack"};
 auto i = 1;
 for (auto&& name : names) {
-  cout << "Person " << i++ << "is called " << name << endl;
+  cout << "Person " << i++
+    << "is " << name << endl;
 }
-// Person 1 is called Anna
-// Person 2 is called Alex
-// Person 3 is called Brian
-// Person 4 is called Jack
+// Person 1 is Anna
+// Person 2 is Alex
+// Person 3 is Brian
+// Person 4 is Jack

@@ -1,6 +1,7 @@
 #include &lt;map&gt;
 #include &lt;string&gt;
-std::map&lt;std::string, std::string&gt; occupations({
+using namespace std;
+map&lt;string, string&gt; occupations({
   { "Malcolm", "Captain" },
   { "Kaylee", "Mechanic" }
 });
