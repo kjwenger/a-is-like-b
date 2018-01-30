@@ -307,7 +307,7 @@ html
         .card.elixir (.lang Elixir) $ pre.code $ code (@insert ../code/todo.ex)
         .card.erlang (.lang Erlang) $ pre.code $ code (@insert ../code/todo.erl)
         .card.go (.lang Go) $ pre.code $ code (@insert ../code/functions/variable-number-of-arguments.go)
-        .card.java (.lang Java) $ pre.code $ code (@insert ../code/todo.java)
+        .card.java (.lang Java) $ pre.code $ code (@insert ../code/functions/variable-number-of-arguments.java)
         .card.javascript (.lang JavaScript) $ pre.code $ code (@insert ../code/functions/variable-number-of-arguments.js)
         .card.kotlin (.lang Kotlin) $ pre.code $ code (@insert ../code/functions/variable-number-of-arguments.kt)
         .card.objectivec (.lang ObjectiveC) $ pre.code $ code (@insert ../code/todo.m)

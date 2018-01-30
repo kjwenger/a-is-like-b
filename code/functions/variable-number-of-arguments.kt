@@ -7,5 +7,5 @@ fun sumOf(vararg numbers: Int): Int {
 }
 sumOf(42, 597, 12)
 
-// sumOf() can also be written in a shorter way:
+// ... can also be written in a shorter way:
 fun sumOf(vararg numbers: Int) = numbers.sum()
