@@ -226,7 +226,7 @@ html
     .section
       .title FUNCTIONS
       .case (.name "Functions") $ .pair
-        .card.c (.lang C) $ pre.code $ code (@insert ../code/todo.c)
+        .card.c (.lang C) $ pre.code $ code (@insert ../code/functions/functions.c)
         .card.cpp (.lang C++) $ pre.code $ code (@insert ../code/functions/functions.cpp)
         .card.coffeescript (.lang CoffeeScript) $ pre.code $ code (@insert ../code/todo.coffee)
         .card.elixir (.lang Elixir) $ pre.code $ code (@insert ../code/todo.ex)
