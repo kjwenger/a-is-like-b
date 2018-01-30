@@ -1,5 +1,4 @@
 #include &lt;stdio.h&gt;
-int main()
-{
+int main() {
   printf("Hello, world!");
 }
