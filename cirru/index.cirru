@@ -271,14 +271,14 @@ html
         .card.toffeescript (.lang ToffeeScript) $ pre.code $ code (@insert ../code/todo.toffee)
         .card.typescript (.lang TypeScript) $ pre.code $ code (@insert ../code/todo.ts)
       .case (.name "Variable Number Of Arguments") $ .pair
-        .card.c (.lang C) $ pre.code $ code (@insert ../code/todo.c)
+        .card.c (.lang C) $ pre.code $ code (@insert ../code/functions/variable-number-of-arguments.c)
         .card.cpp (.lang C++) $ pre.code $ code (@insert ../code/functions/variable-number-of-arguments.cpp)
         .card.coffeescript (.lang CoffeeScript) $ pre.code $ code (@insert ../code/todo.coffee)
         .card.elixir (.lang Elixir) $ pre.code $ code (@insert ../code/todo.ex)
         .card.erlang (.lang Erlang) $ pre.code $ code (@insert ../code/todo.erl)
         .card.go (.lang Go) $ pre.code $ code (@insert ../code/functions/variable-number-of-arguments.go)
         .card.java (.lang Java) $ pre.code $ code (@insert ../code/todo.java)
-        .card.javascript (.lang JavaScript) $ pre.code $ code (@insert ../code/todo.js)
+        .card.javascript (.lang JavaScript) $ pre.code $ code (@insert ../code/functions/variable-number-of-arguments.js)
         .card.kotlin (.lang Kotlin) $ pre.code $ code (@insert ../code/functions/variable-number-of-arguments.kt)
         .card.objectivec (.lang ObjectiveC) $ pre.code $ code (@insert ../code/todo.m)
         .card.scala (.lang Scala) $ pre.code $ code (@insert ../code/functions/variable-number-of-arguments.scala)
@@ -286,14 +286,14 @@ html
         .card.toffeescript (.lang ToffeeScript) $ pre.code $ code (@insert ../code/todo.toffee)
         .card.typescript (.lang TypeScript) $ pre.code $ code (@insert ../code/todo.ts)
       .case (.name "Function Type") $ .pair
-        .card.c (.lang C) $ pre.code $ code (@insert ../code/todo.c)
+        .card.c (.lang C) $ pre.code $ code (@insert ../code/functions/function-type.c)
         .card.cpp (.lang C++) $ pre.code $ code (@insert ../code/functions/function-type.cpp)
         .card.coffeescript (.lang CoffeeScript) $ pre.code $ code (@insert ../code/todo.coffee)
         .card.elixir (.lang Elixir) $ pre.code $ code (@insert ../code/todo.ex)
         .card.erlang (.lang Erlang) $ pre.code $ code (@insert ../code/todo.erl)
         .card.go (.lang Go) $ pre.code $ code (@insert ../code/functions/function-type.go)
         .card.java (.lang Java) $ pre.code $ code (@insert ../code/todo.java)
-        .card.javascript (.lang JavaScript) $ pre.code $ code (@insert ../code/todo.js)
+        .card.javascript (.lang JavaScript) $ pre.code $ code (@insert ../code/functions/function-type.js)
         .card.kotlin (.lang Kotlin) $ pre.code $ code (@insert ../code/functions/function-type.kt)
         .card.objectivec (.lang ObjectiveC) $ pre.code $ code (@insert ../code/todo.m)
         .card.scala (.lang Scala) $ pre.code $ code (@insert ../code/functions/function-type.scala)
@@ -349,7 +349,7 @@ html
     .section
       .title CLASSES
       .case (.name "Declaration") $ .pair
-        .card.c (.lang C) $ pre.code $ code (@insert ../code/todo.c)
+        .card.c (.lang C) $ pre.code $ code (@insert ../code/classes/declaration.c)
         .card.cpp (.lang C++) $ pre.code $ code (@insert ../code/classes/declaration.cpp)
         .card.coffeescript (.lang CoffeeScript) $ pre.code $ code (@insert ../code/todo.coffee)
         .card.elixir (.lang Elixir) $ pre.code $ code (@insert ../code/todo.ex)

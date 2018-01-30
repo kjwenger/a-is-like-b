@@ -1,10 +1,10 @@
 func makeIncrementer() func(int) int {
-    return func (number int) int {
-        return 1 + number
-    }
+  return func (number int) int {
+    return 1 + number
+  }
 }
 
 func main() {
-    increment := makeIncrementer()
-    increment(7)
+  increment := makeIncrementer()
+  increment(7)
 }

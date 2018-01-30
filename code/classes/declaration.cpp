@@ -1,6 +1,8 @@
 #include &lt;string&gt;
 #include &lt;sstream&gt;
 class Shape {
+private:
+  int numberOfSides = 0;
 public:
   std::string simpleDescription() {
     std::osstringstream oss;
@@ -9,6 +11,4 @@ public:
         << " sides.";
     return oss.str();
   }
-private:
-  int numberOfSides = 0;
 }
