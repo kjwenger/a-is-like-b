@@ -1,6 +1,6 @@
 # single line
 @moduledoc """
-modile documentation lines
+module documentation lines
 """
 @doc """
 documentation lines
