@@ -2,8 +2,7 @@
 #include &lt;sstream&gt;
 class Shape {
 public:
-  std::string simpleDescription()
-  {
+  std::string simpleDescription() {
     std::osstringstream oss;
     oss << "A shape with "
         << numberOfSides
