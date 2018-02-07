@@ -8,7 +8,7 @@ html
     link (:rel stylesheet) (:href css/highlightjs-github.css)
     script (:src js/highlight.9.4.0.js)
     script "hljs.initHighlightingOnLoad();"
-    script (:type "text/javascript") "function showHide(checkbox) { const display = checkbox.checked ? 'block' : 'none'; const elements = document.getElementsByClassName(checkbox.id); for(let i = 0; i < elements.length; i++) { elements.item(i).style.display = display; } }"
+    script (:type "text/javascript") "function showHide(checkbox) { const display = checkbox.checked ? 'block' : 'none'; const elements = document.getElementsByClassName(checkbox.id); for(let i = 0; i < elements.length; i++) { elements.item(i).style.display = display; } window.localStorage.setItem(checkbox.id, '' + checkbox.checked); }"
 
   body
     a (:target _blank)
@@ -483,6 +483,8 @@ html
         .card.swift (.lang Swift) $ pre.code $ code (@insert ../code/classes/extensions.swift)
         .card.toffeescript (.lang ToffeeScript) $ pre.code $ code (@insert ../code/todo.toffee)
         .card.typescript (.lang TypeScript) $ pre.code $ code (@insert ../code/todo.ts)
+
+    script (:type "text/javascript") "if (window.localStorage.getItem('c') === 'true') document.getElementById('c').checked = true);"
 
     script (:type "text/javascript") "showHide(document.getElementById('c'));"
     script (:type "text/javascript") "showHide(document.getElementById('cpp'));"
