@@ -1,6 +1,6 @@
 class HelloWorld {
-    static void main(
-            String[] args) {
-        println("Hello, world!")
-    }
+  static void main(
+      String[] args) {
+    println("Hello, world!")
+  }
 }
