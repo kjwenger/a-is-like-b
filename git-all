@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+for SUBMODULE in ./submodule/*/
+do
+    SUBMODULE=${SUBMODULE%*/}
+    git -C ./submodule/${SUBMODULE##*/} $@
+done
