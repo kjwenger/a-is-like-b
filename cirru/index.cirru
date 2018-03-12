@@ -76,6 +76,7 @@ html
         .card.elixir (.lang Elixir) $ pre.code $ code (@insert ../code/todo.ex)
         .card.erlang (.lang Erlang) $ pre.code $ code (@insert ../code/todo.erl)
         .card.go (.lang Go) $ pre.code $ code (@insert ../code/basics/variables-and-constants.go)
+        .card.groovy (.lang Groovy) $ pre.code $ code (@insert ../code/basics/variables-and-constants.groovy)
         .card.java (.lang Java) $ pre.code $ code (@insert ../code/basics/variables-and-constants.java)
         .card.javascript (.lang JavaScript) $ pre.code $ code (@insert ../code/basics/variables-and-constants.js)
         .card.kotlin (.lang Kotlin) $ pre.code $ code (@insert ../code/basics/variables-and-constants.kt)
