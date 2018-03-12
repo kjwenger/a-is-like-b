@@ -6,7 +6,7 @@ class NamedShape {
         self.name = name
     }
 
-    func simpleDescription() -> String {
+    func simpleDescription() -&gt; String {
         return "A shape with \(numberOfSides) sides."
     }
 }
@@ -20,11 +20,11 @@ class Square: NamedShape {
         self.numberOfSides = 4
     }
 
-    func area() -> Double {
+    func area() -&gt; Double {
         return sideLength * sideLength
     }
 
-    override func simpleDescription() -> String {
+    override func simpleDescription() -&gt; String {
         return "A square with sides of length " +
 	       sideLength + "."
     }

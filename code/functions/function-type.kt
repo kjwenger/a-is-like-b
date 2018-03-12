@@ -1,4 +1,4 @@
-fun makeIncrementer(): (Int) -> Int {
+fun makeIncrementer(): (Int) -&gt; Int {
   val addOne = fun(number: Int): Int {
     return 1 + number
   }

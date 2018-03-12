@@ -1,4 +1,4 @@
-for i := 1; i <= 5; i++ {
+for i := 1; i &lt;= 5; i++ {
   fmt.Printf(
     "%d times 5 is %d", i, i*5)
 }

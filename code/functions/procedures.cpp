@@ -6,8 +6,8 @@ void greet(
     const string& day,
     string& out) {
   ostringstream oss;
-  oss << "Hello " << name
-      << ", today is " << day << ".";
+  oss &lt;&lt; "Hello " &lt;&lt; name
+      &lt;&lt; ", today is " &lt;&lt; day &lt;&lt; ".";
   out = oss.str();
 }
 int main() {

@@ -6,8 +6,8 @@ array&lt;string&gt names = {
   "Anna", "Alex", "Brian", "Jack"};
 auto i = 1;
 for (auto&& name : names) {
-  cout << "Person " << i++
-    << "is " << name << endl;
+  cout &lt;&lt; "Person " &lt;&lt; i++
+    &lt;&lt; "is " &lt;&lt; name &lt;&lt; endl;
 }
 // Person 1 is Anna
 // Person 2 is Alex

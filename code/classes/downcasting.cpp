@@ -8,8 +8,8 @@ for (auto
   try {
     Movie& movie = dynamic_cast&lt;Movie&&gt;(current);
     cout
-      << "Movie: " << movie.name << ", "
-      << "dir. " << movie.director;
+      &lt;&lt; "Movie: " &lt;&lt; movie.name &lt;&lt; ", "
+      &lt;&lt; "dir. " &lt;&lt; movie.director;
   } catch (const bad_cast& e) {
       // Cast failed
   }

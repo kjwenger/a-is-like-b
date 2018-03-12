@@ -1,4 +1,4 @@
-for (index <- 1 to 5) {
+for (index &lt;- 1 to 5) {
   println(
     s"$index times 5 is ${index * 5}")
 }

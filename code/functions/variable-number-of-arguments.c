@@ -2,7 +2,7 @@
 double sumOf(int count, ...) {
   va_list ap; va_start(ap, count);
   int sum = 0;
-  for (int i = 0; i < count; i++) {
+  for (int i = 0; i &lt; count; i++) {
     sum += va_arg(ap, int);
   }
   va_end(ap);

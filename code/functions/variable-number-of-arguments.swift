@@ -1,4 +1,4 @@
-func sumOf(_ numbers: Int...) -> Int {
+func sumOf(_ numbers: Int...) -&gt; Int {
     var sum = 0
     for number in numbers {
         sum += number

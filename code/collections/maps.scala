@@ -1,5 +1,5 @@
 var occupations = scala.collection.mutable.Map(
-  "Malcolm" -> "Captain",
-  "Kaylee" -> "Mechanic"
+  "Malcolm" -&gt; "Captain",
+  "Kaylee" -&gt; "Mechanic"
 )
 occupations("Jayne") = "Public Relations"

@@ -1,7 +1,7 @@
 val names = Array(
   "Anna", "Alex", "Brian", "Jack")
 val count = names.length
-for (i <- 0 until count) {
+for (i &lt;- 0 until count) {
   println(
     s"Person ${i + 1} is ${names(i)}")
 }

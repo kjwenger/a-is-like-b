@@ -3,9 +3,9 @@ typedef struct {
 } GasPrices;
 void getGasPrices(
     GasPrices* gasPricesPointer) {
-  gasPricesPointer->a = 3.59;
-  gasPricesPointer->b = 3.69;
-  gasPricesPointer->c = 3.79;
+  gasPricesPointer-&gt;a = 3.59;
+  gasPricesPointer-&gt;b = 3.69;
+  gasPricesPointer-&gt;c = 3.79;
 }
 GasPrices gasPrices;
 getGasPrices(&gasPrices);

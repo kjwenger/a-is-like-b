@@ -1,4 +1,4 @@
 class Shape
   numberOfSides: 0
-  simpleDescription: () =>
+  simpleDescription: () =&gt;
     "A shape with #{this.numberOfSides} sides."

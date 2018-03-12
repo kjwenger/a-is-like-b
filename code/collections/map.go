@@ -1,7 +1,7 @@
 mapFunc := func(slice interface{}, fn func(a interface{}) interface{}) interface{} {
     val := reflect.ValueOf(slice)
     out := reflect.MakeSlice(reflect.TypeOf(slice), val.Len(), val.Cap())
-    for i := 0; i < val.Len(); i++ {
+    for i := 0; i &lt; val.Len(); i++ {
         out.Index(i).Set(
             reflect.ValueOf(fn(val.Index(i).Interface())),
         )

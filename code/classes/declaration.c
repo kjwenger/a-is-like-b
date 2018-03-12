@@ -6,7 +6,7 @@ struct Shape_ {
   void (*_simpleDescription)(const Shape*, char[]) = &simpleDescription_;
 };
 static void simpleDescription_(const Shape* this, char[] out) {
-  sprintf(out, "A shape with %d sides.", this->numberOfSides);
+  sprintf(out, "A shape with %d sides.", this-&gt;numberOfSides);
 }
 #define simpleDescription(shape, out) shape._simpleDescription(&shape, out)
 

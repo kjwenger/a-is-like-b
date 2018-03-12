@@ -1,4 +1,4 @@
-def makeIncrementer(): Int => Int = {
+def makeIncrementer(): Int =&gt; Int = {
     def addOne(number: Int): Int = {
         return 1 + number
     }

@@ -1,6 +1,6 @@
 def sumOf(numbers: Int*): Int = {
   var sum = 0
-  for (number <- numbers) {
+  for (number &lt;- numbers) {
     sum += number
   }
   return sum

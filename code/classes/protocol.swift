@@ -1,7 +1,7 @@
 protocol Nameable {
-    func name() -> String
+    func name() -&gt; String
 }
 
-func f&lt;T: Nameable>(x: T) {
+func f&lt;T: Nameable&gt;(x: T) {
     print("Name is " + x.name())
 }

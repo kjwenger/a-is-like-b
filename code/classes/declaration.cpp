@@ -7,9 +7,9 @@ private:
 public:
   string simpleDescription() {
     ostringstream oss;
-    oss << "A shape with "
-        << numberOfSides
-        << " sides.";
+    oss &lt;&lt; "A shape with "
+        &lt;&lt; numberOfSides
+        &lt;&lt; " sides.";
     return oss.str();
   }
 }
