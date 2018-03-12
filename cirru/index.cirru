@@ -60,6 +60,7 @@ html
         .card.elixir (.lang Elixir) $ pre.code $ code (@insert ../code/basics/comments.ex)
         .card.erlang (.lang Erlang) $ pre.code $ code (@insert ../code/basics/comments.erl)
         .card.go (.lang Go) $ pre.code $ code (@insert ../code/basics/comments.go)
+        .card.groovy (.lang Groovy) $ pre.code $ code (@insert ../code/basics/comments.groovy)
         .card.java (.lang Java) $ pre.code $ code (@insert ../code/basics/comments.java)
         .card.javascript (.lang JavaScript) $ pre.code $ code (@insert ../code/basics/comments.js)
         .card.kotlin (.lang Kotlin) $ pre.code $ code (@insert ../code/basics/comments.kt)
