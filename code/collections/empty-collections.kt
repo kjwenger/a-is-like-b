@@ -1,2 +1,2 @@
-val emptyArray = arrayOf&lt;String&lt;()
-val emptyMap = mapOf&lt;String, Float&lt;()
+val emptyArray = arrayOf&lt;String&gt;()
+val emptyMap = mapOf&lt;String, Float&gt;()
