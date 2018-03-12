@@ -25,6 +25,7 @@ html
         .card (.lang Elixir) $ input (:id elixir)(:type checkbox)(:onclick "showHide(this);")
         .card (.lang Erlang) $ input (:id erlang)(:type checkbox)(:onclick "showHide(this);")
         .card (.lang Go) $ input (:id go)(:type checkbox)(:onclick "showHide(this);")
+        .card (.lang Groovy) $ input (:id groovy)(:type checkbox)(:onclick "showHide(this);")
         .card (.lang Java) $ input (:id java)(:type checkbox)(:onclick "showHide(this);")
         .card (.lang JavaScript) $ input (:id javascript)(:type checkbox)(:onclick "showHide(this);")
         .card (.lang Kotlin) $ input (:id kotlin)(:type checkbox)(:checked true)(:onclick "showHide(this);")
@@ -43,6 +44,7 @@ html
         .card.elixir (.lang Elixir) $ pre.code $ code (@insert ../code/basics/hello-world.ex)
         .card.erlang (.lang Erlang) $ pre.code $ code (@insert ../code/basics/hello-world.erl)
         .card.go (.lang Go) $ pre.code $ code (@insert ../code/basics/hello-world.go)
+        .card.groovy (.lang Groovy) $ pre.code $ code (@insert ../code/basics/hello-world.groovy)
         .card.java (.lang Java) $ pre.code $ code (@insert ../code/basics/hello-world.java)
         .card.javascript (.lang JavaScript) $ pre.code $ code (@insert ../code/basics/hello-world.js)
         .card.kotlin (.lang Kotlin) $ pre.code $ code (@insert ../code/basics/hello-world.kt)
@@ -492,6 +494,7 @@ html
     script (:type "text/javascript") "showHide(document.getElementById('elixir'));"
     script (:type "text/javascript") "showHide(document.getElementById('erlang'));"
     script (:type "text/javascript") "showHide(document.getElementById('go'));"
+    script (:type "text/javascript") "showHide(document.getElementById('groovy'));"
     script (:type "text/javascript") "showHide(document.getElementById('java'));"
     script (:type "text/javascript") "showHide(document.getElementById('javascript'));"
     script (:type "text/javascript") "showHide(document.getElementById('kotlin'));"
