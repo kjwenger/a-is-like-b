@@ -1,6 +1,13 @@
-makeIncrementer = () =&gt;
-  addOne = (number) =&gt;
-    return 1 + number
-  return addOne
-increment = makeIncrementer()
-increment 7
+# Function types in CoffeeScript
+add = (a, b) -> a + b
+multiply = (a, b) -> a * b
+
+applyOperation = (op, x, y) -> op(x, y)
+
+operation = add
+result = applyOperation operation, 5, 3
+console.log "Result: #{result}"
+
+operation = multiply
+result = applyOperation operation, 5, 3
+console.log "Result: #{result}"

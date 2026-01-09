@@ -1,12 +1,29 @@
-#include &lt;functional&gt;
-using namespace std;
-function&lt;int(int)&gt; makeIncrementer() {
-  return [=](int number) -&gt; int {
-    return 1 + number;
-  };
+#include <iostream>
+#include <functional>
+
+// Function types in C++
+using FuncType = std::function<int(int, int)>;
+
+int add(int a, int b) {
+    return a + b;
 }
+
+int multiply(int a, int b) {
+    return a * b;
+}
+
+int apply_operation(FuncType op, int x, int y) {
+    return op(x, y);
+}
+
 int main() {
-  function&lt;int(int)&gt; increment =
-    makeIncrementer();
-  return increment(7);
+    FuncType operation = add;
+    int result = apply_operation(operation, 5, 3);
+    std::cout << "Result: " << result << std::endl;
+    
+    operation = multiply;
+    result = apply_operation(operation, 5, 3);
+    std::cout << "Result: " << result << std::endl;
+    
+    return 0;
 }

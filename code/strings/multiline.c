@@ -1,4 +1,5 @@
-const char* multiline1 = "I span ...\n\
-... multiple lines.";
-const char* multiline2 = "I span ...\n"
-  "... multiple lines.";
+#include <stdio.h>
+
+char multiline[] = "This is a\n"
+                   "multiline\n"
+                   "string";

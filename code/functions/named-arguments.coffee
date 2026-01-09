@@ -1,0 +1,8 @@
+# Named arguments in CoffeeScript (simulated with objects)
+functionWithNamedArgs = (options = {}) ->
+  param1 = options.param1 or 0
+  param2 = options.param2 or 0
+  param3 = options.param3 or 0
+  console.log "param1: #{param1}, param2: #{param2}, param3: #{param3}"
+
+functionWithNamedArgs param2: 20, param1: 10, param3: 30

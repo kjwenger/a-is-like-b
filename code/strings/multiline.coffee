@@ -1,2 +1,5 @@
-multiline = """I span ...
-... multiple lines."""
+multiline = """
+This is a
+multiline
+string
+"""

@@ -1,6 +1,9 @@
-#include &lt;array&gt;
-#include &lt;map&gt;
-#include &lt;string&gt;
-using namespace std;
-const array&lt;string&gt emptyArray;
-const map&lt;string, float&gt emptyMap;
+#include <iostream>
+#include <vector>
+#include <map>
+
+// Empty collections in C++
+std::vector<int> emptyVec;
+std::map<std::string, int> emptyMap;
+std::vector<int> emptyVec2 = {};
+std::map<std::string, int> emptyMap2 = {};

@@ -1,3 +1,8 @@
-const label = "The width is "
-const width = 94
-const widthLabel = label + width
+var intNum = 42;
+var floatNum = 3.14;
+// Explicit conversion
+intNum = parseInt(floatNum);
+floatNum = parseFloat(intNum);
+// Type coercion
+var result = intNum + "" + floatNum; // to string
+result = +result; // to number

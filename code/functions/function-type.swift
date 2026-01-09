@@ -1,8 +1,20 @@
-func makeIncrementer() -&gt; (Int -&gt; Int) {
-  func addOne(number: Int) -&gt; Int {
-    return 1 + number
-  }
-  return addOne
+// Function types in Swift
+func add(_ a: Int, _ b: Int) -> Int {
+    return a + b
 }
-let increment = makeIncrementer()
-increment(7)
+
+func multiply(_ a: Int, _ b: Int) -> Int {
+    return a * b
+}
+
+func applyOperation(_ op: (Int, Int) -> Int, _ x: Int, _ y: Int) -> Int {
+    return op(x, y)
+}
+
+var operation: (Int, Int) -> Int = add
+var result = applyOperation(operation, 5, 3)
+print("Result: \(result)")
+
+operation = multiply
+result = applyOperation(operation, 5, 3)
+print("Result: \(result)")

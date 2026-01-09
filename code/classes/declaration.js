@@ -1,6 +1,16 @@
-class Shape {
-  numberOfSides = 0
-  simpleDescription() {
-    return `A shape with ${this.numberOfSides} sides.`
-  }
+class Person {
+    constructor(name, age) {
+        this.name = name;
+        this.age = age;
+    }
+    
+    getName() {
+        return this.name;
+    }
+    
+    getAge() {
+        return this.age;
+    }
 }
+
+var person = new Person("John", 30);

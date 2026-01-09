@@ -1,4 +1,5 @@
-#include &lt;string&gt;
-using namespace std;
-const string multiline(R"(I span ...
-... multiple lines.)"); // raw string literals
+#include <iostream>
+
+std::string multiline = "This is a\n"
+                        "multiline\n"
+                        "string";

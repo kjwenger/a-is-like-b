@@ -1,8 +1,17 @@
-let nb = 42
-switch nb {
-    case 0...7, 8, 9: print("single digit")
-    case 10: print("double digits")
-    case 11...99: print("double digits")
-    case 100...999: print("triple digits")
-    default: print("four or more digits")
+// Pattern matching in Swift
+func describe(obj: Any) -> String {
+    switch obj {
+    case 1:
+        return "One"
+    case "Hello":
+        return "Greeting"
+    case is Double:
+        return "Double number"
+    default:
+        return "Unknown"
+    }
 }
+
+print(describe(obj: 1))
+print(describe(obj: "Hello"))
+print(describe(obj: 3.14))

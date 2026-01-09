@@ -1,0 +1,16 @@
+# Subclass in ToffeeScript
+class Person
+  constructor: (@name, @age) ->
+  
+  greet: ->
+    "Hello, I'm #{@name} and I'm #{@age} years old"
+
+class Student extends Person
+  constructor: (name, age, @school) ->
+    super(name, age)
+  
+  greet: ->
+    "#{super()} I study at #{@school}"
+
+student = new Student "Alice", 20, "MIT"
+console.log student.greet()

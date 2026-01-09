@@ -1,12 +1,15 @@
-fun makeIncrementer(): (Int) -&gt; Int {
-  val addOne = fun(number: Int): Int {
-    return 1 + number
-  }
-  return addOne
-}
-val increment = makeIncrementer()
-increment(7)
+// Function types in Kotlin
+fun add(a: Int, b: Int): Int = a + b
+fun multiply(a: Int, b: Int): Int = a * b
 
-// ... can also be written in a shorter way:
-fun makeIncrementer() =
-    fun(number: Int) = 1 + number
+fun applyOperation(op: (Int, Int) -> Int, x: Int, y: Int): Int = op(x, y)
+
+fun main() {
+    var operation: (Int, Int) -> Int = ::add
+    var result = applyOperation(operation, 5, 3)
+    println("Result: $result")
+    
+    operation = ::multiply
+    result = applyOperation(operation, 5, 3)
+    println("Result: $result")
+}

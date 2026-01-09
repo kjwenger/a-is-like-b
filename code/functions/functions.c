@@ -1,14 +1,11 @@
-#include &lt;stdlib.h&gt;
-char* greet(
-    const char* name,
-    const char* day) {
-  char* out = (char*)malloc(1024);
-  sprintf(out,
-    "Hello %s, today is %s.",
-    name, day);
-  return out;
+#include <stdio.h>
+
+int add(int a, int b) {
+    return a + b;
 }
+
 int main() {
-  char* out = greet("Bob", "Tuesday");
-  free(out);
+    int result = add(5, 3);
+    printf("%d\n", result);
+    return 0;
 }
