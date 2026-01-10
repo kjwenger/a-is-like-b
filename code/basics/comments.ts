@@ -4,5 +4,5 @@
  */
 /**
  * documentation lines
- * @todo tagged line
+ * Example comment without todo
  */

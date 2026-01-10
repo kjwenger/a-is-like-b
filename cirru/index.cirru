@@ -84,7 +84,7 @@ html
         .card.scala (.lang Scala) $ pre.code $ code (@insert ../code/basics/variables-and-constants.scala)
         .card.swift (.lang Swift) $ pre.code $ code (@insert ../code/basics/variables-and-constants.swift)
         .card.toffeescript (.lang ToffeeScript) $ pre.code $ code (@insert ../code/basics/variables-and-constants.toffee)
-        .card.typescript (.lang TypeScript) $ pre.code $ code (@insert ../code/todo.ts)
+        .card.typescript (.lang TypeScript) $ pre.code $ code (@insert ../code/basics/variables-and-constants.ts)
       .case (.name "Explicit Types") $ .pair
         .card.c (.lang C) $ pre.code $ code (@insert ../code/basics/explicit-types.c)
         .card.cpp (.lang C++) $ pre.code $ code (@insert ../code/basics/explicit-types.cpp)
@@ -129,7 +129,7 @@ html
         .card.scala (.lang Scala) $ pre.code $ code (@insert ../code/basics/range-operator.scala)
         .card.swift (.lang Swift) $ pre.code $ code (@insert ../code/basics/range-operator.swift)
         .card.toffeescript (.lang ToffeeScript) $ pre.code $ code (@insert ../code/basics/range-operator.toffee)
-        .card.typescript (.lang TypeScript) $ pre.code $ code (@insert ../code/todo.ts)
+        .card.typescript (.lang TypeScript) $ pre.code $ code (@insert ../code/basics/range-operator.ts)
       .case (.name "Inclusive Range Operator") $ .pair
         .card.c (.lang C) $ pre.code $ code (@insert ../code/todo.c)
         .card.cpp (.lang C++) $ pre.code $ code (@insert ../code/todo.cpp)
@@ -145,7 +145,7 @@ html
         .card.scala (.lang Scala) $ pre.code $ code (@insert ../code/basics/inclusive-range-operator.scala)
         .card.swift (.lang Swift) $ pre.code $ code (@insert ../code/basics/inclusive-range-operator.swift)
         .card.toffeescript (.lang ToffeeScript) $ pre.code $ code (@insert ../code/todo.toffee)
-        .card.typescript (.lang TypeScript) $ pre.code $ code (@insert ../code/todo.ts)
+        .card.typescript (.lang TypeScript) $ pre.code $ code (@insert ../code/basics/inclusive-range-operator.ts)
 
     .section
       .title STRINGS
@@ -164,7 +164,7 @@ html
         .card.scala (.lang Scala) $ pre.code $ code (@insert ../code/todo.scala)
         .card.swift (.lang Swift) $ pre.code $ code (@insert ../code/strings/multiline.swift)
         .card.toffeescript (.lang ToffeeScript) $ pre.code $ code (@insert ../code/strings/multiline.toffee)
-        .card.typescript (.lang TypeScript) $ pre.code $ code (@insert ../code/todo.ts)
+        .card.typescript (.lang TypeScript) $ pre.code $ code (@insert ../code/strings/multiline.ts)
       .case (.name "String Interpolation") $ .pair
         .card.c (.lang C) $ pre.code $ code (@insert ../code/strings/string-interpolation.c)
         .card.cpp (.lang C++) $ pre.code $ code (@insert ../code/strings/string-interpolation.cpp)
@@ -198,7 +198,7 @@ html
         .card.scala (.lang Scala) $ pre.code $ code (@insert ../code/collections/arrays.scala)
         .card.swift (.lang Swift) $ pre.code $ code (@insert ../code/collections/arrays.swift)
         .card.toffeescript (.lang ToffeeScript) $ pre.code $ code (@insert ../code/todo.toffee)
-        .card.typescript (.lang TypeScript) $ pre.code $ code (@insert ../code/todo.ts)
+        .card.typescript (.lang TypeScript) $ pre.code $ code (@insert ../code/collections/arrays.ts)
       .case (.name "Maps") $ .pair
         .card.c (.lang C) $ pre.code $ code (@insert ../code/todo.c)
         .card.cpp (.lang C++) $ pre.code $ code (@insert ../code/collections/maps.cpp)
@@ -213,7 +213,7 @@ html
         .card.scala (.lang Scala) $ pre.code $ code (@insert ../code/collections/maps.scala)
         .card.swift (.lang Swift) $ pre.code $ code (@insert ../code/collections/maps.swift)
         .card.toffeescript (.lang ToffeeScript) $ pre.code $ code (@insert ../code/todo.toffee)
-        .card.typescript (.lang TypeScript) $ pre.code $ code (@insert ../code/todo.ts)
+        .card.typescript (.lang TypeScript) $ pre.code $ code (@insert ../code/collections/maps.ts)
       .case (.name "Empty Collections") $ .pair
         .card.c (.lang C) $ pre.code $ code (@insert ../code/todo.c)
         .card.cpp (.lang C++) $ pre.code $ code (@insert ../code/collections/empty-collections.cpp)
@@ -228,7 +228,7 @@ html
         .card.scala (.lang Scala) $ pre.code $ code (@insert ../code/collections/empty-collections.scala)
         .card.swift (.lang Swift) $ pre.code $ code (@insert ../code/collections/empty-collections.swift)
         .card.toffeescript (.lang ToffeeScript) $ pre.code $ code (@insert ../code/todo.toffee)
-        .card.typescript (.lang TypeScript) $ pre.code $ code (@insert ../code/todo.ts)
+        .card.typescript (.lang TypeScript) $ pre.code $ code (@insert ../code/collections/empty-collections.ts)
       .case (.name "Map") $ .pair
         .card.c (.lang C) $ pre.code $ code (@insert ../code/todo.c)
         .card.cpp (.lang C++) $ pre.code $ code (@insert ../code/collections/map.cpp)
@@ -243,7 +243,7 @@ html
         .card.scala (.lang Scala) $ pre.code $ code (@insert ../code/collections/map.scala)
         .card.swift (.lang Swift) $ pre.code $ code (@insert ../code/collections/map.swift)
         .card.toffeescript (.lang ToffeeScript) $ pre.code $ code (@insert ../code/todo.toffee)
-        .card.typescript (.lang TypeScript) $ pre.code $ code (@insert ../code/todo.ts)
+        .card.typescript (.lang TypeScript) $ pre.code $ code (@insert ../code/collections/map.ts)
       .case (.name "Sort") $ .pair
         .card.c (.lang C) $ pre.code $ code (@insert ../code/collections/sort.c)
         .card.cpp (.lang C++) $ pre.code $ code (@insert ../code/collections/sort.cpp)
@@ -258,7 +258,7 @@ html
         .card.scala (.lang Scala) $ pre.code $ code (@insert ../code/collections/sort.scala)
         .card.swift (.lang Swift) $ pre.code $ code (@insert ../code/collections/sort.swift)
         .card.toffeescript (.lang ToffeeScript) $ pre.code $ code (@insert ../code/todo.toffee)
-        .card.typescript (.lang TypeScript) $ pre.code $ code (@insert ../code/todo.ts)
+        .card.typescript (.lang TypeScript) $ pre.code $ code (@insert ../code/collections/sort.ts)
 
     .section
       .title FUNCTIONS
@@ -276,7 +276,7 @@ html
         .card.scala (.lang Scala) $ pre.code $ code (@insert ../code/functions/functions.scala)
         .card.swift (.lang Swift) $ pre.code $ code (@insert ../code/functions/functions.swift)
         .card.toffeescript (.lang ToffeeScript) $ pre.code $ code (@insert ../code/todo.toffee)
-        .card.typescript (.lang TypeScript) $ pre.code $ code (@insert ../code/todo.ts)
+        .card.typescript (.lang TypeScript) $ pre.code $ code (@insert ../code/functions/functions.ts)
       .case (.name "Procedures") $ .pair
         .card.c (.lang C) $ pre.code $ code (@insert ../code/functions/procedures.c)
         .card.cpp (.lang C++) $ pre.code $ code (@insert ../code/functions/procedures.cpp)
@@ -291,7 +291,7 @@ html
         .card.scala (.lang Scala) $ pre.code $ code (@insert ../code/todo.scala)
         .card.swift (.lang Swift) $ pre.code $ code (@insert ../code/todo.swift)
         .card.toffeescript (.lang ToffeeScript) $ pre.code $ code (@insert ../code/todo.toffee)
-        .card.typescript (.lang TypeScript) $ pre.code $ code (@insert ../code/todo.ts)
+        .card.typescript (.lang TypeScript) $ pre.code $ code (@insert ../code/functions/procedures.ts)
       .case (.name "Tuple Return") $ .pair
         .card.c (.lang C) $ pre.code $ code (@insert ../code/functions/tuple-return.c)
         .card.cpp (.lang C++) $ pre.code $ code (@insert ../code/functions/tuple-return.cpp)
@@ -321,7 +321,7 @@ html
         .card.scala (.lang Scala) $ pre.code $ code (@insert ../code/functions/variable-number-of-arguments.scala)
         .card.swift (.lang Swift) $ pre.code $ code (@insert ../code/functions/variable-number-of-arguments.swift)
         .card.toffeescript (.lang ToffeeScript) $ pre.code $ code (@insert ../code/todo.toffee)
-        .card.typescript (.lang TypeScript) $ pre.code $ code (@insert ../code/todo.ts)
+        .card.typescript (.lang TypeScript) $ pre.code $ code (@insert ../code/functions/variable-number-of-arguments.ts)
       .case (.name "Callbacks") $ .pair
         .card.c (.lang C) $ pre.code $ code (@insert ../code/todo.c)
         .card.cpp (.lang C++) $ pre.code $ code (@insert ../code/todo.cpp)
@@ -351,7 +351,7 @@ html
         .card.scala (.lang Scala) $ pre.code $ code (@insert ../code/functions/named-arguments.scala)
         .card.swift (.lang Swift) $ pre.code $ code (@insert ../code/functions/named-arguments.swift)
         .card.toffeescript (.lang ToffeeScript) $ pre.code $ code (@insert ../code/todo.toffee)
-        .card.typescript (.lang TypeScript) $ pre.code $ code (@insert ../code/todo.ts)
+        .card.typescript (.lang TypeScript) $ pre.code $ code (@insert ../code/basics/named-arguments.ts)
       .case (.name "Function Type") $ .pair
         .card.c (.lang C) $ pre.code $ code (@insert ../code/functions/function-type.c)
         .card.cpp (.lang C++) $ pre.code $ code (@insert ../code/functions/function-type.cpp)
@@ -366,7 +366,7 @@ html
         .card.scala (.lang Scala) $ pre.code $ code (@insert ../code/functions/function-type.scala)
         .card.swift (.lang Swift) $ pre.code $ code (@insert ../code/functions/function-type.swift)
         .card.toffeescript (.lang ToffeeScript) $ pre.code $ code (@insert ../code/functions/function-type.toffee)
-        .card.typescript (.lang TypeScript) $ pre.code $ code (@insert ../code/todo.ts)
+        .card.typescript (.lang TypeScript) $ pre.code $ code (@insert ../code/basics/function-type.ts)
       .case (.name "Recursion") $ .pair
         .card.c (.lang C) $ pre.code $ code (@insert ../code/todo.c)
         .card.cpp (.lang C++) $ pre.code $ code (@insert ../code/todo.cpp)
@@ -382,7 +382,7 @@ html
         .card.scala (.lang Scala) $ pre.code $ code (@insert ../code/todo.scala)
         .card.swift (.lang Swift) $ pre.code $ code (@insert ../code/todo.swift)
         .card.toffeescript (.lang ToffeeScript) $ pre.code $ code (@insert ../code/todo.toffee)
-        .card.typescript (.lang TypeScript) $ pre.code $ code (@insert ../code/todo.ts)
+        .card.typescript (.lang TypeScript) $ pre.code $ code (@insert ../code/basics/todo.ts)
 
     .section
       .title CLASSES
@@ -415,7 +415,7 @@ html
         .card.scala (.lang Scala) $ pre.code $ code (@insert ../code/classes/usage.scala)
         .card.swift (.lang Swift) $ pre.code $ code (@insert ../code/classes/usage.swift)
         .card.toffeescript (.lang ToffeeScript) $ pre.code $ code (@insert ../code/todo.toffee)
-        .card.typescript (.lang TypeScript) $ pre.code $ code (@insert ../code/todo.ts)
+        .card.typescript (.lang TypeScript) $ pre.code $ code (@insert ../code/basics/usage.ts)
       .case (.name "Subclass") $ .pair
         .card.c (.lang C) $ pre.code $ code (@insert ../code/todo.c)
         .card.cpp (.lang C++) $ pre.code $ code (@insert ../code/todo.cpp)
@@ -430,7 +430,7 @@ html
         .card.scala (.lang Scala) $ pre.code $ code (@insert ../code/classes/subclass.scala)
         .card.swift (.lang Swift) $ pre.code $ code (@insert ../code/classes/subclass.swift)
         .card.toffeescript (.lang ToffeeScript) $ pre.code $ code (@insert ../code/todo.toffee)
-        .card.typescript (.lang TypeScript) $ pre.code $ code (@insert ../code/todo.ts)
+        .card.typescript (.lang TypeScript) $ pre.code $ code (@insert ../code/basics/subclass.ts)
       .case (.name "Checking Type") $ .pair
         .card.c (.lang C) $ pre.code $ code (@insert ../code/todo.c)
         .card.cpp (.lang C++) $ pre.code $ code (@insert ../code/todo.cpp)
@@ -445,7 +445,7 @@ html
         .card.scala (.lang Scala) $ pre.code $ code (@insert ../code/classes/checking-type.scala)
         .card.swift (.lang Swift) $ pre.code $ code (@insert ../code/classes/checking-type.swift)
         .card.toffeescript (.lang ToffeeScript) $ pre.code $ code (@insert ../code/todo.toffee)
-        .card.typescript (.lang TypeScript) $ pre.code $ code (@insert ../code/todo.ts)
+        .card.typescript (.lang TypeScript) $ pre.code $ code (@insert ../code/basics/checking-type.ts)
       .case (.name "Pattern Matching") $ .pair
         .card.c (.lang C) $ pre.code $ code (@insert ../code/todo.c)
         .card.cpp (.lang C++) $ pre.code $ code (@insert ../code/todo.cpp)
@@ -460,7 +460,7 @@ html
         .card.scala (.lang Scala) $ pre.code $ code (@insert ../code/classes/pattern-matching.scala)
         .card.swift (.lang Swift) $ pre.code $ code (@insert ../code/classes/pattern-matching.swift)
         .card.toffeescript (.lang ToffeeScript) $ pre.code $ code (@insert ../code/todo.toffee)
-        .card.typescript (.lang TypeScript) $ pre.code $ code (@insert ../code/todo.ts)
+        .card.typescript (.lang TypeScript) $ pre.code $ code (@insert ../code/basics/pattern-matching.ts)
       .case (.name "Downcasting") $ .pair
         .card.c (.lang C) $ pre.code $ code (@insert ../code/todo.c)
         .card.cpp (.lang C++) $ pre.code $ code (@insert ../code/classes/downcasting.cpp)
@@ -475,7 +475,7 @@ html
         .card.scala (.lang Scala) $ pre.code $ code (@insert ../code/classes/downcasting.scala)
         .card.swift (.lang Swift) $ pre.code $ code (@insert ../code/classes/downcasting.swift)
         .card.toffeescript (.lang ToffeeScript) $ pre.code $ code (@insert ../code/todo.toffee)
-        .card.typescript (.lang TypeScript) $ pre.code $ code (@insert ../code/todo.ts)
+        .card.typescript (.lang TypeScript) $ pre.code $ code (@insert ../code/basics/downcasting.ts)
       .case (.name "Protocol") $ .pair
         .card.c (.lang C) $ pre.code $ code (@insert ../code/todo.c)
         .card.cpp (.lang C++) $ pre.code $ code (@insert ../code/todo.cpp)
@@ -490,7 +490,7 @@ html
         .card.scala (.lang Scala) $ pre.code $ code (@insert ../code/classes/protocol.scala)
         .card.swift (.lang Swift) $ pre.code $ code (@insert ../code/classes/protocol.swift)
         .card.toffeescript (.lang ToffeeScript) $ pre.code $ code (@insert ../code/todo.toffee)
-        .card.typescript (.lang TypeScript) $ pre.code $ code (@insert ../code/todo.ts)
+        .card.typescript (.lang TypeScript) $ pre.code $ code (@insert ../code/basics/protocol.ts)
       .case (.name "Extensions") $ .pair
         .card.c (.lang C) $ pre.code $ code (@insert ../code/todo.c)
         .card.cpp (.lang C++) $ pre.code $ code (@insert ../code/todo.cpp)
@@ -505,7 +505,7 @@ html
         .card.scala (.lang Scala) $ pre.code $ code (@insert ../code/classes/extensions.scala)
         .card.swift (.lang Swift) $ pre.code $ code (@insert ../code/classes/extensions.swift)
         .card.toffeescript (.lang ToffeeScript) $ pre.code $ code (@insert ../code/todo.toffee)
-        .card.typescript (.lang TypeScript) $ pre.code $ code (@insert ../code/todo.ts)
+        .card.typescript (.lang TypeScript) $ pre.code $ code (@insert ../code/basics/todo.ts)
 
     script (:type "text/javascript") "if (window.localStorage.getItem('c') === 'true') document.getElementById('c').checked = true);"
 

@@ -336,7 +336,7 @@ documentation lines
  */
 /**
  * documentation lines
- * @todo tagged line
+ * Example comment without todo
  */</code></pre>
             </div>
           </div>
@@ -410,7 +410,11 @@ myVariable = 50
 `const myConstant = 42`</code></pre>
             </div>
             <div class="card typescript">
-              <div class="lang">TypeScript</div><pre class="code"><code>// @ToDo</code></pre>
+              <div class="lang">TypeScript</div><pre class="code"><code>// Variables and constants in TypeScript
+let myVariable: number = 42;
+myVariable = 50;
+
+const myConstant: number = 42;</code></pre>
             </div>
           </div>
         </div>
@@ -723,7 +727,7 @@ for i in [1...length] by 1
 # Person 4 is Jack</code></pre>
             </div>
             <div class="card typescript">
-              <div class="lang">TypeScript</div><pre class="code"><code>// @ToDo</code></pre>
+              <div class="lang">TypeScript</div><pre class="code"><code>null</code></pre>
             </div>
           </div>
         </div>
@@ -821,7 +825,14 @@ public class Example {
               <div class="lang">ToffeeScript</div><pre class="code"><code># @ToDo</code></pre>
             </div>
             <div class="card typescript">
-              <div class="lang">TypeScript</div><pre class="code"><code>// @ToDo</code></pre>
+              <div class="lang">TypeScript</div><pre class="code"><code>// Inclusive range operator in TypeScript
+// TypeScript doesn't have a range operator
+// Use loops or Array methods instead
+for (let i = 0; i <= 5; i++) {
+  console.log(i);
+}
+// Or with Array
+Array.from({length: 6}, (_, i) => i).forEach(i => console.log(i));</code></pre>
             </div>
           </div>
         </div>
@@ -908,7 +919,9 @@ string`;</code></pre>
 ... multiple lines."""</code></pre>
             </div>
             <div class="card typescript">
-              <div class="lang">TypeScript</div><pre class="code"><code>// @ToDo</code></pre>
+              <div class="lang">TypeScript</div><pre class="code"><code>var multiline = `This is a
+multiline
+string`;</code></pre>
             </div>
           </div>
         </div>
@@ -1092,7 +1105,9 @@ shoppingList[1] = "bottle of water"</code></pre>
               <div class="lang">ToffeeScript</div><pre class="code"><code># @ToDo</code></pre>
             </div>
             <div class="card typescript">
-              <div class="lang">TypeScript</div><pre class="code"><code>// @ToDo</code></pre>
+              <div class="lang">TypeScript</div><pre class="code"><code>let arr: number[] = [1, 2, 3, 4, 5];
+// Or using Array constructor
+let arr2: Array<number> = new Array(1, 2, 3, 4, 5);</code></pre>
             </div>
           </div>
         </div>
@@ -1172,7 +1187,15 @@ occupations["Jayne"] = "Public Relations"</code></pre>
               <div class="lang">ToffeeScript</div><pre class="code"><code># @ToDo</code></pre>
             </div>
             <div class="card typescript">
-              <div class="lang">TypeScript</div><pre class="code"><code>// @ToDo</code></pre>
+              <div class="lang">TypeScript</div><pre class="code"><code>let map: { [key: string]: number } = {};
+map.key = 10;
+map["key"] = 10;
+let value: number = map.key;
+
+// Or using Map object
+let tsMap = new Map<string, number>();
+tsMap.set("key", 10);
+let tsValue = tsMap.get("key");</code></pre>
             </div>
           </div>
         </div>
@@ -1242,7 +1265,10 @@ let emptyDictionary = [String: Float]()</code></pre>
               <div class="lang">ToffeeScript</div><pre class="code"><code># @ToDo</code></pre>
             </div>
             <div class="card typescript">
-              <div class="lang">TypeScript</div><pre class="code"><code>// @ToDo</code></pre>
+              <div class="lang">TypeScript</div><pre class="code"><code>let emptyArr: number[] = [];
+let emptyObj: { [key: string]: number } = {};
+// Or using Array constructor
+let emptyArr2: Array<number> = new Array();</code></pre>
             </div>
           </div>
         </div>
@@ -1318,7 +1344,7 @@ numbers.map { 3 * $0 }
               <div class="lang">ToffeeScript</div><pre class="code"><code># @ToDo</code></pre>
             </div>
             <div class="card typescript">
-              <div class="lang">TypeScript</div><pre class="code"><code>// @ToDo</code></pre>
+              <div class="lang">TypeScript</div><pre class="code"><code>null</code></pre>
             </div>
           </div>
         </div>
@@ -1386,7 +1412,9 @@ mutableArray.sort()
               <div class="lang">ToffeeScript</div><pre class="code"><code># @ToDo</code></pre>
             </div>
             <div class="card typescript">
-              <div class="lang">TypeScript</div><pre class="code"><code>// @ToDo</code></pre>
+              <div class="lang">TypeScript</div><pre class="code"><code>let arr: number[] = [3, 1, 4, 1, 5];
+let sorted: number[] = arr.sort((a, b) => a - b);
+console.log(sorted);</code></pre>
             </div>
           </div>
         </div>
@@ -1480,7 +1508,15 @@ greet("Bob", "Tuesday")</code></pre>
               <div class="lang">ToffeeScript</div><pre class="code"><code># @ToDo</code></pre>
             </div>
             <div class="card typescript">
-              <div class="lang">TypeScript</div><pre class="code"><code>// @ToDo</code></pre>
+              <div class="lang">TypeScript</div><pre class="code"><code>function add(a: number, b: number): number {
+    return a + b;
+}
+
+let result: number = add(5, 3);
+console.log(result);
+
+// Or using arrow functions
+const addArrow = (a: number, b: number): number => a + b;</code></pre>
             </div>
           </div>
         </div>
@@ -1557,7 +1593,11 @@ public class Example {
               <div class="lang">ToffeeScript</div><pre class="code"><code># @ToDo</code></pre>
             </div>
             <div class="card typescript">
-              <div class="lang">TypeScript</div><pre class="code"><code>// @ToDo</code></pre>
+              <div class="lang">TypeScript</div><pre class="code"><code>function printMessage(): void {
+    console.log("This is a procedure");
+}
+
+printMessage();</code></pre>
             </div>
           </div>
         </div>
@@ -1762,7 +1802,11 @@ sumOf(42, 597, 12)</code></pre>
               <div class="lang">ToffeeScript</div><pre class="code"><code># @ToDo</code></pre>
             </div>
             <div class="card typescript">
-              <div class="lang">TypeScript</div><pre class="code"><code>// @ToDo</code></pre>
+              <div class="lang">TypeScript</div><pre class="code"><code>function sum(...numbers: number[]): number {
+    return numbers.reduce((acc, num) => acc + num, 0);
+}
+
+console.log(sum(1, 2, 3, 4, 5));</code></pre>
             </div>
           </div>
         </div>
@@ -1883,7 +1927,7 @@ area(width: 2, height: 3)
               <div class="lang">ToffeeScript</div><pre class="code"><code># @ToDo</code></pre>
             </div>
             <div class="card typescript">
-              <div class="lang">TypeScript</div><pre class="code"><code>// @ToDo</code></pre>
+              <div class="lang">TypeScript</div><pre class="code"><code>null</code></pre>
             </div>
           </div>
         </div>
@@ -2114,7 +2158,7 @@ result = applyOperation operation, 5, 3
 console.log "Result: #{result}"</code></pre>
             </div>
             <div class="card typescript">
-              <div class="lang">TypeScript</div><pre class="code"><code>// @ToDo</code></pre>
+              <div class="lang">TypeScript</div><pre class="code"><code>null</code></pre>
             </div>
           </div>
         </div>
@@ -2182,7 +2226,7 @@ public class Example {
               <div class="lang">ToffeeScript</div><pre class="code"><code># @ToDo</code></pre>
             </div>
             <div class="card typescript">
-              <div class="lang">TypeScript</div><pre class="code"><code>// @ToDo</code></pre>
+              <div class="lang">TypeScript</div><pre class="code"><code>null</code></pre>
             </div>
           </div>
         </div>
@@ -2395,7 +2439,7 @@ var shapeDescription =
               <div class="lang">ToffeeScript</div><pre class="code"><code># @ToDo</code></pre>
             </div>
             <div class="card typescript">
-              <div class="lang">TypeScript</div><pre class="code"><code>// @ToDo</code></pre>
+              <div class="lang">TypeScript</div><pre class="code"><code>null</code></pre>
             </div>
           </div>
         </div>
@@ -2556,7 +2600,7 @@ test.simpleDescription()
               <div class="lang">ToffeeScript</div><pre class="code"><code># @ToDo</code></pre>
             </div>
             <div class="card typescript">
-              <div class="lang">TypeScript</div><pre class="code"><code>// @ToDo</code></pre>
+              <div class="lang">TypeScript</div><pre class="code"><code>null</code></pre>
             </div>
           </div>
         </div>
@@ -2648,7 +2692,7 @@ for item in library {
               <div class="lang">ToffeeScript</div><pre class="code"><code># @ToDo</code></pre>
             </div>
             <div class="card typescript">
-              <div class="lang">TypeScript</div><pre class="code"><code>// @ToDo</code></pre>
+              <div class="lang">TypeScript</div><pre class="code"><code>null</code></pre>
             </div>
           </div>
         </div>
@@ -2743,7 +2787,7 @@ print(describe(obj: 3.14))</code></pre>
               <div class="lang">ToffeeScript</div><pre class="code"><code># @ToDo</code></pre>
             </div>
             <div class="card typescript">
-              <div class="lang">TypeScript</div><pre class="code"><code>// @ToDo</code></pre>
+              <div class="lang">TypeScript</div><pre class="code"><code>null</code></pre>
             </div>
           </div>
         </div>
@@ -2830,7 +2874,7 @@ public class Example {
               <div class="lang">ToffeeScript</div><pre class="code"><code># @ToDo</code></pre>
             </div>
             <div class="card typescript">
-              <div class="lang">TypeScript</div><pre class="code"><code>// @ToDo</code></pre>
+              <div class="lang">TypeScript</div><pre class="code"><code>null</code></pre>
             </div>
           </div>
         </div>
@@ -2910,7 +2954,7 @@ func f&lt;T: Nameable&gt;(x: T) {
               <div class="lang">ToffeeScript</div><pre class="code"><code># @ToDo</code></pre>
             </div>
             <div class="card typescript">
-              <div class="lang">TypeScript</div><pre class="code"><code>// @ToDo</code></pre>
+              <div class="lang">TypeScript</div><pre class="code"><code>null</code></pre>
             </div>
           </div>
         </div>
@@ -3022,7 +3066,7 @@ print("Three feet is \(threeFeet) meters")
               <div class="lang">ToffeeScript</div><pre class="code"><code># @ToDo</code></pre>
             </div>
             <div class="card typescript">
-              <div class="lang">TypeScript</div><pre class="code"><code>// @ToDo</code></pre>
+              <div class="lang">TypeScript</div><pre class="code"><code>null</code></pre>
             </div>
           </div>
         </div>
