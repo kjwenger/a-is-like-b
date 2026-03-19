@@ -1,4 +1,3 @@
-% Functions in Erlang
 -module(math).
 -export([add/2, start/0]).
 

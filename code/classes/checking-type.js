@@ -1,4 +1,3 @@
-// Checking type in JavaScript
 class Animal {
     makeSound() {
         console.log("Some sound");

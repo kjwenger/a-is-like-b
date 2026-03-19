@@ -1,4 +1,3 @@
-// Function types in TypeScript
 type FuncType = (a: number, b: number) =&gt; number;
 
 function add(a: number, b: number): number {

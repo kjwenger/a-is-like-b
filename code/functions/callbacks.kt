@@ -1,4 +1,3 @@
-// Callbacks in Kotlin
 fun callback(value: Int) {
     println("Callback called with: $value")
 }

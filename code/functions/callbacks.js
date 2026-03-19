@@ -1,4 +1,3 @@
-// Callbacks in JavaScript
 function callback(value) {
     console.log("Callback called with: " + value);
 }

@@ -1,4 +1,3 @@
-# Usage in Elixir
 defmodule Person do
   defstruct name: nil, age: nil
   

@@ -1,4 +1,3 @@
-# String interpolation in Elixir
 apples = 3
 oranges = 5
 fruit_summary = "I have #{apples + oranges} " &lt;&gt;

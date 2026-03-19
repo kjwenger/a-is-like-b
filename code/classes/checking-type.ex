@@ -1,4 +1,3 @@
-# Checking type in Elixir (using structs and pattern matching)
 defmodule Movie do
   defstruct [:name, :director]
 end

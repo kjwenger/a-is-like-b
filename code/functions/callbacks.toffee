@@ -1,4 +1,3 @@
-# Callbacks in ToffeeScript
 callback = (value) -&gt;
   console.log "Callback called with: #{value}"
 

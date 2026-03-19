@@ -1,4 +1,3 @@
-% Usage in Erlang
 -module(person).
 -export([new/2, greet/1, start/0]).
 

@@ -1,4 +1,3 @@
-% Checking type in Erlang (using tagged tuples)
 -module(checking_type).
 -export([start/0]).
 

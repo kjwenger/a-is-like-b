@@ -1,6 +1,3 @@
-# Type coercion in Elixir
-# Elixir doesn't have implicit type coercion
-# Conversion must be explicit
 int_num = 42
 float_num = 3.14
 

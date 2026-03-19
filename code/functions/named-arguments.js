@@ -1,4 +1,3 @@
-// Named arguments in JavaScript (simulated with objects)
 function functionWithNamedArgs({param1 = 0, param2 = 0, param3 = 0} = {}) {
     console.log(`param1: ${param1}, param2: ${param2}, param3: ${param3}`);
 }

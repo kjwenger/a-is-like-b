@@ -1,4 +1,3 @@
-// Callbacks in Swift
 func callback(_ value: Int) {
     print("Callback called with: \(value)")
 }

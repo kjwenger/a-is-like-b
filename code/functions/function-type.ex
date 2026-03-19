@@ -1,4 +1,3 @@
-# Function types in Elixir
 add = fn(a, b) -&gt; a + b end
 multiply = fn(a, b) -&gt; a * b end
 

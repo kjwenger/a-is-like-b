@@ -1,4 +1,3 @@
-# Protocol in Elixir (using defprotocol and defimpl)
 defprotocol Drawable do
   def draw(shape)
 end

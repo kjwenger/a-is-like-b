@@ -1,4 +1,3 @@
-// Pattern matching in Swift
 func describe(obj: Any) -&gt; String {
     switch obj {
     case 1:

@@ -1,4 +1,3 @@
-% Tuple return in Erlang
 -module(math).
 -export([div_rem/2]).
 

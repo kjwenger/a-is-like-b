@@ -1,4 +1,3 @@
-// Extensions in TypeScript (using interface merging or utility functions)
 interface String {
     reverse(): string;
 }

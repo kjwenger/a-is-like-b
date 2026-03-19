@@ -1,4 +1,3 @@
-// Pattern matching in TypeScript (using switch or type guards)
 function describe(obj: any): string {
     if (obj === 1) {
         return "One";

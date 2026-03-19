@@ -1,4 +1,3 @@
-# Downcasting in ToffeeScript (simulated with type checking)
 class Animal
   makeSound: -&gt; console.log "Some sound"
 

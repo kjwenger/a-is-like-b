@@ -1,4 +1,3 @@
-% Procedures in Erlang
 -module(printer).
 -export([print_message/0]).
 

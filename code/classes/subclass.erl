@@ -1,4 +1,3 @@
-% Subclass in Erlang (no direct equivalent, use records and module delegation)
 -module(subclass).
 -export([new_person/2, new_student/3, greet/1, start/0]).
 

@@ -1,4 +1,3 @@
-// Callbacks in TypeScript
 function callback(value: number): void {
     console.log(`Callback called with: ${value}`);
 }

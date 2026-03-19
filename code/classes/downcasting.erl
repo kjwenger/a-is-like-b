@@ -1,4 +1,3 @@
-% Downcasting in Erlang (no direct equivalent, but pattern matching)
 -module(animal).
 -export([make_sound/1, handle_animal/1, start/0]).
 

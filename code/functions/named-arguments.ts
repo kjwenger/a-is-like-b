@@ -1,4 +1,3 @@
-// Named arguments in TypeScript (simulated with interfaces)
 interface Args {
     param1?: number;
     param2?: number;

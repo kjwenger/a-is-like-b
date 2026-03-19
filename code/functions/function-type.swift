@@ -1,4 +1,3 @@
-// Function types in Swift
 func add(_ a: Int, _ b: Int) -&gt; Int {
     return a + b
 }

@@ -1,4 +1,3 @@
-# Downcasting in Elixir (no direct equivalent, but pattern matching)
 defmodule Animal do
   defstruct [:type]
   

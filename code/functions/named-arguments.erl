@@ -1,4 +1,3 @@
-% Named arguments in Erlang
 -module(example).
 -export([function_with_named_args/1, start/0]).
 

@@ -1,4 +1,3 @@
-# Variable number of arguments in Elixir
 defmodule Math do
   def sum(numbers) when is_list(numbers) do
     Enum.sum(numbers)

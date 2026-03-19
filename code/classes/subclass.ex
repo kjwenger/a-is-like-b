@@ -1,4 +1,3 @@
-# Subclass in Elixir (no direct equivalent, use structs and protocol delegation)
 defmodule Person do
   defstruct name: nil, age: nil
 

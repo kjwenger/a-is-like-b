@@ -1,4 +1,3 @@
-% Recursion in Erlang
 -module(math).
 -export([factorial/1, start/0]).
 

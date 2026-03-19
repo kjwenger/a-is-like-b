@@ -1,4 +1,3 @@
-# Checking type in CoffeeScript
 class Movie
   constructor: (@name, @director) -&gt;
 

@@ -1,4 +1,3 @@
-# Pattern matching in Elixir (native pattern matching with case/function clauses)
 defmodule PatternMatching do
   def describe(1),                    do: "One"
   def describe("Hello"),              do: "Greeting"

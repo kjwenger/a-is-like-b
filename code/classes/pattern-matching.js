@@ -1,4 +1,3 @@
-// Pattern matching in JavaScript (using switch or if-else chains)
 function describe(obj) {
     if (obj === 1) {
         return "One";

@@ -1,4 +1,3 @@
-# Functions in Elixir
 defmodule Math do
   def add(a, b) do
     a + b

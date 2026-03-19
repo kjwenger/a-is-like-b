@@ -1,4 +1,3 @@
-% Pattern matching in Erlang (native pattern matching in function clauses)
 -module(pattern_matching).
 -export([describe/1, start/0]).
 

@@ -1,4 +1,3 @@
-# Named arguments in Elixir
 defmodule Example do
   def function_with_named_args(opts \\ []) do
     param1 = Keyword.get(opts, :param1, 0)

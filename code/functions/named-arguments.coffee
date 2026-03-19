@@ -1,4 +1,3 @@
-# Named arguments in CoffeeScript (simulated with objects)
 functionWithNamedArgs = (options = {}) -&gt;
   param1 = options.param1 or 0
   param2 = options.param2 or 0

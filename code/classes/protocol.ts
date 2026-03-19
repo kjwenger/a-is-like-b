@@ -1,4 +1,3 @@
-// Protocol in TypeScript (using interface)
 interface Drawable {
     draw(): void;
 }

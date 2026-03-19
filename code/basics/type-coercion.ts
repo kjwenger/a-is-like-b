@@ -1,4 +1,3 @@
-// Type coercion in TypeScript
 let intNum: number = 42;
 let floatNum: number = 3.14;
 // Explicit conversion

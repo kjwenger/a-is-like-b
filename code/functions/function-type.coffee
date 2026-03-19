@@ -1,4 +1,3 @@
-# Function types in CoffeeScript
 add = (a, b) -&gt; a + b
 multiply = (a, b) -&gt; a * b
 

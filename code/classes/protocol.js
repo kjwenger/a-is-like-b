@@ -1,4 +1,3 @@
-// Protocol in JavaScript (using duck typing / interfaces concept)
 class Circle {
     draw() {
         console.log("Drawing a circle");

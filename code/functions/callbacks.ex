@@ -1,5 +1,4 @@
-# Callbacks in Elixir
-callback = fn(value) -&gt; 
+callback = fn(value) -&gt;
   IO.puts "Callback called with: #{value}"
 end
 

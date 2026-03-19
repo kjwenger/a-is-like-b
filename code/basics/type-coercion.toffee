@@ -1,4 +1,3 @@
-# Type coercion in ToffeeScript
 intNum = 42
 floatNum = 3.14
 # Explicit conversion

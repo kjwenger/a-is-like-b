@@ -1,4 +1,3 @@
-// Usage in TypeScript
 class Person {
     private name: string;
     private age: number;

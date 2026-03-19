@@ -1,4 +1,3 @@
-# Multiline strings in Elixir
 multiline = """
 This is a
 multiline

@@ -1,4 +1,3 @@
-# Callbacks in CoffeeScript
 callback = (value) -&gt;
   console.log "Callback called with: #{value}"
 

@@ -1,4 +1,3 @@
-# Tuple return in Elixir
 defmodule Math do
   def div_rem(a, b) do
     {div(a, b), rem(a, b)}

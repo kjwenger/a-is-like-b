@@ -1,4 +1,3 @@
-% Function types in Erlang
 -module(example).
 -export([add/2, multiply/2, apply_operation/3, start/0]).
 

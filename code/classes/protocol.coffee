@@ -1,4 +1,3 @@
-# Protocol in CoffeeScript (using duck typing)
 class Circle
   draw: -&gt; console.log "Drawing a circle"
 

@@ -1,4 +1,3 @@
-# Pattern matching in CoffeeScript (using switch or if-else chains)
 describe = (obj) -&gt;
   switch
     when obj is 1

@@ -1,4 +1,3 @@
-// Pattern matching in Kotlin
 fun describe(obj: Any): String =
     when (obj) {
         1 -&gt; "One"

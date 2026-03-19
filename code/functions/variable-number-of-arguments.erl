@@ -1,4 +1,3 @@
-% Variable number of arguments in Erlang
 -module(math).
 -export([sum/1, sum/0]).
 

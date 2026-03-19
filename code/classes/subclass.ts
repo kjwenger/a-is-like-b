@@ -1,4 +1,3 @@
-// Subclass in TypeScript
 class Person {
     protected name: string;
     protected age: number;

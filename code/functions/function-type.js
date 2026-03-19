@@ -1,4 +1,3 @@
-// Function types in JavaScript
 function add(a, b) {
     return a + b;
 }

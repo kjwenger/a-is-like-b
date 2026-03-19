@@ -1,4 +1,3 @@
-# Usage in CoffeeScript
 class Person
   constructor: (@name, @age) -&gt;
   

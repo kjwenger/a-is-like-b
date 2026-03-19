@@ -1,4 +1,3 @@
-% Extensions in Erlang (using modules with functions)
 -module(string_ext).
 -export([reverse/1, start/0]).
 

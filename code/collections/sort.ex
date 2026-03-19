@@ -1,4 +1,3 @@
-# Sort in Elixir
 arr = [3, 1, 4, 1, 5]
 sorted = Enum.sort(arr)
 IO.inspect sorted

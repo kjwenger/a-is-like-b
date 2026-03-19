@@ -1,4 +1,3 @@
-// Downcasting in TypeScript
 class Animal {
     makeSound(): void {
         console.log("Some sound");

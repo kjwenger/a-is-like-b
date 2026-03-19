@@ -1,4 +1,3 @@
-# Subclass in CoffeeScript
 class Person
   constructor: (@name, @age) -&gt;
 

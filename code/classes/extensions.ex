@@ -1,4 +1,3 @@
-# Extensions in Elixir (using modules with functions)
 defmodule StringExt do
   def reverse(str) do
     str

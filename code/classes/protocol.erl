@@ -1,4 +1,3 @@
-% Protocol in Erlang (simulated with a behaviour)
 -module(protocol).
 -export([start/0]).
 

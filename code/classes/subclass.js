@@ -1,4 +1,3 @@
-// Subclass in JavaScript
 class Person {
     constructor(name, age) {
         this.name = name;
