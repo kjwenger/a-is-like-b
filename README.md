@@ -4,7 +4,7 @@
 **GitHub Pages:** https://kjwenger.github.io/a-is-like-b/
 
 Programmatically inspired from:
-- [swift-is-like-kotlin](https://github.com/kjwenger/a-is-like-b.git)
+- [swift-is-like-kotlin](https://github.com/JnariyaInnov/swift-is-like-kotlin)
 - [swift-is-like-go](https://github.com/jiyinyiyong/swift-is-like-go)
 - [swiftislikescala](https://github.com/leverich/swiftislikescala)
 
