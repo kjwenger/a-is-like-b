@@ -8,13 +8,14 @@ html
     link (:rel stylesheet) (:href css/highlightjs-github.css)
     script (:src js/highlight.9.4.0.js)
     script "hljs.initHighlightingOnLoad();"
-    script (:type "text/javascript") "function showHide(checkbox) { const display = checkbox.checked ? 'block' : 'none'; const elements = document.getElementsByClassName(checkbox.id); for(let i = 0; i < elements.length; i++) { elements.item(i).style.display = display; } window.localStorage.setItem(checkbox.id, '' + checkbox.checked); }"
+    script (:type "text/javascript") "function showHide(checkbox) { const display = checkbox.checked ? 'block' : 'none'; const elements = document.getElementsByClassName(checkbox.id); for(let i = 0; i < elements.length; i++) { elements.item(i).style.display = display; } window.localStorage.setItem(checkbox.id, '' + checkbox.checked); } function toggleTheme() { const dark = document.body.classList.toggle('dark'); document.getElementById('theme-toggle').textContent = dark ? '☀' : '🌙'; window.localStorage.setItem('theme', dark ? 'dark' : 'light'); } (function() { if (window.localStorage.getItem('theme') === 'dark') { document.body.classList.add('dark'); document.addEventListener('DOMContentLoaded', function() { document.getElementById('theme-toggle').textContent = '☀'; }); } })();"
 
   body
     a (:target _blank)
       :href https://github.com/kjwenger/a-is-like-b.git
       img#fork-me (:style "z-index: 1000;")(:src fork-me.png)
     #note
+      button#theme-toggle (:onclick "toggleTheme()") "🌙"
       = "Programming language 'A' is like 'B', is like ..."
 
     .section (:style "position: -webkit-sticky; position: sticky; top: 0; background-color: #f5deb3;")

@@ -78,6 +78,7 @@ body * {
 }
 
 #note {
+    position: relative;
     font-size: 1.5em;
     color: #fff;
     text-align: center;
@@ -85,4 +86,110 @@ body * {
     background: #414141;
     font-weight: 300;
     letter-spacing: 0.05em;
+}
+
+#theme-toggle {
+    position: absolute;
+    left: 0.6em;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: 1px solid #888;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.8em;
+    padding: 2px 8px;
+    color: #fff;
+    line-height: 1.4;
+}
+
+/* Dark theme */
+body.dark {
+    background-color: #1e1e1e;
+    color: #ccc;
+}
+body.dark .section {
+    background-color: #252526;
+}
+body.dark .section:nth-child(2n) {
+    background-color: #2d2d2d;
+}
+body.dark .section[style] {
+    background-color: #3a3020 !important;
+}
+body.dark .title {
+    color: #aaa;
+}
+body.dark .name {
+    color: #bbb;
+}
+body.dark .lang {
+    color: #999;
+}
+body.dark .code {
+    background-color: #1e1e1e;
+}
+body.dark .section:nth-child(2n) .code {
+    background-color: #252526;
+}
+body.dark #note {
+    background: #1a1a1a;
+}
+
+/* Dark highlight.js overrides */
+body.dark .hljs {
+    background: inherit;
+    color: #d4d4d4;
+}
+body.dark .hljs-comment,
+body.dark .hljs-quote {
+    color: #6a9955;
+}
+body.dark .hljs-keyword,
+body.dark .hljs-selector-tag,
+body.dark .hljs-subst {
+    color: #569cd6;
+    font-weight: normal;
+}
+body.dark .hljs-number,
+body.dark .hljs-literal,
+body.dark .hljs-variable,
+body.dark .hljs-template-variable,
+body.dark .hljs-tag .hljs-attr {
+    color: #b5cea8;
+}
+body.dark .hljs-string,
+body.dark .hljs-doctag {
+    color: #ce9178;
+}
+body.dark .hljs-title,
+body.dark .hljs-section,
+body.dark .hljs-selector-id {
+    color: #dcdcaa;
+    font-weight: normal;
+}
+body.dark .hljs-type,
+body.dark .hljs-class .hljs-title {
+    color: #4ec9b0;
+    font-weight: normal;
+}
+body.dark .hljs-tag,
+body.dark .hljs-name,
+body.dark .hljs-attribute {
+    color: #9cdcfe;
+}
+body.dark .hljs-regexp,
+body.dark .hljs-link {
+    color: #d7ba7d;
+}
+body.dark .hljs-symbol,
+body.dark .hljs-bullet {
+    color: #c586c0;
+}
+body.dark .hljs-built_in,
+body.dark .hljs-builtin-name {
+    color: #dcdcaa;
+}
+body.dark .hljs-meta {
+    color: #9cdcfe;
 }
