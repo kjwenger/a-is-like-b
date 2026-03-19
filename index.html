@@ -11,15 +11,16 @@
       hljs.initHighlightingOnLoad();
     </script>
     <script type="text/javascript">
-      function showHide(checkbox) { const display = checkbox.checked ? 'block' : 'none'; const elements = document.getElementsByClassName(checkbox.id); for(let i = 0; i < elements.length; i++) { elements.item(i).style.display = display; } window.localStorage.setItem(checkbox.id, '' + checkbox.checked); }
+      function showHide(checkbox) { const display = checkbox.checked ? 'block' : 'none'; const elements = document.getElementsByClassName(checkbox.id); for(let i = 0; i < elements.length; i++) { elements.item(i).style.display = display; } window.localStorage.setItem(checkbox.id, '' + checkbox.checked); } function toggleTheme() { const dark = document.body.classList.toggle('dark'); document.getElementById('theme-toggle').textContent = dark ? '☀' : '🌙'; window.localStorage.setItem('theme', dark ? 'dark' : 'light'); } (function() { if (window.localStorage.getItem('theme') === 'dark') { document.body.classList.add('dark'); document.addEventListener('DOMContentLoaded', function() { document.getElementById('theme-toggle').textContent = '☀'; }); } })();
     </script>
   </head>
   
   <body><a target="_blank" href="https://github.com/kjwenger/a-is-like-b.git"><img id="fork-me" style="z-index: 1000;" src="fork-me.png"></a>
     <div
-    id="note">Programming language 'A' is like 'B', is like ...</div>
-      <div class="section"
-      style="position: -webkit-sticky; position: sticky; top: 0; background-color: #f5deb3;">
+    id="note">
+      <button id="theme-toggle" onclick="toggleTheme()">🌙</button>Programming language 'A' is like 'B', is like ...</div>
+      <div
+      class="section" style="position: -webkit-sticky; position: sticky; top: 0; background-color: #f5deb3;">
         <div class="pair">
           <div class="card">
             <div class="lang">C
@@ -97,77 +98,77 @@
             <input id="typescript" type="checkbox" onclick="showHide(this);">
           </div>
         </div>
-      </div>
-      <div class="section">
-        <div class="title">BASICS</div>
-        <div class="case">
-          <div class="name">Hello World</div>
-          <div class="pair">
-            <div class="card c">
-              <div class="lang">C</div><pre class="code"><code>#include &lt;stdio.h&gt;
+        </div>
+        <div class="section">
+          <div class="title">BASICS</div>
+          <div class="case">
+            <div class="name">Hello World</div>
+            <div class="pair">
+              <div class="card c">
+                <div class="lang">C</div><pre class="code"><code>#include &lt;stdio.h&gt;
 int main() {
   printf("Hello, world!");
 }
 </code></pre>
-            </div>
-            <div class="card cpp">
-              <div class="lang">C++</div><pre class="code"><code>#include &lt;iostream&gt;
+              </div>
+              <div class="card cpp">
+                <div class="lang">C++</div><pre class="code"><code>#include &lt;iostream&gt;
 using namespace std;
 int main() {
   cout &lt; "Hello, world!";
 }</code></pre>
-            </div>
-            <div class="card coffeescript">
-              <div class="lang">CoffeeScript</div><pre class="code"><code>console.log "Hello, world!"</code></pre>
-            </div>
-            <div class="card elixir">
-              <div class="lang">Elixir</div><pre class="code"><code>defmodule HelloWorld do
+              </div>
+              <div class="card coffeescript">
+                <div class="lang">CoffeeScript</div><pre class="code"><code>console.log "Hello, world!"</code></pre>
+              </div>
+              <div class="card elixir">
+                <div class="lang">Elixir</div><pre class="code"><code>defmodule HelloWorld do
   def hello do
     IO.puts "Hello, world!"
   end
 end</code></pre>
-            </div>
-            <div class="card erlang">
-              <div class="lang">Erlang</div><pre class="code"><code>-module('hello-world').
+              </div>
+              <div class="card erlang">
+                <div class="lang">Erlang</div><pre class="code"><code>-module('hello-world').
 -export([start/0]).
 start() -&gt;
   io:fwrite("Hello, world!\n").</code></pre>
-            </div>
-            <div class="card go">
-              <div class="lang">Go</div><pre class="code"><code>package basics
+              </div>
+              <div class="card go">
+                <div class="lang">Go</div><pre class="code"><code>package basics
 import "fmt"
 func main() {
   fmt.Println(
     "Hello, world!")
 }</code></pre>
-            </div>
-            <div class="card groovy">
-              <div class="lang">Groovy</div><pre class="code"><code>class HelloWorld {
+              </div>
+              <div class="card groovy">
+                <div class="lang">Groovy</div><pre class="code"><code>class HelloWorld {
   static void main(
       String[] args) {
     println("Hello, world!")
   }
 }</code></pre>
-            </div>
-            <div class="card java">
-              <div class="lang">Java</div><pre class="code"><code>class HelloWorld {
+              </div>
+              <div class="card java">
+                <div class="lang">Java</div><pre class="code"><code>class HelloWorld {
   public static void main(
       String[] args) {
     System.out.println(
       "Hello World!");
   }
 }</code></pre>
-            </div>
-            <div class="card javascript">
-              <div class="lang">JavaScript</div><pre class="code"><code>console.log('Hello, world!')</code></pre>
-            </div>
-            <div class="card kotlin">
-              <div class="lang">Kotlin</div><pre class="code"><code>fun main(args : Array&lt;String&gt;) {
+              </div>
+              <div class="card javascript">
+                <div class="lang">JavaScript</div><pre class="code"><code>console.log('Hello, world!')</code></pre>
+              </div>
+              <div class="card kotlin">
+                <div class="lang">Kotlin</div><pre class="code"><code>fun main(args : Array&lt;String&gt;) {
   println("Hello, world!")
 }</code></pre>
-            </div>
-            <div class="card objectivec">
-              <div class="lang">ObjectiveC</div><pre class="code"><code>#import &lt;Foundation/Foundation.h&gt;
+              </div>
+              <div class="card objectivec">
+                <div class="lang">ObjectiveC</div><pre class="code"><code>#import &lt;Foundation/Foundation.h&gt;
 int main (int argc, const char * argv[])
 {
   NSAutoreleasePool *pool =
@@ -176,31 +177,31 @@ int main (int argc, const char * argv[])
   [pool drain];
   return 0;
 }</code></pre>
-            </div>
-            <div class="card scala">
-              <div class="lang">Scala</div><pre class="code"><code>object HelloWorld {
+              </div>
+              <div class="card scala">
+                <div class="lang">Scala</div><pre class="code"><code>object HelloWorld {
   def main(
       args: Array[String]): Unit = {
     println("Hello, world!")
   }
 }</code></pre>
-            </div>
-            <div class="card swift">
-              <div class="lang">Swift</div><pre class="code"><code>print("Hello, world!")</code></pre>
-            </div>
-            <div class="card toffeescript">
-              <div class="lang">ToffeeScript</div><pre class="code"><code>console.log "Hello, world!"</code></pre>
-            </div>
-            <div class="card typescript">
-              <div class="lang">TypeScript</div><pre class="code"><code>console.log('Hello, world!')</code></pre>
+              </div>
+              <div class="card swift">
+                <div class="lang">Swift</div><pre class="code"><code>print("Hello, world!")</code></pre>
+              </div>
+              <div class="card toffeescript">
+                <div class="lang">ToffeeScript</div><pre class="code"><code>console.log "Hello, world!"</code></pre>
+              </div>
+              <div class="card typescript">
+                <div class="lang">TypeScript</div><pre class="code"><code>console.log('Hello, world!')</code></pre>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="case">
-          <div class="name">Comments</div>
-          <div class="pair">
-            <div class="card c">
-              <div class="lang">C</div><pre class="code"><code>// single line
+          <div class="case">
+            <div class="name">Comments</div>
+            <div class="pair">
+              <div class="card c">
+                <div class="lang">C</div><pre class="code"><code>// single line
 /*
  * multiple lines
  */
@@ -208,9 +209,9 @@ int main (int argc, const char * argv[])
  * documentation lines
  * @todo tagged line
  */</code></pre>
-            </div>
-            <div class="card cpp">
-              <div class="lang">C++</div><pre class="code"><code>// single line
+              </div>
+              <div class="card cpp">
+                <div class="lang">C++</div><pre class="code"><code>// single line
 /*
  * multiple lines
  */
@@ -218,9 +219,9 @@ int main (int argc, const char * argv[])
   * documentation lines
   * @todo tagged line
   */</code></pre>
-            </div>
-            <div class="card coffeescript">
-              <div class="lang">CoffeeScript</div><pre class="code"><code># single line
+              </div>
+              <div class="card coffeescript">
+                <div class="lang">CoffeeScript</div><pre class="code"><code># single line
 ###
 multiple lines
 ###
@@ -228,9 +229,9 @@ multiple lines
 documentation lines
 @todo tagged line
 ###</code></pre>
-            </div>
-            <div class="card elixir">
-              <div class="lang">Elixir</div><pre class="code"><code># single line
+              </div>
+              <div class="card elixir">
+                <div class="lang">Elixir</div><pre class="code"><code># single line
 @moduledoc """
 module documentation lines
 """
@@ -238,12 +239,12 @@ module documentation lines
 documentation lines
 """
 </code></pre>
-            </div>
-            <div class="card erlang">
-              <div class="lang">Erlang</div><pre class="code"><code>% @ToDo</code></pre>
-            </div>
-            <div class="card go">
-              <div class="lang">Go</div><pre class="code"><code>// single line
+              </div>
+              <div class="card erlang">
+                <div class="lang">Erlang</div><pre class="code"><code>% @ToDo</code></pre>
+              </div>
+              <div class="card go">
+                <div class="lang">Go</div><pre class="code"><code>// single line
 /*
  * multiple lines
  */
@@ -251,9 +252,9 @@ documentation lines
   * documentation lines
   * @todo tagged line
   */</code></pre>
-            </div>
-            <div class="card groovy">
-              <div class="lang">Groovy</div><pre class="code"><code>// single line
+              </div>
+              <div class="card groovy">
+                <div class="lang">Groovy</div><pre class="code"><code>// single line
 /*
  * multiple lines
  */
@@ -261,9 +262,9 @@ documentation lines
  * documentation lines
  * @todo tagged line
  */</code></pre>
-            </div>
-            <div class="card java">
-              <div class="lang">Java</div><pre class="code"><code>// single line
+              </div>
+              <div class="card java">
+                <div class="lang">Java</div><pre class="code"><code>// single line
 /*
  * multiple lines
  */
@@ -271,9 +272,9 @@ documentation lines
  * documentation lines
  * @todo tagged line
  */</code></pre>
-            </div>
-            <div class="card javascript">
-              <div class="lang">JavaScript</div><pre class="code"><code>// single line
+              </div>
+              <div class="card javascript">
+                <div class="lang">JavaScript</div><pre class="code"><code>// single line
 /*
  * multiple lines
  */
@@ -281,9 +282,9 @@ documentation lines
  * documentation lines
  * @todo tagged line
  */</code></pre>
-            </div>
-            <div class="card kotlin">
-              <div class="lang">Kotlin</div><pre class="code"><code>// single line
+              </div>
+              <div class="card kotlin">
+                <div class="lang">Kotlin</div><pre class="code"><code>// single line
 /*
  * multiple lines
  */
@@ -291,9 +292,9 @@ documentation lines
  * documentation lines
  * @todo tagged line
  */</code></pre>
-            </div>
-            <div class="card objectivec">
-              <div class="lang">ObjectiveC</div><pre class="code"><code>// single line
+              </div>
+              <div class="card objectivec">
+                <div class="lang">ObjectiveC</div><pre class="code"><code>// single line
 /*
  * multiple lines
  */
@@ -301,9 +302,9 @@ documentation lines
   * documentation lines
   * @todo tagged line
   */</code></pre>
-            </div>
-            <div class="card scala">
-              <div class="lang">Scala</div><pre class="code"><code>// single line
+              </div>
+              <div class="card scala">
+                <div class="lang">Scala</div><pre class="code"><code>// single line
 /*
  * multiple lines
  */
@@ -311,16 +312,16 @@ documentation lines
   * documentation lines
   * @todo tagged line
   */</code></pre>
-            </div>
-            <div class="card swift">
-              <div class="lang">Swift</div><pre class="code"><code>// single line
+              </div>
+              <div class="card swift">
+                <div class="lang">Swift</div><pre class="code"><code>// single line
 /*
  * multiple lines
  */
 </code></pre>
-            </div>
-            <div class="card toffeescript">
-              <div class="lang">ToffeeScript</div><pre class="code"><code># single line
+              </div>
+              <div class="card toffeescript">
+                <div class="lang">ToffeeScript</div><pre class="code"><code># single line
 ###
 multiple lines
 ###
@@ -328,9 +329,9 @@ multiple lines
 documentation lines
 @todo tagged line
 ###</code></pre>
-            </div>
-            <div class="card typescript">
-              <div class="lang">TypeScript</div><pre class="code"><code>// single line
+              </div>
+              <div class="card typescript">
+                <div class="lang">TypeScript</div><pre class="code"><code>// single line
 /*
  * multiple lines
  */
@@ -338,91 +339,91 @@ documentation lines
  * documentation lines
  * Example comment without todo
  */</code></pre>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="case">
-          <div class="name">Variables And Constants</div>
-          <div class="pair">
-            <div class="card c">
-              <div class="lang">C</div><pre class="code"><code>int myVariable = 42;
+          <div class="case">
+            <div class="name">Variables And Constants</div>
+            <div class="pair">
+              <div class="card c">
+                <div class="lang">C</div><pre class="code"><code>int myVariable = 42;
 myVariable = 50;
 const int myConstant = 42;</code></pre>
-            </div>
-            <div class="card cpp">
-              <div class="lang">C++</div><pre class="code"><code>auto myVariable = 42;
+              </div>
+              <div class="card cpp">
+                <div class="lang">C++</div><pre class="code"><code>auto myVariable = 42;
 myVariable = 50;
 const auto myConstant = 42;</code></pre>
-            </div>
-            <div class="card coffeescript">
-              <div class="lang">CoffeeScript</div><pre class="code"><code>myVariable = 42
+              </div>
+              <div class="card coffeescript">
+                <div class="lang">CoffeeScript</div><pre class="code"><code>myVariable = 42
 myVariable = 50
 `const myConstant = 42`</code></pre>
-            </div>
-            <div class="card elixir">
-              <div class="lang">Elixir</div><pre class="code"><code># @ToDo</code></pre>
-            </div>
-            <div class="card erlang">
-              <div class="lang">Erlang</div><pre class="code"><code>% @ToDo</code></pre>
-            </div>
-            <div class="card go">
-              <div class="lang">Go</div><pre class="code"><code>var myVariable = 42
+              </div>
+              <div class="card elixir">
+                <div class="lang">Elixir</div><pre class="code"><code># @ToDo</code></pre>
+              </div>
+              <div class="card erlang">
+                <div class="lang">Erlang</div><pre class="code"><code>% @ToDo</code></pre>
+              </div>
+              <div class="card go">
+                <div class="lang">Go</div><pre class="code"><code>var myVariable = 42
 myVariable = 50
 const myConstant = 42</code></pre>
-            </div>
-            <div class="card groovy">
-              <div class="lang">Groovy</div><pre class="code"><code>myVariable = 42
+              </div>
+              <div class="card groovy">
+                <div class="lang">Groovy</div><pre class="code"><code>myVariable = 42
 myVariable = 50
 final myConstant = 42</code></pre>
-            </div>
-            <div class="card java">
-              <div class="lang">Java</div><pre class="code"><code>int myVariable = 42;
+              </div>
+              <div class="card java">
+                <div class="lang">Java</div><pre class="code"><code>int myVariable = 42;
 myVariable = 50;
 final int myConstant = 42;</code></pre>
-            </div>
-            <div class="card javascript">
-              <div class="lang">JavaScript</div><pre class="code"><code>let myVariable = 42
+              </div>
+              <div class="card javascript">
+                <div class="lang">JavaScript</div><pre class="code"><code>let myVariable = 42
 myVariable = 50
 const myConstant = 42</code></pre>
-            </div>
-            <div class="card kotlin">
-              <div class="lang">Kotlin</div><pre class="code"><code>var myVariable = 42
+              </div>
+              <div class="card kotlin">
+                <div class="lang">Kotlin</div><pre class="code"><code>var myVariable = 42
 myVariable = 50
 val myConstant = 42</code></pre>
-            </div>
-            <div class="card objectivec">
-              <div class="lang">ObjectiveC</div><pre class="code"><code>// @ToDo</code></pre>
-            </div>
-            <div class="card scala">
-              <div class="lang">Scala</div><pre class="code"><code>var myVariable = 42
+              </div>
+              <div class="card objectivec">
+                <div class="lang">ObjectiveC</div><pre class="code"><code>// @ToDo</code></pre>
+              </div>
+              <div class="card scala">
+                <div class="lang">Scala</div><pre class="code"><code>var myVariable = 42
 myVariable = 50
 val myConstant = 42
 </code></pre>
-            </div>
-            <div class="card swift">
-              <div class="lang">Swift</div><pre class="code"><code>var myVariable = 42
+              </div>
+              <div class="card swift">
+                <div class="lang">Swift</div><pre class="code"><code>var myVariable = 42
 myVariable = 50
 let myConstant = 42</code></pre>
-            </div>
-            <div class="card toffeescript">
-              <div class="lang">ToffeeScript</div><pre class="code"><code>myVariable = 42
+              </div>
+              <div class="card toffeescript">
+                <div class="lang">ToffeeScript</div><pre class="code"><code>myVariable = 42
 myVariable = 50
 `const myConstant = 42`</code></pre>
-            </div>
-            <div class="card typescript">
-              <div class="lang">TypeScript</div><pre class="code"><code>// Variables and constants in TypeScript
+              </div>
+              <div class="card typescript">
+                <div class="lang">TypeScript</div><pre class="code"><code>// Variables and constants in TypeScript
 let myVariable: number = 42;
 myVariable = 50;
 
 const myConstant: number = 42;</code></pre>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="case">
-          <div class="name">Explicit Types</div>
-          <div class="pair">
-            <div class="card c">
-              <div class="lang">C</div><pre class="code"><code>#include <stdio.h>
+          <div class="case">
+            <div class="name">Explicit Types</div>
+            <div class="pair">
+              <div class="card c">
+                <div class="lang">C</div><pre class="code"><code>#include <stdio.h>
 #include <stdbool.h>
 
 int integer = 42;
@@ -432,9 +433,9 @@ double doubleNum = 3.14;
 bool boolean = true;
 char character = 'A';
 char text[] = "Hello";</code></pre>
-            </div>
-            <div class="card cpp">
-              <div class="lang">C++</div><pre class="code"><code>#include <iostream>
+              </div>
+              <div class="card cpp">
+                <div class="lang">C++</div><pre class="code"><code>#include <iostream>
 
 int integer = 42;
 long longInteger = 42L;
@@ -443,9 +444,9 @@ double doubleNum = 3.14;
 bool boolean = true;
 char character = 'A';
 std::string text = "Hello";</code></pre>
-            </div>
-            <div class="card coffeescript">
-              <div class="lang">CoffeeScript</div><pre class="code"><code># Explicit types in CoffeeScript
+              </div>
+              <div class="card coffeescript">
+                <div class="lang">CoffeeScript</div><pre class="code"><code># Explicit types in CoffeeScript
 # CoffeeScript doesn't have explicit types like typed languages
 # But here's how you'd declare variables
 integer = 42
@@ -456,27 +457,27 @@ text = "Hello"
 # ES6 const/let equivalent
 constant = 42
 variable = "changeable"</code></pre>
-            </div>
-            <div class="card elixir">
-              <div class="lang">Elixir</div><pre class="code"><code># @ToDo</code></pre>
-            </div>
-            <div class="card erlang">
-              <div class="lang">Erlang</div><pre class="code"><code>% @ToDo</code></pre>
-            </div>
-            <div class="card go">
-              <div class="lang">Go</div><pre class="code"><code>const explicitDouble float64 = 70</code></pre>
-            </div>
-            <div class="card java">
-              <div class="lang">Java</div><pre class="code"><code>int integer = 42;
+              </div>
+              <div class="card elixir">
+                <div class="lang">Elixir</div><pre class="code"><code># @ToDo</code></pre>
+              </div>
+              <div class="card erlang">
+                <div class="lang">Erlang</div><pre class="code"><code>% @ToDo</code></pre>
+              </div>
+              <div class="card go">
+                <div class="lang">Go</div><pre class="code"><code>const explicitDouble float64 = 70</code></pre>
+              </div>
+              <div class="card java">
+                <div class="lang">Java</div><pre class="code"><code>int integer = 42;
 long longInteger = 42L;
 float floatNum = 3.14f;
 double doubleNum = 3.14;
 boolean bool = true;
 char character = 'A';
 String text = "Hello";</code></pre>
-            </div>
-            <div class="card javascript">
-              <div class="lang">JavaScript</div><pre class="code"><code>// Explicit types in JavaScript
+              </div>
+              <div class="card javascript">
+                <div class="lang">JavaScript</div><pre class="code"><code>// Explicit types in JavaScript
 // JavaScript doesn't have traditional types
 var integer = 42;
 var floatNum = 3.14;
@@ -485,13 +486,13 @@ var text = "Hello";
 // ES6 const/let
 const constant = 42;
 let variable = "changeable";</code></pre>
-            </div>
-            <div class="card kotlin">
-              <div class="lang">Kotlin</div><pre class="code"><code>val explicitDouble: Double = 70.0
+              </div>
+              <div class="card kotlin">
+                <div class="lang">Kotlin</div><pre class="code"><code>val explicitDouble: Double = 70.0
 </code></pre>
-            </div>
-            <div class="card objectivec">
-              <div class="lang">ObjectiveC</div><pre class="code"><code>// Explicit types in Objective-C
+              </div>
+              <div class="card objectivec">
+                <div class="lang">ObjectiveC</div><pre class="code"><code>// Explicit types in Objective-C
 int integer = 42;
 long longInteger = 42L;
 float floatNum = 3.14f;
@@ -499,16 +500,16 @@ double doubleNum = 3.14;
 BOOL boolean = YES;
 char character = 'A';
 NSString *text = @"Hello";</code></pre>
-            </div>
-            <div class="card scala">
-              <div class="lang">Scala</div><pre class="code"><code>val explicitDouble: Double = 70
+              </div>
+              <div class="card scala">
+                <div class="lang">Scala</div><pre class="code"><code>val explicitDouble: Double = 70
 </code></pre>
-            </div>
-            <div class="card swift">
-              <div class="lang">Swift</div><pre class="code"><code>let explicitDouble: Double = 70</code></pre>
-            </div>
-            <div class="card toffeescript">
-              <div class="lang">ToffeeScript</div><pre class="code"><code># Explicit types in ToffeeScript
+              </div>
+              <div class="card swift">
+                <div class="lang">Swift</div><pre class="code"><code>let explicitDouble: Double = 70</code></pre>
+              </div>
+              <div class="card toffeescript">
+                <div class="lang">ToffeeScript</div><pre class="code"><code># Explicit types in ToffeeScript
 # ToffeeScript doesn't have explicit types like typed languages
 # But here's how you'd declare variables
 integer = 42
@@ -519,9 +520,9 @@ text = "Hello"
 # ES6 const/let equivalent
 constant = 42
 variable = "changeable"</code></pre>
-            </div>
-            <div class="card typescript">
-              <div class="lang">TypeScript</div><pre class="code"><code>// Explicit types in TypeScript
+              </div>
+              <div class="card typescript">
+                <div class="lang">TypeScript</div><pre class="code"><code>// Explicit types in TypeScript
 let integer: number = 42;
 let floatNum: number = 3.14;
 let bool: boolean = true;
@@ -530,45 +531,45 @@ let text: string = "Hello";
 // ES6 const/let with types
 const constant: number = 42;
 let variable: string = "changeable";</code></pre>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="case">
-          <div class="name">Type Coercion</div>
-          <div class="pair">
-            <div class="card c">
-              <div class="lang">C</div><pre class="code"><code>// @ToDo</code></pre>
-            </div>
-            <div class="card cpp">
-              <div class="lang">C++</div><pre class="code"><code>// @ToDo</code></pre>
-            </div>
-            <div class="card coffeescript">
-              <div class="lang">CoffeeScript</div><pre class="code"><code>label = "The width is "
+          <div class="case">
+            <div class="name">Type Coercion</div>
+            <div class="pair">
+              <div class="card c">
+                <div class="lang">C</div><pre class="code"><code>// @ToDo</code></pre>
+              </div>
+              <div class="card cpp">
+                <div class="lang">C++</div><pre class="code"><code>// @ToDo</code></pre>
+              </div>
+              <div class="card coffeescript">
+                <div class="lang">CoffeeScript</div><pre class="code"><code>label = "The width is "
 width = 94
 widthLabel = label + width</code></pre>
-            </div>
-            <div class="card elixir">
-              <div class="lang">Elixir</div><pre class="code"><code># @ToDo</code></pre>
-            </div>
-            <div class="card erlang">
-              <div class="lang">Erlang</div><pre class="code"><code>% @ToDo</code></pre>
-            </div>
-            <div class="card go">
-              <div class="lang">Go</div><pre class="code"><code>const label = "The width is "
+              </div>
+              <div class="card elixir">
+                <div class="lang">Elixir</div><pre class="code"><code># @ToDo</code></pre>
+              </div>
+              <div class="card erlang">
+                <div class="lang">Erlang</div><pre class="code"><code>% @ToDo</code></pre>
+              </div>
+              <div class="card go">
+                <div class="lang">Go</div><pre class="code"><code>const label = "The width is "
 const width = 94
 var widthLabel = label + strconv.Itoa(width)</code></pre>
-            </div>
-            <div class="card java">
-              <div class="lang">Java</div><pre class="code"><code>// Generic example for missing Java implementations
+              </div>
+              <div class="card java">
+                <div class="lang">Java</div><pre class="code"><code>// Generic example for missing Java implementations
 // This placeholder will be replaced with actual examples as needed
 public class Example {
     public static void main(String[] args) {
         System.out.println("Example implementation");
     }
 }</code></pre>
-            </div>
-            <div class="card javascript">
-              <div class="lang">JavaScript</div><pre class="code"><code>var intNum = 42;
+              </div>
+              <div class="card javascript">
+                <div class="lang">JavaScript</div><pre class="code"><code>var intNum = 42;
 var floatNum = 3.14;
 // Explicit conversion
 intNum = parseInt(floatNum);
@@ -576,29 +577,29 @@ floatNum = parseFloat(intNum);
 // Type coercion
 var result = intNum + "" + floatNum; // to string
 result = +result; // to number</code></pre>
-            </div>
-            <div class="card kotlin">
-              <div class="lang">Kotlin</div><pre class="code"><code>val label = "The width is "
+              </div>
+              <div class="card kotlin">
+                <div class="lang">Kotlin</div><pre class="code"><code>val label = "The width is "
 val width = 94
 val widthLabel = label + width
 </code></pre>
-            </div>
-            <div class="card objectivec">
-              <div class="lang">ObjectiveC</div><pre class="code"><code>// @ToDo</code></pre>
-            </div>
-            <div class="card scala">
-              <div class="lang">Scala</div><pre class="code"><code>val label = "The width is "
+              </div>
+              <div class="card objectivec">
+                <div class="lang">ObjectiveC</div><pre class="code"><code>// @ToDo</code></pre>
+              </div>
+              <div class="card scala">
+                <div class="lang">Scala</div><pre class="code"><code>val label = "The width is "
 val width = 94
 val widthLabel = label + width
 </code></pre>
-            </div>
-            <div class="card swift">
-              <div class="lang">Swift</div><pre class="code"><code>let label = "The width is "
+              </div>
+              <div class="card swift">
+                <div class="lang">Swift</div><pre class="code"><code>let label = "The width is "
 let width = 94
 let widthLabel = label + String(width)</code></pre>
-            </div>
-            <div class="card toffeescript">
-              <div class="lang">ToffeeScript</div><pre class="code"><code># Type coercion in ToffeeScript
+              </div>
+              <div class="card toffeescript">
+                <div class="lang">ToffeeScript</div><pre class="code"><code># Type coercion in ToffeeScript
 intNum = 42
 floatNum = 3.14
 # Explicit conversion
@@ -607,9 +608,9 @@ floatNum = parseFloat(intNum)
 # Type coercion
 result = intNum + "" + floatNum # to string
 # Note: ToffeeScript follows JavaScript coercion rules</code></pre>
-            </div>
-            <div class="card typescript">
-              <div class="lang">TypeScript</div><pre class="code"><code>// Type coercion in TypeScript
+              </div>
+              <div class="card typescript">
+                <div class="lang">TypeScript</div><pre class="code"><code>// Type coercion in TypeScript
 let intNum: number = 42;
 let floatNum: number = 3.14;
 // Explicit conversion
@@ -620,20 +621,20 @@ result = `${intNum}${floatNum}`; // template literals
 // Parsing
 intNum = parseInt(result);
 floatNum = parseFloat(result);</code></pre>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="case">
-          <div class="name">Range Operator</div>
-          <div class="pair">
-            <div class="card c">
-              <div class="lang">C</div><pre class="code"><code>// @ToDo</code></pre>
-            </div>
-            <div class="card cpp">
-              <div class="lang">C++</div><pre class="code"><code>// @ToDo</code></pre>
-            </div>
-            <div class="card coffeescript">
-              <div class="lang">CoffeeScript</div><pre class="code"><code>names = [
+          <div class="case">
+            <div class="name">Range Operator</div>
+            <div class="pair">
+              <div class="card c">
+                <div class="lang">C</div><pre class="code"><code>// @ToDo</code></pre>
+              </div>
+              <div class="card cpp">
+                <div class="lang">C++</div><pre class="code"><code>// @ToDo</code></pre>
+              </div>
+              <div class="card coffeescript">
+                <div class="lang">CoffeeScript</div><pre class="code"><code>names = [
   "Anna", "Alex", "Brian", "Jack"]
 length = names.length
 for i in [1...length] by 1
@@ -643,15 +644,15 @@ for i in [1...length] by 1
 # Person 2 is Alex
 # Person 3 is Brian
 # Person 4 is Jack</code></pre>
-            </div>
-            <div class="card elixir">
-              <div class="lang">Elixir</div><pre class="code"><code># @ToDo</code></pre>
-            </div>
-            <div class="card erlang">
-              <div class="lang">Erlang</div><pre class="code"><code>% @ToDo</code></pre>
-            </div>
-            <div class="card go">
-              <div class="lang">Go</div><pre class="code"><code>names := [4]string{
+              </div>
+              <div class="card elixir">
+                <div class="lang">Elixir</div><pre class="code"><code># @ToDo</code></pre>
+              </div>
+              <div class="card erlang">
+                <div class="lang">Erlang</div><pre class="code"><code>% @ToDo</code></pre>
+              </div>
+              <div class="card go">
+                <div class="lang">Go</div><pre class="code"><code>names := [4]string{
   "Anna", "Alex", "Brian", "Jack"}
 for i, value := range(names) {
   fmt.Printf(
@@ -661,21 +662,21 @@ for i, value := range(names) {
 // Person 2 is Alex
 // Person 3 is Brian
 // Person 4 is Jack</code></pre>
-            </div>
-            <div class="card java">
-              <div class="lang">Java</div><pre class="code"><code>// Generic example for missing Java implementations
+              </div>
+              <div class="card java">
+                <div class="lang">Java</div><pre class="code"><code>// Generic example for missing Java implementations
 // This placeholder will be replaced with actual examples as needed
 public class Example {
     public static void main(String[] args) {
         System.out.println("Example implementation");
     }
 }</code></pre>
-            </div>
-            <div class="card javascript">
-              <div class="lang">JavaScript</div><pre class="code"><code>// @ToDo</code></pre>
-            </div>
-            <div class="card kotlin">
-              <div class="lang">Kotlin</div><pre class="code"><code>val names = arrayOf(
+              </div>
+              <div class="card javascript">
+                <div class="lang">JavaScript</div><pre class="code"><code>// @ToDo</code></pre>
+              </div>
+              <div class="card kotlin">
+                <div class="lang">Kotlin</div><pre class="code"><code>val names = arrayOf(
   "Anna", "Alex", "Brian", "Jack")
 val count = names.count()
 for (i in 0..count - 1) {
@@ -685,12 +686,12 @@ for (i in 0..count - 1) {
 // Person 2 is Alex
 // Person 3 is Brian
 // Person 4 is Jack</code></pre>
-            </div>
-            <div class="card objectivec">
-              <div class="lang">ObjectiveC</div><pre class="code"><code>// @ToDo</code></pre>
-            </div>
-            <div class="card scala">
-              <div class="lang">Scala</div><pre class="code"><code>val names = Array(
+              </div>
+              <div class="card objectivec">
+                <div class="lang">ObjectiveC</div><pre class="code"><code>// @ToDo</code></pre>
+              </div>
+              <div class="card scala">
+                <div class="lang">Scala</div><pre class="code"><code>val names = Array(
   "Anna", "Alex", "Brian", "Jack")
 val count = names.length
 for (i &lt;- 0 until count) {
@@ -701,9 +702,9 @@ for (i &lt;- 0 until count) {
 // Person 2 is Alex
 // Person 3 is Brian
 // Person 4 is Jack</code></pre>
-            </div>
-            <div class="card swift">
-              <div class="lang">Swift</div><pre class="code"><code>let names = [
+              </div>
+              <div class="card swift">
+                <div class="lang">Swift</div><pre class="code"><code>let names = [
   "Anna", "Alex", "Brian", "Jack"]
 let count = names.count
 for i in 0..&lt;count {
@@ -713,9 +714,9 @@ for i in 0..&lt;count {
 // Person 2 is Alex
 // Person 3 is Brian
 // Person 4 is Jack</code></pre>
-            </div>
-            <div class="card toffeescript">
-              <div class="lang">ToffeeScript</div><pre class="code"><code>names = [
+              </div>
+              <div class="card toffeescript">
+                <div class="lang">ToffeeScript</div><pre class="code"><code>names = [
   "Anna", "Alex", "Brian", "Jack"]
 length = names.length
 for i in [1...length] by 1
@@ -725,32 +726,32 @@ for i in [1...length] by 1
 # Person 2 is Alex
 # Person 3 is Brian
 # Person 4 is Jack</code></pre>
-            </div>
-            <div class="card typescript">
-              <div class="lang">TypeScript</div><pre class="code"><code>null</code></pre>
+              </div>
+              <div class="card typescript">
+                <div class="lang">TypeScript</div><pre class="code"><code>null</code></pre>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="case">
-          <div class="name">Inclusive Range Operator</div>
-          <div class="pair">
-            <div class="card c">
-              <div class="lang">C</div><pre class="code"><code>// @ToDo</code></pre>
-            </div>
-            <div class="card cpp">
-              <div class="lang">C++</div><pre class="code"><code>// @ToDo</code></pre>
-            </div>
-            <div class="card coffeescript">
-              <div class="lang">CoffeeScript</div><pre class="code"><code># @ToDo</code></pre>
-            </div>
-            <div class="card elixir">
-              <div class="lang">Elixir</div><pre class="code"><code># @ToDo</code></pre>
-            </div>
-            <div class="card erlang">
-              <div class="lang">Erlang</div><pre class="code"><code>% @ToDo</code></pre>
-            </div>
-            <div class="card go">
-              <div class="lang">Go</div><pre class="code"><code>for i := 1; i &lt;= 5; i++ {
+          <div class="case">
+            <div class="name">Inclusive Range Operator</div>
+            <div class="pair">
+              <div class="card c">
+                <div class="lang">C</div><pre class="code"><code>// @ToDo</code></pre>
+              </div>
+              <div class="card cpp">
+                <div class="lang">C++</div><pre class="code"><code>// @ToDo</code></pre>
+              </div>
+              <div class="card coffeescript">
+                <div class="lang">CoffeeScript</div><pre class="code"><code># @ToDo</code></pre>
+              </div>
+              <div class="card elixir">
+                <div class="lang">Elixir</div><pre class="code"><code># @ToDo</code></pre>
+              </div>
+              <div class="card erlang">
+                <div class="lang">Erlang</div><pre class="code"><code>% @ToDo</code></pre>
+              </div>
+              <div class="card go">
+                <div class="lang">Go</div><pre class="code"><code>for i := 1; i &lt;= 5; i++ {
   fmt.Printf(
     "%d times 5 is %d", i, i*5)
 }
@@ -759,9 +760,9 @@ for i in [1...length] by 1
 // 3 times 5 is 15
 // 4 times 5 is 20
 // 5 times 5 is 25</code></pre>
-            </div>
-            <div class="card groovy">
-              <div class="lang">Groovy</div><pre class="code"><code>for (index in 1..5) {
+              </div>
+              <div class="card groovy">
+                <div class="lang">Groovy</div><pre class="code"><code>for (index in 1..5) {
   println(
     "$index times 5 is ${index * 5}")
 }
@@ -771,21 +772,21 @@ for i in [1...length] by 1
 // 4 times 5 is 20
 // 5 times 5 is 25
 </code></pre>
-            </div>
-            <div class="card java">
-              <div class="lang">Java</div><pre class="code"><code>// Generic example for missing Java implementations
+              </div>
+              <div class="card java">
+                <div class="lang">Java</div><pre class="code"><code>// Generic example for missing Java implementations
 // This placeholder will be replaced with actual examples as needed
 public class Example {
     public static void main(String[] args) {
         System.out.println("Example implementation");
     }
 }</code></pre>
-            </div>
-            <div class="card javascript">
-              <div class="lang">JavaScript</div><pre class="code"><code>// @ToDo</code></pre>
-            </div>
-            <div class="card kotlin">
-              <div class="lang">Kotlin</div><pre class="code"><code>for (index in 1..5) {
+              </div>
+              <div class="card javascript">
+                <div class="lang">JavaScript</div><pre class="code"><code>// @ToDo</code></pre>
+              </div>
+              <div class="card kotlin">
+                <div class="lang">Kotlin</div><pre class="code"><code>for (index in 1..5) {
   println(
     "$index times 5 is ${index * 5}")
 }
@@ -795,12 +796,12 @@ public class Example {
 // 4 times 5 is 20
 // 5 times 5 is 25
 </code></pre>
-            </div>
-            <div class="card objectivec">
-              <div class="lang">ObjectiveC</div><pre class="code"><code>// @ToDo</code></pre>
-            </div>
-            <div class="card scala">
-              <div class="lang">Scala</div><pre class="code"><code>for (index &lt;- 1 to 5) {
+              </div>
+              <div class="card objectivec">
+                <div class="lang">ObjectiveC</div><pre class="code"><code>// @ToDo</code></pre>
+              </div>
+              <div class="card scala">
+                <div class="lang">Scala</div><pre class="code"><code>for (index &lt;- 1 to 5) {
   println(
     s"$index times 5 is ${index * 5}")
 }
@@ -810,9 +811,9 @@ public class Example {
 // 4 times 5 is 20
 // 5 times 5 is 25
 </code></pre>
-            </div>
-            <div class="card swift">
-              <div class="lang">Swift</div><pre class="code"><code>for index in 1...5 {
+              </div>
+              <div class="card swift">
+                <div class="lang">Swift</div><pre class="code"><code>for index in 1...5 {
   print("\(index) times 5 is \(index * 5)")
 }
 // 1 times 5 is 5
@@ -820,12 +821,12 @@ public class Example {
 // 3 times 5 is 15
 // 4 times 5 is 20
 // 5 times 5 is 25</code></pre>
-            </div>
-            <div class="card toffeescript">
-              <div class="lang">ToffeeScript</div><pre class="code"><code># @ToDo</code></pre>
-            </div>
-            <div class="card typescript">
-              <div class="lang">TypeScript</div><pre class="code"><code>// Inclusive range operator in TypeScript
+              </div>
+              <div class="card toffeescript">
+                <div class="lang">ToffeeScript</div><pre class="code"><code># @ToDo</code></pre>
+              </div>
+              <div class="card typescript">
+                <div class="lang">TypeScript</div><pre class="code"><code>// Inclusive range operator in TypeScript
 // TypeScript doesn't have a range operator
 // Use loops or Array methods instead
 for (let i = 0; i <= 5; i++) {
@@ -833,47 +834,47 @@ for (let i = 0; i <= 5; i++) {
 }
 // Or with Array
 Array.from({length: 6}, (_, i) => i).forEach(i => console.log(i));</code></pre>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="section">
-        <div class="title">STRINGS</div>
-        <div class="case">
-          <div class="name">Multiline</div>
-          <div class="pair">
-            <div class="card c">
-              <div class="lang">C</div><pre class="code"><code>#include <stdio.h>
+        <div class="section">
+          <div class="title">STRINGS</div>
+          <div class="case">
+            <div class="name">Multiline</div>
+            <div class="pair">
+              <div class="card c">
+                <div class="lang">C</div><pre class="code"><code>#include <stdio.h>
 
 char multiline[] = "This is a\n"
                    "multiline\n"
                    "string";</code></pre>
-            </div>
-            <div class="card cpp">
-              <div class="lang">C++</div><pre class="code"><code>#include <iostream>
+              </div>
+              <div class="card cpp">
+                <div class="lang">C++</div><pre class="code"><code>#include <iostream>
 
 std::string multiline = "This is a\n"
                         "multiline\n"
                         "string";</code></pre>
-            </div>
-            <div class="card coffeescript">
-              <div class="lang">CoffeeScript</div><pre class="code"><code>multiline = """
+              </div>
+              <div class="card coffeescript">
+                <div class="lang">CoffeeScript</div><pre class="code"><code>multiline = """
 This is a
 multiline
 string
 """</code></pre>
-            </div>
-            <div class="card elixir">
-              <div class="lang">Elixir</div><pre class="code"><code># @ToDo</code></pre>
-            </div>
-            <div class="card erlang">
-              <div class="lang">Erlang</div><pre class="code"><code>% @ToDo</code></pre>
-            </div>
-            <div class="card go">
-              <div class="lang">Go</div><pre class="code"><code>// @ToDo</code></pre>
-            </div>
-            <div class="card groovy">
-              <div class="lang">Groovy</div><pre class="code"><code>multiple="multiple"
+              </div>
+              <div class="card elixir">
+                <div class="lang">Elixir</div><pre class="code"><code># @ToDo</code></pre>
+              </div>
+              <div class="card erlang">
+                <div class="lang">Erlang</div><pre class="code"><code>% @ToDo</code></pre>
+              </div>
+              <div class="card go">
+                <div class="lang">Go</div><pre class="code"><code>// @ToDo</code></pre>
+              </div>
+              <div class="card groovy">
+                <div class="lang">Groovy</div><pre class="code"><code>multiple="multiple"
 mutable = """I span ...
 ... ${multiple} lines."""
 println(mutable)
@@ -885,51 +886,51 @@ println(immutable)
 // I span ...
 // ... ${multiple} lines.
 </code></pre>
-            </div>
-            <div class="card java">
-              <div class="lang">Java</div><pre class="code"><code>// Generic example for missing Java implementations
+              </div>
+              <div class="card java">
+                <div class="lang">Java</div><pre class="code"><code>// Generic example for missing Java implementations
 // This placeholder will be replaced with actual examples as needed
 public class Example {
     public static void main(String[] args) {
         System.out.println("Example implementation");
     }
 }</code></pre>
-            </div>
-            <div class="card javascript">
-              <div class="lang">JavaScript</div><pre class="code"><code>var multiline = `This is a
+              </div>
+              <div class="card javascript">
+                <div class="lang">JavaScript</div><pre class="code"><code>var multiline = `This is a
 multiline
 string`;</code></pre>
-            </div>
-            <div class="card kotlin">
-              <div class="lang">Kotlin</div><pre class="code"><code>val multiline = """I span ...
+              </div>
+              <div class="card kotlin">
+                <div class="lang">Kotlin</div><pre class="code"><code>val multiline = """I span ...
 ... multiple lines."""</code></pre>
-            </div>
-            <div class="card objectivec">
-              <div class="lang">ObjectiveC</div><pre class="code"><code>// @ToDo</code></pre>
-            </div>
-            <div class="card scala">
-              <div class="lang">Scala</div><pre class="code"><code>// @ToDo</code></pre>
-            </div>
-            <div class="card swift">
-              <div class="lang">Swift</div><pre class="code"><code>let multiline: String = """I span ...
+              </div>
+              <div class="card objectivec">
+                <div class="lang">ObjectiveC</div><pre class="code"><code>// @ToDo</code></pre>
+              </div>
+              <div class="card scala">
+                <div class="lang">Scala</div><pre class="code"><code>// @ToDo</code></pre>
+              </div>
+              <div class="card swift">
+                <div class="lang">Swift</div><pre class="code"><code>let multiline: String = """I span ...
 ... multiple lines."""</code></pre>
-            </div>
-            <div class="card toffeescript">
-              <div class="lang">ToffeeScript</div><pre class="code"><code>multiline = """I span ...
+              </div>
+              <div class="card toffeescript">
+                <div class="lang">ToffeeScript</div><pre class="code"><code>multiline = """I span ...
 ... multiple lines."""</code></pre>
-            </div>
-            <div class="card typescript">
-              <div class="lang">TypeScript</div><pre class="code"><code>var multiline = `This is a
+              </div>
+              <div class="card typescript">
+                <div class="lang">TypeScript</div><pre class="code"><code>var multiline = `This is a
 multiline
 string`;</code></pre>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="case">
-          <div class="name">String Interpolation</div>
-          <div class="pair">
-            <div class="card c">
-              <div class="lang">C</div><pre class="code"><code>#include &lt;stdio.h&gt;
+          <div class="case">
+            <div class="name">String Interpolation</div>
+            <div class="pair">
+              <div class="card c">
+                <div class="lang">C</div><pre class="code"><code>#include &lt;stdio.h&gt;
 const int apples = 3;
 const int oranges = 5;
 char[1024] fruitSummary;
@@ -937,9 +938,9 @@ sprintf(fruitSummary,
   "I have %d %s",
   apples + oranges,
   "pieces of fruit.");</code></pre>
-            </div>
-            <div class="card cpp">
-              <div class="lang">C++</div><pre class="code"><code>#include &lt;sstream&gt;
+              </div>
+              <div class="card cpp">
+                <div class="lang">C++</div><pre class="code"><code>#include &lt;sstream&gt;
 using namespace std;
 const auto apples = 3;
 const auto oranges = 5;
@@ -948,103 +949,103 @@ oss &lt;&lt; "I have "
     &lt;&lt; (apples + oranges)
     &lt;&lt; " pieces of fruit.";
 const auto fruitSummary = oss.str();</code></pre>
-            </div>
-            <div class="card coffeescript">
-              <div class="lang">CoffeeScript</div><pre class="code"><code>apples = 3
+              </div>
+              <div class="card coffeescript">
+                <div class="lang">CoffeeScript</div><pre class="code"><code>apples = 3
 oranges = 5
 fruitSummary =
   "I have #{apples + oranges} " +
   "pieces of fruit."</code></pre>
-            </div>
-            <div class="card elixir">
-              <div class="lang">Elixir</div><pre class="code"><code># @ToDo</code></pre>
-            </div>
-            <div class="card erlang">
-              <div class="lang">Erlang</div><pre class="code"><code>% @ToDo</code></pre>
-            </div>
-            <div class="card go">
-              <div class="lang">Go</div><pre class="code"><code>const apples = 3
+              </div>
+              <div class="card elixir">
+                <div class="lang">Elixir</div><pre class="code"><code># @ToDo</code></pre>
+              </div>
+              <div class="card erlang">
+                <div class="lang">Erlang</div><pre class="code"><code>% @ToDo</code></pre>
+              </div>
+              <div class="card go">
+                <div class="lang">Go</div><pre class="code"><code>const apples = 3
 const oranges = 5
 fruitSummary := fmt.Sprintf(
   "I have %d", apples + oranges) +
   "pieces of fruit."</code></pre>
-            </div>
-            <div class="card groovy">
-              <div class="lang">Groovy</div><pre class="code"><code>apples = 3
+              </div>
+              <div class="card groovy">
+                <div class="lang">Groovy</div><pre class="code"><code>apples = 3
 oranges = 5
 fruitSummary =
   "I have ${apples + oranges} " +
   "pieces of fruit."
 println(fruitSummary)
 // I have 8 pieces of fruit.</code></pre>
-            </div>
-            <div class="card java">
-              <div class="lang">Java</div><pre class="code"><code>int apples = 3
+              </div>
+              <div class="card java">
+                <div class="lang">Java</div><pre class="code"><code>int apples = 3
 int oranges = 5
 String fruitSummary =
   String.format("I have %d ", apples + oranges) +
   "pieces of fruit.";</code></pre>
-            </div>
-            <div class="card javascript">
-              <div class="lang">JavaScript</div><pre class="code"><code>const apples = 3
+              </div>
+              <div class="card javascript">
+                <div class="lang">JavaScript</div><pre class="code"><code>const apples = 3
 const oranges = 5
 const fruitSummary =
   `I have ${apples + oranges} ` +
   'pieces of fruit.'
 </code></pre>
-            </div>
-            <div class="card kotlin">
-              <div class="lang">Kotlin</div><pre class="code"><code>val apples = 3
+              </div>
+              <div class="card kotlin">
+                <div class="lang">Kotlin</div><pre class="code"><code>val apples = 3
 val oranges = 5
 val fruitSummary =
   "I have ${apples + oranges} " +
   "pieces of fruit."</code></pre>
-            </div>
-            <div class="card objectivec">
-              <div class="lang">ObjectiveC</div><pre class="code"><code>// @ToDo</code></pre>
-            </div>
-            <div class="card scala">
-              <div class="lang">Scala</div><pre class="code"><code>val apples = 3
+              </div>
+              <div class="card objectivec">
+                <div class="lang">ObjectiveC</div><pre class="code"><code>// @ToDo</code></pre>
+              </div>
+              <div class="card scala">
+                <div class="lang">Scala</div><pre class="code"><code>val apples = 3
 val oranges = 5
 val fruitSummary =
   s"I have ${apples + oranges} " +
   "pieces of fruit."</code></pre>
-            </div>
-            <div class="card swift">
-              <div class="lang">Swift</div><pre class="code"><code>let apples = 3
+              </div>
+              <div class="card swift">
+                <div class="lang">Swift</div><pre class="code"><code>let apples = 3
 let oranges = 5
 let fruitSummary =
   "I have \(apples + oranges) " +
   "pieces of fruit."</code></pre>
-            </div>
-            <div class="card toffeescript">
-              <div class="lang">ToffeeScript</div><pre class="code"><code>apples = 3
+              </div>
+              <div class="card toffeescript">
+                <div class="lang">ToffeeScript</div><pre class="code"><code>apples = 3
 oranges = 5
 fruitSummary =
   "I have #{apples + oranges} " +
   "pieces of fruit."</code></pre>
-            </div>
-            <div class="card typescript">
-              <div class="lang">TypeScript</div><pre class="code"><code>const apples = 3
+              </div>
+              <div class="card typescript">
+                <div class="lang">TypeScript</div><pre class="code"><code>const apples = 3
 const oranges = 5
 const fruitSummary =
   `I have ${apples + oranges} ` +
   'pieces of fruit.'
 </code></pre>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="section">
-        <div class="title">COLLECTIONS</div>
-        <div class="case">
-          <div class="name">Arrays</div>
-          <div class="pair">
-            <div class="card c">
-              <div class="lang">C</div><pre class="code"><code>// @ToDo</code></pre>
-            </div>
-            <div class="card cpp">
-              <div class="lang">C++</div><pre class="code"><code>#include <iostream>
+        <div class="section">
+          <div class="title">COLLECTIONS</div>
+          <div class="case">
+            <div class="name">Arrays</div>
+            <div class="pair">
+              <div class="card c">
+                <div class="lang">C</div><pre class="code"><code>// @ToDo</code></pre>
+              </div>
+              <div class="card cpp">
+                <div class="lang">C++</div><pre class="code"><code>#include <iostream>
 #include <array>
 #include <vector>
 
@@ -1054,71 +1055,71 @@ int arr[5] = {1, 2, 3, 4, 5};
 std::array<int, 5> stdArr = {1, 2, 3, 4, 5};
 // Or using std::vector
 std::vector<int> vec = {1, 2, 3, 4, 5};</code></pre>
-            </div>
-            <div class="card coffeescript">
-              <div class="lang">CoffeeScript</div><pre class="code"><code># @ToDo</code></pre>
-            </div>
-            <div class="card elixir">
-              <div class="lang">Elixir</div><pre class="code"><code># @ToDo</code></pre>
-            </div>
-            <div class="card erlang">
-              <div class="lang">Erlang</div><pre class="code"><code>% @ToDo</code></pre>
-            </div>
-            <div class="card go">
-              <div class="lang">Go</div><pre class="code"><code>var shoppingList = []string{
+              </div>
+              <div class="card coffeescript">
+                <div class="lang">CoffeeScript</div><pre class="code"><code># @ToDo</code></pre>
+              </div>
+              <div class="card elixir">
+                <div class="lang">Elixir</div><pre class="code"><code># @ToDo</code></pre>
+              </div>
+              <div class="card erlang">
+                <div class="lang">Erlang</div><pre class="code"><code>% @ToDo</code></pre>
+              </div>
+              <div class="card go">
+                <div class="lang">Go</div><pre class="code"><code>var shoppingList = []string{
   "catfish", "water", "tulips", "blue paint"}
 shoppingList[1] = "bottle of water"</code></pre>
-            </div>
-            <div class="card java">
-              <div class="lang">Java</div><pre class="code"><code>// Generic example for missing Java implementations
+              </div>
+              <div class="card java">
+                <div class="lang">Java</div><pre class="code"><code>// Generic example for missing Java implementations
 // This placeholder will be replaced with actual examples as needed
 public class Example {
     public static void main(String[] args) {
         System.out.println("Example implementation");
     }
 }</code></pre>
-            </div>
-            <div class="card javascript">
-              <div class="lang">JavaScript</div><pre class="code"><code>// @ToDo</code></pre>
-            </div>
-            <div class="card kotlin">
-              <div class="lang">Kotlin</div><pre class="code"><code>val shoppingList = arrayOf(
+              </div>
+              <div class="card javascript">
+                <div class="lang">JavaScript</div><pre class="code"><code>// @ToDo</code></pre>
+              </div>
+              <div class="card kotlin">
+                <div class="lang">Kotlin</div><pre class="code"><code>val shoppingList = arrayOf(
   "catfish", "water", "tulips", "blue paint")
 shoppingList[1] = "bottle of water"
 </code></pre>
-            </div>
-            <div class="card objectivec">
-              <div class="lang">ObjectiveC</div><pre class="code"><code>// @ToDo</code></pre>
-            </div>
-            <div class="card scala">
-              <div class="lang">Scala</div><pre class="code"><code>var shoppingList = Array(
+              </div>
+              <div class="card objectivec">
+                <div class="lang">ObjectiveC</div><pre class="code"><code>// @ToDo</code></pre>
+              </div>
+              <div class="card scala">
+                <div class="lang">Scala</div><pre class="code"><code>var shoppingList = Array(
   "catfish", "water", "tulips", "blue paint")
 shoppingList(1) = "bottle of water"
 </code></pre>
-            </div>
-            <div class="card swift">
-              <div class="lang">Swift</div><pre class="code"><code>var shoppingList = [
+              </div>
+              <div class="card swift">
+                <div class="lang">Swift</div><pre class="code"><code>var shoppingList = [
   "catfish", "water", "tulips", "blue paint"]
 shoppingList[1] = "bottle of water"</code></pre>
-            </div>
-            <div class="card toffeescript">
-              <div class="lang">ToffeeScript</div><pre class="code"><code># @ToDo</code></pre>
-            </div>
-            <div class="card typescript">
-              <div class="lang">TypeScript</div><pre class="code"><code>let arr: number[] = [1, 2, 3, 4, 5];
+              </div>
+              <div class="card toffeescript">
+                <div class="lang">ToffeeScript</div><pre class="code"><code># @ToDo</code></pre>
+              </div>
+              <div class="card typescript">
+                <div class="lang">TypeScript</div><pre class="code"><code>let arr: number[] = [1, 2, 3, 4, 5];
 // Or using Array constructor
 let arr2: Array<number> = new Array(1, 2, 3, 4, 5);</code></pre>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="case">
-          <div class="name">Maps</div>
-          <div class="pair">
-            <div class="card c">
-              <div class="lang">C</div><pre class="code"><code>// @ToDo</code></pre>
-            </div>
-            <div class="card cpp">
-              <div class="lang">C++</div><pre class="code"><code>#include <iostream>
+          <div class="case">
+            <div class="name">Maps</div>
+            <div class="pair">
+              <div class="card c">
+                <div class="lang">C</div><pre class="code"><code>// @ToDo</code></pre>
+              </div>
+              <div class="card cpp">
+                <div class="lang">C++</div><pre class="code"><code>#include <iostream>
 #include <map>
 #include <unordered_map>
 
@@ -1128,66 +1129,66 @@ orderedMap["key"] = 10;
 
 std::unordered_map<std::string, int> hashMap;
 hashMap["key"] = 10;</code></pre>
-            </div>
-            <div class="card coffeescript">
-              <div class="lang">CoffeeScript</div><pre class="code"><code># @ToDo</code></pre>
-            </div>
-            <div class="card elixir">
-              <div class="lang">Elixir</div><pre class="code"><code># @ToDo</code></pre>
-            </div>
-            <div class="card erlang">
-              <div class="lang">Erlang</div><pre class="code"><code>% @ToDo</code></pre>
-            </div>
-            <div class="card go">
-              <div class="lang">Go</div><pre class="code"><code>var occupations = map[string]string{
+              </div>
+              <div class="card coffeescript">
+                <div class="lang">CoffeeScript</div><pre class="code"><code># @ToDo</code></pre>
+              </div>
+              <div class="card elixir">
+                <div class="lang">Elixir</div><pre class="code"><code># @ToDo</code></pre>
+              </div>
+              <div class="card erlang">
+                <div class="lang">Erlang</div><pre class="code"><code>% @ToDo</code></pre>
+              </div>
+              <div class="card go">
+                <div class="lang">Go</div><pre class="code"><code>var occupations = map[string]string{
   "Malcolm": "Captain",
   "Kaylee": "Mechanic",
 }
 occupations["Jayne"] = "Public Relations"</code></pre>
-            </div>
-            <div class="card java">
-              <div class="lang">Java</div><pre class="code"><code>// Generic example for missing Java implementations
+              </div>
+              <div class="card java">
+                <div class="lang">Java</div><pre class="code"><code>// Generic example for missing Java implementations
 // This placeholder will be replaced with actual examples as needed
 public class Example {
     public static void main(String[] args) {
         System.out.println("Example implementation");
     }
 }</code></pre>
-            </div>
-            <div class="card javascript">
-              <div class="lang">JavaScript</div><pre class="code"><code>// @ToDo</code></pre>
-            </div>
-            <div class="card kotlin">
-              <div class="lang">Kotlin</div><pre class="code"><code>val occupations = mutableMapOf(
+              </div>
+              <div class="card javascript">
+                <div class="lang">JavaScript</div><pre class="code"><code>// @ToDo</code></pre>
+              </div>
+              <div class="card kotlin">
+                <div class="lang">Kotlin</div><pre class="code"><code>val occupations = mutableMapOf(
   "Malcolm" to "Captain",
   "Kaylee" to "Mechanic"
 )
 occupations["Jayne"] = "Public Relations"
 </code></pre>
-            </div>
-            <div class="card objectivec">
-              <div class="lang">ObjectiveC</div><pre class="code"><code>// @ToDo</code></pre>
-            </div>
-            <div class="card scala">
-              <div class="lang">Scala</div><pre class="code"><code>var occupations = scala.collection.mutable.Map(
+              </div>
+              <div class="card objectivec">
+                <div class="lang">ObjectiveC</div><pre class="code"><code>// @ToDo</code></pre>
+              </div>
+              <div class="card scala">
+                <div class="lang">Scala</div><pre class="code"><code>var occupations = scala.collection.mutable.Map(
   "Malcolm" -&gt; "Captain",
   "Kaylee" -&gt; "Mechanic"
 )
 occupations("Jayne") = "Public Relations"
 </code></pre>
-            </div>
-            <div class="card swift">
-              <div class="lang">Swift</div><pre class="code"><code>var occupations = [
+              </div>
+              <div class="card swift">
+                <div class="lang">Swift</div><pre class="code"><code>var occupations = [
   "Malcolm": "Captain",
   "Kaylee": "Mechanic",
 ]
 occupations["Jayne"] = "Public Relations"</code></pre>
-            </div>
-            <div class="card toffeescript">
-              <div class="lang">ToffeeScript</div><pre class="code"><code># @ToDo</code></pre>
-            </div>
-            <div class="card typescript">
-              <div class="lang">TypeScript</div><pre class="code"><code>let map: { [key: string]: number } = {};
+              </div>
+              <div class="card toffeescript">
+                <div class="lang">ToffeeScript</div><pre class="code"><code># @ToDo</code></pre>
+              </div>
+              <div class="card typescript">
+                <div class="lang">TypeScript</div><pre class="code"><code>let map: { [key: string]: number } = {};
 map.key = 10;
 map["key"] = 10;
 let value: number = map.key;
@@ -1196,17 +1197,17 @@ let value: number = map.key;
 let tsMap = new Map<string, number>();
 tsMap.set("key", 10);
 let tsValue = tsMap.get("key");</code></pre>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="case">
-          <div class="name">Empty Collections</div>
-          <div class="pair">
-            <div class="card c">
-              <div class="lang">C</div><pre class="code"><code>// @ToDo</code></pre>
-            </div>
-            <div class="card cpp">
-              <div class="lang">C++</div><pre class="code"><code>#include <iostream>
+          <div class="case">
+            <div class="name">Empty Collections</div>
+            <div class="pair">
+              <div class="card c">
+                <div class="lang">C</div><pre class="code"><code>// @ToDo</code></pre>
+              </div>
+              <div class="card cpp">
+                <div class="lang">C++</div><pre class="code"><code>#include <iostream>
 #include <vector>
 #include <map>
 
@@ -1215,88 +1216,88 @@ std::vector<int> emptyVec;
 std::map<std::string, int> emptyMap;
 std::vector<int> emptyVec2 = {};
 std::map<std::string, int> emptyMap2 = {};</code></pre>
-            </div>
-            <div class="card coffeescript">
-              <div class="lang">CoffeeScript</div><pre class="code"><code># @ToDo</code></pre>
-            </div>
-            <div class="card elixir">
-              <div class="lang">Elixir</div><pre class="code"><code># @ToDo</code></pre>
-            </div>
-            <div class="card erlang">
-              <div class="lang">Erlang</div><pre class="code"><code>% @ToDo</code></pre>
-            </div>
-            <div class="card go">
-              <div class="lang">Go</div><pre class="code"><code>var (
+              </div>
+              <div class="card coffeescript">
+                <div class="lang">CoffeeScript</div><pre class="code"><code># @ToDo</code></pre>
+              </div>
+              <div class="card elixir">
+                <div class="lang">Elixir</div><pre class="code"><code># @ToDo</code></pre>
+              </div>
+              <div class="card erlang">
+                <div class="lang">Erlang</div><pre class="code"><code>% @ToDo</code></pre>
+              </div>
+              <div class="card go">
+                <div class="lang">Go</div><pre class="code"><code>var (
     emptyArray []string
     emptyDictionary = make(map[interface{}]interface{})
     emptyArrayNoType []interface{}
 )</code></pre>
-            </div>
-            <div class="card java">
-              <div class="lang">Java</div><pre class="code"><code>// Generic example for missing Java implementations
+              </div>
+              <div class="card java">
+                <div class="lang">Java</div><pre class="code"><code>// Generic example for missing Java implementations
 // This placeholder will be replaced with actual examples as needed
 public class Example {
     public static void main(String[] args) {
         System.out.println("Example implementation");
     }
 }</code></pre>
-            </div>
-            <div class="card javascript">
-              <div class="lang">JavaScript</div><pre class="code"><code>// @ToDo</code></pre>
-            </div>
-            <div class="card kotlin">
-              <div class="lang">Kotlin</div><pre class="code"><code>val emptyArray = arrayOf&lt;String&gt;()
+              </div>
+              <div class="card javascript">
+                <div class="lang">JavaScript</div><pre class="code"><code>// @ToDo</code></pre>
+              </div>
+              <div class="card kotlin">
+                <div class="lang">Kotlin</div><pre class="code"><code>val emptyArray = arrayOf&lt;String&gt;()
 val emptyMap = mapOf&lt;String, Float&gt;()</code></pre>
-            </div>
-            <div class="card objectivec">
-              <div class="lang">ObjectiveC</div><pre class="code"><code>// @ToDo</code></pre>
-            </div>
-            <div class="card scala">
-              <div class="lang">Scala</div><pre class="code"><code>val emptyArray = Array[String]()
+              </div>
+              <div class="card objectivec">
+                <div class="lang">ObjectiveC</div><pre class="code"><code>// @ToDo</code></pre>
+              </div>
+              <div class="card scala">
+                <div class="lang">Scala</div><pre class="code"><code>val emptyArray = Array[String]()
 val emptyDictionary = Map[String, Float]()
 val emptyArrayNoType = Array()
 </code></pre>
-            </div>
-            <div class="card swift">
-              <div class="lang">Swift</div><pre class="code"><code>let emptyArray = [String]()
+              </div>
+              <div class="card swift">
+                <div class="lang">Swift</div><pre class="code"><code>let emptyArray = [String]()
 let emptyDictionary = [String: Float]()</code></pre>
-            </div>
-            <div class="card toffeescript">
-              <div class="lang">ToffeeScript</div><pre class="code"><code># @ToDo</code></pre>
-            </div>
-            <div class="card typescript">
-              <div class="lang">TypeScript</div><pre class="code"><code>let emptyArr: number[] = [];
+              </div>
+              <div class="card toffeescript">
+                <div class="lang">ToffeeScript</div><pre class="code"><code># @ToDo</code></pre>
+              </div>
+              <div class="card typescript">
+                <div class="lang">TypeScript</div><pre class="code"><code>let emptyArr: number[] = [];
 let emptyObj: { [key: string]: number } = {};
 // Or using Array constructor
 let emptyArr2: Array<number> = new Array();</code></pre>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="case">
-          <div class="name">Map</div>
-          <div class="pair">
-            <div class="card c">
-              <div class="lang">C</div><pre class="code"><code>// @ToDo</code></pre>
-            </div>
-            <div class="card cpp">
-              <div class="lang">C++</div><pre class="code"><code>#include &lt;algorithm&gt;
+          <div class="case">
+            <div class="name">Map</div>
+            <div class="pair">
+              <div class="card c">
+                <div class="lang">C</div><pre class="code"><code>// @ToDo</code></pre>
+              </div>
+              <div class="card cpp">
+                <div class="lang">C++</div><pre class="code"><code>#include &lt;algorithm&gt;
 #include &lt;vector&gt;
 using namespace std;
 vector&lt;int&gt; numbers = {20, 19, 7, 12};
 transform(numbers.begin(), numbers.end(), numbers.begin(),
   [](int number) -&gt; int { return 3 * number; });</code></pre>
-            </div>
-            <div class="card coffeescript">
-              <div class="lang">CoffeeScript</div><pre class="code"><code># @ToDo</code></pre>
-            </div>
-            <div class="card elixir">
-              <div class="lang">Elixir</div><pre class="code"><code># @ToDo</code></pre>
-            </div>
-            <div class="card erlang">
-              <div class="lang">Erlang</div><pre class="code"><code>% @ToDo</code></pre>
-            </div>
-            <div class="card go">
-              <div class="lang">Go</div><pre class="code"><code>mapFunc := func(slice interface{}, fn func(a interface{}) interface{}) interface{} {
+              </div>
+              <div class="card coffeescript">
+                <div class="lang">CoffeeScript</div><pre class="code"><code># @ToDo</code></pre>
+              </div>
+              <div class="card elixir">
+                <div class="lang">Elixir</div><pre class="code"><code># @ToDo</code></pre>
+              </div>
+              <div class="card erlang">
+                <div class="lang">Erlang</div><pre class="code"><code>% @ToDo</code></pre>
+              </div>
+              <div class="card go">
+                <div class="lang">Go</div><pre class="code"><code>mapFunc := func(slice interface{}, fn func(a interface{}) interface{}) interface{} {
     val := reflect.ValueOf(slice)
     out := reflect.MakeSlice(reflect.TypeOf(slice), val.Len(), val.Cap())
     for i := 0; i &lt; val.Len(); i++ {
@@ -1309,123 +1310,123 @@ transform(numbers.begin(), numbers.end(), numbers.begin(),
 a := mapFunc([]int{1, 2, 3, 4}, func(val interface{}) interface{} {
     return val.(int) * 3
 })</code></pre>
-            </div>
-            <div class="card java">
-              <div class="lang">Java</div><pre class="code"><code>// Generic example for missing Java implementations
+              </div>
+              <div class="card java">
+                <div class="lang">Java</div><pre class="code"><code>// Generic example for missing Java implementations
 // This placeholder will be replaced with actual examples as needed
 public class Example {
     public static void main(String[] args) {
         System.out.println("Example implementation");
     }
 }</code></pre>
-            </div>
-            <div class="card javascript">
-              <div class="lang">JavaScript</div><pre class="code"><code>// @ToDo</code></pre>
-            </div>
-            <div class="card kotlin">
-              <div class="lang">Kotlin</div><pre class="code"><code>val numbers = listOf(20, 19, 7, 12)
+              </div>
+              <div class="card javascript">
+                <div class="lang">JavaScript</div><pre class="code"><code>// @ToDo</code></pre>
+              </div>
+              <div class="card kotlin">
+                <div class="lang">Kotlin</div><pre class="code"><code>val numbers = listOf(20, 19, 7, 12)
 numbers.map { 3 * it }
 </code></pre>
-            </div>
-            <div class="card objectivec">
-              <div class="lang">ObjectiveC</div><pre class="code"><code>// @ToDo</code></pre>
-            </div>
-            <div class="card scala">
-              <div class="lang">Scala</div><pre class="code"><code>var numbers = Array(20, 19, 7, 12)
+              </div>
+              <div class="card objectivec">
+                <div class="lang">ObjectiveC</div><pre class="code"><code>// @ToDo</code></pre>
+              </div>
+              <div class="card scala">
+                <div class="lang">Scala</div><pre class="code"><code>var numbers = Array(20, 19, 7, 12)
 numbers.map( number =&gt; 3 * number )
 </code></pre>
-            </div>
-            <div class="card swift">
-              <div class="lang">Swift</div><pre class="code"><code>let numbers = [20, 19, 7, 12]
+              </div>
+              <div class="card swift">
+                <div class="lang">Swift</div><pre class="code"><code>let numbers = [20, 19, 7, 12]
 numbers.map { 3 * $0 }
 </code></pre>
-            </div>
-            <div class="card toffeescript">
-              <div class="lang">ToffeeScript</div><pre class="code"><code># @ToDo</code></pre>
-            </div>
-            <div class="card typescript">
-              <div class="lang">TypeScript</div><pre class="code"><code>null</code></pre>
+              </div>
+              <div class="card toffeescript">
+                <div class="lang">ToffeeScript</div><pre class="code"><code># @ToDo</code></pre>
+              </div>
+              <div class="card typescript">
+                <div class="lang">TypeScript</div><pre class="code"><code>null</code></pre>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="case">
-          <div class="name">Sort</div>
-          <div class="pair">
-            <div class="card c">
-              <div class="lang">C</div><pre class="code"><code>#include &lt;stdlib.h&gt;
+          <div class="case">
+            <div class="name">Sort</div>
+            <div class="pair">
+              <div class="card c">
+                <div class="lang">C</div><pre class="code"><code>#include &lt;stdlib.h&gt;
 int values[] = {1, 5, 3, 12, 2};
 int predicate(const void* a, const void* b) {
    return (*(int*)a - *(int*)b);
 }
 size_t length = sizeof(values)/sizeof(int);
 qsort(values, length, sizeof(int), predicate);</code></pre>
-            </div>
-            <div class="card cpp">
-              <div class="lang">C++</div><pre class="code"><code>#include &lt;algorithm&gt;
+              </div>
+              <div class="card cpp">
+                <div class="lang">C++</div><pre class="code"><code>#include &lt;algorithm&gt;
 #include &lt;vector&gt;
 #include &lt;string&gt;
 using namespace std;
 vector&lt;int&gt unsorted = {1, 5, 3, 12, 2};
 sort(unsorted.begin(), unsorted.end());</code></pre>
-            </div>
-            <div class="card coffeescript">
-              <div class="lang">CoffeeScript</div><pre class="code"><code># @ToDo</code></pre>
-            </div>
-            <div class="card elixir">
-              <div class="lang">Elixir</div><pre class="code"><code># @ToDo</code></pre>
-            </div>
-            <div class="card erlang">
-              <div class="lang">Erlang</div><pre class="code"><code>% @ToDo</code></pre>
-            </div>
-            <div class="card go">
-              <div class="lang">Go</div><pre class="code"><code>sort.Sort(sort.Reverse(sort.IntSlice([]int{1, 5, 3, 12, 2})))</code></pre>
-            </div>
-            <div class="card java">
-              <div class="lang">Java</div><pre class="code"><code>// Generic example for missing Java implementations
+              </div>
+              <div class="card coffeescript">
+                <div class="lang">CoffeeScript</div><pre class="code"><code># @ToDo</code></pre>
+              </div>
+              <div class="card elixir">
+                <div class="lang">Elixir</div><pre class="code"><code># @ToDo</code></pre>
+              </div>
+              <div class="card erlang">
+                <div class="lang">Erlang</div><pre class="code"><code>% @ToDo</code></pre>
+              </div>
+              <div class="card go">
+                <div class="lang">Go</div><pre class="code"><code>sort.Sort(sort.Reverse(sort.IntSlice([]int{1, 5, 3, 12, 2})))</code></pre>
+              </div>
+              <div class="card java">
+                <div class="lang">Java</div><pre class="code"><code>// Generic example for missing Java implementations
 // This placeholder will be replaced with actual examples as needed
 public class Example {
     public static void main(String[] args) {
         System.out.println("Example implementation");
     }
 }</code></pre>
-            </div>
-            <div class="card javascript">
-              <div class="lang">JavaScript</div><pre class="code"><code>// @ToDo</code></pre>
-            </div>
-            <div class="card kotlin">
-              <div class="lang">Kotlin</div><pre class="code"><code>listOf(1, 5, 3, 12, 2).sorted()
+              </div>
+              <div class="card javascript">
+                <div class="lang">JavaScript</div><pre class="code"><code>// @ToDo</code></pre>
+              </div>
+              <div class="card kotlin">
+                <div class="lang">Kotlin</div><pre class="code"><code>listOf(1, 5, 3, 12, 2).sorted()
 </code></pre>
-            </div>
-            <div class="card objectivec">
-              <div class="lang">ObjectiveC</div><pre class="code"><code>// @ToDo</code></pre>
-            </div>
-            <div class="card scala">
-              <div class="lang">Scala</div><pre class="code"><code>Array(1, 5, 3, 12, 2).sortWith(_ &gt; _)
+              </div>
+              <div class="card objectivec">
+                <div class="lang">ObjectiveC</div><pre class="code"><code>// @ToDo</code></pre>
+              </div>
+              <div class="card scala">
+                <div class="lang">Scala</div><pre class="code"><code>Array(1, 5, 3, 12, 2).sortWith(_ &gt; _)
 </code></pre>
-            </div>
-            <div class="card swift">
-              <div class="lang">Swift</div><pre class="code"><code>var mutableArray = [1, 5, 3, 12, 2]
+              </div>
+              <div class="card swift">
+                <div class="lang">Swift</div><pre class="code"><code>var mutableArray = [1, 5, 3, 12, 2]
 mutableArray.sort()
 </code></pre>
-            </div>
-            <div class="card toffeescript">
-              <div class="lang">ToffeeScript</div><pre class="code"><code># @ToDo</code></pre>
-            </div>
-            <div class="card typescript">
-              <div class="lang">TypeScript</div><pre class="code"><code>let arr: number[] = [3, 1, 4, 1, 5];
+              </div>
+              <div class="card toffeescript">
+                <div class="lang">ToffeeScript</div><pre class="code"><code># @ToDo</code></pre>
+              </div>
+              <div class="card typescript">
+                <div class="lang">TypeScript</div><pre class="code"><code>let arr: number[] = [3, 1, 4, 1, 5];
 let sorted: number[] = arr.sort((a, b) => a - b);
 console.log(sorted);</code></pre>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="section">
-        <div class="title">FUNCTIONS</div>
-        <div class="case">
-          <div class="name">Functions</div>
-          <div class="pair">
-            <div class="card c">
-              <div class="lang">C</div><pre class="code"><code>#include <stdio.h>
+        <div class="section">
+          <div class="title">FUNCTIONS</div>
+          <div class="case">
+            <div class="name">Functions</div>
+            <div class="pair">
+              <div class="card c">
+                <div class="lang">C</div><pre class="code"><code>#include <stdio.h>
 
 int add(int a, int b) {
     return a + b;
@@ -1436,9 +1437,9 @@ int main() {
     printf("%d\n", result);
     return 0;
 }</code></pre>
-            </div>
-            <div class="card cpp">
-              <div class="lang">C++</div><pre class="code"><code>#include &lt;string&gt;
+              </div>
+              <div class="card cpp">
+                <div class="lang">C++</div><pre class="code"><code>#include &lt;string&gt;
 #include &lt;sstream&gt;
 using namespace std;
 string greet(
@@ -1452,63 +1453,63 @@ string greet(
 int main() {
   greet("Bob", "Tuesday");
 }</code></pre>
-            </div>
-            <div class="card coffeescript">
-              <div class="lang">CoffeeScript</div><pre class="code"><code># @ToDo</code></pre>
-            </div>
-            <div class="card elixir">
-              <div class="lang">Elixir</div><pre class="code"><code># @ToDo</code></pre>
-            </div>
-            <div class="card erlang">
-              <div class="lang">Erlang</div><pre class="code"><code>% @ToDo</code></pre>
-            </div>
-            <div class="card go">
-              <div class="lang">Go</div><pre class="code"><code>func greet(name, day string) string {
+              </div>
+              <div class="card coffeescript">
+                <div class="lang">CoffeeScript</div><pre class="code"><code># @ToDo</code></pre>
+              </div>
+              <div class="card elixir">
+                <div class="lang">Elixir</div><pre class="code"><code># @ToDo</code></pre>
+              </div>
+              <div class="card erlang">
+                <div class="lang">Erlang</div><pre class="code"><code>% @ToDo</code></pre>
+              </div>
+              <div class="card go">
+                <div class="lang">Go</div><pre class="code"><code>func greet(name, day string) string {
     return fmt.Sprintf("Hello %v, today is %v.", name, day)
 }
 
 func main() {
     greet("Bob", "Tuesday")
 }</code></pre>
-            </div>
-            <div class="card java">
-              <div class="lang">Java</div><pre class="code"><code>// Generic example for missing Java implementations
+              </div>
+              <div class="card java">
+                <div class="lang">Java</div><pre class="code"><code>// Generic example for missing Java implementations
 // This placeholder will be replaced with actual examples as needed
 public class Example {
     public static void main(String[] args) {
         System.out.println("Example implementation");
     }
 }</code></pre>
-            </div>
-            <div class="card javascript">
-              <div class="lang">JavaScript</div><pre class="code"><code>// @ToDo</code></pre>
-            </div>
-            <div class="card kotlin">
-              <div class="lang">Kotlin</div><pre class="code"><code>fun greet(name: String, day: String): String {
+              </div>
+              <div class="card javascript">
+                <div class="lang">JavaScript</div><pre class="code"><code>// @ToDo</code></pre>
+              </div>
+              <div class="card kotlin">
+                <div class="lang">Kotlin</div><pre class="code"><code>fun greet(name: String, day: String): String {
     return "Hello $name, today is $day."
 }
 greet("Bob", "Tuesday")</code></pre>
-            </div>
-            <div class="card objectivec">
-              <div class="lang">ObjectiveC</div><pre class="code"><code>// @ToDo</code></pre>
-            </div>
-            <div class="card scala">
-              <div class="lang">Scala</div><pre class="code"><code>def greet(name: String, day: String): String = {
+              </div>
+              <div class="card objectivec">
+                <div class="lang">ObjectiveC</div><pre class="code"><code>// @ToDo</code></pre>
+              </div>
+              <div class="card scala">
+                <div class="lang">Scala</div><pre class="code"><code>def greet(name: String, day: String): String = {
     return s"Hello $name, today is $day."
 }
 greet("Bob", "Tuesday")</code></pre>
-            </div>
-            <div class="card swift">
-              <div class="lang">Swift</div><pre class="code"><code>func greet(_ name: String,_ day: String) -&gt; String {
+              </div>
+              <div class="card swift">
+                <div class="lang">Swift</div><pre class="code"><code>func greet(_ name: String,_ day: String) -&gt; String {
     return "Hello \(name), today is \(day)."
 }
 greet("Bob", "Tuesday")</code></pre>
-            </div>
-            <div class="card toffeescript">
-              <div class="lang">ToffeeScript</div><pre class="code"><code># @ToDo</code></pre>
-            </div>
-            <div class="card typescript">
-              <div class="lang">TypeScript</div><pre class="code"><code>function add(a: number, b: number): number {
+              </div>
+              <div class="card toffeescript">
+                <div class="lang">ToffeeScript</div><pre class="code"><code># @ToDo</code></pre>
+              </div>
+              <div class="card typescript">
+                <div class="lang">TypeScript</div><pre class="code"><code>function add(a: number, b: number): number {
     return a + b;
 }
 
@@ -1517,14 +1518,14 @@ console.log(result);
 
 // Or using arrow functions
 const addArrow = (a: number, b: number): number => a + b;</code></pre>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="case">
-          <div class="name">Procedures</div>
-          <div class="pair">
-            <div class="card c">
-              <div class="lang">C</div><pre class="code"><code>#include <stdio.h>
+          <div class="case">
+            <div class="name">Procedures</div>
+            <div class="pair">
+              <div class="card c">
+                <div class="lang">C</div><pre class="code"><code>#include <stdio.h>
 
 void printMessage() {
     printf("This is a procedure\n");
@@ -1534,9 +1535,9 @@ int main() {
     printMessage();
     return 0;
 }</code></pre>
-            </div>
-            <div class="card cpp">
-              <div class="lang">C++</div><pre class="code"><code>#include &lt;string&gt;
+              </div>
+              <div class="card cpp">
+                <div class="lang">C++</div><pre class="code"><code>#include &lt;string&gt;
 #include &lt;sstream&gt;
 using namespace std;
 void greet(
@@ -1552,60 +1553,60 @@ int main() {
   string out;
   greet("Bob", "Tuesday", out);
 }</code></pre>
-            </div>
-            <div class="card coffeescript">
-              <div class="lang">CoffeeScript</div><pre class="code"><code># @ToDo</code></pre>
-            </div>
-            <div class="card elixir">
-              <div class="lang">Elixir</div><pre class="code"><code># @ToDo</code></pre>
-            </div>
-            <div class="card erlang">
-              <div class="lang">Erlang</div><pre class="code"><code>% @ToDo</code></pre>
-            </div>
-            <div class="card go">
-              <div class="lang">Go</div><pre class="code"><code>// @ToDo</code></pre>
-            </div>
-            <div class="card java">
-              <div class="lang">Java</div><pre class="code"><code>// Generic example for missing Java implementations
+              </div>
+              <div class="card coffeescript">
+                <div class="lang">CoffeeScript</div><pre class="code"><code># @ToDo</code></pre>
+              </div>
+              <div class="card elixir">
+                <div class="lang">Elixir</div><pre class="code"><code># @ToDo</code></pre>
+              </div>
+              <div class="card erlang">
+                <div class="lang">Erlang</div><pre class="code"><code>% @ToDo</code></pre>
+              </div>
+              <div class="card go">
+                <div class="lang">Go</div><pre class="code"><code>// @ToDo</code></pre>
+              </div>
+              <div class="card java">
+                <div class="lang">Java</div><pre class="code"><code>// Generic example for missing Java implementations
 // This placeholder will be replaced with actual examples as needed
 public class Example {
     public static void main(String[] args) {
         System.out.println("Example implementation");
     }
 }</code></pre>
-            </div>
-            <div class="card javascript">
-              <div class="lang">JavaScript</div><pre class="code"><code>// @ToDo</code></pre>
-            </div>
-            <div class="card kotlin">
-              <div class="lang">Kotlin</div><pre class="code"><code>// @ToDo</code></pre>
-            </div>
-            <div class="card objectivec">
-              <div class="lang">ObjectiveC</div><pre class="code"><code>// @ToDo</code></pre>
-            </div>
-            <div class="card scala">
-              <div class="lang">Scala</div><pre class="code"><code>// @ToDo</code></pre>
-            </div>
-            <div class="card swift">
-              <div class="lang">Swift</div><pre class="code"><code>// @ToDo</code></pre>
-            </div>
-            <div class="card toffeescript">
-              <div class="lang">ToffeeScript</div><pre class="code"><code># @ToDo</code></pre>
-            </div>
-            <div class="card typescript">
-              <div class="lang">TypeScript</div><pre class="code"><code>function printMessage(): void {
+              </div>
+              <div class="card javascript">
+                <div class="lang">JavaScript</div><pre class="code"><code>// @ToDo</code></pre>
+              </div>
+              <div class="card kotlin">
+                <div class="lang">Kotlin</div><pre class="code"><code>// @ToDo</code></pre>
+              </div>
+              <div class="card objectivec">
+                <div class="lang">ObjectiveC</div><pre class="code"><code>// @ToDo</code></pre>
+              </div>
+              <div class="card scala">
+                <div class="lang">Scala</div><pre class="code"><code>// @ToDo</code></pre>
+              </div>
+              <div class="card swift">
+                <div class="lang">Swift</div><pre class="code"><code>// @ToDo</code></pre>
+              </div>
+              <div class="card toffeescript">
+                <div class="lang">ToffeeScript</div><pre class="code"><code># @ToDo</code></pre>
+              </div>
+              <div class="card typescript">
+                <div class="lang">TypeScript</div><pre class="code"><code>function printMessage(): void {
     console.log("This is a procedure");
 }
 
 printMessage();</code></pre>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="case">
-          <div class="name">Tuple Return</div>
-          <div class="pair">
-            <div class="card c">
-              <div class="lang">C</div><pre class="code"><code>typedef struct {
+          <div class="case">
+            <div class="name">Tuple Return</div>
+            <div class="pair">
+              <div class="card c">
+                <div class="lang">C</div><pre class="code"><code>typedef struct {
   double a; double b; double c;
 } GasPrices;
 void getGasPrices(
@@ -1617,78 +1618,78 @@ void getGasPrices(
 GasPrices gasPrices;
 getGasPrices(&gasPrices);
 </code></pre>
-            </div>
-            <div class="card cpp">
-              <div class="lang">C++</div><pre class="code"><code>#include &lt;tuple&gt;
+              </div>
+              <div class="card cpp">
+                <div class="lang">C++</div><pre class="code"><code>#include &lt;tuple&gt;
 using namespace std;
 tuple&lt;double, double, double&gt; getGasPrices() {
   return make_tuple(3.59, 3.69, 3.79);
 }</code></pre>
-            </div>
-            <div class="card coffeescript">
-              <div class="lang">CoffeeScript</div><pre class="code"><code>getGasPrices =&gt;
+              </div>
+              <div class="card coffeescript">
+                <div class="lang">CoffeeScript</div><pre class="code"><code>getGasPrices =&gt;
   [3.59, 3.69, 3.79]
 [low, mid, high] = getGasPrices()</code></pre>
-            </div>
-            <div class="card elixir">
-              <div class="lang">Elixir</div><pre class="code"><code># @ToDo</code></pre>
-            </div>
-            <div class="card erlang">
-              <div class="lang">Erlang</div><pre class="code"><code>% @ToDo</code></pre>
-            </div>
-            <div class="card go">
-              <div class="lang">Go</div><pre class="code"><code>func getGasPrices() (float64, float64, float64) {
+              </div>
+              <div class="card elixir">
+                <div class="lang">Elixir</div><pre class="code"><code># @ToDo</code></pre>
+              </div>
+              <div class="card erlang">
+                <div class="lang">Erlang</div><pre class="code"><code>% @ToDo</code></pre>
+              </div>
+              <div class="card go">
+                <div class="lang">Go</div><pre class="code"><code>func getGasPrices() (float64, float64, float64) {
   return 3.59, 3.69, 3.79
 }</code></pre>
-            </div>
-            <div class="card java">
-              <div class="lang">Java</div><pre class="code"><code>// Generic example for missing Java implementations
+              </div>
+              <div class="card java">
+                <div class="lang">Java</div><pre class="code"><code>// Generic example for missing Java implementations
 // This placeholder will be replaced with actual examples as needed
 public class Example {
     public static void main(String[] args) {
         System.out.println("Example implementation");
     }
 }</code></pre>
-            </div>
-            <div class="card javascript">
-              <div class="lang">JavaScript</div><pre class="code"><code>const getGasPrices = () => ([3.59, 3.69, 3.79])
+              </div>
+              <div class="card javascript">
+                <div class="lang">JavaScript</div><pre class="code"><code>const getGasPrices = () => ([3.59, 3.69, 3.79])
 const [low, mid, high] = getGasPrices()</code></pre>
-            </div>
-            <div class="card kotlin">
-              <div class="lang">Kotlin</div><pre class="code"><code>data class GasPrices(
+              </div>
+              <div class="card kotlin">
+                <div class="lang">Kotlin</div><pre class="code"><code>data class GasPrices(
   val a: Double, val b: Double, val c: Double)
 fun getGasPrices() = GasPrices(3.59, 3.69, 3.79)</code></pre>
-            </div>
-            <div class="card objectivec">
-              <div class="lang">ObjectiveC</div><pre class="code"><code>// @ToDo</code></pre>
-            </div>
-            <div class="card scala">
-              <div class="lang">Scala</div><pre class="code"><code>def getGasPrices(): (Double, Double, Double) = {
+              </div>
+              <div class="card objectivec">
+                <div class="lang">ObjectiveC</div><pre class="code"><code>// @ToDo</code></pre>
+              </div>
+              <div class="card scala">
+                <div class="lang">Scala</div><pre class="code"><code>def getGasPrices(): (Double, Double, Double) = {
     return (3.59, 3.69, 3.79)
 }
 </code></pre>
-            </div>
-            <div class="card swift">
-              <div class="lang">Swift</div><pre class="code"><code>func getGasPrices() -&gt; (Double, Double, Double) {
+              </div>
+              <div class="card swift">
+                <div class="lang">Swift</div><pre class="code"><code>func getGasPrices() -&gt; (Double, Double, Double) {
   return (3.59, 3.69, 3.79)
 }</code></pre>
-            </div>
-            <div class="card toffeescript">
-              <div class="lang">ToffeeScript</div><pre class="code"><code>getGasPrices =&gt;
+              </div>
+              <div class="card toffeescript">
+                <div class="lang">ToffeeScript</div><pre class="code"><code>getGasPrices =&gt;
   [3.59, 3.69, 3.79]
 [low, mid, high] = getGasPrices()</code></pre>
-            </div>
-            <div class="card typescript">
-              <div class="lang">TypeScript</div><pre class="code"><code>const getGasPrices = () =&gt; ([3.59, 3.69, 3.79])
+              </div>
+              <div class="card typescript">
+                <div class="lang">TypeScript</div><pre class="code"><code>const getGasPrices = () =&gt; ([3.59, 3.69, 3.79])
 const [low, mid, high] = getGasPrices()</code></pre>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="case">
-          <div class="name">Variable Number Of Arguments</div>
-          <div class="pair">
-            <div class="card c">
-              <div class="lang">C</div><pre class="code"><code>#include &lt;stdarg.h&gt;
+          <div class="case">
+            <div class="name">Variable Number Of Arguments</div>
+            <div class="pair">
+              <div class="card c">
+                <div class="lang">C</div><pre class="code"><code>#include &lt;stdarg.h&gt;
 double sumOf(int count, ...) {
   va_list ap; va_start(ap, count);
   int sum = 0;
@@ -1702,9 +1703,9 @@ int main() {
   return sumOf(3,
     42, 597, 12);
 }</code></pre>
-            </div>
-            <div class="card cpp">
-              <div class="lang">C++</div><pre class="code"><code>template&lt;typename T&gt;
+              </div>
+              <div class="card cpp">
+                <div class="lang">C++</div><pre class="code"><code>template&lt;typename T&gt;
 int sumOf(T t) {
   return t;
 }
@@ -1715,18 +1716,18 @@ int sumOf(T t, Types&&... types) {
 int main() {
   return sumOf(42, 597, 12);
 }</code></pre>
-            </div>
-            <div class="card coffeescript">
-              <div class="lang">CoffeeScript</div><pre class="code"><code># @ToDo</code></pre>
-            </div>
-            <div class="card elixir">
-              <div class="lang">Elixir</div><pre class="code"><code># @ToDo</code></pre>
-            </div>
-            <div class="card erlang">
-              <div class="lang">Erlang</div><pre class="code"><code>% @ToDo</code></pre>
-            </div>
-            <div class="card go">
-              <div class="lang">Go</div><pre class="code"><code>func sumOf(numbers ...int) int {
+              </div>
+              <div class="card coffeescript">
+                <div class="lang">CoffeeScript</div><pre class="code"><code># @ToDo</code></pre>
+              </div>
+              <div class="card elixir">
+                <div class="lang">Elixir</div><pre class="code"><code># @ToDo</code></pre>
+              </div>
+              <div class="card erlang">
+                <div class="lang">Erlang</div><pre class="code"><code>% @ToDo</code></pre>
+              </div>
+              <div class="card go">
+                <div class="lang">Go</div><pre class="code"><code>func sumOf(numbers ...int) int {
   var sum = 0
   for _, number := range(numbers) {
     sum += number
@@ -1737,9 +1738,9 @@ func main() {
   sumOf(42, 597, 12)
   sumOf([]int{42, 597, 12}...)
 }</code></pre>
-            </div>
-            <div class="card java">
-              <div class="lang">Java</div><pre class="code"><code>public int sumOf(int...numbers) {
+              </div>
+              <div class="card java">
+                <div class="lang">Java</div><pre class="code"><code>public int sumOf(int...numbers) {
   int sum = 0;
   for (int number : numbers) {
     sum += number;
@@ -1752,18 +1753,18 @@ class SumOf {
     sumOf(42, 597, 12);
   }
 }</code></pre>
-            </div>
-            <div class="card javascript">
-              <div class="lang">JavaScript</div><pre class="code"><code>function sumOf() {
+              </div>
+              <div class="card javascript">
+                <div class="lang">JavaScript</div><pre class="code"><code>function sumOf() {
   let sum = 0
   for (let i = 0; i &lt; arguments.length; i++) {
     sum += arguments[i]
   }
 }
 sumOf(42, 597, 12)</code></pre>
-            </div>
-            <div class="card kotlin">
-              <div class="lang">Kotlin</div><pre class="code"><code>fun sumOf(vararg numbers: Int): Int {
+              </div>
+              <div class="card kotlin">
+                <div class="lang">Kotlin</div><pre class="code"><code>fun sumOf(vararg numbers: Int): Int {
     var sum = 0
     for (number in numbers) {
         sum += number
@@ -1774,12 +1775,12 @@ sumOf(42, 597, 12)
 
 // ... can also be written in a shorter way:
 fun sumOf(vararg numbers: Int) = numbers.sum()</code></pre>
-            </div>
-            <div class="card objectivec">
-              <div class="lang">ObjectiveC</div><pre class="code"><code>// @ToDo</code></pre>
-            </div>
-            <div class="card scala">
-              <div class="lang">Scala</div><pre class="code"><code>def sumOf(numbers: Int*): Int = {
+              </div>
+              <div class="card objectivec">
+                <div class="lang">ObjectiveC</div><pre class="code"><code>// @ToDo</code></pre>
+              </div>
+              <div class="card scala">
+                <div class="lang">Scala</div><pre class="code"><code>def sumOf(numbers: Int*): Int = {
   var sum = 0
   for (number &lt;- numbers) {
     sum += number
@@ -1787,9 +1788,9 @@ fun sumOf(vararg numbers: Int) = numbers.sum()</code></pre>
   return sum
 }
 sumOf(42, 597, 12)</code></pre>
-            </div>
-            <div class="card swift">
-              <div class="lang">Swift</div><pre class="code"><code>func sumOf(_ numbers: Int...) -&gt; Int {
+              </div>
+              <div class="card swift">
+                <div class="lang">Swift</div><pre class="code"><code>func sumOf(_ numbers: Int...) -&gt; Int {
     var sum = 0
     for number in numbers {
         sum += number
@@ -1797,145 +1798,145 @@ sumOf(42, 597, 12)</code></pre>
     return sum
 }
 sumOf(42, 597, 12)</code></pre>
-            </div>
-            <div class="card toffeescript">
-              <div class="lang">ToffeeScript</div><pre class="code"><code># @ToDo</code></pre>
-            </div>
-            <div class="card typescript">
-              <div class="lang">TypeScript</div><pre class="code"><code>function sum(...numbers: number[]): number {
+              </div>
+              <div class="card toffeescript">
+                <div class="lang">ToffeeScript</div><pre class="code"><code># @ToDo</code></pre>
+              </div>
+              <div class="card typescript">
+                <div class="lang">TypeScript</div><pre class="code"><code>function sum(...numbers: number[]): number {
     return numbers.reduce((acc, num) => acc + num, 0);
 }
 
 console.log(sum(1, 2, 3, 4, 5));</code></pre>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="case">
-          <div class="name">Callbacks</div>
-          <div class="pair">
-            <div class="card c">
-              <div class="lang">C</div><pre class="code"><code>// @ToDo</code></pre>
-            </div>
-            <div class="card cpp">
-              <div class="lang">C++</div><pre class="code"><code>// @ToDo</code></pre>
-            </div>
-            <div class="card coffeescript">
-              <div class="lang">CoffeeScript</div><pre class="code"><code># @ToDo</code></pre>
-            </div>
-            <div class="card elixir">
-              <div class="lang">Elixir</div><pre class="code"><code># @ToDo</code></pre>
-            </div>
-            <div class="card erlang">
-              <div class="lang">Erlang</div><pre class="code"><code>% @ToDo</code></pre>
-            </div>
-            <div class="card go">
-              <div class="lang">Go</div><pre class="code"><code>// @ToDo</code></pre>
-            </div>
-            <div class="card java">
-              <div class="lang">Java</div><pre class="code"><code>// Generic example for missing Java implementations
+          <div class="case">
+            <div class="name">Callbacks</div>
+            <div class="pair">
+              <div class="card c">
+                <div class="lang">C</div><pre class="code"><code>// @ToDo</code></pre>
+              </div>
+              <div class="card cpp">
+                <div class="lang">C++</div><pre class="code"><code>// @ToDo</code></pre>
+              </div>
+              <div class="card coffeescript">
+                <div class="lang">CoffeeScript</div><pre class="code"><code># @ToDo</code></pre>
+              </div>
+              <div class="card elixir">
+                <div class="lang">Elixir</div><pre class="code"><code># @ToDo</code></pre>
+              </div>
+              <div class="card erlang">
+                <div class="lang">Erlang</div><pre class="code"><code>% @ToDo</code></pre>
+              </div>
+              <div class="card go">
+                <div class="lang">Go</div><pre class="code"><code>// @ToDo</code></pre>
+              </div>
+              <div class="card java">
+                <div class="lang">Java</div><pre class="code"><code>// Generic example for missing Java implementations
 // This placeholder will be replaced with actual examples as needed
 public class Example {
     public static void main(String[] args) {
         System.out.println("Example implementation");
     }
 }</code></pre>
-            </div>
-            <div class="card javascript">
-              <div class="lang">JavaScript</div><pre class="code"><code>// @ToDo</code></pre>
-            </div>
-            <div class="card kotlin">
-              <div class="lang">Kotlin</div><pre class="code"><code>// @ToDo</code></pre>
-            </div>
-            <div class="card objectivec">
-              <div class="lang">ObjectiveC</div><pre class="code"><code>// @ToDo</code></pre>
-            </div>
-            <div class="card scala">
-              <div class="lang">Scala</div><pre class="code"><code>// @ToDo</code></pre>
-            </div>
-            <div class="card swift">
-              <div class="lang">Swift</div><pre class="code"><code>// @ToDo</code></pre>
-            </div>
-            <div class="card toffeescript">
-              <div class="lang">ToffeeScript</div><pre class="code"><code># @ToDo</code></pre>
-            </div>
-            <div class="card typescript">
-              <div class="lang">TypeScript</div><pre class="code"><code>// @ToDo</code></pre>
+              </div>
+              <div class="card javascript">
+                <div class="lang">JavaScript</div><pre class="code"><code>// @ToDo</code></pre>
+              </div>
+              <div class="card kotlin">
+                <div class="lang">Kotlin</div><pre class="code"><code>// @ToDo</code></pre>
+              </div>
+              <div class="card objectivec">
+                <div class="lang">ObjectiveC</div><pre class="code"><code>// @ToDo</code></pre>
+              </div>
+              <div class="card scala">
+                <div class="lang">Scala</div><pre class="code"><code>// @ToDo</code></pre>
+              </div>
+              <div class="card swift">
+                <div class="lang">Swift</div><pre class="code"><code>// @ToDo</code></pre>
+              </div>
+              <div class="card toffeescript">
+                <div class="lang">ToffeeScript</div><pre class="code"><code># @ToDo</code></pre>
+              </div>
+              <div class="card typescript">
+                <div class="lang">TypeScript</div><pre class="code"><code>// @ToDo</code></pre>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="case">
-          <div class="name">Named Arguments</div>
-          <div class="pair">
-            <div class="card c">
-              <div class="lang">C</div><pre class="code"><code>// @ToDo</code></pre>
-            </div>
-            <div class="card cpp">
-              <div class="lang">C++</div><pre class="code"><code>// @ToDo</code></pre>
-            </div>
-            <div class="card coffeescript">
-              <div class="lang">CoffeeScript</div><pre class="code"><code># @ToDo</code></pre>
-            </div>
-            <div class="card elixir">
-              <div class="lang">Elixir</div><pre class="code"><code># @ToDo</code></pre>
-            </div>
-            <div class="card erlang">
-              <div class="lang">Erlang</div><pre class="code"><code>% @ToDo</code></pre>
-            </div>
-            <div class="card go">
-              <div class="lang">Go</div><pre class="code"><code></code></pre>
-            </div>
-            <div class="card java">
-              <div class="lang">Java</div><pre class="code"><code>// Generic example for missing Java implementations
+          <div class="case">
+            <div class="name">Named Arguments</div>
+            <div class="pair">
+              <div class="card c">
+                <div class="lang">C</div><pre class="code"><code>// @ToDo</code></pre>
+              </div>
+              <div class="card cpp">
+                <div class="lang">C++</div><pre class="code"><code>// @ToDo</code></pre>
+              </div>
+              <div class="card coffeescript">
+                <div class="lang">CoffeeScript</div><pre class="code"><code># @ToDo</code></pre>
+              </div>
+              <div class="card elixir">
+                <div class="lang">Elixir</div><pre class="code"><code># @ToDo</code></pre>
+              </div>
+              <div class="card erlang">
+                <div class="lang">Erlang</div><pre class="code"><code>% @ToDo</code></pre>
+              </div>
+              <div class="card go">
+                <div class="lang">Go</div><pre class="code"><code></code></pre>
+              </div>
+              <div class="card java">
+                <div class="lang">Java</div><pre class="code"><code>// Generic example for missing Java implementations
 // This placeholder will be replaced with actual examples as needed
 public class Example {
     public static void main(String[] args) {
         System.out.println("Example implementation");
     }
 }</code></pre>
-            </div>
-            <div class="card javascript">
-              <div class="lang">JavaScript</div><pre class="code"><code>// @ToDo</code></pre>
-            </div>
-            <div class="card kotlin">
-              <div class="lang">Kotlin</div><pre class="code"><code>fun area(width: Int, height: Int) = width * height
+              </div>
+              <div class="card javascript">
+                <div class="lang">JavaScript</div><pre class="code"><code>// @ToDo</code></pre>
+              </div>
+              <div class="card kotlin">
+                <div class="lang">Kotlin</div><pre class="code"><code>fun area(width: Int, height: Int) = width * height
 area(width = 2, height = 3)
 
 // This is also possible with named arguments
 area(2, height = 2)
 area(height = 3, width = 2)
 </code></pre>
-            </div>
-            <div class="card objectivec">
-              <div class="lang">ObjectiveC</div><pre class="code"><code>// @ToDo</code></pre>
-            </div>
-            <div class="card scala">
-              <div class="lang">Scala</div><pre class="code"><code>def area(width: Int, height: Int): Int = {
+              </div>
+              <div class="card objectivec">
+                <div class="lang">ObjectiveC</div><pre class="code"><code>// @ToDo</code></pre>
+              </div>
+              <div class="card scala">
+                <div class="lang">Scala</div><pre class="code"><code>def area(width: Int, height: Int): Int = {
     return width * height
 }
 
 area(width = 10, height = 10)
 </code></pre>
-            </div>
-            <div class="card swift">
-              <div class="lang">Swift</div><pre class="code"><code>func area(width: Int, height: Int) -&gt; Int {
+              </div>
+              <div class="card swift">
+                <div class="lang">Swift</div><pre class="code"><code>func area(width: Int, height: Int) -&gt; Int {
     return width * height
 }
 area(width: 2, height: 3)
 </code></pre>
-            </div>
-            <div class="card toffeescript">
-              <div class="lang">ToffeeScript</div><pre class="code"><code># @ToDo</code></pre>
-            </div>
-            <div class="card typescript">
-              <div class="lang">TypeScript</div><pre class="code"><code>null</code></pre>
+              </div>
+              <div class="card toffeescript">
+                <div class="lang">ToffeeScript</div><pre class="code"><code># @ToDo</code></pre>
+              </div>
+              <div class="card typescript">
+                <div class="lang">TypeScript</div><pre class="code"><code>null</code></pre>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="case">
-          <div class="name">Function Type</div>
-          <div class="pair">
-            <div class="card c">
-              <div class="lang">C</div><pre class="code"><code>#include <stdio.h>
+          <div class="case">
+            <div class="name">Function Type</div>
+            <div class="pair">
+              <div class="card c">
+                <div class="lang">C</div><pre class="code"><code>#include <stdio.h>
 
 // Function types in C
 typedef int (*FuncType)(int, int);
@@ -1963,9 +1964,9 @@ int main() {
     
     return 0;
 }</code></pre>
-            </div>
-            <div class="card cpp">
-              <div class="lang">C++</div><pre class="code"><code>#include <iostream>
+              </div>
+              <div class="card cpp">
+                <div class="lang">C++</div><pre class="code"><code>#include <iostream>
 #include <functional>
 
 // Function types in C++
@@ -1994,9 +1995,9 @@ int main() {
     
     return 0;
 }</code></pre>
-            </div>
-            <div class="card coffeescript">
-              <div class="lang">CoffeeScript</div><pre class="code"><code># Function types in CoffeeScript
+              </div>
+              <div class="card coffeescript">
+                <div class="lang">CoffeeScript</div><pre class="code"><code># Function types in CoffeeScript
 add = (a, b) -> a + b
 multiply = (a, b) -> a * b
 
@@ -2009,15 +2010,15 @@ console.log "Result: #{result}"
 operation = multiply
 result = applyOperation operation, 5, 3
 console.log "Result: #{result}"</code></pre>
-            </div>
-            <div class="card elixir">
-              <div class="lang">Elixir</div><pre class="code"><code># @ToDo</code></pre>
-            </div>
-            <div class="card erlang">
-              <div class="lang">Erlang</div><pre class="code"><code>% @ToDo</code></pre>
-            </div>
-            <div class="card go">
-              <div class="lang">Go</div><pre class="code"><code>package main
+              </div>
+              <div class="card elixir">
+                <div class="lang">Elixir</div><pre class="code"><code># @ToDo</code></pre>
+              </div>
+              <div class="card erlang">
+                <div class="lang">Erlang</div><pre class="code"><code>% @ToDo</code></pre>
+              </div>
+              <div class="card go">
+                <div class="lang">Go</div><pre class="code"><code>package main
 
 import "fmt"
 
@@ -2045,18 +2046,18 @@ func main() {
 	result = applyOperation(operation, 5, 3)
 	fmt.Printf("Result: %d\n", result)
 }</code></pre>
-            </div>
-            <div class="card java">
-              <div class="lang">Java</div><pre class="code"><code>// Generic example for missing Java implementations
+              </div>
+              <div class="card java">
+                <div class="lang">Java</div><pre class="code"><code>// Generic example for missing Java implementations
 // This placeholder will be replaced with actual examples as needed
 public class Example {
     public static void main(String[] args) {
         System.out.println("Example implementation");
     }
 }</code></pre>
-            </div>
-            <div class="card javascript">
-              <div class="lang">JavaScript</div><pre class="code"><code>// Function types in JavaScript
+              </div>
+              <div class="card javascript">
+                <div class="lang">JavaScript</div><pre class="code"><code>// Function types in JavaScript
 function add(a, b) {
     return a + b;
 }
@@ -2081,9 +2082,9 @@ console.log("Result: " + result);
 const arrowAdd = (a, b) => a + b;
 result = applyOperation(arrowAdd, 5, 3);
 console.log("Result: " + result);</code></pre>
-            </div>
-            <div class="card kotlin">
-              <div class="lang">Kotlin</div><pre class="code"><code>// Function types in Kotlin
+              </div>
+              <div class="card kotlin">
+                <div class="lang">Kotlin</div><pre class="code"><code>// Function types in Kotlin
 fun add(a: Int, b: Int): Int = a + b
 fun multiply(a: Int, b: Int): Int = a * b
 
@@ -2098,12 +2099,12 @@ fun main() {
     result = applyOperation(operation, 5, 3)
     println("Result: $result")
 }</code></pre>
-            </div>
-            <div class="card objectivec">
-              <div class="lang">ObjectiveC</div><pre class="code"><code>// @ToDo</code></pre>
-            </div>
-            <div class="card scala">
-              <div class="lang">Scala</div><pre class="code"><code>object FunctionTypes extends App {
+              </div>
+              <div class="card objectivec">
+                <div class="lang">ObjectiveC</div><pre class="code"><code>// @ToDo</code></pre>
+              </div>
+              <div class="card scala">
+                <div class="lang">Scala</div><pre class="code"><code>object FunctionTypes extends App {
   type FuncType = (Int, Int) => Int
   
   def add(a: Int, b: Int): Int = a + b
@@ -2119,9 +2120,9 @@ fun main() {
   result = applyOperation(operation, 5, 3)
   println(s"Result: $result")
 }</code></pre>
-            </div>
-            <div class="card swift">
-              <div class="lang">Swift</div><pre class="code"><code>// Function types in Swift
+              </div>
+              <div class="card swift">
+                <div class="lang">Swift</div><pre class="code"><code>// Function types in Swift
 func add(_ a: Int, _ b: Int) -> Int {
     return a + b
 }
@@ -2141,9 +2142,9 @@ print("Result: \(result)")
 operation = multiply
 result = applyOperation(operation, 5, 3)
 print("Result: \(result)")</code></pre>
-            </div>
-            <div class="card toffeescript">
-              <div class="lang">ToffeeScript</div><pre class="code"><code># Function types in ToffeeScript
+              </div>
+              <div class="card toffeescript">
+                <div class="lang">ToffeeScript</div><pre class="code"><code># Function types in ToffeeScript
 add = (a, b) -> a + b
 multiply = (a, b) -> a * b
 
@@ -2156,35 +2157,35 @@ console.log "Result: #{result}"
 operation = multiply
 result = applyOperation operation, 5, 3
 console.log "Result: #{result}"</code></pre>
-            </div>
-            <div class="card typescript">
-              <div class="lang">TypeScript</div><pre class="code"><code>null</code></pre>
+              </div>
+              <div class="card typescript">
+                <div class="lang">TypeScript</div><pre class="code"><code>null</code></pre>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="case">
-          <div class="name">Recursion</div>
-          <div class="pair">
-            <div class="card c">
-              <div class="lang">C</div><pre class="code"><code>// @ToDo</code></pre>
-            </div>
-            <div class="card cpp">
-              <div class="lang">C++</div><pre class="code"><code>// @ToDo</code></pre>
-            </div>
-            <div class="card coffeescript">
-              <div class="lang">CoffeeScript</div><pre class="code"><code># @ToDo</code></pre>
-            </div>
-            <div class="card elixir">
-              <div class="lang">Elixir</div><pre class="code"><code># @ToDo</code></pre>
-            </div>
-            <div class="card erlang">
-              <div class="lang">Erlang</div><pre class="code"><code>% @ToDo</code></pre>
-            </div>
-            <div class="card go">
-              <div class="lang">Go</div><pre class="code"><code>// @ToDo</code></pre>
-            </div>
-            <div class="card groovy">
-              <div class="lang">Groovy</div><pre class="code"><code>import groovy.transform.TailRecursive
+          <div class="case">
+            <div class="name">Recursion</div>
+            <div class="pair">
+              <div class="card c">
+                <div class="lang">C</div><pre class="code"><code>// @ToDo</code></pre>
+              </div>
+              <div class="card cpp">
+                <div class="lang">C++</div><pre class="code"><code>// @ToDo</code></pre>
+              </div>
+              <div class="card coffeescript">
+                <div class="lang">CoffeeScript</div><pre class="code"><code># @ToDo</code></pre>
+              </div>
+              <div class="card elixir">
+                <div class="lang">Elixir</div><pre class="code"><code># @ToDo</code></pre>
+              </div>
+              <div class="card erlang">
+                <div class="lang">Erlang</div><pre class="code"><code>% @ToDo</code></pre>
+              </div>
+              <div class="card go">
+                <div class="lang">Go</div><pre class="code"><code>// @ToDo</code></pre>
+              </div>
+              <div class="card groovy">
+                <div class="lang">Groovy</div><pre class="code"><code>import groovy.transform.TailRecursive
 
 class TailEndRecursion {
     @TailRecursive
@@ -2197,47 +2198,47 @@ class TailEndRecursion {
 }
 println("Factorial of 5 is ${TailEndRecursion.factorial(5)}")
 </code></pre>
-            </div>
-            <div class="card java">
-              <div class="lang">Java</div><pre class="code"><code>// Generic example for missing Java implementations
+              </div>
+              <div class="card java">
+                <div class="lang">Java</div><pre class="code"><code>// Generic example for missing Java implementations
 // This placeholder will be replaced with actual examples as needed
 public class Example {
     public static void main(String[] args) {
         System.out.println("Example implementation");
     }
 }</code></pre>
-            </div>
-            <div class="card javascript">
-              <div class="lang">JavaScript</div><pre class="code"><code>// @ToDo</code></pre>
-            </div>
-            <div class="card kotlin">
-              <div class="lang">Kotlin</div><pre class="code"><code>// @ToDo</code></pre>
-            </div>
-            <div class="card objectivec">
-              <div class="lang">ObjectiveC</div><pre class="code"><code>// @ToDo</code></pre>
-            </div>
-            <div class="card scala">
-              <div class="lang">Scala</div><pre class="code"><code>// @ToDo</code></pre>
-            </div>
-            <div class="card swift">
-              <div class="lang">Swift</div><pre class="code"><code>// @ToDo</code></pre>
-            </div>
-            <div class="card toffeescript">
-              <div class="lang">ToffeeScript</div><pre class="code"><code># @ToDo</code></pre>
-            </div>
-            <div class="card typescript">
-              <div class="lang">TypeScript</div><pre class="code"><code>null</code></pre>
+              </div>
+              <div class="card javascript">
+                <div class="lang">JavaScript</div><pre class="code"><code>// @ToDo</code></pre>
+              </div>
+              <div class="card kotlin">
+                <div class="lang">Kotlin</div><pre class="code"><code>// @ToDo</code></pre>
+              </div>
+              <div class="card objectivec">
+                <div class="lang">ObjectiveC</div><pre class="code"><code>// @ToDo</code></pre>
+              </div>
+              <div class="card scala">
+                <div class="lang">Scala</div><pre class="code"><code>// @ToDo</code></pre>
+              </div>
+              <div class="card swift">
+                <div class="lang">Swift</div><pre class="code"><code>// @ToDo</code></pre>
+              </div>
+              <div class="card toffeescript">
+                <div class="lang">ToffeeScript</div><pre class="code"><code># @ToDo</code></pre>
+              </div>
+              <div class="card typescript">
+                <div class="lang">TypeScript</div><pre class="code"><code>null</code></pre>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="section">
-        <div class="title">CLASSES</div>
-        <div class="case">
-          <div class="name">Declaration</div>
-          <div class="pair">
-            <div class="card c">
-              <div class="lang">C</div><pre class="code"><code>#include &lt;stdio.h&gt;
+        <div class="section">
+          <div class="title">CLASSES</div>
+          <div class="case">
+            <div class="name">Declaration</div>
+            <div class="pair">
+              <div class="card c">
+                <div class="lang">C</div><pre class="code"><code>#include &lt;stdio.h&gt;
 typedef struct Shape_ Shape;
 static void simpleDescription_(const Shape* this, char[] out);
 struct Shape_ {
@@ -2253,9 +2254,9 @@ char[1024] out;
 Shape shape;
 simpleDescription(shape, out);
 printf();</code></pre>
-            </div>
-            <div class="card cpp">
-              <div class="lang">C++</div><pre class="code"><code>#include &lt;string&gt;
+              </div>
+              <div class="card cpp">
+                <div class="lang">C++</div><pre class="code"><code>#include &lt;string&gt;
 #include &lt;sstream&gt;
 using namespace std;
 class Shape {
@@ -2271,38 +2272,38 @@ public:
   }
 }
 </code></pre>
-            </div>
-            <div class="card coffeescript">
-              <div class="lang">CoffeeScript</div><pre class="code"><code>class Shape
+              </div>
+              <div class="card coffeescript">
+                <div class="lang">CoffeeScript</div><pre class="code"><code>class Shape
   numberOfSides: 0
   simpleDescription: () =&gt;
     "A shape with #{this.numberOfSides} sides."</code></pre>
-            </div>
-            <div class="card elixir">
-              <div class="lang">Elixir</div><pre class="code"><code># @ToDo</code></pre>
-            </div>
-            <div class="card erlang">
-              <div class="lang">Erlang</div><pre class="code"><code>% @ToDo</code></pre>
-            </div>
-            <div class="card go">
-              <div class="lang">Go</div><pre class="code"><code>type Shape struct {
+              </div>
+              <div class="card elixir">
+                <div class="lang">Elixir</div><pre class="code"><code># @ToDo</code></pre>
+              </div>
+              <div class="card erlang">
+                <div class="lang">Erlang</div><pre class="code"><code>% @ToDo</code></pre>
+              </div>
+              <div class="card go">
+                <div class="lang">Go</div><pre class="code"><code>type Shape struct {
     numberOfSides int
 }
 func (p *Shape) simpleDescription() string {
     return fmt.Sprintf("A shape with %d sides.", p.numberOfSides)
 }</code></pre>
-            </div>
-            <div class="card java">
-              <div class="lang">Java</div><pre class="code"><code>// Generic example for missing Java implementations
+              </div>
+              <div class="card java">
+                <div class="lang">Java</div><pre class="code"><code>// Generic example for missing Java implementations
 // This placeholder will be replaced with actual examples as needed
 public class Example {
     public static void main(String[] args) {
         System.out.println("Example implementation");
     }
 }</code></pre>
-            </div>
-            <div class="card javascript">
-              <div class="lang">JavaScript</div><pre class="code"><code>class Person {
+              </div>
+              <div class="card javascript">
+                <div class="lang">JavaScript</div><pre class="code"><code>class Person {
     constructor(name, age) {
         this.name = name;
         this.age = age;
@@ -2318,43 +2319,43 @@ public class Example {
 }
 
 var person = new Person("John", 30);</code></pre>
-            </div>
-            <div class="card kotlin">
-              <div class="lang">Kotlin</div><pre class="code"><code>class Shape {
+              </div>
+              <div class="card kotlin">
+                <div class="lang">Kotlin</div><pre class="code"><code>class Shape {
     var numberOfSides = 0
     fun simpleDescription() =
         "A shape with $numberOfSides sides."
 }
 </code></pre>
-            </div>
-            <div class="card objectivec">
-              <div class="lang">ObjectiveC</div><pre class="code"><code>// @ToDo</code></pre>
-            </div>
-            <div class="card scala">
-              <div class="lang">Scala</div><pre class="code"><code>class Shape {
+              </div>
+              <div class="card objectivec">
+                <div class="lang">ObjectiveC</div><pre class="code"><code>// @ToDo</code></pre>
+              </div>
+              <div class="card scala">
+                <div class="lang">Scala</div><pre class="code"><code>class Shape {
     var numberOfSides = 0
     def simpleDescription(): String = {
         return s"A shape with $numberOfSides sides."
     }
 }
 </code></pre>
-            </div>
-            <div class="card swift">
-              <div class="lang">Swift</div><pre class="code"><code>class Shape {
+              </div>
+              <div class="card swift">
+                <div class="lang">Swift</div><pre class="code"><code>class Shape {
     var numberOfSides = 0
     func simpleDescription() -&gt; String {
         return "A shape with \(numberOfSides) sides."
     }
 }</code></pre>
-            </div>
-            <div class="card toffeescript">
-              <div class="lang">ToffeeScript</div><pre class="code"><code>class Shape
+              </div>
+              <div class="card toffeescript">
+                <div class="lang">ToffeeScript</div><pre class="code"><code>class Shape
   numberOfSides: 0
   simpleDescription: () =&gt;
     "A shape with #{this.numberOfSides} sides."</code></pre>
-            </div>
-            <div class="card typescript">
-              <div class="lang">TypeScript</div><pre class="code"><code>class Person {
+              </div>
+              <div class="card typescript">
+                <div class="lang">TypeScript</div><pre class="code"><code>class Person {
     private name: string;
     private age: number;
     
@@ -2373,96 +2374,96 @@ var person = new Person("John", 30);</code></pre>
 }
 
 let person: Person = new Person("John", 30);</code></pre>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="case">
-          <div class="name">Usage</div>
-          <div class="pair">
-            <div class="card c">
-              <div class="lang">C</div><pre class="code"><code>// @ToDo</code></pre>
-            </div>
-            <div class="card cpp">
-              <div class="lang">C++</div><pre class="code"><code>// @ToDo</code></pre>
-            </div>
-            <div class="card coffeescript">
-              <div class="lang">CoffeeScript</div><pre class="code"><code># @ToDo</code></pre>
-            </div>
-            <div class="card elixir">
-              <div class="lang">Elixir</div><pre class="code"><code># @ToDo</code></pre>
-            </div>
-            <div class="card erlang">
-              <div class="lang">Erlang</div><pre class="code"><code>% @ToDo</code></pre>
-            </div>
-            <div class="card go">
-              <div class="lang">Go</div><pre class="code"><code>var shape = new(Shape)
+          <div class="case">
+            <div class="name">Usage</div>
+            <div class="pair">
+              <div class="card c">
+                <div class="lang">C</div><pre class="code"><code>// @ToDo</code></pre>
+              </div>
+              <div class="card cpp">
+                <div class="lang">C++</div><pre class="code"><code>// @ToDo</code></pre>
+              </div>
+              <div class="card coffeescript">
+                <div class="lang">CoffeeScript</div><pre class="code"><code># @ToDo</code></pre>
+              </div>
+              <div class="card elixir">
+                <div class="lang">Elixir</div><pre class="code"><code># @ToDo</code></pre>
+              </div>
+              <div class="card erlang">
+                <div class="lang">Erlang</div><pre class="code"><code>% @ToDo</code></pre>
+              </div>
+              <div class="card go">
+                <div class="lang">Go</div><pre class="code"><code>var shape = new(Shape)
 shape.numberOfSides = 7
 var shapeDescription =
   shape.simpleDescription()
 </code></pre>
-            </div>
-            <div class="card java">
-              <div class="lang">Java</div><pre class="code"><code>// Generic example for missing Java implementations
+              </div>
+              <div class="card java">
+                <div class="lang">Java</div><pre class="code"><code>// Generic example for missing Java implementations
 // This placeholder will be replaced with actual examples as needed
 public class Example {
     public static void main(String[] args) {
         System.out.println("Example implementation");
     }
 }</code></pre>
-            </div>
-            <div class="card javascript">
-              <div class="lang">JavaScript</div><pre class="code"><code>// @ToDo</code></pre>
-            </div>
-            <div class="card kotlin">
-              <div class="lang">Kotlin</div><pre class="code"><code>var shape = Shape()
+              </div>
+              <div class="card javascript">
+                <div class="lang">JavaScript</div><pre class="code"><code>// @ToDo</code></pre>
+              </div>
+              <div class="card kotlin">
+                <div class="lang">Kotlin</div><pre class="code"><code>var shape = Shape()
 shape.numberOfSides = 7
 var shapeDescription =
   shape.simpleDescription()
 </code></pre>
-            </div>
-            <div class="card objectivec">
-              <div class="lang">ObjectiveC</div><pre class="code"><code>// @ToDo</code></pre>
-            </div>
-            <div class="card scala">
-              <div class="lang">Scala</div><pre class="code"><code>var shape = new Shape()
+              </div>
+              <div class="card objectivec">
+                <div class="lang">ObjectiveC</div><pre class="code"><code>// @ToDo</code></pre>
+              </div>
+              <div class="card scala">
+                <div class="lang">Scala</div><pre class="code"><code>var shape = new Shape()
 shape.numberOfSides = 7
 var shapeDescription = shape.simpleDescription()
 </code></pre>
-            </div>
-            <div class="card swift">
-              <div class="lang">Swift</div><pre class="code"><code>var shape = Shape()
+              </div>
+              <div class="card swift">
+                <div class="lang">Swift</div><pre class="code"><code>var shape = Shape()
 shape.numberOfSides = 7
 var shapeDescription =
   shape.simpleDescription()</code></pre>
-            </div>
-            <div class="card toffeescript">
-              <div class="lang">ToffeeScript</div><pre class="code"><code># @ToDo</code></pre>
-            </div>
-            <div class="card typescript">
-              <div class="lang">TypeScript</div><pre class="code"><code>null</code></pre>
+              </div>
+              <div class="card toffeescript">
+                <div class="lang">ToffeeScript</div><pre class="code"><code># @ToDo</code></pre>
+              </div>
+              <div class="card typescript">
+                <div class="lang">TypeScript</div><pre class="code"><code>null</code></pre>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="case">
-          <div class="name">Subclass</div>
-          <div class="pair">
-            <div class="card c">
-              <div class="lang">C</div><pre class="code"><code>// @ToDo</code></pre>
-            </div>
-            <div class="card cpp">
-              <div class="lang">C++</div><pre class="code"><code>// @ToDo</code></pre>
-            </div>
-            <div class="card coffeescript">
-              <div class="lang">CoffeeScript</div><pre class="code"><code># @ToDo</code></pre>
-            </div>
-            <div class="card elixir">
-              <div class="lang">Elixir</div><pre class="code"><code># @ToDo</code></pre>
-            </div>
-            <div class="card erlang">
-              <div class="lang">Erlang</div><pre class="code"><code>% @ToDo</code></pre>
-            </div>
-            <div class="card go">
-              <div class="lang">Go</div><pre class="code"><code>type NamedShape struct {
+          <div class="case">
+            <div class="name">Subclass</div>
+            <div class="pair">
+              <div class="card c">
+                <div class="lang">C</div><pre class="code"><code>// @ToDo</code></pre>
+              </div>
+              <div class="card cpp">
+                <div class="lang">C++</div><pre class="code"><code>// @ToDo</code></pre>
+              </div>
+              <div class="card coffeescript">
+                <div class="lang">CoffeeScript</div><pre class="code"><code># @ToDo</code></pre>
+              </div>
+              <div class="card elixir">
+                <div class="lang">Elixir</div><pre class="code"><code># @ToDo</code></pre>
+              </div>
+              <div class="card erlang">
+                <div class="lang">Erlang</div><pre class="code"><code>% @ToDo</code></pre>
+              </div>
+              <div class="card go">
+                <div class="lang">Go</div><pre class="code"><code>type NamedShape struct {
     numberOfSides int
     name string
 }
@@ -2498,21 +2499,21 @@ func main() {
     a.SimpleDescription()
 }
 </code></pre>
-            </div>
-            <div class="card java">
-              <div class="lang">Java</div><pre class="code"><code>// Generic example for missing Java implementations
+              </div>
+              <div class="card java">
+                <div class="lang">Java</div><pre class="code"><code>// Generic example for missing Java implementations
 // This placeholder will be replaced with actual examples as needed
 public class Example {
     public static void main(String[] args) {
         System.out.println("Example implementation");
     }
 }</code></pre>
-            </div>
-            <div class="card javascript">
-              <div class="lang">JavaScript</div><pre class="code"><code>// @ToDo</code></pre>
-            </div>
-            <div class="card kotlin">
-              <div class="lang">Kotlin</div><pre class="code"><code>open class NamedShape(val name: String) {
+              </div>
+              <div class="card javascript">
+                <div class="lang">JavaScript</div><pre class="code"><code>// @ToDo</code></pre>
+              </div>
+              <div class="card kotlin">
+                <div class="lang">Kotlin</div><pre class="code"><code>open class NamedShape(val name: String) {
     var numberOfSides = 0
 
     open fun simpleDescription() =
@@ -2535,12 +2536,12 @@ val test = Square(BigDecimal("5.2"), "square")
 test.area()
 test.simpleDescription()
 </code></pre>
-            </div>
-            <div class="card objectivec">
-              <div class="lang">ObjectiveC</div><pre class="code"><code>// @ToDo</code></pre>
-            </div>
-            <div class="card scala">
-              <div class="lang">Scala</div><pre class="code"><code>class NamedShape(var name: String,
+              </div>
+              <div class="card objectivec">
+                <div class="lang">ObjectiveC</div><pre class="code"><code>// @ToDo</code></pre>
+              </div>
+              <div class="card scala">
+                <div class="lang">Scala</div><pre class="code"><code>class NamedShape(var name: String,
                  var numberOfSides: Int = 0) {
     def simpleDescription =
         s"A shape with $numberOfSides sides."
@@ -2557,9 +2558,9 @@ val test = new Square(5.2, "my test square")
 test.area
 test.simpleDescription
 </code></pre>
-            </div>
-            <div class="card swift">
-              <div class="lang">Swift</div><pre class="code"><code>class NamedShape {
+              </div>
+              <div class="card swift">
+                <div class="lang">Swift</div><pre class="code"><code>class NamedShape {
     var numberOfSides: Int = 0
     let name: String
 
@@ -2595,35 +2596,35 @@ let test = Square(sideLength: 5.2, name: "square")
 test.area()
 test.simpleDescription()
 </code></pre>
-            </div>
-            <div class="card toffeescript">
-              <div class="lang">ToffeeScript</div><pre class="code"><code># @ToDo</code></pre>
-            </div>
-            <div class="card typescript">
-              <div class="lang">TypeScript</div><pre class="code"><code>null</code></pre>
+              </div>
+              <div class="card toffeescript">
+                <div class="lang">ToffeeScript</div><pre class="code"><code># @ToDo</code></pre>
+              </div>
+              <div class="card typescript">
+                <div class="lang">TypeScript</div><pre class="code"><code>null</code></pre>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="case">
-          <div class="name">Checking Type</div>
-          <div class="pair">
-            <div class="card c">
-              <div class="lang">C</div><pre class="code"><code>// @ToDo</code></pre>
-            </div>
-            <div class="card cpp">
-              <div class="lang">C++</div><pre class="code"><code>// @ToDo</code></pre>
-            </div>
-            <div class="card coffeescript">
-              <div class="lang">CoffeeScript</div><pre class="code"><code># @ToDo</code></pre>
-            </div>
-            <div class="card elixir">
-              <div class="lang">Elixir</div><pre class="code"><code># @ToDo</code></pre>
-            </div>
-            <div class="card erlang">
-              <div class="lang">Erlang</div><pre class="code"><code>% @ToDo</code></pre>
-            </div>
-            <div class="card go">
-              <div class="lang">Go</div><pre class="code"><code>var movieCount = 0
+          <div class="case">
+            <div class="name">Checking Type</div>
+            <div class="pair">
+              <div class="card c">
+                <div class="lang">C</div><pre class="code"><code>// @ToDo</code></pre>
+              </div>
+              <div class="card cpp">
+                <div class="lang">C++</div><pre class="code"><code>// @ToDo</code></pre>
+              </div>
+              <div class="card coffeescript">
+                <div class="lang">CoffeeScript</div><pre class="code"><code># @ToDo</code></pre>
+              </div>
+              <div class="card elixir">
+                <div class="lang">Elixir</div><pre class="code"><code># @ToDo</code></pre>
+              </div>
+              <div class="card erlang">
+                <div class="lang">Erlang</div><pre class="code"><code>% @ToDo</code></pre>
+              </div>
+              <div class="card go">
+                <div class="lang">Go</div><pre class="code"><code>var movieCount = 0
 var songCount = 0
 
 for _, item := range(library) {
@@ -2634,21 +2635,21 @@ for _, item := range(library) {
     }
 }
 </code></pre>
-            </div>
-            <div class="card java">
-              <div class="lang">Java</div><pre class="code"><code>// Generic example for missing Java implementations
+              </div>
+              <div class="card java">
+                <div class="lang">Java</div><pre class="code"><code>// Generic example for missing Java implementations
 // This placeholder will be replaced with actual examples as needed
 public class Example {
     public static void main(String[] args) {
         System.out.println("Example implementation");
     }
 }</code></pre>
-            </div>
-            <div class="card javascript">
-              <div class="lang">JavaScript</div><pre class="code"><code>// @ToDo</code></pre>
-            </div>
-            <div class="card kotlin">
-              <div class="lang">Kotlin</div><pre class="code"><code>var movieCount = 0
+              </div>
+              <div class="card javascript">
+                <div class="lang">JavaScript</div><pre class="code"><code>// @ToDo</code></pre>
+              </div>
+              <div class="card kotlin">
+                <div class="lang">Kotlin</div><pre class="code"><code>var movieCount = 0
 var songCount = 0
 
 for (item in library) {
@@ -2659,12 +2660,12 @@ for (item in library) {
     }
 }
 </code></pre>
-            </div>
-            <div class="card objectivec">
-              <div class="lang">ObjectiveC</div><pre class="code"><code>// @ToDo</code></pre>
-            </div>
-            <div class="card scala">
-              <div class="lang">Scala</div><pre class="code"><code>var movieCount = 0
+              </div>
+              <div class="card objectivec">
+                <div class="lang">ObjectiveC</div><pre class="code"><code>// @ToDo</code></pre>
+              </div>
+              <div class="card scala">
+                <div class="lang">Scala</div><pre class="code"><code>var movieCount = 0
 var songCount = 0
  
 for (item &lt;- library) {
@@ -2675,9 +2676,9 @@ for (item &lt;- library) {
     }
 }
 </code></pre>
-            </div>
-            <div class="card swift">
-              <div class="lang">Swift</div><pre class="code"><code>var movieCount = 0
+              </div>
+              <div class="card swift">
+                <div class="lang">Swift</div><pre class="code"><code>var movieCount = 0
 var songCount = 0
 
 for item in library {
@@ -2687,50 +2688,50 @@ for item in library {
         songCount += 1
     }
 }</code></pre>
-            </div>
-            <div class="card toffeescript">
-              <div class="lang">ToffeeScript</div><pre class="code"><code># @ToDo</code></pre>
-            </div>
-            <div class="card typescript">
-              <div class="lang">TypeScript</div><pre class="code"><code>null</code></pre>
+              </div>
+              <div class="card toffeescript">
+                <div class="lang">ToffeeScript</div><pre class="code"><code># @ToDo</code></pre>
+              </div>
+              <div class="card typescript">
+                <div class="lang">TypeScript</div><pre class="code"><code>null</code></pre>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="case">
-          <div class="name">Pattern Matching</div>
-          <div class="pair">
-            <div class="card c">
-              <div class="lang">C</div><pre class="code"><code>// @ToDo</code></pre>
-            </div>
-            <div class="card cpp">
-              <div class="lang">C++</div><pre class="code"><code>// @ToDo</code></pre>
-            </div>
-            <div class="card coffeescript">
-              <div class="lang">CoffeeScript</div><pre class="code"><code># @ToDo</code></pre>
-            </div>
-            <div class="card elixir">
-              <div class="lang">Elixir</div><pre class="code"><code># @ToDo</code></pre>
-            </div>
-            <div class="card erlang">
-              <div class="lang">Erlang</div><pre class="code"><code>% @ToDo</code></pre>
-            </div>
-            <div class="card go">
-              <div class="lang">Go</div><pre class="code"><code>// @ToDo</code></pre>
-            </div>
-            <div class="card java">
-              <div class="lang">Java</div><pre class="code"><code>// Generic example for missing Java implementations
+          <div class="case">
+            <div class="name">Pattern Matching</div>
+            <div class="pair">
+              <div class="card c">
+                <div class="lang">C</div><pre class="code"><code>// @ToDo</code></pre>
+              </div>
+              <div class="card cpp">
+                <div class="lang">C++</div><pre class="code"><code>// @ToDo</code></pre>
+              </div>
+              <div class="card coffeescript">
+                <div class="lang">CoffeeScript</div><pre class="code"><code># @ToDo</code></pre>
+              </div>
+              <div class="card elixir">
+                <div class="lang">Elixir</div><pre class="code"><code># @ToDo</code></pre>
+              </div>
+              <div class="card erlang">
+                <div class="lang">Erlang</div><pre class="code"><code>% @ToDo</code></pre>
+              </div>
+              <div class="card go">
+                <div class="lang">Go</div><pre class="code"><code>// @ToDo</code></pre>
+              </div>
+              <div class="card java">
+                <div class="lang">Java</div><pre class="code"><code>// Generic example for missing Java implementations
 // This placeholder will be replaced with actual examples as needed
 public class Example {
     public static void main(String[] args) {
         System.out.println("Example implementation");
     }
 }</code></pre>
-            </div>
-            <div class="card javascript">
-              <div class="lang">JavaScript</div><pre class="code"><code>// @ToDo</code></pre>
-            </div>
-            <div class="card kotlin">
-              <div class="lang">Kotlin</div><pre class="code"><code>// Pattern matching in Kotlin
+              </div>
+              <div class="card javascript">
+                <div class="lang">JavaScript</div><pre class="code"><code>// @ToDo</code></pre>
+              </div>
+              <div class="card kotlin">
+                <div class="lang">Kotlin</div><pre class="code"><code>// Pattern matching in Kotlin
 fun describe(obj: Any): String =
     when (obj) {
         1 -> "One"
@@ -2745,12 +2746,12 @@ fun main() {
     println(describe("Hello"))
     println(describe(2L))
 }</code></pre>
-            </div>
-            <div class="card objectivec">
-              <div class="lang">ObjectiveC</div><pre class="code"><code>// @ToDo</code></pre>
-            </div>
-            <div class="card scala">
-              <div class="lang">Scala</div><pre class="code"><code>object PatternMatching extends App {
+              </div>
+              <div class="card objectivec">
+                <div class="lang">ObjectiveC</div><pre class="code"><code>// @ToDo</code></pre>
+              </div>
+              <div class="card scala">
+                <div class="lang">Scala</div><pre class="code"><code>object PatternMatching extends App {
   def describe(obj: Any): String = obj match {
     case 1 => "One"
     case "Hello" => "Greeting"
@@ -2763,9 +2764,9 @@ fun main() {
   println(describe("Hello"))
   println(describe(2L))
 }</code></pre>
-            </div>
-            <div class="card swift">
-              <div class="lang">Swift</div><pre class="code"><code>// Pattern matching in Swift
+              </div>
+              <div class="card swift">
+                <div class="lang">Swift</div><pre class="code"><code>// Pattern matching in Swift
 func describe(obj: Any) -> String {
     switch obj {
     case 1:
@@ -2782,23 +2783,23 @@ func describe(obj: Any) -> String {
 print(describe(obj: 1))
 print(describe(obj: "Hello"))
 print(describe(obj: 3.14))</code></pre>
-            </div>
-            <div class="card toffeescript">
-              <div class="lang">ToffeeScript</div><pre class="code"><code># @ToDo</code></pre>
-            </div>
-            <div class="card typescript">
-              <div class="lang">TypeScript</div><pre class="code"><code>null</code></pre>
+              </div>
+              <div class="card toffeescript">
+                <div class="lang">ToffeeScript</div><pre class="code"><code># @ToDo</code></pre>
+              </div>
+              <div class="card typescript">
+                <div class="lang">TypeScript</div><pre class="code"><code>null</code></pre>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="case">
-          <div class="name">Downcasting</div>
-          <div class="pair">
-            <div class="card c">
-              <div class="lang">C</div><pre class="code"><code>// @ToDo</code></pre>
-            </div>
-            <div class="card cpp">
-              <div class="lang">C++</div><pre class="code"><code>#include &lt;iostream&gt;
+          <div class="case">
+            <div class="name">Downcasting</div>
+            <div class="pair">
+              <div class="card c">
+                <div class="lang">C</div><pre class="code"><code>// @ToDo</code></pre>
+              </div>
+              <div class="card cpp">
+                <div class="lang">C++</div><pre class="code"><code>#include &lt;iostream&gt;
 using namespace std;
 for (auto
     iterator = someObjects.begin();
@@ -2814,111 +2815,111 @@ for (auto
       // Cast failed
   }
 }</code></pre>
-            </div>
-            <div class="card coffeescript">
-              <div class="lang">CoffeeScript</div><pre class="code"><code># @ToDo</code></pre>
-            </div>
-            <div class="card elixir">
-              <div class="lang">Elixir</div><pre class="code"><code># @ToDo</code></pre>
-            </div>
-            <div class="card erlang">
-              <div class="lang">Erlang</div><pre class="code"><code>% @ToDo</code></pre>
-            </div>
-            <div class="card go">
-              <div class="lang">Go</div><pre class="code"><code>for object := range someObjects {
+              </div>
+              <div class="card coffeescript">
+                <div class="lang">CoffeeScript</div><pre class="code"><code># @ToDo</code></pre>
+              </div>
+              <div class="card elixir">
+                <div class="lang">Elixir</div><pre class="code"><code># @ToDo</code></pre>
+              </div>
+              <div class="card erlang">
+                <div class="lang">Erlang</div><pre class="code"><code>% @ToDo</code></pre>
+              </div>
+              <div class="card go">
+                <div class="lang">Go</div><pre class="code"><code>for object := range someObjects {
     movie := object.(Movie)
     fmt.Printf("Movie: '%s', dir. %s", movie.name, movie.director)
 }</code></pre>
-            </div>
-            <div class="card java">
-              <div class="lang">Java</div><pre class="code"><code>// Generic example for missing Java implementations
+              </div>
+              <div class="card java">
+                <div class="lang">Java</div><pre class="code"><code>// Generic example for missing Java implementations
 // This placeholder will be replaced with actual examples as needed
 public class Example {
     public static void main(String[] args) {
         System.out.println("Example implementation");
     }
 }</code></pre>
-            </div>
-            <div class="card javascript">
-              <div class="lang">JavaScript</div><pre class="code"><code>// @ToDo</code></pre>
-            </div>
-            <div class="card kotlin">
-              <div class="lang">Kotlin</div><pre class="code"><code>for (current in someObjects) {
+              </div>
+              <div class="card javascript">
+                <div class="lang">JavaScript</div><pre class="code"><code>// @ToDo</code></pre>
+              </div>
+              <div class="card kotlin">
+                <div class="lang">Kotlin</div><pre class="code"><code>for (current in someObjects) {
   if (current is Movie) {
     println("Movie: '${current.name}', " +
       "dir. ${current.director}")
   }
 }
 </code></pre>
-            </div>
-            <div class="card objectivec">
-              <div class="lang">ObjectiveC</div><pre class="code"><code>// @ToDo</code></pre>
-            </div>
-            <div class="card scala">
-              <div class="lang">Scala</div><pre class="code"><code>for (obj &lt;- someObjects) {
+              </div>
+              <div class="card objectivec">
+                <div class="lang">ObjectiveC</div><pre class="code"><code>// @ToDo</code></pre>
+              </div>
+              <div class="card scala">
+                <div class="lang">Scala</div><pre class="code"><code>for (obj &lt;- someObjects) {
     val movie = obj.asInstanceOf[Movie]
     println(s"Movie: '${movie.name}', dir. ${movie.director}")
 }
 </code></pre>
-            </div>
-            <div class="card swift">
-              <div class="lang">Swift</div><pre class="code"><code>for current in someObjects {
+              </div>
+              <div class="card swift">
+                <div class="lang">Swift</div><pre class="code"><code>for current in someObjects {
     if let movie = current as? Movie {
         print("Movie: '\(movie.name)', " +
             "dir. \(movie.director)")
     }
 }
 </code></pre>
-            </div>
-            <div class="card toffeescript">
-              <div class="lang">ToffeeScript</div><pre class="code"><code># @ToDo</code></pre>
-            </div>
-            <div class="card typescript">
-              <div class="lang">TypeScript</div><pre class="code"><code>null</code></pre>
+              </div>
+              <div class="card toffeescript">
+                <div class="lang">ToffeeScript</div><pre class="code"><code># @ToDo</code></pre>
+              </div>
+              <div class="card typescript">
+                <div class="lang">TypeScript</div><pre class="code"><code>null</code></pre>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="case">
-          <div class="name">Protocol</div>
-          <div class="pair">
-            <div class="card c">
-              <div class="lang">C</div><pre class="code"><code>// @ToDo</code></pre>
-            </div>
-            <div class="card cpp">
-              <div class="lang">C++</div><pre class="code"><code>// @ToDo</code></pre>
-            </div>
-            <div class="card coffeescript">
-              <div class="lang">CoffeeScript</div><pre class="code"><code># @ToDo</code></pre>
-            </div>
-            <div class="card elixir">
-              <div class="lang">Elixir</div><pre class="code"><code># @ToDo</code></pre>
-            </div>
-            <div class="card erlang">
-              <div class="lang">Erlang</div><pre class="code"><code>% @ToDo</code></pre>
-            </div>
-            <div class="card go">
-              <div class="lang">Go</div><pre class="code"><code>type Nameabler interface {
+          <div class="case">
+            <div class="name">Protocol</div>
+            <div class="pair">
+              <div class="card c">
+                <div class="lang">C</div><pre class="code"><code>// @ToDo</code></pre>
+              </div>
+              <div class="card cpp">
+                <div class="lang">C++</div><pre class="code"><code>// @ToDo</code></pre>
+              </div>
+              <div class="card coffeescript">
+                <div class="lang">CoffeeScript</div><pre class="code"><code># @ToDo</code></pre>
+              </div>
+              <div class="card elixir">
+                <div class="lang">Elixir</div><pre class="code"><code># @ToDo</code></pre>
+              </div>
+              <div class="card erlang">
+                <div class="lang">Erlang</div><pre class="code"><code>% @ToDo</code></pre>
+              </div>
+              <div class="card go">
+                <div class="lang">Go</div><pre class="code"><code>type Nameabler interface {
     func Name() string
 }
 
 func F(x Nameabler) {
     fmt.Println("Name is " + x.Name())
 }</code></pre>
-            </div>
-            <div class="card java">
-              <div class="lang">Java</div><pre class="code"><code>// Generic example for missing Java implementations
+              </div>
+              <div class="card java">
+                <div class="lang">Java</div><pre class="code"><code>// Generic example for missing Java implementations
 // This placeholder will be replaced with actual examples as needed
 public class Example {
     public static void main(String[] args) {
         System.out.println("Example implementation");
     }
 }</code></pre>
-            </div>
-            <div class="card javascript">
-              <div class="lang">JavaScript</div><pre class="code"><code>// @ToDo</code></pre>
-            </div>
-            <div class="card kotlin">
-              <div class="lang">Kotlin</div><pre class="code"><code>interface Nameable {
+              </div>
+              <div class="card javascript">
+                <div class="lang">JavaScript</div><pre class="code"><code>// @ToDo</code></pre>
+              </div>
+              <div class="card kotlin">
+                <div class="lang">Kotlin</div><pre class="code"><code>interface Nameable {
     fun name(): String
 }
 
@@ -2926,12 +2927,12 @@ fun f&lt;T: Nameable&gt;(x: T) {
     println("Name is " + x.name())
 }
 </code></pre>
-            </div>
-            <div class="card objectivec">
-              <div class="lang">ObjectiveC</div><pre class="code"><code>// @ToDo</code></pre>
-            </div>
-            <div class="card scala">
-              <div class="lang">Scala</div><pre class="code"><code>trait Nameable {
+              </div>
+              <div class="card objectivec">
+                <div class="lang">ObjectiveC</div><pre class="code"><code>// @ToDo</code></pre>
+              </div>
+              <div class="card scala">
+                <div class="lang">Scala</div><pre class="code"><code>trait Nameable {
     def name(): String
 }
 
@@ -2939,9 +2940,9 @@ def f[T &lt;: Nameable](x: T) = {
     println("Name is " + x.name())
 }
 </code></pre>
-            </div>
-            <div class="card swift">
-              <div class="lang">Swift</div><pre class="code"><code>protocol Nameable {
+              </div>
+              <div class="card swift">
+                <div class="lang">Swift</div><pre class="code"><code>protocol Nameable {
     func name() -&gt; String
 }
 
@@ -2949,35 +2950,35 @@ func f&lt;T: Nameable&gt;(x: T) {
     print("Name is " + x.name())
 }
 </code></pre>
-            </div>
-            <div class="card toffeescript">
-              <div class="lang">ToffeeScript</div><pre class="code"><code># @ToDo</code></pre>
-            </div>
-            <div class="card typescript">
-              <div class="lang">TypeScript</div><pre class="code"><code>null</code></pre>
+              </div>
+              <div class="card toffeescript">
+                <div class="lang">ToffeeScript</div><pre class="code"><code># @ToDo</code></pre>
+              </div>
+              <div class="card typescript">
+                <div class="lang">TypeScript</div><pre class="code"><code>null</code></pre>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="case">
-          <div class="name">Extensions</div>
-          <div class="pair">
-            <div class="card c">
-              <div class="lang">C</div><pre class="code"><code>// @ToDo</code></pre>
-            </div>
-            <div class="card cpp">
-              <div class="lang">C++</div><pre class="code"><code>// @ToDo</code></pre>
-            </div>
-            <div class="card coffeescript">
-              <div class="lang">CoffeeScript</div><pre class="code"><code># @ToDo</code></pre>
-            </div>
-            <div class="card elixir">
-              <div class="lang">Elixir</div><pre class="code"><code># @ToDo</code></pre>
-            </div>
-            <div class="card erlang">
-              <div class="lang">Erlang</div><pre class="code"><code>% @ToDo</code></pre>
-            </div>
-            <div class="card go">
-              <div class="lang">Go</div><pre class="code"><code>type double float64
+          <div class="case">
+            <div class="name">Extensions</div>
+            <div class="pair">
+              <div class="card c">
+                <div class="lang">C</div><pre class="code"><code>// @ToDo</code></pre>
+              </div>
+              <div class="card cpp">
+                <div class="lang">C++</div><pre class="code"><code>// @ToDo</code></pre>
+              </div>
+              <div class="card coffeescript">
+                <div class="lang">CoffeeScript</div><pre class="code"><code># @ToDo</code></pre>
+              </div>
+              <div class="card elixir">
+                <div class="lang">Elixir</div><pre class="code"><code># @ToDo</code></pre>
+              </div>
+              <div class="card erlang">
+                <div class="lang">Erlang</div><pre class="code"><code>% @ToDo</code></pre>
+              </div>
+              <div class="card go">
+                <div class="lang">Go</div><pre class="code"><code>type double float64
 
 func (d double) km() double { return d * 1000 }
 func (d double) m() double  { return d }
@@ -2994,21 +2995,21 @@ func main() {
     fmt.Printf("Three feet is %v meters\n", threeFeet)
     // prints "Three feet is 0.914399970739201 meters"
 }</code></pre>
-            </div>
-            <div class="card java">
-              <div class="lang">Java</div><pre class="code"><code>// Generic example for missing Java implementations
+              </div>
+              <div class="card java">
+                <div class="lang">Java</div><pre class="code"><code>// Generic example for missing Java implementations
 // This placeholder will be replaced with actual examples as needed
 public class Example {
     public static void main(String[] args) {
         System.out.println("Example implementation");
     }
 }</code></pre>
-            </div>
-            <div class="card javascript">
-              <div class="lang">JavaScript</div><pre class="code"><code>// @ToDo</code></pre>
-            </div>
-            <div class="card kotlin">
-              <div class="lang">Kotlin</div><pre class="code"><code>val Double.km: Double get() = this * 1000
+              </div>
+              <div class="card javascript">
+                <div class="lang">JavaScript</div><pre class="code"><code>// @ToDo</code></pre>
+              </div>
+              <div class="card kotlin">
+                <div class="lang">Kotlin</div><pre class="code"><code>val Double.km: Double get() = this * 1000
 val Double.m: Double get() = this
 val Double.cm: Double get() = this / 100
 val Double.mm: Double get() = this / 1000
@@ -3021,12 +3022,12 @@ val threeFeet = 3.0.ft
 println("Three feet is $threeFeet meters")
 // prints "Three feet is 0.914399970739201 meters"
 </code></pre>
-            </div>
-            <div class="card objectivec">
-              <div class="lang">ObjectiveC</div><pre class="code"><code>// @ToDo</code></pre>
-            </div>
-            <div class="card scala">
-              <div class="lang">Scala</div><pre class="code"><code>object Extensions {
+              </div>
+              <div class="card objectivec">
+                <div class="lang">ObjectiveC</div><pre class="code"><code>// @ToDo</code></pre>
+              </div>
+              <div class="card scala">
+                <div class="lang">Scala</div><pre class="code"><code>object Extensions {
     implicit class DoubleUnit(d: Double) {
         def km: Double = { return d * 1000.0 }
         def m: Double = { return d }
@@ -3045,9 +3046,9 @@ val threeFeet = 3.ft
 println(s"Three feet is $threeFeet meters")
 // prints "Three feet is 0.914399970739201 meters"
 </code></pre>
-            </div>
-            <div class="card swift">
-              <div class="lang">Swift</div><pre class="code"><code>extension Double {
+              </div>
+              <div class="card swift">
+                <div class="lang">Swift</div><pre class="code"><code>extension Double {
     var km: Double { return self * 1_000.0 }
     var m: Double { return self }
     var cm: Double { return self / 100.0 }
@@ -3061,64 +3062,64 @@ let threeFeet = 3.ft
 print("Three feet is \(threeFeet) meters")
 // prints "Three feet is 0.914399970739201 meters"
 </code></pre>
-            </div>
-            <div class="card toffeescript">
-              <div class="lang">ToffeeScript</div><pre class="code"><code># @ToDo</code></pre>
-            </div>
-            <div class="card typescript">
-              <div class="lang">TypeScript</div><pre class="code"><code>null</code></pre>
+              </div>
+              <div class="card toffeescript">
+                <div class="lang">ToffeeScript</div><pre class="code"><code># @ToDo</code></pre>
+              </div>
+              <div class="card typescript">
+                <div class="lang">TypeScript</div><pre class="code"><code>null</code></pre>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <script type="text/javascript">
-        if (window.localStorage.getItem('c') === 'true') document.getElementById('c').checked = true);
-      </script>
-      <script type="text/javascript">
-        showHide(document.getElementById('c'));
-      </script>
-      <script type="text/javascript">
-        showHide(document.getElementById('cpp'));
-      </script>
-      <script type="text/javascript">
-        showHide(document.getElementById('coffeescript'));
-      </script>
-      <script type="text/javascript">
-        showHide(document.getElementById('elixir'));
-      </script>
-      <script type="text/javascript">
-        showHide(document.getElementById('erlang'));
-      </script>
-      <script type="text/javascript">
-        showHide(document.getElementById('go'));
-      </script>
-      <script type="text/javascript">
-        showHide(document.getElementById('groovy'));
-      </script>
-      <script type="text/javascript">
-        showHide(document.getElementById('java'));
-      </script>
-      <script type="text/javascript">
-        showHide(document.getElementById('javascript'));
-      </script>
-      <script type="text/javascript">
-        showHide(document.getElementById('kotlin'));
-      </script>
-      <script type="text/javascript">
-        showHide(document.getElementById('objectivec'));
-      </script>
-      <script type="text/javascript">
-        showHide(document.getElementById('scala'));
-      </script>
-      <script type="text/javascript">
-        showHide(document.getElementById('swift'));
-      </script>
-      <script type="text/javascript">
-        showHide(document.getElementById('toffeescript'));
-      </script>
-      <script type="text/javascript">
-        showHide(document.getElementById('typescript'));
-      </script>
+        <script type="text/javascript">
+          if (window.localStorage.getItem('c') === 'true') document.getElementById('c').checked = true);
+        </script>
+        <script type="text/javascript">
+          showHide(document.getElementById('c'));
+        </script>
+        <script type="text/javascript">
+          showHide(document.getElementById('cpp'));
+        </script>
+        <script type="text/javascript">
+          showHide(document.getElementById('coffeescript'));
+        </script>
+        <script type="text/javascript">
+          showHide(document.getElementById('elixir'));
+        </script>
+        <script type="text/javascript">
+          showHide(document.getElementById('erlang'));
+        </script>
+        <script type="text/javascript">
+          showHide(document.getElementById('go'));
+        </script>
+        <script type="text/javascript">
+          showHide(document.getElementById('groovy'));
+        </script>
+        <script type="text/javascript">
+          showHide(document.getElementById('java'));
+        </script>
+        <script type="text/javascript">
+          showHide(document.getElementById('javascript'));
+        </script>
+        <script type="text/javascript">
+          showHide(document.getElementById('kotlin'));
+        </script>
+        <script type="text/javascript">
+          showHide(document.getElementById('objectivec'));
+        </script>
+        <script type="text/javascript">
+          showHide(document.getElementById('scala'));
+        </script>
+        <script type="text/javascript">
+          showHide(document.getElementById('swift'));
+        </script>
+        <script type="text/javascript">
+          showHide(document.getElementById('toffeescript'));
+        </script>
+        <script type="text/javascript">
+          showHide(document.getElementById('typescript'));
+        </script>
   </body>
 
 </html>
