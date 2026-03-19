@@ -241,7 +241,14 @@ documentation lines
 </code></pre>
               </div>
               <div class="card erlang">
-                <div class="lang">Erlang</div><pre class="code"><code>% @ToDo</code></pre>
+                <div class="lang">Erlang</div><pre class="code"><code>% single line
+
+%% module documentation lines
+
+%%%
+%%% file/section headers
+%%%
+</code></pre>
               </div>
               <div class="card go">
                 <div class="lang">Go</div><pre class="code"><code>// single line
@@ -361,8 +368,7 @@ myVariable = 50
 `const myConstant = 42`</code></pre>
               </div>
               <div class="card elixir">
-                <div class="lang">Elixir</div><pre class="code"><code># Variables and constants in Elixir
-my_variable = 42
+                <div class="lang">Elixir</div><pre class="code"><code>my_variable = 42
 my_variable = 50  # variables can be rebound
 
 # Constants are defined in modules
@@ -372,8 +378,7 @@ defmodule MyModule do
 end</code></pre>
               </div>
               <div class="card erlang">
-                <div class="lang">Erlang</div><pre class="code"><code>% Variables and constants in Erlang
--module(example).
+                <div class="lang">Erlang</div><pre class="code"><code>-module(example).
 -export([start/0]).
 
 start() -&gt;
@@ -492,8 +497,8 @@ text = "Hello"
 atom = :symbol</code></pre>
               </div>
               <div class="card erlang">
-                <div class="lang">Erlang</div><pre class="code"><code>% Explicit types in Erlang
-% Erlang is dynamically typed, but here's how you'd assign values
+                <div class="lang">Erlang</div><pre class="code"><code>% Erlang is dynamically typed,
+% but here's how you'd assign values
 -module(example).
 -export([start/0]).
 
@@ -502,7 +507,8 @@ start() -&gt;
     FloatNum = 3.14,
     Boolean = true,
     Text = "Hello",
-    io:format("~p ~p ~p ~p~n", [Integer, FloatNum, Boolean, Text]).</code></pre>
+    io:format("~p ~p ~p ~p~n",
+      [Integer, FloatNum, Boolean, Text]).</code></pre>
               </div>
               <div class="card go">
                 <div class="lang">Go</div><pre class="code"><code>var integer int = 42
@@ -652,8 +658,7 @@ int_val = String.to_integer("42")
 float_val = String.to_float("3.14")</code></pre>
               </div>
               <div class="card erlang">
-                <div class="lang">Erlang</div><pre class="code"><code>% Type coercion in Erlang
-% Erlang doesn't have implicit type coercion
+                <div class="lang">Erlang</div><pre class="code"><code>% Erlang doesn't have implicit type coercion
 % Conversion must be explicit
 -module(example).
 -export([start/0]).
@@ -802,8 +807,7 @@ Enum.each(range, fn(x) -&gt; IO.puts(x) end)
 for x &lt;- 0..4, do: IO.puts(x)</code></pre>
               </div>
               <div class="card erlang">
-                <div class="lang">Erlang</div><pre class="code"><code>% Range operator in Erlang
-% Erlang doesn't have a built-in range operator
+                <div class="lang">Erlang</div><pre class="code"><code>% Erlang doesn't have a built-in range operator
 % Use lists or recursion
 -module(example).
 -export([range/2, start/0]).
@@ -991,8 +995,7 @@ Enum.each(range, fn(x) -&gt; IO.puts(x) end)
 for x &lt;- 0..5, do: IO.puts(x)</code></pre>
               </div>
               <div class="card erlang">
-                <div class="lang">Erlang</div><pre class="code"><code>% Inclusive range operator in Erlang
-% Erlang doesn't have a built-in range operator
+                <div class="lang">Erlang</div><pre class="code"><code>% Erlang doesn't have a built-in range operator
 % Use lists or recursion
 -module(example).
 -export([range_inclusive/2, start/0]).
@@ -1157,8 +1160,7 @@ string
 IO.puts(multiline)</code></pre>
               </div>
               <div class="card erlang">
-                <div class="lang">Erlang</div><pre class="code"><code>% Multiline strings in Erlang
--module(example).
+                <div class="lang">Erlang</div><pre class="code"><code>-module(example).
 -export([start/0]).
 
 start() -&gt;
@@ -1286,8 +1288,7 @@ fruit_summary = "I have #{apples + oranges} " &lt;&gt;
 IO.puts fruit_summary</code></pre>
               </div>
               <div class="card erlang">
-                <div class="lang">Erlang</div><pre class="code"><code>% String interpolation in Erlang
-% Erlang doesn't have direct string interpolation
+                <div class="lang">Erlang</div><pre class="code"><code>% Erlang doesn't have direct string interpolation
 % Use io_lib:format/2 or similar
 -module(example).
 -export([start/0]).
@@ -1424,8 +1425,7 @@ arr = [1, 2, 3, 4, 5]
 arr2 = ~w[1 2 3 4 5]a  # atom list</code></pre>
               </div>
               <div class="card erlang">
-                <div class="lang">Erlang</div><pre class="code"><code>% Arrays in Erlang
-% Erlang uses lists as primary collection
+                <div class="lang">Erlang</div><pre class="code"><code>% Erlang uses lists as primary collection
 -module(example).
 -export([start/0]).
 
@@ -1552,8 +1552,7 @@ map2 = %{key: 10}
 value = map["key"]</code></pre>
               </div>
               <div class="card erlang">
-                <div class="lang">Erlang</div><pre class="code"><code>% Maps in Erlang
--module(example).
+                <div class="lang">Erlang</div><pre class="code"><code>-module(example).
 -export([start/0]).
 
 start() -&gt;
@@ -1684,8 +1683,7 @@ empty_list = []
 empty_map = %{}</code></pre>
               </div>
               <div class="card erlang">
-                <div class="lang">Erlang</div><pre class="code"><code>% Empty collections in Erlang
--module(example).
+                <div class="lang">Erlang</div><pre class="code"><code>-module(example).
 -export([start/0]).
 
 start() -&gt;
@@ -1816,8 +1814,7 @@ IO.inspect doubled
 </code></pre>
               </div>
               <div class="card erlang">
-                <div class="lang">Erlang</div><pre class="code"><code>% Map (higher-order) in Erlang
--module(example).
+                <div class="lang">Erlang</div><pre class="code"><code>-module(example).
 -export([start/0]).
 
 start() -&gt;
