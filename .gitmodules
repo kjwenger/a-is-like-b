@@ -7,3 +7,12 @@
 [submodule "submodule/swift-is-like-go"]
 	path = submodule/swift-is-like-go
 	url = https://github.com/jiyinyiyong/swift-is-like-go.git
+[submodule "swift-is-like-kotlin"]
+	path = swift-is-like-kotlin
+	url = https://github.com/JnariyaInnov/swift-is-like-kotlin
+[submodule "swift-is-like-go"]
+	path = swift-is-like-go
+	url = https://github.com/jiyinyiyong/swift-is-like-go
+[submodule "swiftislikescala"]
+	path = swiftislikescala
+	url = https://github.com/leverich/swiftislikescala
