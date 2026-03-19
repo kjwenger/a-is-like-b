@@ -1,4 +1,0 @@
-printMessage = ->
-  console.log "This is a procedure"
-
-printMessage()

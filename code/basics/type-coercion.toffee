@@ -1,9 +1,0 @@
-# Type coercion in ToffeeScript
-intNum = 42
-floatNum = 3.14
-# Explicit conversion
-intNum = parseInt(floatNum)
-floatNum = parseFloat(intNum)
-# Type coercion
-result = intNum + "" + floatNum # to string
-# Note: ToffeeScript follows JavaScript coercion rules

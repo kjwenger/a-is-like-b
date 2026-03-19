@@ -1,4 +1,0 @@
-// single line
-/*
- * multiple lines
- */
