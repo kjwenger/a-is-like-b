@@ -1,4 +1,3 @@
-% Arrays in Erlang
 % Erlang uses lists as primary collection
 -module(example).
 -export([start/0]).

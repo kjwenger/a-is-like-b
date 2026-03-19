@@ -1,4 +1,3 @@
-% Variables and constants in Erlang
 -module(example).
 -export([start/0]).
 

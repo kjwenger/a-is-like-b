@@ -1,4 +1,3 @@
-% String interpolation in Erlang
 % Erlang doesn't have direct string interpolation
 % Use io_lib:format/2 or similar
 -module(example).

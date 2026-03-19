@@ -1,4 +1,3 @@
-% Multiline strings in Erlang
 -module(example).
 -export([start/0]).
 

@@ -1,4 +1,3 @@
-% Inclusive range operator in Erlang
 % Erlang doesn't have a built-in range operator
 % Use lists or recursion
 -module(example).

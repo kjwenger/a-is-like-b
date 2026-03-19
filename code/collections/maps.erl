@@ -1,4 +1,3 @@
-% Maps in Erlang
 -module(example).
 -export([start/0]).
 

@@ -1,4 +1,3 @@
-% Type coercion in Erlang
 % Erlang doesn't have implicit type coercion
 % Conversion must be explicit
 -module(example).

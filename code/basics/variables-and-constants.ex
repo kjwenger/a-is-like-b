@@ -1,4 +1,3 @@
-# Variables and constants in Elixir
 my_variable = 42
 my_variable = 50  # variables can be rebound
 

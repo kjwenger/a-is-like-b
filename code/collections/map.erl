@@ -1,4 +1,3 @@
-% Map (higher-order) in Erlang
 -module(example).
 -export([start/0]).
 
