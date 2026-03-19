@@ -361,10 +361,26 @@ myVariable = 50
 `const myConstant = 42`</code></pre>
               </div>
               <div class="card elixir">
-                <div class="lang">Elixir</div><pre class="code"><code># @ToDo</code></pre>
+                <div class="lang">Elixir</div><pre class="code"><code># Variables and constants in Elixir
+my_variable = 42
+my_variable = 50  # variables can be rebound
+
+# Constants are defined in modules
+defmodule MyModule do
+  @my_constant 42
+  def get_constant, do: @my_constant
+end</code></pre>
               </div>
               <div class="card erlang">
-                <div class="lang">Erlang</div><pre class="code"><code>% @ToDo</code></pre>
+                <div class="lang">Erlang</div><pre class="code"><code>% Variables and constants in Erlang
+-module(example).
+-export([start/0]).
+
+start() -&gt;
+    MyVariable = 42,
+    % Erlang doesn't have mutable variables in the traditional sense
+    % But you can shadow bindings
+    io:format("~p~n", [MyVariable]).</code></pre>
               </div>
               <div class="card go">
                 <div class="lang">Go</div><pre class="code"><code>var myVariable = 42
@@ -392,7 +408,13 @@ myVariable = 50
 val myConstant = 42</code></pre>
               </div>
               <div class="card objectivec">
-                <div class="lang">ObjectiveC</div><pre class="code"><code>// @ToDo</code></pre>
+                <div class="lang">ObjectiveC</div><pre class="code"><code>// Variables and constants in Objective-C
+int myVariable = 42;
+myVariable = 50;
+
+const int myConstant = 42;
+// Or using #define
+#define MY_CONSTANT 42</code></pre>
               </div>
               <div class="card scala">
                 <div class="lang">Scala</div><pre class="code"><code>var myVariable = 42
@@ -423,8 +445,8 @@ const myConstant: number = 42;</code></pre>
             <div class="name">Explicit Types</div>
             <div class="pair">
               <div class="card c">
-                <div class="lang">C</div><pre class="code"><code>#include <stdio.h>
-#include <stdbool.h>
+                <div class="lang">C</div><pre class="code"><code>#include &lt;stdio.h&gt;
+#include &lt;stdbool.h&gt;
 
 int integer = 42;
 long longInteger = 42L;
@@ -435,7 +457,7 @@ char character = 'A';
 char text[] = "Hello";</code></pre>
               </div>
               <div class="card cpp">
-                <div class="lang">C++</div><pre class="code"><code>#include <iostream>
+                <div class="lang">C++</div><pre class="code"><code>#include &lt;iostream&gt;
 
 int integer = 42;
 long longInteger = 42L;
@@ -459,13 +481,38 @@ constant = 42
 variable = "changeable"</code></pre>
               </div>
               <div class="card elixir">
-                <div class="lang">Elixir</div><pre class="code"><code># @ToDo</code></pre>
+                <div class="lang">Elixir</div><pre class="code"><code># Explicit types in Elixir
+# Elixir is dynamically typed, but here's how you'd assign values
+integer = 42
+float_num = 3.14
+boolean = true
+text = "Hello"
+
+# Atoms (constants)
+atom = :symbol</code></pre>
               </div>
               <div class="card erlang">
-                <div class="lang">Erlang</div><pre class="code"><code>% @ToDo</code></pre>
+                <div class="lang">Erlang</div><pre class="code"><code>% Explicit types in Erlang
+% Erlang is dynamically typed, but here's how you'd assign values
+-module(example).
+-export([start/0]).
+
+start() -&gt;
+    Integer = 42,
+    FloatNum = 3.14,
+    Boolean = true,
+    Text = "Hello",
+    io:format("~p ~p ~p ~p~n", [Integer, FloatNum, Boolean, Text]).</code></pre>
               </div>
               <div class="card go">
-                <div class="lang">Go</div><pre class="code"><code>const explicitDouble float64 = 70</code></pre>
+                <div class="lang">Go</div><pre class="code"><code>var integer int = 42
+var longInteger int64 = 42
+var floatNum float32 = 3.14
+var doubleNum float64 = 3.14
+var boolean bool = true
+var character rune = 'A'
+var text string = "Hello"
+</code></pre>
               </div>
               <div class="card java">
                 <div class="lang">Java</div><pre class="code"><code>int integer = 42;
@@ -488,7 +535,13 @@ const constant = 42;
 let variable = "changeable";</code></pre>
               </div>
               <div class="card kotlin">
-                <div class="lang">Kotlin</div><pre class="code"><code>val explicitDouble: Double = 70.0
+                <div class="lang">Kotlin</div><pre class="code"><code>val integer: Int = 42
+val longInteger: Long = 42L
+val floatNum: Float = 3.14f
+val doubleNum: Double = 3.14
+val boolean: Boolean = true
+val character: Char = 'A'
+val text: String = "Hello"
 </code></pre>
               </div>
               <div class="card objectivec">
@@ -502,11 +555,23 @@ char character = 'A';
 NSString *text = @"Hello";</code></pre>
               </div>
               <div class="card scala">
-                <div class="lang">Scala</div><pre class="code"><code>val explicitDouble: Double = 70
+                <div class="lang">Scala</div><pre class="code"><code>val integer: Int = 42
+val longInteger: Long = 42L
+val floatNum: Float = 3.14f
+val doubleNum: Double = 3.14
+val boolean: Boolean = true
+val character: Char = 'A'
+val text: String = "Hello"
 </code></pre>
               </div>
               <div class="card swift">
-                <div class="lang">Swift</div><pre class="code"><code>let explicitDouble: Double = 70</code></pre>
+                <div class="lang">Swift</div><pre class="code"><code>let integer: Int = 42
+let floatNum: Float = 3.14
+let doubleNum: Double = 3.14
+let boolean: Bool = true
+let character: Character = "A"
+let text: String = "Hello"
+</code></pre>
               </div>
               <div class="card toffeescript">
                 <div class="lang">ToffeeScript</div><pre class="code"><code># Explicit types in ToffeeScript
@@ -538,21 +603,71 @@ let variable: string = "changeable";</code></pre>
             <div class="name">Type Coercion</div>
             <div class="pair">
               <div class="card c">
-                <div class="lang">C</div><pre class="code"><code>// @ToDo</code></pre>
+                <div class="lang">C</div><pre class="code"><code>#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+int intNum = 42;
+double doubleNum = (double)intNum;
+intNum = (int)3.14;
+char str[20];
+sprintf(str, "%d", intNum);
+intNum = atoi("42");</code></pre>
               </div>
               <div class="card cpp">
-                <div class="lang">C++</div><pre class="code"><code>// @ToDo</code></pre>
+                <div class="lang">C++</div><pre class="code"><code>#include &lt;iostream&gt;
+#include &lt;string&gt;
+#include &lt;sstream&gt;
+
+int intNum = 42;
+double doubleNum = static_cast&lt;double&gt;(intNum);
+intNum = static_cast&lt;int&gt;(3.14);
+std::string str = std::to_string(intNum);
+str = "42";
+intNum = std::stoi(str);</code></pre>
               </div>
               <div class="card coffeescript">
-                <div class="lang">CoffeeScript</div><pre class="code"><code>label = "The width is "
-width = 94
-widthLabel = label + width</code></pre>
+                <div class="lang">CoffeeScript</div><pre class="code"><code>intNum = 42
+str = String(intNum)
+parsedInt = parseInt("42")
+floatNum = parseFloat("3.14")
+doubleNum = Number(intNum)
+</code></pre>
               </div>
               <div class="card elixir">
-                <div class="lang">Elixir</div><pre class="code"><code># @ToDo</code></pre>
+                <div class="lang">Elixir</div><pre class="code"><code># Type coercion in Elixir
+# Elixir doesn't have implicit type coercion
+# Conversion must be explicit
+int_num = 42
+float_num = 3.14
+
+# Convert integer to float
+float_val = int_num / 1
+# Convert float to integer
+int_val = trunc(float_num)
+# Convert to string
+str = Integer.to_string(int_num)
+str = Float.to_string(float_num)
+# Convert from string
+int_val = String.to_integer("42")
+float_val = String.to_float("3.14")</code></pre>
               </div>
               <div class="card erlang">
-                <div class="lang">Erlang</div><pre class="code"><code>% @ToDo</code></pre>
+                <div class="lang">Erlang</div><pre class="code"><code>% Type coercion in Erlang
+% Erlang doesn't have implicit type coercion
+% Conversion must be explicit
+-module(example).
+-export([start/0]).
+
+start() -&gt;
+    IntNum = 42,
+    FloatNum = 3.14,
+    % Convert to string
+    StrInt = integer_to_list(IntNum),
+    StrFloat = float_to_list(FloatNum),
+    % Convert from string
+    IntVal = list_to_integer(StrInt),
+    FloatVal = list_to_float(StrFloat),
+    io:format("~p ~p~n", [StrInt, StrFloat]).</code></pre>
               </div>
               <div class="card go">
                 <div class="lang">Go</div><pre class="code"><code>const label = "The width is "
@@ -560,11 +675,14 @@ const width = 94
 var widthLabel = label + strconv.Itoa(width)</code></pre>
               </div>
               <div class="card java">
-                <div class="lang">Java</div><pre class="code"><code>// Generic example for missing Java implementations
-// This placeholder will be replaced with actual examples as needed
+                <div class="lang">Java</div><pre class="code"><code>// Type coercion in Java
 public class Example {
     public static void main(String[] args) {
-        System.out.println("Example implementation");
+        int intNum = 42;
+        double doubleNum = (double)intNum;
+        intNum = (int)3.14;
+        String str = String.valueOf(intNum);
+        intNum = Integer.parseInt("42");
     }
 }</code></pre>
               </div>
@@ -579,18 +697,29 @@ var result = intNum + "" + floatNum; // to string
 result = +result; // to number</code></pre>
               </div>
               <div class="card kotlin">
-                <div class="lang">Kotlin</div><pre class="code"><code>val label = "The width is "
-val width = 94
-val widthLabel = label + width
+                <div class="lang">Kotlin</div><pre class="code"><code>val intNum: Int = 42
+val str: String = intNum.toString()
+val parsedInt: Int = "42".toInt()
+val doubleNum: Double = intNum.toDouble()
+val floatNum: Float = intNum.toFloat()
 </code></pre>
               </div>
               <div class="card objectivec">
-                <div class="lang">ObjectiveC</div><pre class="code"><code>// @ToDo</code></pre>
+                <div class="lang">ObjectiveC</div><pre class="code"><code>// Type coercion in Objective-C
+#import &lt;Foundation/Foundation.h&gt;
+
+int intNum = 42;
+double doubleNum = (double)intNum;
+intNum = (int)3.14;
+NSString *str = [NSString stringWithFormat:@"%d", intNum];
+intNum = [str intValue];</code></pre>
               </div>
               <div class="card scala">
-                <div class="lang">Scala</div><pre class="code"><code>val label = "The width is "
-val width = 94
-val widthLabel = label + width
+                <div class="lang">Scala</div><pre class="code"><code>val intNum: Int = 42
+val str: String = intNum.toString
+val parsedInt: Int = "42".toInt
+val doubleNum: Double = intNum.toDouble
+val floatNum: Float = intNum.toFloat
 </code></pre>
               </div>
               <div class="card swift">
@@ -628,10 +757,28 @@ floatNum = parseFloat(result);</code></pre>
             <div class="name">Range Operator</div>
             <div class="pair">
               <div class="card c">
-                <div class="lang">C</div><pre class="code"><code>// @ToDo</code></pre>
+                <div class="lang">C</div><pre class="code"><code>#include &lt;stdio.h&gt;
+
+// C doesn't have a range operator
+// Use loops instead
+int main() {
+    for (int i = 0; i &lt; 5; i++) {
+        printf("%d\n", i);
+    }
+    return 0;
+}</code></pre>
               </div>
               <div class="card cpp">
-                <div class="lang">C++</div><pre class="code"><code>// @ToDo</code></pre>
+                <div class="lang">C++</div><pre class="code"><code>#include &lt;iostream&gt;
+
+// C++ doesn't have a range operator like some languages
+// Use loops or std::iota with containers instead
+int main() {
+    for (int i = 0; i &lt; 5; i++) {
+        std::cout &lt;&lt; i &lt;&lt; std::endl;
+    }
+    return 0;
+}</code></pre>
               </div>
               <div class="card coffeescript">
                 <div class="lang">CoffeeScript</div><pre class="code"><code>names = [
@@ -646,10 +793,29 @@ for i in [1...length] by 1
 # Person 4 is Jack</code></pre>
               </div>
               <div class="card elixir">
-                <div class="lang">Elixir</div><pre class="code"><code># @ToDo</code></pre>
+                <div class="lang">Elixir</div><pre class="code"><code># Range operator in Elixir
+# Elixir has ranges with .. operator
+range = 0..4
+Enum.each(range, fn(x) -&gt; IO.puts(x) end)
+
+# Or using for comprehension
+for x &lt;- 0..4, do: IO.puts(x)</code></pre>
               </div>
               <div class="card erlang">
-                <div class="lang">Erlang</div><pre class="code"><code>% @ToDo</code></pre>
+                <div class="lang">Erlang</div><pre class="code"><code>% Range operator in Erlang
+% Erlang doesn't have a built-in range operator
+% Use lists or recursion
+-module(example).
+-export([range/2, start/0]).
+
+range(Start, End) when Start &gt; End -&gt;
+    [];
+range(Start, End) -&gt;
+    [Start | range(Start + 1, End)].
+
+start() -&gt;
+    Range = range(0, 4),
+    [io:format("~p~n", [X]) || X &lt;- Range].</code></pre>
               </div>
               <div class="card go">
                 <div class="lang">Go</div><pre class="code"><code>names := [4]string{
@@ -663,17 +829,43 @@ for i, value := range(names) {
 // Person 3 is Brian
 // Person 4 is Jack</code></pre>
               </div>
+              <div class="card groovy">
+                <div class="lang">Groovy</div><pre class="code"><code>def names = [
+  "Anna", "Alex", "Brian", "Jack"]
+def count = names.size()
+for (i in 0..&lt;count) {
+  println("Person ${i + 1} is ${names[i]}")
+}
+// Person 1 is Anna
+// Person 2 is Alex
+// Person 3 is Brian
+// Person 4 is Jack
+</code></pre>
+              </div>
               <div class="card java">
-                <div class="lang">Java</div><pre class="code"><code>// Generic example for missing Java implementations
-// This placeholder will be replaced with actual examples as needed
+                <div class="lang">Java</div><pre class="code"><code>// Range operator in Java
+// Java doesn't have a range operator
+// Use loops or IntStream instead
 public class Example {
     public static void main(String[] args) {
-        System.out.println("Example implementation");
+        for (int i = 0; i &lt; 5; i++) {
+            System.out.println(i);
+        }
+        // Or with IntStream
+        java.util.stream.IntStream.range(0, 5)
+            .forEach(System.out::println);
     }
 }</code></pre>
               </div>
               <div class="card javascript">
-                <div class="lang">JavaScript</div><pre class="code"><code>// @ToDo</code></pre>
+                <div class="lang">JavaScript</div><pre class="code"><code>// Range operator in JavaScript
+// JavaScript doesn't have a range operator
+// Use loops or Array methods instead
+for (let i = 0; i &lt; 5; i++) {
+  console.log(i);
+}
+// Or with Array
+[...Array(5).keys()].forEach(i =&gt; console.log(i));</code></pre>
               </div>
               <div class="card kotlin">
                 <div class="lang">Kotlin</div><pre class="code"><code>val names = arrayOf(
@@ -688,7 +880,17 @@ for (i in 0..count - 1) {
 // Person 4 is Jack</code></pre>
               </div>
               <div class="card objectivec">
-                <div class="lang">ObjectiveC</div><pre class="code"><code>// @ToDo</code></pre>
+                <div class="lang">ObjectiveC</div><pre class="code"><code>// Range operator in Objective-C
+// Objective-C doesn't have a range operator
+// Use loops instead
+#import &lt;Foundation/Foundation.h&gt;
+
+int main() {
+    for (int i = 0; i &lt; 5; i++) {
+        NSLog(@"%d", i);
+    }
+    return 0;
+}</code></pre>
               </div>
               <div class="card scala">
                 <div class="lang">Scala</div><pre class="code"><code>val names = Array(
@@ -728,7 +930,14 @@ for i in [1...length] by 1
 # Person 4 is Jack</code></pre>
               </div>
               <div class="card typescript">
-                <div class="lang">TypeScript</div><pre class="code"><code>null</code></pre>
+                <div class="lang">TypeScript</div><pre class="code"><code>// TypeScript doesn't have a range operator
+// Use loops or Array methods instead
+for (let i = 0; i &lt; 5; i++) {
+  console.log(i);
+}
+// Or with Array
+[...Array(5).keys()].forEach((i: number) =&gt; console.log(i));
+</code></pre>
               </div>
             </div>
           </div>
@@ -736,19 +945,66 @@ for i in [1...length] by 1
             <div class="name">Inclusive Range Operator</div>
             <div class="pair">
               <div class="card c">
-                <div class="lang">C</div><pre class="code"><code>// @ToDo</code></pre>
+                <div class="lang">C</div><pre class="code"><code>#include &lt;stdio.h&gt;
+
+// Inclusive range operator in C
+// C doesn't have a range operator
+// Use loops instead
+int main() {
+    for (int i = 0; i &lt;= 5; i++) {
+        printf("%d\n", i);
+    }
+    return 0;
+}</code></pre>
               </div>
               <div class="card cpp">
-                <div class="lang">C++</div><pre class="code"><code>// @ToDo</code></pre>
+                <div class="lang">C++</div><pre class="code"><code>#include &lt;iostream&gt;
+
+// Inclusive range operator in C++
+// C++ doesn't have a range operator
+// Use loops instead
+int main() {
+    for (int i = 0; i &lt;= 5; i++) {
+        std::cout &lt;&lt; i &lt;&lt; std::endl;
+    }
+    return 0;
+}</code></pre>
               </div>
               <div class="card coffeescript">
-                <div class="lang">CoffeeScript</div><pre class="code"><code># @ToDo</code></pre>
+                <div class="lang">CoffeeScript</div><pre class="code"><code># Inclusive range operator in CoffeeScript
+# CoffeeScript doesn't have a range operator like some languages
+# Use loops instead
+for i in [0..5]
+  console.log i
+
+# Or using for loop
+for i in [0..5] by 1
+  console.log i</code></pre>
               </div>
               <div class="card elixir">
-                <div class="lang">Elixir</div><pre class="code"><code># @ToDo</code></pre>
+                <div class="lang">Elixir</div><pre class="code"><code># Inclusive range operator in Elixir
+# Elixir has inclusive ranges with .. operator
+range = 0..5
+Enum.each(range, fn(x) -&gt; IO.puts(x) end)
+
+# Or using for comprehension
+for x &lt;- 0..5, do: IO.puts(x)</code></pre>
               </div>
               <div class="card erlang">
-                <div class="lang">Erlang</div><pre class="code"><code>% @ToDo</code></pre>
+                <div class="lang">Erlang</div><pre class="code"><code>% Inclusive range operator in Erlang
+% Erlang doesn't have a built-in range operator
+% Use lists or recursion
+-module(example).
+-export([range_inclusive/2, start/0]).
+
+range_inclusive(Start, End) when Start &gt; End -&gt;
+    [];
+range_inclusive(Start, End) -&gt;
+    [Start | range_inclusive(Start + 1, End)].
+
+start() -&gt;
+    Range = range_inclusive(0, 5),
+    [io:format("~p~n", [X]) || X &lt;- Range].</code></pre>
               </div>
               <div class="card go">
                 <div class="lang">Go</div><pre class="code"><code>for i := 1; i &lt;= 5; i++ {
@@ -774,16 +1030,26 @@ for i in [1...length] by 1
 </code></pre>
               </div>
               <div class="card java">
-                <div class="lang">Java</div><pre class="code"><code>// Generic example for missing Java implementations
-// This placeholder will be replaced with actual examples as needed
+                <div class="lang">Java</div><pre class="code"><code>// Inclusive range operator in Java
+// Java doesn't have a range operator
+// Use loops instead
 public class Example {
     public static void main(String[] args) {
-        System.out.println("Example implementation");
+        for (int i = 0; i &lt;= 5; i++) {
+            System.out.println(i);
+        }
     }
 }</code></pre>
               </div>
               <div class="card javascript">
-                <div class="lang">JavaScript</div><pre class="code"><code>// @ToDo</code></pre>
+                <div class="lang">JavaScript</div><pre class="code"><code>// Inclusive range operator in JavaScript
+// JavaScript doesn't have a range operator
+// Use loops or Array methods instead
+for (let i = 0; i &lt;= 5; i++) {
+  console.log(i);
+}
+// Or with Array
+Array.from({length: 7}, (_, i) =&gt; i).forEach(i =&gt; console.log(i));</code></pre>
               </div>
               <div class="card kotlin">
                 <div class="lang">Kotlin</div><pre class="code"><code>for (index in 1..5) {
@@ -798,7 +1064,17 @@ public class Example {
 </code></pre>
               </div>
               <div class="card objectivec">
-                <div class="lang">ObjectiveC</div><pre class="code"><code>// @ToDo</code></pre>
+                <div class="lang">ObjectiveC</div><pre class="code"><code>// Inclusive range operator in Objective-C
+// Objective-C doesn't have a range operator
+// Use loops instead
+#import &lt;Foundation/Foundation.h&gt;
+
+int main() {
+    for (int i = 0; i &lt;= 5; i++) {
+        NSLog(@"%d", i);
+    }
+    return 0;
+}</code></pre>
               </div>
               <div class="card scala">
                 <div class="lang">Scala</div><pre class="code"><code>for (index &lt;- 1 to 5) {
@@ -823,17 +1099,24 @@ public class Example {
 // 5 times 5 is 25</code></pre>
               </div>
               <div class="card toffeescript">
-                <div class="lang">ToffeeScript</div><pre class="code"><code># @ToDo</code></pre>
+                <div class="lang">ToffeeScript</div><pre class="code"><code>for i in [1..5] by 1
+  console.log "#{i} times 5 is #{i * 5}"
+# 1 times 5 is 5
+# 2 times 5 is 10
+# 3 times 5 is 15
+# 4 times 5 is 20
+# 5 times 5 is 25
+</code></pre>
               </div>
               <div class="card typescript">
                 <div class="lang">TypeScript</div><pre class="code"><code>// Inclusive range operator in TypeScript
 // TypeScript doesn't have a range operator
 // Use loops or Array methods instead
-for (let i = 0; i <= 5; i++) {
+for (let i = 0; i &lt;= 5; i++) {
   console.log(i);
 }
 // Or with Array
-Array.from({length: 6}, (_, i) => i).forEach(i => console.log(i));</code></pre>
+Array.from({length: 6}, (_, i) =&gt; i).forEach(i =&gt; console.log(i));</code></pre>
               </div>
             </div>
           </div>
@@ -844,14 +1127,14 @@ Array.from({length: 6}, (_, i) => i).forEach(i => console.log(i));</code></pre>
             <div class="name">Multiline</div>
             <div class="pair">
               <div class="card c">
-                <div class="lang">C</div><pre class="code"><code>#include <stdio.h>
+                <div class="lang">C</div><pre class="code"><code>#include &lt;stdio.h&gt;
 
 char multiline[] = "This is a\n"
                    "multiline\n"
                    "string";</code></pre>
               </div>
               <div class="card cpp">
-                <div class="lang">C++</div><pre class="code"><code>#include <iostream>
+                <div class="lang">C++</div><pre class="code"><code>#include &lt;iostream&gt;
 
 std::string multiline = "This is a\n"
                         "multiline\n"
@@ -865,13 +1148,36 @@ string
 """</code></pre>
               </div>
               <div class="card elixir">
-                <div class="lang">Elixir</div><pre class="code"><code># @ToDo</code></pre>
+                <div class="lang">Elixir</div><pre class="code"><code># Multiline strings in Elixir
+multiline = """
+This is a
+multiline
+string
+"""
+IO.puts(multiline)</code></pre>
               </div>
               <div class="card erlang">
-                <div class="lang">Erlang</div><pre class="code"><code>% @ToDo</code></pre>
+                <div class="lang">Erlang</div><pre class="code"><code>% Multiline strings in Erlang
+-module(example).
+-export([start/0]).
+
+start() -&gt;
+    Multiline = "This is a\n"
+                "multiline\n"
+                "string",
+    io:format("~s~n", [Multiline]).</code></pre>
               </div>
               <div class="card go">
-                <div class="lang">Go</div><pre class="code"><code>// @ToDo</code></pre>
+                <div class="lang">Go</div><pre class="code"><code>package strings
+
+import "fmt"
+
+func main() {
+	multiline := `This is a
+	multiline
+	string`
+	fmt.Println(multiline)
+}</code></pre>
               </div>
               <div class="card groovy">
                 <div class="lang">Groovy</div><pre class="code"><code>multiple="multiple"
@@ -888,11 +1194,12 @@ println(immutable)
 </code></pre>
               </div>
               <div class="card java">
-                <div class="lang">Java</div><pre class="code"><code>// Generic example for missing Java implementations
-// This placeholder will be replaced with actual examples as needed
-public class Example {
+                <div class="lang">Java</div><pre class="code"><code>public class Multiline {
     public static void main(String[] args) {
-        System.out.println("Example implementation");
+        String multiline = "This is a\n" +
+                           "multiline\n" +
+                           "string";
+        System.out.println(multiline);
     }
 }</code></pre>
               </div>
@@ -906,10 +1213,23 @@ string`;</code></pre>
 ... multiple lines."""</code></pre>
               </div>
               <div class="card objectivec">
-                <div class="lang">ObjectiveC</div><pre class="code"><code>// @ToDo</code></pre>
+                <div class="lang">ObjectiveC</div><pre class="code"><code>#import &lt;Foundation/Foundation.h&gt;
+
+int main() {
+    NSString *multiline = @"This is a\n"
+                          @"multiline\n"
+                          @"string";
+    NSLog(@"%@", multiline);
+    return 0;
+}</code></pre>
               </div>
               <div class="card scala">
-                <div class="lang">Scala</div><pre class="code"><code>// @ToDo</code></pre>
+                <div class="lang">Scala</div><pre class="code"><code>object Multiline extends App {
+  val multiline = """This is a
+                    |multiline
+                    |string""".stripMargin
+  println(multiline)
+}</code></pre>
               </div>
               <div class="card swift">
                 <div class="lang">Swift</div><pre class="code"><code>let multiline: String = """I span ...
@@ -958,10 +1278,25 @@ fruitSummary =
   "pieces of fruit."</code></pre>
               </div>
               <div class="card elixir">
-                <div class="lang">Elixir</div><pre class="code"><code># @ToDo</code></pre>
+                <div class="lang">Elixir</div><pre class="code"><code># String interpolation in Elixir
+apples = 3
+oranges = 5
+fruit_summary = "I have #{apples + oranges} " &lt;&gt;
+               "pieces of fruit."
+IO.puts fruit_summary</code></pre>
               </div>
               <div class="card erlang">
-                <div class="lang">Erlang</div><pre class="code"><code>% @ToDo</code></pre>
+                <div class="lang">Erlang</div><pre class="code"><code>% String interpolation in Erlang
+% Erlang doesn't have direct string interpolation
+% Use io_lib:format/2 or similar
+-module(example).
+-export([start/0]).
+
+start() -&gt;
+    Apples = 3,
+    Oranges = 5,
+    FruitSummary = io_lib:format("I have ~p ~s", [Apples + Oranges, "pieces of fruit."]),
+    io:format("~s~n", [FruitSummary]).</code></pre>
               </div>
               <div class="card go">
                 <div class="lang">Go</div><pre class="code"><code>const apples = 3
@@ -1002,7 +1337,17 @@ val fruitSummary =
   "pieces of fruit."</code></pre>
               </div>
               <div class="card objectivec">
-                <div class="lang">ObjectiveC</div><pre class="code"><code>// @ToDo</code></pre>
+                <div class="lang">ObjectiveC</div><pre class="code"><code>#import &lt;Foundation/Foundation.h&gt;
+
+int main() {
+    int apples = 3;
+    int oranges = 5;
+    NSString *fruitSummary = [NSString stringWithFormat:@"I have %d %@",
+                              apples + oranges,
+                              @"pieces of fruit."];
+    NSLog(@"%@", fruitSummary);
+    return 0;
+}</code></pre>
               </div>
               <div class="card scala">
                 <div class="lang">Scala</div><pre class="code"><code>val apples = 3
@@ -1042,28 +1387,51 @@ const fruitSummary =
             <div class="name">Arrays</div>
             <div class="pair">
               <div class="card c">
-                <div class="lang">C</div><pre class="code"><code>// @ToDo</code></pre>
+                <div class="lang">C</div><pre class="code"><code>#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+// Arrays in C
+int arr[5] = {1, 2, 3, 4, 5};
+int *dynamic_arr = malloc(5 * sizeof(int));
+for (int i = 0; i &lt; 5; i++) {
+    dynamic_arr[i] = i + 1;
+}
+// Don't forget to free: free(dynamic_arr);</code></pre>
               </div>
               <div class="card cpp">
-                <div class="lang">C++</div><pre class="code"><code>#include <iostream>
-#include <array>
-#include <vector>
+                <div class="lang">C++</div><pre class="code"><code>#include &lt;iostream&gt;
+#include &lt;array&gt;
+#include &lt;vector&gt;
 
 // Arrays in C++
 int arr[5] = {1, 2, 3, 4, 5};
 // Or using std::array
-std::array<int, 5> stdArr = {1, 2, 3, 4, 5};
+std::array&lt;int, 5&gt; stdArr = {1, 2, 3, 4, 5};
 // Or using std::vector
-std::vector<int> vec = {1, 2, 3, 4, 5};</code></pre>
+std::vector&lt;int&gt; vec = {1, 2, 3, 4, 5};</code></pre>
               </div>
               <div class="card coffeescript">
-                <div class="lang">CoffeeScript</div><pre class="code"><code># @ToDo</code></pre>
+                <div class="lang">CoffeeScript</div><pre class="code"><code># Arrays in CoffeeScript
+arr = [1, 2, 3, 4, 5]
+# Or using new Array
+arr2 = new Array(1, 2, 3, 4, 5)</code></pre>
               </div>
               <div class="card elixir">
-                <div class="lang">Elixir</div><pre class="code"><code># @ToDo</code></pre>
+                <div class="lang">Elixir</div><pre class="code"><code># Arrays in Elixir
+arr = [1, 2, 3, 4, 5]
+# Lists are the primary collection in Elixir
+# Also can use sigils
+arr2 = ~w[1 2 3 4 5]a  # atom list</code></pre>
               </div>
               <div class="card erlang">
-                <div class="lang">Erlang</div><pre class="code"><code>% @ToDo</code></pre>
+                <div class="lang">Erlang</div><pre class="code"><code>% Arrays in Erlang
+% Erlang uses lists as primary collection
+-module(example).
+-export([start/0]).
+
+start() -&gt;
+    Arr = [1, 2, 3, 4, 5],
+    io:format("~p~n", [Arr]).</code></pre>
               </div>
               <div class="card go">
                 <div class="lang">Go</div><pre class="code"><code>var shoppingList = []string{
@@ -1071,16 +1439,27 @@ std::vector<int> vec = {1, 2, 3, 4, 5};</code></pre>
 shoppingList[1] = "bottle of water"</code></pre>
               </div>
               <div class="card java">
-                <div class="lang">Java</div><pre class="code"><code>// Generic example for missing Java implementations
-// This placeholder will be replaced with actual examples as needed
+                <div class="lang">Java</div><pre class="code"><code>// Arrays in Java
+import java.util.ArrayList;
+import java.util.Arrays;
+
 public class Example {
     public static void main(String[] args) {
-        System.out.println("Example implementation");
+        int[] arr = {1, 2, 3, 4, 5};
+        // Or using ArrayList
+        ArrayList&lt;Integer&gt; list = new ArrayList&lt;&gt;();
+        list.add(1);
+        list.add(2);
+        list.add(3);
+        list.add(4);
+        list.add(5);
     }
 }</code></pre>
               </div>
               <div class="card javascript">
-                <div class="lang">JavaScript</div><pre class="code"><code>// @ToDo</code></pre>
+                <div class="lang">JavaScript</div><pre class="code"><code>var arr = [1, 2, 3, 4, 5];
+// Or using Array constructor
+var arr2 = new Array(1, 2, 3, 4, 5);</code></pre>
               </div>
               <div class="card kotlin">
                 <div class="lang">Kotlin</div><pre class="code"><code>val shoppingList = arrayOf(
@@ -1089,7 +1468,15 @@ shoppingList[1] = "bottle of water"
 </code></pre>
               </div>
               <div class="card objectivec">
-                <div class="lang">ObjectiveC</div><pre class="code"><code>// @ToDo</code></pre>
+                <div class="lang">ObjectiveC</div><pre class="code"><code>#import &lt;Foundation/Foundation.h&gt;
+
+// Arrays in Objective-C
+int main() {
+    NSArray *arr = @[@1, @2, @3, @4, @5];
+    NSMutableArray *mutableArr = [@[@1, @2, @3, @4, @5] mutableCopy];
+    NSLog(@"%@", arr);
+    return 0;
+}</code></pre>
               </div>
               <div class="card scala">
                 <div class="lang">Scala</div><pre class="code"><code>var shoppingList = Array(
@@ -1103,12 +1490,15 @@ shoppingList(1) = "bottle of water"
 shoppingList[1] = "bottle of water"</code></pre>
               </div>
               <div class="card toffeescript">
-                <div class="lang">ToffeeScript</div><pre class="code"><code># @ToDo</code></pre>
+                <div class="lang">ToffeeScript</div><pre class="code"><code># Arrays in ToffeeScript
+arr = [1, 2, 3, 4, 5]
+# Or using new Array
+arr2 = new Array(1, 2, 3, 4, 5)</code></pre>
               </div>
               <div class="card typescript">
                 <div class="lang">TypeScript</div><pre class="code"><code>let arr: number[] = [1, 2, 3, 4, 5];
 // Or using Array constructor
-let arr2: Array<number> = new Array(1, 2, 3, 4, 5);</code></pre>
+let arr2: Array&lt;number&gt; = new Array(1, 2, 3, 4, 5);</code></pre>
               </div>
             </div>
           </div>
@@ -1116,28 +1506,60 @@ let arr2: Array<number> = new Array(1, 2, 3, 4, 5);</code></pre>
             <div class="name">Maps</div>
             <div class="pair">
               <div class="card c">
-                <div class="lang">C</div><pre class="code"><code>// @ToDo</code></pre>
+                <div class="lang">C</div><pre class="code"><code>#include &lt;stdio.h&gt;
+// C doesn't have built-in maps
+// Usually implemented with structures or external libraries
+// Example with a simple struct approach:
+struct Pair {
+    char* key;
+    int value;
+};
+struct Pair map[10]; // Simple array of key-value pairs
+
+int main() {
+    struct Pair myMap[2];
+    myMap[0].key = "key";
+    myMap[0].value = 10;
+    printf("%s: %d\n", myMap[0].key, myMap[0].value);
+    return 0;
+}</code></pre>
               </div>
               <div class="card cpp">
-                <div class="lang">C++</div><pre class="code"><code>#include <iostream>
-#include <map>
-#include <unordered_map>
+                <div class="lang">C++</div><pre class="code"><code>#include &lt;iostream&gt;
+#include &lt;map&gt;
+#include &lt;unordered_map&gt;
 
 // Maps in C++
-std::map<std::string, int> orderedMap;
+std::map&lt;std::string, int&gt; orderedMap;
 orderedMap["key"] = 10;
 
-std::unordered_map<std::string, int> hashMap;
+std::unordered_map&lt;std::string, int&gt; hashMap;
 hashMap["key"] = 10;</code></pre>
               </div>
               <div class="card coffeescript">
-                <div class="lang">CoffeeScript</div><pre class="code"><code># @ToDo</code></pre>
+                <div class="lang">CoffeeScript</div><pre class="code"><code># Maps in CoffeeScript
+map = {}
+map.key = 10
+map["key"] = 10
+value = map.key</code></pre>
               </div>
               <div class="card elixir">
-                <div class="lang">Elixir</div><pre class="code"><code># @ToDo</code></pre>
+                <div class="lang">Elixir</div><pre class="code"><code># Maps in Elixir
+map = %{"key" =&gt; 10}
+# Or with atoms as keys
+map2 = %{key: 10}
+# Access
+value = map["key"]</code></pre>
               </div>
               <div class="card erlang">
-                <div class="lang">Erlang</div><pre class="code"><code>% @ToDo</code></pre>
+                <div class="lang">Erlang</div><pre class="code"><code>% Maps in Erlang
+-module(example).
+-export([start/0]).
+
+start() -&gt;
+    Map = #{key =&gt; 10},
+    Value = maps:get(key, Map),
+    io:format("~p~n", [Map]).</code></pre>
               </div>
               <div class="card go">
                 <div class="lang">Go</div><pre class="code"><code>var occupations = map[string]string{
@@ -1147,16 +1569,28 @@ hashMap["key"] = 10;</code></pre>
 occupations["Jayne"] = "Public Relations"</code></pre>
               </div>
               <div class="card java">
-                <div class="lang">Java</div><pre class="code"><code>// Generic example for missing Java implementations
-// This placeholder will be replaced with actual examples as needed
+                <div class="lang">Java</div><pre class="code"><code>// Maps in Java
+import java.util.HashMap;
+import java.util.Map;
+
 public class Example {
     public static void main(String[] args) {
-        System.out.println("Example implementation");
+        Map&lt;String, Integer&gt; map = new HashMap&lt;&gt;();
+        map.put("key", 10);
+        int value = map.get("key");
     }
 }</code></pre>
               </div>
               <div class="card javascript">
-                <div class="lang">JavaScript</div><pre class="code"><code>// @ToDo</code></pre>
+                <div class="lang">JavaScript</div><pre class="code"><code>var map = {};
+map.key = 10;
+map["key"] = 10;
+var value = map.key;
+
+// Or using Map object
+var es6Map = new Map();
+es6Map.set("key", 10);
+var value = es6Map.get("key");</code></pre>
               </div>
               <div class="card kotlin">
                 <div class="lang">Kotlin</div><pre class="code"><code>val occupations = mutableMapOf(
@@ -1167,7 +1601,16 @@ occupations["Jayne"] = "Public Relations"
 </code></pre>
               </div>
               <div class="card objectivec">
-                <div class="lang">ObjectiveC</div><pre class="code"><code>// @ToDo</code></pre>
+                <div class="lang">ObjectiveC</div><pre class="code"><code>#import &lt;Foundation/Foundation.h&gt;
+
+// Maps in Objective-C (Dictionary)
+int main() {
+    NSDictionary *dict = @{@"key": @10};
+    NSMutableDictionary *mutableDict = [@{@ "key": @10} mutableCopy];
+    int value = [dict[@"key"] intValue];
+    NSLog(@"%d", value);
+    return 0;
+}</code></pre>
               </div>
               <div class="card scala">
                 <div class="lang">Scala</div><pre class="code"><code>var occupations = scala.collection.mutable.Map(
@@ -1185,7 +1628,13 @@ occupations("Jayne") = "Public Relations"
 occupations["Jayne"] = "Public Relations"</code></pre>
               </div>
               <div class="card toffeescript">
-                <div class="lang">ToffeeScript</div><pre class="code"><code># @ToDo</code></pre>
+                <div class="lang">ToffeeScript</div><pre class="code"><code># Maps in ToffeeScript
+map = {one: 1, two: 2}
+map.three = 3
+map["four"] = 4
+value = map.one
+console.log value
+</code></pre>
               </div>
               <div class="card typescript">
                 <div class="lang">TypeScript</div><pre class="code"><code>let map: { [key: string]: number } = {};
@@ -1194,7 +1643,7 @@ map["key"] = 10;
 let value: number = map.key;
 
 // Or using Map object
-let tsMap = new Map<string, number>();
+let tsMap = new Map&lt;string, number&gt;();
 tsMap.set("key", 10);
 let tsValue = tsMap.get("key");</code></pre>
               </div>
@@ -1204,27 +1653,45 @@ let tsValue = tsMap.get("key");</code></pre>
             <div class="name">Empty Collections</div>
             <div class="pair">
               <div class="card c">
-                <div class="lang">C</div><pre class="code"><code>// @ToDo</code></pre>
+                <div class="lang">C</div><pre class="code"><code>#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+// Empty collections in C
+int *empty_arr = NULL; // or malloc(0)
+// For truly empty array with size
+int empty_size = 0;
+int *empty_dynamic = malloc(empty_size * sizeof(int));</code></pre>
               </div>
               <div class="card cpp">
-                <div class="lang">C++</div><pre class="code"><code>#include <iostream>
-#include <vector>
-#include <map>
+                <div class="lang">C++</div><pre class="code"><code>#include &lt;iostream&gt;
+#include &lt;vector&gt;
+#include &lt;map&gt;
 
 // Empty collections in C++
-std::vector<int> emptyVec;
-std::map<std::string, int> emptyMap;
-std::vector<int> emptyVec2 = {};
-std::map<std::string, int> emptyMap2 = {};</code></pre>
+std::vector&lt;int&gt; emptyVec;
+std::map&lt;std::string, int&gt; emptyMap;
+std::vector&lt;int&gt; emptyVec2 = {};
+std::map&lt;std::string, int&gt; emptyMap2 = {};</code></pre>
               </div>
               <div class="card coffeescript">
-                <div class="lang">CoffeeScript</div><pre class="code"><code># @ToDo</code></pre>
+                <div class="lang">CoffeeScript</div><pre class="code"><code># Empty collections in CoffeeScript
+emptyArr = []
+emptyObj = {}</code></pre>
               </div>
               <div class="card elixir">
-                <div class="lang">Elixir</div><pre class="code"><code># @ToDo</code></pre>
+                <div class="lang">Elixir</div><pre class="code"><code># Empty collections in Elixir
+empty_list = []
+empty_map = %{}</code></pre>
               </div>
               <div class="card erlang">
-                <div class="lang">Erlang</div><pre class="code"><code>% @ToDo</code></pre>
+                <div class="lang">Erlang</div><pre class="code"><code>% Empty collections in Erlang
+-module(example).
+-export([start/0]).
+
+start() -&gt;
+    EmptyList = [],
+    EmptyTuple = {},
+    io:format("~p ~p~n", [EmptyList, EmptyTuple]).</code></pre>
               </div>
               <div class="card go">
                 <div class="lang">Go</div><pre class="code"><code>var (
@@ -1234,23 +1701,41 @@ std::map<std::string, int> emptyMap2 = {};</code></pre>
 )</code></pre>
               </div>
               <div class="card java">
-                <div class="lang">Java</div><pre class="code"><code>// Generic example for missing Java implementations
-// This placeholder will be replaced with actual examples as needed
+                <div class="lang">Java</div><pre class="code"><code>// Empty collections in Java
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 public class Example {
     public static void main(String[] args) {
-        System.out.println("Example implementation");
+        List&lt;Integer&gt; emptyList = new ArrayList&lt;&gt;();
+        Map&lt;String, Integer&gt; emptyMap = new HashMap&lt;&gt;();
     }
 }</code></pre>
               </div>
               <div class="card javascript">
-                <div class="lang">JavaScript</div><pre class="code"><code>// @ToDo</code></pre>
+                <div class="lang">JavaScript</div><pre class="code"><code>var emptyArr = [];
+var emptyObj = {};
+// Or using constructors
+var emptyArr2 = new Array();
+var emptyObj2 = new Object();</code></pre>
               </div>
               <div class="card kotlin">
                 <div class="lang">Kotlin</div><pre class="code"><code>val emptyArray = arrayOf&lt;String&gt;()
 val emptyMap = mapOf&lt;String, Float&gt;()</code></pre>
               </div>
               <div class="card objectivec">
-                <div class="lang">ObjectiveC</div><pre class="code"><code>// @ToDo</code></pre>
+                <div class="lang">ObjectiveC</div><pre class="code"><code>#import &lt;Foundation/Foundation.h&gt;
+
+// Empty collections in Objective-C
+int main() {
+    NSArray *emptyArr = @[];
+    NSDictionary *emptyDict = @{};
+    NSMutableArray *emptyMutableArr = [NSMutableArray array];
+    NSMutableDictionary *emptyMutableDict = [NSMutableDictionary dictionary];
+    return 0;
+}</code></pre>
               </div>
               <div class="card scala">
                 <div class="lang">Scala</div><pre class="code"><code>val emptyArray = Array[String]()
@@ -1263,13 +1748,18 @@ val emptyArrayNoType = Array()
 let emptyDictionary = [String: Float]()</code></pre>
               </div>
               <div class="card toffeescript">
-                <div class="lang">ToffeeScript</div><pre class="code"><code># @ToDo</code></pre>
+                <div class="lang">ToffeeScript</div><pre class="code"><code># Empty collections in ToffeeScript
+emptyArr = []
+emptyObj = {}
+console.log emptyArr.length
+console.log Object.keys(emptyObj).length
+</code></pre>
               </div>
               <div class="card typescript">
                 <div class="lang">TypeScript</div><pre class="code"><code>let emptyArr: number[] = [];
 let emptyObj: { [key: string]: number } = {};
 // Or using Array constructor
-let emptyArr2: Array<number> = new Array();</code></pre>
+let emptyArr2: Array&lt;number&gt; = new Array();</code></pre>
               </div>
             </div>
           </div>
@@ -1277,7 +1767,27 @@ let emptyArr2: Array<number> = new Array();</code></pre>
             <div class="name">Map</div>
             <div class="pair">
               <div class="card c">
-                <div class="lang">C</div><pre class="code"><code>// @ToDo</code></pre>
+                <div class="lang">C</div><pre class="code"><code>#include &lt;stdio.h&gt;
+
+// Map (higher-order) in C: apply function to each element
+void map_int(int *arr, int len, int (*fn)(int)) {
+    for (int i = 0; i &lt; len; i++) {
+        arr[i] = fn(arr[i]);
+    }
+}
+
+int triple(int x) { return x * 3; }
+
+int main() {
+    int numbers[] = {20, 19, 7, 12};
+    int len = sizeof(numbers) / sizeof(int);
+    map_int(numbers, len, triple);
+    for (int i = 0; i &lt; len; i++) {
+        printf("%d ", numbers[i]);
+    }
+    return 0;
+}
+</code></pre>
               </div>
               <div class="card cpp">
                 <div class="lang">C++</div><pre class="code"><code>#include &lt;algorithm&gt;
@@ -1288,13 +1798,35 @@ transform(numbers.begin(), numbers.end(), numbers.begin(),
   [](int number) -&gt; int { return 3 * number; });</code></pre>
               </div>
               <div class="card coffeescript">
-                <div class="lang">CoffeeScript</div><pre class="code"><code># @ToDo</code></pre>
+                <div class="lang">CoffeeScript</div><pre class="code"><code># Map (higher-order) in CoffeeScript
+numbers = [20, 19, 7, 12]
+tripled = numbers.map (x) -&gt; x * 3
+doubled = numbers.map (x) -&gt; x * 2
+console.log tripled
+console.log doubled
+</code></pre>
               </div>
               <div class="card elixir">
-                <div class="lang">Elixir</div><pre class="code"><code># @ToDo</code></pre>
+                <div class="lang">Elixir</div><pre class="code"><code># Map (higher-order) in Elixir
+numbers = [20, 19, 7, 12]
+tripled = Enum.map(numbers, fn x -&gt; x * 3 end)
+doubled = Enum.map(numbers, &(&1 * 2))
+IO.inspect tripled
+IO.inspect doubled
+</code></pre>
               </div>
               <div class="card erlang">
-                <div class="lang">Erlang</div><pre class="code"><code>% @ToDo</code></pre>
+                <div class="lang">Erlang</div><pre class="code"><code>% Map (higher-order) in Erlang
+-module(example).
+-export([start/0]).
+
+start() -&gt;
+    Numbers = [20, 19, 7, 12],
+    Tripled = lists:map(fun(X) -&gt; X * 3 end, Numbers),
+    Doubled = lists:map(fun(X) -&gt; X * 2 end, Numbers),
+    io:format("~p~n", [Tripled]),
+    io:format("~p~n", [Doubled]).
+</code></pre>
               </div>
               <div class="card go">
                 <div class="lang">Go</div><pre class="code"><code>mapFunc := func(slice interface{}, fn func(a interface{}) interface{}) interface{} {
@@ -1312,16 +1844,35 @@ a := mapFunc([]int{1, 2, 3, 4}, func(val interface{}) interface{} {
 })</code></pre>
               </div>
               <div class="card java">
-                <div class="lang">Java</div><pre class="code"><code>// Generic example for missing Java implementations
-// This placeholder will be replaced with actual examples as needed
+                <div class="lang">Java</div><pre class="code"><code>// Map (higher-order) in Java
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
+
 public class Example {
     public static void main(String[] args) {
-        System.out.println("Example implementation");
+        List&lt;Integer&gt; numbers = Arrays.asList(20, 19, 7, 12);
+        List&lt;Integer&gt; tripled = numbers.stream()
+            .map(x -&gt; x * 3)
+            .collect(Collectors.toList());
+        List&lt;Integer&gt; doubled = numbers.stream()
+            .map(x -&gt; x * 2)
+            .collect(Collectors.toList());
+        System.out.println(tripled);
+        System.out.println(doubled);
     }
-}</code></pre>
+}
+</code></pre>
               </div>
               <div class="card javascript">
-                <div class="lang">JavaScript</div><pre class="code"><code>// @ToDo</code></pre>
+                <div class="lang">JavaScript</div><pre class="code"><code>// Map (higher-order) in JavaScript
+var numbers = [20, 19, 7, 12];
+var tripled = numbers.map(function(x) { return x * 3; });
+// Or with arrow function (ES6)
+var doubled = numbers.map(x =&gt; x * 2);
+console.log(tripled);
+console.log(doubled);
+</code></pre>
               </div>
               <div class="card kotlin">
                 <div class="lang">Kotlin</div><pre class="code"><code>val numbers = listOf(20, 19, 7, 12)
@@ -1329,7 +1880,19 @@ numbers.map { 3 * it }
 </code></pre>
               </div>
               <div class="card objectivec">
-                <div class="lang">ObjectiveC</div><pre class="code"><code>// @ToDo</code></pre>
+                <div class="lang">ObjectiveC</div><pre class="code"><code>#import &lt;Foundation/Foundation.h&gt;
+
+// Map (higher-order) in Objective-C
+int main() {
+    NSArray *numbers = @[@20, @19, @7, @12];
+    NSMutableArray *tripled = [NSMutableArray array];
+    [numbers enumerateObjectsUsingBlock:^(NSNumber *obj, NSUInteger idx, BOOL *stop) {
+        [tripled addObject:@([obj intValue] * 3)];
+    }];
+    NSLog(@"%@", tripled);
+    return 0;
+}
+</code></pre>
               </div>
               <div class="card scala">
                 <div class="lang">Scala</div><pre class="code"><code>var numbers = Array(20, 19, 7, 12)
@@ -1342,10 +1905,21 @@ numbers.map { 3 * $0 }
 </code></pre>
               </div>
               <div class="card toffeescript">
-                <div class="lang">ToffeeScript</div><pre class="code"><code># @ToDo</code></pre>
+                <div class="lang">ToffeeScript</div><pre class="code"><code># Map (higher-order) in ToffeeScript
+numbers = [20, 19, 7, 12]
+tripled = numbers.map (x) -&gt; x * 3
+doubled = numbers.map (x) -&gt; x * 2
+console.log tripled
+console.log doubled
+</code></pre>
               </div>
               <div class="card typescript">
-                <div class="lang">TypeScript</div><pre class="code"><code>null</code></pre>
+                <div class="lang">TypeScript</div><pre class="code"><code>const numbers: number[] = [20, 19, 7, 12];
+const tripled: number[] = numbers.map((x: number) =&gt; x * 3);
+const doubled: number[] = numbers.map((x: number) =&gt; x * 2);
+console.log(tripled);
+console.log(doubled);
+</code></pre>
               </div>
             </div>
           </div>
@@ -1370,51 +1944,124 @@ vector&lt;int&gt unsorted = {1, 5, 3, 12, 2};
 sort(unsorted.begin(), unsorted.end());</code></pre>
               </div>
               <div class="card coffeescript">
-                <div class="lang">CoffeeScript</div><pre class="code"><code># @ToDo</code></pre>
+                <div class="lang">CoffeeScript</div><pre class="code"><code># Sort in CoffeeScript
+arr = [3, 1, 4, 1, 5]
+sorted = arr.sort (a, b) -&gt; a - b
+console.log sorted</code></pre>
               </div>
               <div class="card elixir">
-                <div class="lang">Elixir</div><pre class="code"><code># @ToDo</code></pre>
+                <div class="lang">Elixir</div><pre class="code"><code># Sort in Elixir
+arr = [3, 1, 4, 1, 5]
+sorted = Enum.sort(arr)
+IO.inspect sorted
+
+# Or with custom sort
+sorted_desc = Enum.sort(arr, &&gt;=/2)</code></pre>
               </div>
               <div class="card erlang">
-                <div class="lang">Erlang</div><pre class="code"><code>% @ToDo</code></pre>
+                <div class="lang">Erlang</div><pre class="code"><code>% Sort in Erlang
+-module(example).
+-export([start/0]).
+
+start() -&gt;
+    Arr = [3, 1, 4, 1, 5],
+    Sorted = lists:sort(Arr),
+    io:format("~p~n", [Sorted]).</code></pre>
               </div>
               <div class="card go">
-                <div class="lang">Go</div><pre class="code"><code>sort.Sort(sort.Reverse(sort.IntSlice([]int{1, 5, 3, 12, 2})))</code></pre>
+                <div class="lang">Go</div><pre class="code"><code>import "sort"
+
+names := []string{"Anna", "Alex", "Brian", "Jack"}
+sort.Strings(names)
+
+numbers := []int{1, 5, 3, 12, 2}
+sort.Ints(numbers)
+
+// Custom sort: descending
+sort.Sort(sort.Reverse(sort.IntSlice(numbers)))
+</code></pre>
               </div>
               <div class="card java">
-                <div class="lang">Java</div><pre class="code"><code>// Generic example for missing Java implementations
-// This placeholder will be replaced with actual examples as needed
+                <div class="lang">Java</div><pre class="code"><code>// Sort in Java
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+import java.util.ArrayList;
+
 public class Example {
     public static void main(String[] args) {
-        System.out.println("Example implementation");
+        int[] arr = {3, 1, 4, 1, 5};
+        Arrays.sort(arr);
+        
+        List&lt;Integer&gt; list = new ArrayList&lt;&gt;();
+        list.add(3); list.add(1); list.add(4); list.add(1); list.add(5);
+        Collections.sort(list);
     }
 }</code></pre>
               </div>
               <div class="card javascript">
-                <div class="lang">JavaScript</div><pre class="code"><code>// @ToDo</code></pre>
+                <div class="lang">JavaScript</div><pre class="code"><code>var arr = [3, 1, 4, 1, 5];
+var sorted = arr.sort(function(a, b) { return a - b; });
+console.log(sorted);
+
+// Or with arrow function (ES6)
+var sorted2 = arr.sort((a, b) =&gt; a - b);</code></pre>
               </div>
               <div class="card kotlin">
-                <div class="lang">Kotlin</div><pre class="code"><code>listOf(1, 5, 3, 12, 2).sorted()
+                <div class="lang">Kotlin</div><pre class="code"><code>val numbers = mutableListOf(1, 5, 3, 12, 2)
+val sorted = numbers.sorted()
+val sortedDesc = numbers.sortedDescending()
+
+// Sort in place
+numbers.sort()
+
+// Custom sort
+val sortedBy = numbers.sortedWith(compareBy { it })
 </code></pre>
               </div>
               <div class="card objectivec">
-                <div class="lang">ObjectiveC</div><pre class="code"><code>// @ToDo</code></pre>
+                <div class="lang">ObjectiveC</div><pre class="code"><code>#import &lt;Foundation/Foundation.h&gt;
+
+int main() {
+    NSArray *arr = @[@3, @1, @4, @1, @5];
+    NSArray *sorted = [arr sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
+        return [obj1 compare:obj2];
+    }];
+    NSLog(@"%@", sorted);
+    return 0;
+}</code></pre>
               </div>
               <div class="card scala">
-                <div class="lang">Scala</div><pre class="code"><code>Array(1, 5, 3, 12, 2).sortWith(_ &gt; _)
+                <div class="lang">Scala</div><pre class="code"><code>val numbers = Array(1, 5, 3, 12, 2)
+val sorted = numbers.sorted
+val sortedDesc = numbers.sortWith(_ &gt; _)
+
+val words = List("banana", "apple", "cherry")
+val sortedWords = words.sorted
+val sortedWordsDesc = words.sortWith(_ &gt; _)
 </code></pre>
               </div>
               <div class="card swift">
                 <div class="lang">Swift</div><pre class="code"><code>var mutableArray = [1, 5, 3, 12, 2]
 mutableArray.sort()
+
+let fruits = ["banana", "apple", "cherry"]
+let sorted = fruits.sorted()
+let sortedDesc = fruits.sorted(by: &gt;)
+
+// Custom sort
+let sortedBy = fruits.sorted { $0.count &lt; $1.count }
 </code></pre>
               </div>
               <div class="card toffeescript">
-                <div class="lang">ToffeeScript</div><pre class="code"><code># @ToDo</code></pre>
+                <div class="lang">ToffeeScript</div><pre class="code"><code># Sort in ToffeeScript
+arr = [3, 1, 4, 1, 5]
+sorted = arr.sort (a, b) -&gt; a - b
+console.log sorted</code></pre>
               </div>
               <div class="card typescript">
                 <div class="lang">TypeScript</div><pre class="code"><code>let arr: number[] = [3, 1, 4, 1, 5];
-let sorted: number[] = arr.sort((a, b) => a - b);
+let sorted: number[] = arr.sort((a, b) =&gt; a - b);
 console.log(sorted);</code></pre>
               </div>
             </div>
@@ -1426,7 +2073,7 @@ console.log(sorted);</code></pre>
             <div class="name">Functions</div>
             <div class="pair">
               <div class="card c">
-                <div class="lang">C</div><pre class="code"><code>#include <stdio.h>
+                <div class="lang">C</div><pre class="code"><code>#include &lt;stdio.h&gt;
 
 int add(int a, int b) {
     return a + b;
@@ -1452,37 +2099,78 @@ string greet(
 }
 int main() {
   greet("Bob", "Tuesday");
-}</code></pre>
+}
+</code></pre>
               </div>
               <div class="card coffeescript">
-                <div class="lang">CoffeeScript</div><pre class="code"><code># @ToDo</code></pre>
+                <div class="lang">CoffeeScript</div><pre class="code"><code>add = (a, b) -&gt;
+  a + b
+
+result = add 5, 3
+console.log result
+
+# Or with fat arrow
+addFat = (a, b) -&gt; a + b</code></pre>
               </div>
               <div class="card elixir">
-                <div class="lang">Elixir</div><pre class="code"><code># @ToDo</code></pre>
+                <div class="lang">Elixir</div><pre class="code"><code># Functions in Elixir
+defmodule Math do
+  def add(a, b) do
+    a + b
+  end
+end
+
+result = Math.add(5, 3)
+IO.puts result</code></pre>
               </div>
               <div class="card erlang">
-                <div class="lang">Erlang</div><pre class="code"><code>% @ToDo</code></pre>
+                <div class="lang">Erlang</div><pre class="code"><code>% Functions in Erlang
+-module(math).
+-export([add/2, start/0]).
+
+add(A, B) -&gt;
+    A + B.
+
+start() -&gt;
+    Result = add(5, 3),
+    io:format("~p~n", [Result]).</code></pre>
               </div>
               <div class="card go">
-                <div class="lang">Go</div><pre class="code"><code>func greet(name, day string) string {
+                <div class="lang">Go</div><pre class="code"><code>package main
+
+import "fmt"
+
+func greet(name, day string) string {
     return fmt.Sprintf("Hello %v, today is %v.", name, day)
 }
 
 func main() {
     greet("Bob", "Tuesday")
-}</code></pre>
+}
+</code></pre>
               </div>
               <div class="card java">
-                <div class="lang">Java</div><pre class="code"><code>// Generic example for missing Java implementations
-// This placeholder will be replaced with actual examples as needed
-public class Example {
+                <div class="lang">Java</div><pre class="code"><code>public class Example {
+    public static int add(int a, int b) {
+        return a + b;
+    }
+    
     public static void main(String[] args) {
-        System.out.println("Example implementation");
+        int result = add(5, 3);
+        System.out.println(result);
     }
 }</code></pre>
               </div>
               <div class="card javascript">
-                <div class="lang">JavaScript</div><pre class="code"><code>// @ToDo</code></pre>
+                <div class="lang">JavaScript</div><pre class="code"><code>function add(a, b) {
+    return a + b;
+}
+
+var result = add(5, 3);
+console.log(result);
+
+// Or using arrow functions (ES6)
+var addArrow = (a, b) =&gt; a + b;</code></pre>
               </div>
               <div class="card kotlin">
                 <div class="lang">Kotlin</div><pre class="code"><code>fun greet(name: String, day: String): String {
@@ -1491,7 +2179,25 @@ public class Example {
 greet("Bob", "Tuesday")</code></pre>
               </div>
               <div class="card objectivec">
-                <div class="lang">ObjectiveC</div><pre class="code"><code>// @ToDo</code></pre>
+                <div class="lang">ObjectiveC</div><pre class="code"><code>#import &lt;Foundation/Foundation.h&gt;
+
+// Functions in Objective-C (methods in a class)
+@interface Calculator : NSObject
+- (int)add:(int)a to:(int)b;
+@end
+
+@implementation Calculator
+- (int)add:(int)a to:(int)b {
+    return a + b;
+}
+@end
+
+int main() {
+    Calculator *calc = [[Calculator alloc] init];
+    int result = [calc add:5 to:3];
+    NSLog(@"%d", result);
+    return 0;
+}</code></pre>
               </div>
               <div class="card scala">
                 <div class="lang">Scala</div><pre class="code"><code>def greet(name: String, day: String): String = {
@@ -1503,10 +2209,15 @@ greet("Bob", "Tuesday")</code></pre>
                 <div class="lang">Swift</div><pre class="code"><code>func greet(_ name: String,_ day: String) -&gt; String {
     return "Hello \(name), today is \(day)."
 }
-greet("Bob", "Tuesday")</code></pre>
+print(greet("Bob", "Tuesday"))
+</code></pre>
               </div>
               <div class="card toffeescript">
-                <div class="lang">ToffeeScript</div><pre class="code"><code># @ToDo</code></pre>
+                <div class="lang">ToffeeScript</div><pre class="code"><code>add = (a, b) -&gt;
+  a + b
+
+result = add 5, 3
+console.log result</code></pre>
               </div>
               <div class="card typescript">
                 <div class="lang">TypeScript</div><pre class="code"><code>function add(a: number, b: number): number {
@@ -1517,7 +2228,7 @@ let result: number = add(5, 3);
 console.log(result);
 
 // Or using arrow functions
-const addArrow = (a: number, b: number): number => a + b;</code></pre>
+const addArrow = (a: number, b: number): number =&gt; a + b;</code></pre>
               </div>
             </div>
           </div>
@@ -1525,7 +2236,7 @@ const addArrow = (a: number, b: number): number => a + b;</code></pre>
             <div class="name">Procedures</div>
             <div class="pair">
               <div class="card c">
-                <div class="lang">C</div><pre class="code"><code>#include <stdio.h>
+                <div class="lang">C</div><pre class="code"><code>#include &lt;stdio.h&gt;
 
 void printMessage() {
     printf("This is a procedure\n");
@@ -1552,46 +2263,118 @@ void greet(
 int main() {
   string out;
   greet("Bob", "Tuesday", out);
-}</code></pre>
+}
+</code></pre>
               </div>
               <div class="card coffeescript">
-                <div class="lang">CoffeeScript</div><pre class="code"><code># @ToDo</code></pre>
+                <div class="lang">CoffeeScript</div><pre class="code"><code># Procedures in CoffeeScript
+printMessage = -&gt;
+  console.log "This is a procedure"
+
+printMessage()</code></pre>
               </div>
               <div class="card elixir">
-                <div class="lang">Elixir</div><pre class="code"><code># @ToDo</code></pre>
+                <div class="lang">Elixir</div><pre class="code"><code># Procedures in Elixir
+defmodule Printer do
+  def print_message do
+    IO.puts "This is a procedure"
+  end
+end
+
+Printer.print_message()</code></pre>
               </div>
               <div class="card erlang">
-                <div class="lang">Erlang</div><pre class="code"><code>% @ToDo</code></pre>
+                <div class="lang">Erlang</div><pre class="code"><code>% Procedures in Erlang
+-module(printer).
+-export([print_message/0]).
+
+print_message() -&gt;
+    io:format("This is a procedure~n").</code></pre>
               </div>
               <div class="card go">
-                <div class="lang">Go</div><pre class="code"><code>// @ToDo</code></pre>
+                <div class="lang">Go</div><pre class="code"><code>package main
+
+import "fmt"
+
+func printMessage() {
+	fmt.Println("This is a procedure")
+}
+
+func main() {
+	printMessage()
+}</code></pre>
               </div>
               <div class="card java">
-                <div class="lang">Java</div><pre class="code"><code>// Generic example for missing Java implementations
-// This placeholder will be replaced with actual examples as needed
-public class Example {
+                <div class="lang">Java</div><pre class="code"><code>public class Example {
+    public static void printMessage() {
+        System.out.println("This is a procedure");
+    }
+    
     public static void main(String[] args) {
-        System.out.println("Example implementation");
+        printMessage();
     }
 }</code></pre>
               </div>
               <div class="card javascript">
-                <div class="lang">JavaScript</div><pre class="code"><code>// @ToDo</code></pre>
+                <div class="lang">JavaScript</div><pre class="code"><code>function printMessage() {
+    console.log("This is a procedure");
+}
+
+printMessage();
+
+// Or using arrow functions
+var printArrow = () =&gt; console.log("This is a procedure");</code></pre>
               </div>
               <div class="card kotlin">
-                <div class="lang">Kotlin</div><pre class="code"><code>// @ToDo</code></pre>
+                <div class="lang">Kotlin</div><pre class="code"><code>fun printMessage() {
+    println("This is a procedure")
+}
+
+fun main() {
+    printMessage()
+}</code></pre>
               </div>
               <div class="card objectivec">
-                <div class="lang">ObjectiveC</div><pre class="code"><code>// @ToDo</code></pre>
+                <div class="lang">ObjectiveC</div><pre class="code"><code>#import &lt;Foundation/Foundation.h&gt;
+
+// Procedures in Objective-C (methods in a class)
+@interface Printer : NSObject
+- (void)printMessage;
+@end
+
+@implementation Printer
+- (void)printMessage {
+    NSLog(@"This is a procedure");
+}
+@end
+
+int main() {
+    Printer *printer = [[Printer alloc] init];
+    [printer printMessage];
+    return 0;
+}</code></pre>
               </div>
               <div class="card scala">
-                <div class="lang">Scala</div><pre class="code"><code>// @ToDo</code></pre>
+                <div class="lang">Scala</div><pre class="code"><code>object Printer extends App {
+  def printMessage(): Unit = {
+    println("This is a procedure")
+  }
+  
+  printMessage()
+}</code></pre>
               </div>
               <div class="card swift">
-                <div class="lang">Swift</div><pre class="code"><code>// @ToDo</code></pre>
+                <div class="lang">Swift</div><pre class="code"><code>func printMessage() {
+    print("This is a procedure")
+}
+
+printMessage()</code></pre>
               </div>
               <div class="card toffeescript">
-                <div class="lang">ToffeeScript</div><pre class="code"><code># @ToDo</code></pre>
+                <div class="lang">ToffeeScript</div><pre class="code"><code>printMessage = -&gt;
+  console.log "This is a procedure"
+
+printMessage()</code></pre>
               </div>
               <div class="card typescript">
                 <div class="lang">TypeScript</div><pre class="code"><code>function printMessage(): void {
@@ -1624,35 +2407,65 @@ getGasPrices(&gasPrices);
 using namespace std;
 tuple&lt;double, double, double&gt; getGasPrices() {
   return make_tuple(3.59, 3.69, 3.79);
-}</code></pre>
+}
+</code></pre>
               </div>
               <div class="card coffeescript">
-                <div class="lang">CoffeeScript</div><pre class="code"><code>getGasPrices =&gt;
+                <div class="lang">CoffeeScript</div><pre class="code"><code>getGasPrices = -&gt;
   [3.59, 3.69, 3.79]
-[low, mid, high] = getGasPrices()</code></pre>
+[low, mid, high] = getGasPrices()
+</code></pre>
               </div>
               <div class="card elixir">
-                <div class="lang">Elixir</div><pre class="code"><code># @ToDo</code></pre>
+                <div class="lang">Elixir</div><pre class="code"><code># Tuple return in Elixir
+defmodule Math do
+  def div_rem(a, b) do
+    {div(a, b), rem(a, b)}
+  end
+end
+
+{quotient, remainder} = Math.div_rem(10, 3)
+IO.puts "#{quotient}, #{remainder}"</code></pre>
               </div>
               <div class="card erlang">
-                <div class="lang">Erlang</div><pre class="code"><code>% @ToDo</code></pre>
+                <div class="lang">Erlang</div><pre class="code"><code>% Tuple return in Erlang
+-module(math).
+-export([div_rem/2]).
+
+div_rem(A, B) -&gt;
+    {A div B, A rem B}.</code></pre>
               </div>
               <div class="card go">
                 <div class="lang">Go</div><pre class="code"><code>func getGasPrices() (float64, float64, float64) {
   return 3.59, 3.69, 3.79
-}</code></pre>
+}
+</code></pre>
               </div>
               <div class="card java">
-                <div class="lang">Java</div><pre class="code"><code>// Generic example for missing Java implementations
-// This placeholder will be replaced with actual examples as needed
+                <div class="lang">Java</div><pre class="code"><code>// Tuple return in Java (using a simple class)
+public class Pair&lt;T, U&gt; {
+    public final T first;
+    public final U second;
+    
+    public Pair(T first, U second) {
+        this.first = first;
+        this.second = second;
+    }
+}
+
 public class Example {
+    public static Pair&lt;Integer, Integer&gt; divRem(int a, int b) {
+        return new Pair&lt;&gt;(a / b, a % b);
+    }
+    
     public static void main(String[] args) {
-        System.out.println("Example implementation");
+        Pair&lt;Integer, Integer&gt; result = divRem(10, 3);
+        System.out.println(result.first + ", " + result.second);
     }
 }</code></pre>
               </div>
               <div class="card javascript">
-                <div class="lang">JavaScript</div><pre class="code"><code>const getGasPrices = () => ([3.59, 3.69, 3.79])
+                <div class="lang">JavaScript</div><pre class="code"><code>const getGasPrices = () =&gt; ([3.59, 3.69, 3.79])
 const [low, mid, high] = getGasPrices()</code></pre>
               </div>
               <div class="card kotlin">
@@ -1661,7 +2474,36 @@ const [low, mid, high] = getGasPrices()</code></pre>
 fun getGasPrices() = GasPrices(3.59, 3.69, 3.79)</code></pre>
               </div>
               <div class="card objectivec">
-                <div class="lang">ObjectiveC</div><pre class="code"><code>// @ToDo</code></pre>
+                <div class="lang">ObjectiveC</div><pre class="code"><code>#import &lt;Foundation/Foundation.h&gt;
+
+// Tuple return in Objective-C (using NSArray or custom class)
+@interface Pair : NSObject
+@property (nonatomic, strong) id first;
+@property (nonatomic, strong) id second;
+
+- (instancetype)initWithFirst:(id)first second:(id)second;
+@end
+
+@implementation Pair
+- (instancetype)initWithFirst:(id)first second:(id)second {
+    self = [super init];
+    if (self) {
+        _first = first;
+        _second = second;
+    }
+    return self;
+}
+@end
+
+Pair* divRem(int a, int b) {
+    return [[Pair alloc] initWithFirst:@(a / b) second:@(a % b)];
+}
+
+int main() {
+    Pair* result = divRem(10, 3);
+    NSLog(@"%@, %@", result.first, result.second);
+    return 0;
+}</code></pre>
               </div>
               <div class="card scala">
                 <div class="lang">Scala</div><pre class="code"><code>def getGasPrices(): (Double, Double, Double) = {
@@ -1672,16 +2514,19 @@ fun getGasPrices() = GasPrices(3.59, 3.69, 3.79)</code></pre>
               <div class="card swift">
                 <div class="lang">Swift</div><pre class="code"><code>func getGasPrices() -&gt; (Double, Double, Double) {
   return (3.59, 3.69, 3.79)
-}</code></pre>
+}
+</code></pre>
               </div>
               <div class="card toffeescript">
-                <div class="lang">ToffeeScript</div><pre class="code"><code>getGasPrices =&gt;
+                <div class="lang">ToffeeScript</div><pre class="code"><code>getGasPrices = -&gt;
   [3.59, 3.69, 3.79]
-[low, mid, high] = getGasPrices()</code></pre>
+[low, mid, high] = getGasPrices()
+</code></pre>
               </div>
               <div class="card typescript">
                 <div class="lang">TypeScript</div><pre class="code"><code>const getGasPrices = () =&gt; ([3.59, 3.69, 3.79])
-const [low, mid, high] = getGasPrices()</code></pre>
+const [low, mid, high] = getGasPrices()
+</code></pre>
               </div>
             </div>
           </div>
@@ -1702,7 +2547,8 @@ double sumOf(int count, ...) {
 int main() {
   return sumOf(3,
     42, 597, 12);
-}</code></pre>
+}
+</code></pre>
               </div>
               <div class="card cpp">
                 <div class="lang">C++</div><pre class="code"><code>template&lt;typename T&gt;
@@ -1715,16 +2561,43 @@ int sumOf(T t, Types&&... types) {
 }
 int main() {
   return sumOf(42, 597, 12);
-}</code></pre>
+}
+</code></pre>
               </div>
               <div class="card coffeescript">
-                <div class="lang">CoffeeScript</div><pre class="code"><code># @ToDo</code></pre>
+                <div class="lang">CoffeeScript</div><pre class="code"><code># Variable number of arguments in CoffeeScript
+sum = (numbers...) -&gt;
+  numbers.reduce ((acc, num) -&gt; acc + num), 0
+
+console.log sum(1, 2, 3, 4, 5)</code></pre>
               </div>
               <div class="card elixir">
-                <div class="lang">Elixir</div><pre class="code"><code># @ToDo</code></pre>
+                <div class="lang">Elixir</div><pre class="code"><code># Variable number of arguments in Elixir
+defmodule Math do
+  def sum(numbers) when is_list(numbers) do
+    Enum.sum(numbers)
+  end
+  
+  def sum do
+    0
+  end
+  
+  def sum(head, tail) when is_list(tail) do
+    head + Enum.sum(tail)
+  end
+end
+
+IO.puts Math.sum([1, 2, 3, 4, 5])</code></pre>
               </div>
               <div class="card erlang">
-                <div class="lang">Erlang</div><pre class="code"><code>% @ToDo</code></pre>
+                <div class="lang">Erlang</div><pre class="code"><code>% Variable number of arguments in Erlang
+-module(math).
+-export([sum/1, sum/0]).
+
+sum(Numbers) when is_list(Numbers) -&gt;
+    lists:sum(Numbers);
+sum() -&gt;
+    0.</code></pre>
               </div>
               <div class="card go">
                 <div class="lang">Go</div><pre class="code"><code>func sumOf(numbers ...int) int {
@@ -1761,7 +2634,8 @@ class SumOf {
     sum += arguments[i]
   }
 }
-sumOf(42, 597, 12)</code></pre>
+sumOf(42, 597, 12)
+</code></pre>
               </div>
               <div class="card kotlin">
                 <div class="lang">Kotlin</div><pre class="code"><code>fun sumOf(vararg numbers: Int): Int {
@@ -1777,7 +2651,28 @@ sumOf(42, 597, 12)
 fun sumOf(vararg numbers: Int) = numbers.sum()</code></pre>
               </div>
               <div class="card objectivec">
-                <div class="lang">ObjectiveC</div><pre class="code"><code>// @ToDo</code></pre>
+                <div class="lang">ObjectiveC</div><pre class="code"><code>#import &lt;Foundation/Foundation.h&gt;
+#include &lt;stdarg.h&gt;
+
+// Variable number of arguments in Objective-C
+int sumOfIntegers(int count, ...) {
+    va_list args;
+    va_start(args, count);
+
+    int sum = 0;
+    for (int i = 0; i &lt; count; i++) {
+        sum += va_arg(args, int);
+    }
+
+    va_end(args);
+    return sum;
+}
+
+int main() {
+    int result = sumOfIntegers(5, 1, 2, 3, 4, 5);
+    NSLog(@"%d", result);
+    return 0;
+}</code></pre>
               </div>
               <div class="card scala">
                 <div class="lang">Scala</div><pre class="code"><code>def sumOf(numbers: Int*): Int = {
@@ -1787,7 +2682,8 @@ fun sumOf(vararg numbers: Int) = numbers.sum()</code></pre>
   }
   return sum
 }
-sumOf(42, 597, 12)</code></pre>
+sumOf(42, 597, 12)
+</code></pre>
               </div>
               <div class="card swift">
                 <div class="lang">Swift</div><pre class="code"><code>func sumOf(_ numbers: Int...) -&gt; Int {
@@ -1797,14 +2693,18 @@ sumOf(42, 597, 12)</code></pre>
     }
     return sum
 }
-sumOf(42, 597, 12)</code></pre>
+print(sumOf(42, 597, 12))
+</code></pre>
               </div>
               <div class="card toffeescript">
-                <div class="lang">ToffeeScript</div><pre class="code"><code># @ToDo</code></pre>
+                <div class="lang">ToffeeScript</div><pre class="code"><code>sum = (numbers...) -&gt;
+  numbers.reduce ((acc, num) -&gt; acc + num), 0
+
+console.log sum(1, 2, 3, 4, 5)</code></pre>
               </div>
               <div class="card typescript">
                 <div class="lang">TypeScript</div><pre class="code"><code>function sum(...numbers: number[]): number {
-    return numbers.reduce((acc, num) => acc + num, 0);
+    return numbers.reduce((acc, num) =&gt; acc + num, 0);
 }
 
 console.log(sum(1, 2, 3, 4, 5));</code></pre>
@@ -1815,52 +2715,210 @@ console.log(sum(1, 2, 3, 4, 5));</code></pre>
             <div class="name">Callbacks</div>
             <div class="pair">
               <div class="card c">
-                <div class="lang">C</div><pre class="code"><code>// @ToDo</code></pre>
+                <div class="lang">C</div><pre class="code"><code>#include &lt;stdio.h&gt;
+
+// Callbacks in C
+void callback(int value) {
+    printf("Callback called with: %d\n", value);
+}
+
+void process_with_callback(void (*cb)(int), int data) {
+    cb(data);
+}
+
+int main() {
+    process_with_callback(callback, 42);
+    return 0;
+}</code></pre>
               </div>
               <div class="card cpp">
-                <div class="lang">C++</div><pre class="code"><code>// @ToDo</code></pre>
+                <div class="lang">C++</div><pre class="code"><code>#include &lt;iostream&gt;
+#include &lt;functional&gt;
+
+// Callbacks in C++
+void callback(int value) {
+    std::cout &lt;&lt; "Callback called with: " &lt;&lt; value &lt;&lt; std::endl;
+}
+
+void process_with_callback(std::function&lt;void(int)&gt; cb, int data) {
+    cb(data);
+}
+
+int main() {
+    process_with_callback(callback, 42);
+    return 0;
+}</code></pre>
               </div>
               <div class="card coffeescript">
-                <div class="lang">CoffeeScript</div><pre class="code"><code># @ToDo</code></pre>
+                <div class="lang">CoffeeScript</div><pre class="code"><code># Callbacks in CoffeeScript
+callback = (value) -&gt;
+  console.log "Callback called with: #{value}"
+
+processWithCallback = (cb, data) -&gt;
+  cb(data)
+
+processWithCallback callback, 42</code></pre>
               </div>
               <div class="card elixir">
-                <div class="lang">Elixir</div><pre class="code"><code># @ToDo</code></pre>
+                <div class="lang">Elixir</div><pre class="code"><code># Callbacks in Elixir
+callback = fn(value) -&gt; 
+  IO.puts "Callback called with: #{value}"
+end
+
+process_with_callback = fn(cb, data) -&gt;
+  cb.(data)
+end
+
+process_with_callback.(callback, 42)</code></pre>
               </div>
               <div class="card erlang">
-                <div class="lang">Erlang</div><pre class="code"><code>% @ToDo</code></pre>
+                <div class="lang">Erlang</div><pre class="code"><code>% Callbacks in Erlang
+-module(example).
+-export([start/0]).
+
+callback(Value) -&gt;
+    io:format("Callback called with: ~p~n", [Value]).
+
+process_with_callback(Callback, Data) -&gt;
+    Callback(Data).
+
+start() -&gt;
+    process_with_callback(fun callback/1, 42).</code></pre>
               </div>
               <div class="card go">
-                <div class="lang">Go</div><pre class="code"><code>// @ToDo</code></pre>
+                <div class="lang">Go</div><pre class="code"><code>package main
+
+import "fmt"
+
+// Callbacks in Go
+func callback(value int) {
+	fmt.Printf("Callback called with: %d\n", value)
+}
+
+func processWithCallback(cb func(int), data int) {
+	cb(data)
+}
+
+func main() {
+	processWithCallback(callback, 42)
+}</code></pre>
               </div>
               <div class="card java">
-                <div class="lang">Java</div><pre class="code"><code>// Generic example for missing Java implementations
-// This placeholder will be replaced with actual examples as needed
+                <div class="lang">Java</div><pre class="code"><code>// Callbacks in Java
+interface Callback {
+    void call(int value);
+}
+
 public class Example {
+    public static void processWithCallback(Callback cb, int data) {
+        cb.call(data);
+    }
+    
     public static void main(String[] args) {
-        System.out.println("Example implementation");
+        processWithCallback(new Callback() {
+            public void call(int value) {
+                System.out.println("Callback called with: " + value);
+            }
+        }, 42);
     }
 }</code></pre>
               </div>
               <div class="card javascript">
-                <div class="lang">JavaScript</div><pre class="code"><code>// @ToDo</code></pre>
+                <div class="lang">JavaScript</div><pre class="code"><code>// Callbacks in JavaScript
+function callback(value) {
+    console.log("Callback called with: " + value);
+}
+
+function processWithCallback(cb, data) {
+    cb(data);
+}
+
+processWithCallback(callback, 42);
+
+// Or with arrow function
+processWithCallback((value) =&gt; console.log(`Callback called with: ${value}`), 42);</code></pre>
               </div>
               <div class="card kotlin">
-                <div class="lang">Kotlin</div><pre class="code"><code>// @ToDo</code></pre>
+                <div class="lang">Kotlin</div><pre class="code"><code>// Callbacks in Kotlin
+fun callback(value: Int) {
+    println("Callback called with: $value")
+}
+
+fun processWithCallback(cb: (Int) -&gt; Unit, data: Int) {
+    cb(data)
+}
+
+fun main() {
+    processWithCallback(::callback, 42)
+}</code></pre>
               </div>
               <div class="card objectivec">
-                <div class="lang">ObjectiveC</div><pre class="code"><code>// @ToDo</code></pre>
+                <div class="lang">ObjectiveC</div><pre class="code"><code>#import &lt;Foundation/Foundation.h&gt;
+
+// Callbacks in Objective-C
+typedef void (^CallbackBlock)(int value);
+
+void callback(int value) {
+    NSLog(@"Callback called with: %d", value);
+}
+
+void processWithCallback(void (*cb)(int), int data) {
+    cb(data);
+}
+
+int main() {
+    processWithCallback(callback, 42);
+    return 0;
+}</code></pre>
               </div>
               <div class="card scala">
-                <div class="lang">Scala</div><pre class="code"><code>// @ToDo</code></pre>
+                <div class="lang">Scala</div><pre class="code"><code>object Callbacks extends App {
+  type Callback = Int =&gt; Unit
+  
+  def callback(value: Int): Unit = {
+    println(s"Callback called with: $value")
+  }
+  
+  def processWithCallback(cb: Callback, data: Int): Unit = {
+    cb(data)
+  }
+  
+  processWithCallback(callback, 42)
+}</code></pre>
               </div>
               <div class="card swift">
-                <div class="lang">Swift</div><pre class="code"><code>// @ToDo</code></pre>
+                <div class="lang">Swift</div><pre class="code"><code>// Callbacks in Swift
+func callback(_ value: Int) {
+    print("Callback called with: \(value)")
+}
+
+func processWithCallback(_ cb: (Int) -&gt; Void, _ data: Int) {
+    cb(data)
+}
+
+processWithCallback(callback, 42)</code></pre>
               </div>
               <div class="card toffeescript">
-                <div class="lang">ToffeeScript</div><pre class="code"><code># @ToDo</code></pre>
+                <div class="lang">ToffeeScript</div><pre class="code"><code># Callbacks in ToffeeScript
+callback = (value) -&gt;
+  console.log "Callback called with: #{value}"
+
+processWithCallback = (cb, data) -&gt;
+  cb(data)
+
+processWithCallback callback, 42</code></pre>
               </div>
               <div class="card typescript">
-                <div class="lang">TypeScript</div><pre class="code"><code>// @ToDo</code></pre>
+                <div class="lang">TypeScript</div><pre class="code"><code>// Callbacks in TypeScript
+function callback(value: number): void {
+    console.log(`Callback called with: ${value}`);
+}
+
+function processWithCallback(cb: (value: number) =&gt; void, data: number): void {
+    cb(data);
+}
+
+processWithCallback(callback, 42);</code></pre>
               </div>
             </div>
           </div>
@@ -1868,34 +2926,158 @@ public class Example {
             <div class="name">Named Arguments</div>
             <div class="pair">
               <div class="card c">
-                <div class="lang">C</div><pre class="code"><code>// @ToDo</code></pre>
+                <div class="lang">C</div><pre class="code"><code>#include &lt;stdio.h&gt;
+
+// Named arguments in C (simulated with structs)
+struct Args {
+    int param1;
+    int param2;
+    int param3;
+};
+
+void function_with_named_args(struct Args args) {
+    printf("param1: %d, param2: %d, param3: %d\n", 
+           args.param1, args.param2, args.param3);
+}
+
+int main() {
+    struct Args args = { .param2 = 20, .param1 = 10, .param3 = 30 };
+    function_with_named_args(args);
+    return 0;
+}</code></pre>
               </div>
               <div class="card cpp">
-                <div class="lang">C++</div><pre class="code"><code>// @ToDo</code></pre>
+                <div class="lang">C++</div><pre class="code"><code>#include &lt;iostream&gt;
+
+// Named arguments in C++ (simulated with structs or initializer lists)
+struct Args {
+    int param1 = 0;
+    int param2 = 0;
+    int param3 = 0;
+};
+
+void function_with_named_args(Args args) {
+    std::cout &lt;&lt; "param1: " &lt;&lt; args.param1 
+              &lt;&lt; ", param2: " &lt;&lt; args.param2 
+              &lt;&lt; ", param3: " &lt;&lt; args.param3 &lt;&lt; std::endl;
+}
+
+int main() {
+    Args args{.param2 = 20, .param1 = 10, .param3 = 30};
+    function_with_named_args(args);
+    return 0;
+}</code></pre>
               </div>
               <div class="card coffeescript">
-                <div class="lang">CoffeeScript</div><pre class="code"><code># @ToDo</code></pre>
+                <div class="lang">CoffeeScript</div><pre class="code"><code># Named arguments in CoffeeScript (simulated with objects)
+functionWithNamedArgs = (options = {}) -&gt;
+  param1 = options.param1 or 0
+  param2 = options.param2 or 0
+  param3 = options.param3 or 0
+  console.log "param1: #{param1}, param2: #{param2}, param3: #{param3}"
+
+functionWithNamedArgs param2: 20, param1: 10, param3: 30</code></pre>
               </div>
               <div class="card elixir">
-                <div class="lang">Elixir</div><pre class="code"><code># @ToDo</code></pre>
+                <div class="lang">Elixir</div><pre class="code"><code># Named arguments in Elixir
+defmodule Example do
+  def function_with_named_args(opts \\ []) do
+    param1 = Keyword.get(opts, :param1, 0)
+    param2 = Keyword.get(opts, :param2, 0)
+    param3 = Keyword.get(opts, :param3, 0)
+    IO.puts "param1: #{param1}, param2: #{param2}, param3: #{param3}"
+  end
+end
+
+Example.function_with_named_args(param2: 20, param1: 10, param3: 30)</code></pre>
               </div>
               <div class="card erlang">
-                <div class="lang">Erlang</div><pre class="code"><code>% @ToDo</code></pre>
+                <div class="lang">Erlang</div><pre class="code"><code>% Named arguments in Erlang
+-module(example).
+-export([function_with_named_args/1, start/0]).
+
+function_with_named_args(Opts) -&gt;
+    Param1 = proplists:get_value(param1, Opts, 0),
+    Param2 = proplists:get_value(param2, Opts, 0),
+    Param3 = proplists:get_value(param3, Opts, 0),
+    io:format("param1: ~p, param2: ~p, param3: ~p~n", [Param1, Param2, Param3]).
+
+start() -&gt;
+    function_with_named_args([{param2, 20}, {param1, 10}, {param3, 30}]).</code></pre>
               </div>
               <div class="card go">
-                <div class="lang">Go</div><pre class="code"><code></code></pre>
+                <div class="lang">Go</div><pre class="code"><code>package main
+
+import "fmt"
+
+// Named arguments in Go (simulated with structs)
+type GreetArgs struct {
+	Name     string
+	Hometown string
+}
+
+func greet(args GreetArgs) string {
+	return fmt.Sprintf("Hello, %s from %s!", args.Name, args.Hometown)
+}
+
+func main() {
+	result := greet(GreetArgs{Name: "Bill", Hometown: "Cupertino"})
+	fmt.Println(result)
+}
+</code></pre>
               </div>
               <div class="card java">
-                <div class="lang">Java</div><pre class="code"><code>// Generic example for missing Java implementations
-// This placeholder will be replaced with actual examples as needed
+                <div class="lang">Java</div><pre class="code"><code>// Named arguments in Java (simulated with Builder pattern or setters)
 public class Example {
+    private int param1 = 0;
+    private int param2 = 0;
+    private int param3 = 0;
+    
+    public static class Builder {
+        private int param1 = 0;
+        private int param2 = 0;
+        private int param3 = 0;
+        
+        public Builder param1(int param1) {
+            this.param1 = param1;
+            return this;
+        }
+        
+        public Builder param2(int param2) {
+            this.param2 = param2;
+            return this;
+        }
+        
+        public Builder param3(int param3) {
+            this.param3 = param3;
+            return this;
+        }
+        
+        public void buildAndExecute() {
+            System.out.println("param1: " + param1 + ", param2: " + param2 + ", param3: " + param3);
+        }
+    }
+    
     public static void main(String[] args) {
-        System.out.println("Example implementation");
+        new Builder()
+            .param2(20)
+            .param1(10)
+            .param3(30)
+            .buildAndExecute();
     }
 }</code></pre>
               </div>
               <div class="card javascript">
-                <div class="lang">JavaScript</div><pre class="code"><code>// @ToDo</code></pre>
+                <div class="lang">JavaScript</div><pre class="code"><code>// Named arguments in JavaScript (simulated with objects)
+function functionWithNamedArgs({param1 = 0, param2 = 0, param3 = 0} = {}) {
+    console.log(`param1: ${param1}, param2: ${param2}, param3: ${param3}`);
+}
+
+functionWithNamedArgs({param2: 20, param1: 10, param3: 30});
+
+// Or with destructuring
+const obj = {param2: 20, param1: 10, param3: 30};
+functionWithNamedArgs(obj);</code></pre>
               </div>
               <div class="card kotlin">
                 <div class="lang">Kotlin</div><pre class="code"><code>fun area(width: Int, height: Int) = width * height
@@ -1907,7 +3089,24 @@ area(height = 3, width = 2)
 </code></pre>
               </div>
               <div class="card objectivec">
-                <div class="lang">ObjectiveC</div><pre class="code"><code>// @ToDo</code></pre>
+                <div class="lang">ObjectiveC</div><pre class="code"><code>#import &lt;Foundation/Foundation.h&gt;
+
+// Named arguments in Objective-C (using named parameters)
+@interface Example : NSObject
+- (void)functionWithParam1:(int)param1 param2:(int)param2 param3:(int)param3;
+@end
+
+@implementation Example
+- (void)functionWithParam1:(int)param1 param2:(int)param2 param3:(int)param3 {
+    NSLog(@"param1: %d, param2: %d, param3: %d", param1, param2, param3);
+}
+@end
+
+int main() {
+    Example *example = [[Example alloc] init];
+    [example functionWithParam1:10 param2:20 param3:30];
+    return 0;
+}</code></pre>
               </div>
               <div class="card scala">
                 <div class="lang">Scala</div><pre class="code"><code>def area(width: Int, height: Int): Int = {
@@ -1921,14 +3120,32 @@ area(width = 10, height = 10)
                 <div class="lang">Swift</div><pre class="code"><code>func area(width: Int, height: Int) -&gt; Int {
     return width * height
 }
-area(width: 2, height: 3)
+print(area(width: 2, height: 3))
 </code></pre>
               </div>
               <div class="card toffeescript">
-                <div class="lang">ToffeeScript</div><pre class="code"><code># @ToDo</code></pre>
+                <div class="lang">ToffeeScript</div><pre class="code"><code># Named arguments in ToffeeScript (simulated with objects)
+functionWithNamedArgs = (options = {}) -&gt;
+  param1 = options.param1 or 0
+  param2 = options.param2 or 0
+  param3 = options.param3 or 0
+  console.log "param1: #{param1}, param2: #{param2}, param3: #{param3}"
+
+functionWithNamedArgs param2: 20, param1: 10, param3: 30</code></pre>
               </div>
               <div class="card typescript">
-                <div class="lang">TypeScript</div><pre class="code"><code>null</code></pre>
+                <div class="lang">TypeScript</div><pre class="code"><code>// Named arguments in TypeScript (simulated with interfaces)
+interface Args {
+    param1?: number;
+    param2?: number;
+    param3?: number;
+}
+
+function functionWithNamedArgs({param1 = 0, param2 = 0, param3 = 0}: Args = {}): void {
+    console.log(`param1: ${param1}, param2: ${param2}, param3: ${param3}`);
+}
+
+functionWithNamedArgs({param2: 20, param1: 10, param3: 30});</code></pre>
               </div>
             </div>
           </div>
@@ -1936,7 +3153,7 @@ area(width: 2, height: 3)
             <div class="name">Function Type</div>
             <div class="pair">
               <div class="card c">
-                <div class="lang">C</div><pre class="code"><code>#include <stdio.h>
+                <div class="lang">C</div><pre class="code"><code>#include &lt;stdio.h&gt;
 
 // Function types in C
 typedef int (*FuncType)(int, int);
@@ -1966,11 +3183,11 @@ int main() {
 }</code></pre>
               </div>
               <div class="card cpp">
-                <div class="lang">C++</div><pre class="code"><code>#include <iostream>
-#include <functional>
+                <div class="lang">C++</div><pre class="code"><code>#include &lt;iostream&gt;
+#include &lt;functional&gt;
 
 // Function types in C++
-using FuncType = std::function<int(int, int)>;
+using FuncType = std::function&lt;int(int, int)&gt;;
 
 int add(int a, int b) {
     return a + b;
@@ -1987,21 +3204,21 @@ int apply_operation(FuncType op, int x, int y) {
 int main() {
     FuncType operation = add;
     int result = apply_operation(operation, 5, 3);
-    std::cout << "Result: " << result << std::endl;
+    std::cout &lt;&lt; "Result: " &lt;&lt; result &lt;&lt; std::endl;
     
     operation = multiply;
     result = apply_operation(operation, 5, 3);
-    std::cout << "Result: " << result << std::endl;
+    std::cout &lt;&lt; "Result: " &lt;&lt; result &lt;&lt; std::endl;
     
     return 0;
 }</code></pre>
               </div>
               <div class="card coffeescript">
                 <div class="lang">CoffeeScript</div><pre class="code"><code># Function types in CoffeeScript
-add = (a, b) -> a + b
-multiply = (a, b) -> a * b
+add = (a, b) -&gt; a + b
+multiply = (a, b) -&gt; a * b
 
-applyOperation = (op, x, y) -> op(x, y)
+applyOperation = (op, x, y) -&gt; op(x, y)
 
 operation = add
 result = applyOperation operation, 5, 3
@@ -2012,10 +3229,42 @@ result = applyOperation operation, 5, 3
 console.log "Result: #{result}"</code></pre>
               </div>
               <div class="card elixir">
-                <div class="lang">Elixir</div><pre class="code"><code># @ToDo</code></pre>
+                <div class="lang">Elixir</div><pre class="code"><code># Function types in Elixir
+add = fn(a, b) -&gt; a + b end
+multiply = fn(a, b) -&gt; a * b end
+
+apply_operation = fn(op, x, y) -&gt; op.(x, y) end
+
+operation = add
+result = apply_operation.(operation, 5, 3)
+IO.puts "Result: #{result}"
+
+operation = multiply
+result = apply_operation.(operation, 5, 3)
+IO.puts "Result: #{result}"</code></pre>
               </div>
               <div class="card erlang">
-                <div class="lang">Erlang</div><pre class="code"><code>% @ToDo</code></pre>
+                <div class="lang">Erlang</div><pre class="code"><code>% Function types in Erlang
+-module(example).
+-export([add/2, multiply/2, apply_operation/3, start/0]).
+
+add(A, B) -&gt;
+    A + B.
+
+multiply(A, B) -&gt;
+    A * B.
+
+apply_operation(Op, X, Y) -&gt;
+    Op(X, Y).
+
+start() -&gt;
+    Operation = fun add/2,
+    Result = apply_operation(Operation, 5, 3),
+    io:format("Result: ~p~n", [Result]),
+    
+    Operation2 = fun multiply/2,
+    Result2 = apply_operation(Operation2, 5, 3),
+    io:format("Result: ~p~n", [Result2]).</code></pre>
               </div>
               <div class="card go">
                 <div class="lang">Go</div><pre class="code"><code>package main
@@ -2048,11 +3297,32 @@ func main() {
 }</code></pre>
               </div>
               <div class="card java">
-                <div class="lang">Java</div><pre class="code"><code>// Generic example for missing Java implementations
-// This placeholder will be replaced with actual examples as needed
+                <div class="lang">Java</div><pre class="code"><code>// Function types in Java
+interface FuncType {
+    int apply(int a, int b);
+}
+
 public class Example {
+    public static int add(int a, int b) {
+        return a + b;
+    }
+    
+    public static int multiply(int a, int b) {
+        return a * b;
+    }
+    
+    public static int applyOperation(FuncType op, int x, int y) {
+        return op.apply(x, y);
+    }
+    
     public static void main(String[] args) {
-        System.out.println("Example implementation");
+        FuncType operation = Example::add;
+        int result = applyOperation(operation, 5, 3);
+        System.out.println("Result: " + result);
+        
+        operation = Example::multiply;
+        result = applyOperation(operation, 5, 3);
+        System.out.println("Result: " + result);
     }
 }</code></pre>
               </div>
@@ -2079,7 +3349,7 @@ result = applyOperation(operation, 5, 3);
 console.log("Result: " + result);
 
 // Or with arrow functions
-const arrowAdd = (a, b) => a + b;
+const arrowAdd = (a, b) =&gt; a + b;
 result = applyOperation(arrowAdd, 5, 3);
 console.log("Result: " + result);</code></pre>
               </div>
@@ -2088,10 +3358,10 @@ console.log("Result: " + result);</code></pre>
 fun add(a: Int, b: Int): Int = a + b
 fun multiply(a: Int, b: Int): Int = a * b
 
-fun applyOperation(op: (Int, Int) -> Int, x: Int, y: Int): Int = op(x, y)
+fun applyOperation(op: (Int, Int) -&gt; Int, x: Int, y: Int): Int = op(x, y)
 
 fun main() {
-    var operation: (Int, Int) -> Int = ::add
+    var operation: (Int, Int) -&gt; Int = ::add
     var result = applyOperation(operation, 5, 3)
     println("Result: $result")
     
@@ -2101,11 +3371,38 @@ fun main() {
 }</code></pre>
               </div>
               <div class="card objectivec">
-                <div class="lang">ObjectiveC</div><pre class="code"><code>// @ToDo</code></pre>
+                <div class="lang">ObjectiveC</div><pre class="code"><code>#import &lt;Foundation/Foundation.h&gt;
+
+// Function types in Objective-C
+typedef int (*FuncType)(int, int);
+
+int add(int a, int b) {
+    return a + b;
+}
+
+int multiply(int a, int b) {
+    return a * b;
+}
+
+int applyOperation(FuncType op, int x, int y) {
+    return op(x, y);
+}
+
+int main() {
+    FuncType operation = add;
+    int result = applyOperation(operation, 5, 3);
+    NSLog(@"Result: %d", result);
+    
+    operation = multiply;
+    result = applyOperation(operation, 5, 3);
+    NSLog(@"Result: %d", result);
+    
+    return 0;
+}</code></pre>
               </div>
               <div class="card scala">
                 <div class="lang">Scala</div><pre class="code"><code>object FunctionTypes extends App {
-  type FuncType = (Int, Int) => Int
+  type FuncType = (Int, Int) =&gt; Int
   
   def add(a: Int, b: Int): Int = a + b
   def multiply(a: Int, b: Int): Int = a * b
@@ -2123,19 +3420,19 @@ fun main() {
               </div>
               <div class="card swift">
                 <div class="lang">Swift</div><pre class="code"><code>// Function types in Swift
-func add(_ a: Int, _ b: Int) -> Int {
+func add(_ a: Int, _ b: Int) -&gt; Int {
     return a + b
 }
 
-func multiply(_ a: Int, _ b: Int) -> Int {
+func multiply(_ a: Int, _ b: Int) -&gt; Int {
     return a * b
 }
 
-func applyOperation(_ op: (Int, Int) -> Int, _ x: Int, _ y: Int) -> Int {
+func applyOperation(_ op: (Int, Int) -&gt; Int, _ x: Int, _ y: Int) -&gt; Int {
     return op(x, y)
 }
 
-var operation: (Int, Int) -> Int = add
+var operation: (Int, Int) -&gt; Int = add
 var result = applyOperation(operation, 5, 3)
 print("Result: \(result)")
 
@@ -2145,10 +3442,10 @@ print("Result: \(result)")</code></pre>
               </div>
               <div class="card toffeescript">
                 <div class="lang">ToffeeScript</div><pre class="code"><code># Function types in ToffeeScript
-add = (a, b) -> a + b
-multiply = (a, b) -> a * b
+add = (a, b) -&gt; a + b
+multiply = (a, b) -&gt; a * b
 
-applyOperation = (op, x, y) -> op(x, y)
+applyOperation = (op, x, y) -&gt; op(x, y)
 
 operation = add
 result = applyOperation operation, 5, 3
@@ -2159,7 +3456,28 @@ result = applyOperation operation, 5, 3
 console.log "Result: #{result}"</code></pre>
               </div>
               <div class="card typescript">
-                <div class="lang">TypeScript</div><pre class="code"><code>null</code></pre>
+                <div class="lang">TypeScript</div><pre class="code"><code>// Function types in TypeScript
+type FuncType = (a: number, b: number) =&gt; number;
+
+function add(a: number, b: number): number {
+    return a + b;
+}
+
+function multiply(a: number, b: number): number {
+    return a * b;
+}
+
+function applyOperation(op: FuncType, x: number, y: number): number {
+    return op(x, y);
+}
+
+let operation: FuncType = add;
+let result = applyOperation(operation, 5, 3);
+console.log("Result: " + result);
+
+operation = multiply;
+result = applyOperation(operation, 5, 3);
+console.log("Result: " + result);</code></pre>
               </div>
             </div>
           </div>
@@ -2167,22 +3485,80 @@ console.log "Result: #{result}"</code></pre>
             <div class="name">Recursion</div>
             <div class="pair">
               <div class="card c">
-                <div class="lang">C</div><pre class="code"><code>// @ToDo</code></pre>
+                <div class="lang">C</div><pre class="code"><code>#include &lt;stdio.h&gt;
+
+// Recursion in C
+int factorial(int n) {
+    return n &lt;= 1 ? 1 : n * factorial(n - 1);
+}
+
+int main() {
+    printf("%d\n", factorial(5));
+    return 0;
+}
+</code></pre>
               </div>
               <div class="card cpp">
-                <div class="lang">C++</div><pre class="code"><code>// @ToDo</code></pre>
+                <div class="lang">C++</div><pre class="code"><code>#include &lt;iostream&gt;
+
+// Recursion in C++
+int factorial(int n) {
+    return n &lt;= 1 ? 1 : n * factorial(n - 1);
+}
+
+int main() {
+    std::cout &lt;&lt; factorial(5) &lt;&lt; std::endl;
+    return 0;
+}
+</code></pre>
               </div>
               <div class="card coffeescript">
-                <div class="lang">CoffeeScript</div><pre class="code"><code># @ToDo</code></pre>
+                <div class="lang">CoffeeScript</div><pre class="code"><code># Recursion in CoffeeScript
+factorial = (n) -&gt;
+  if n &lt;= 1 then 1 else n * factorial(n - 1)
+
+console.log factorial(5)
+</code></pre>
               </div>
               <div class="card elixir">
-                <div class="lang">Elixir</div><pre class="code"><code># @ToDo</code></pre>
+                <div class="lang">Elixir</div><pre class="code"><code># Recursion in Elixir
+defmodule Math do
+  def factorial(0), do: 1
+  def factorial(n), do: n * factorial(n - 1)
+end
+
+IO.puts Math.factorial(5)
+</code></pre>
               </div>
               <div class="card erlang">
-                <div class="lang">Erlang</div><pre class="code"><code>% @ToDo</code></pre>
+                <div class="lang">Erlang</div><pre class="code"><code>% Recursion in Erlang
+-module(math).
+-export([factorial/1, start/0]).
+
+factorial(0) -&gt; 1;
+factorial(N) -&gt; N * factorial(N - 1).
+
+start() -&gt;
+    io:format("~p~n", [factorial(5)]).
+</code></pre>
               </div>
               <div class="card go">
-                <div class="lang">Go</div><pre class="code"><code>// @ToDo</code></pre>
+                <div class="lang">Go</div><pre class="code"><code>package main
+
+import "fmt"
+
+// Recursion in Go
+func factorial(n int) int {
+	if n &lt;= 1 {
+		return 1
+	}
+	return n * factorial(n-1)
+}
+
+func main() {
+	fmt.Println(factorial(5))
+}
+</code></pre>
               </div>
               <div class="card groovy">
                 <div class="lang">Groovy</div><pre class="code"><code>import groovy.transform.TailRecursive
@@ -2200,34 +3576,82 @@ println("Factorial of 5 is ${TailEndRecursion.factorial(5)}")
 </code></pre>
               </div>
               <div class="card java">
-                <div class="lang">Java</div><pre class="code"><code>// Generic example for missing Java implementations
-// This placeholder will be replaced with actual examples as needed
+                <div class="lang">Java</div><pre class="code"><code>// Recursion in Java
 public class Example {
-    public static void main(String[] args) {
-        System.out.println("Example implementation");
+    public static int factorial(int n) {
+        return n &lt;= 1 ? 1 : n * factorial(n - 1);
     }
-}</code></pre>
+
+    public static void main(String[] args) {
+        System.out.println(factorial(5));
+    }
+}
+</code></pre>
               </div>
               <div class="card javascript">
-                <div class="lang">JavaScript</div><pre class="code"><code>// @ToDo</code></pre>
+                <div class="lang">JavaScript</div><pre class="code"><code>// Recursion in JavaScript
+function factorial(n) {
+    return n &lt;= 1 ? 1 : n * factorial(n - 1);
+}
+
+console.log(factorial(5));
+</code></pre>
               </div>
               <div class="card kotlin">
-                <div class="lang">Kotlin</div><pre class="code"><code>// @ToDo</code></pre>
+                <div class="lang">Kotlin</div><pre class="code"><code>// Recursion in Kotlin
+fun factorial(n: Int): Int = if (n &lt;= 1) 1 else n * factorial(n - 1)
+
+fun main() {
+    println(factorial(5))
+}
+</code></pre>
               </div>
               <div class="card objectivec">
-                <div class="lang">ObjectiveC</div><pre class="code"><code>// @ToDo</code></pre>
+                <div class="lang">ObjectiveC</div><pre class="code"><code>#import &lt;Foundation/Foundation.h&gt;
+
+// Recursion in Objective-C
+int factorial(int n) {
+    return n &lt;= 1 ? 1 : n * factorial(n - 1);
+}
+
+int main() {
+    NSLog(@"%d", factorial(5));
+    return 0;
+}
+</code></pre>
               </div>
               <div class="card scala">
-                <div class="lang">Scala</div><pre class="code"><code>// @ToDo</code></pre>
+                <div class="lang">Scala</div><pre class="code"><code>// Recursion in Scala
+def factorial(n: Int): Int = if (n &lt;= 1) 1 else n * factorial(n - 1)
+
+println(factorial(5))
+</code></pre>
               </div>
               <div class="card swift">
-                <div class="lang">Swift</div><pre class="code"><code>// @ToDo</code></pre>
+                <div class="lang">Swift</div><pre class="code"><code>// Recursion in Swift
+func factorial(_ n: Int) -&gt; Int {
+    return n &lt;= 1 ? 1 : n * factorial(n - 1)
+}
+
+print(factorial(5))
+</code></pre>
               </div>
               <div class="card toffeescript">
-                <div class="lang">ToffeeScript</div><pre class="code"><code># @ToDo</code></pre>
+                <div class="lang">ToffeeScript</div><pre class="code"><code># Recursion in ToffeeScript
+factorial = (n) -&gt;
+  if n &lt;= 1 then 1 else n * factorial(n - 1)
+
+console.log factorial(5)
+</code></pre>
               </div>
               <div class="card typescript">
-                <div class="lang">TypeScript</div><pre class="code"><code>null</code></pre>
+                <div class="lang">TypeScript</div><pre class="code"><code>// Recursion in TypeScript
+function factorial(n: number): number {
+    return n &lt;= 1 ? 1 : n * factorial(n - 1);
+}
+
+console.log(factorial(5));
+</code></pre>
               </div>
             </div>
           </div>
@@ -2280,10 +3704,36 @@ public:
     "A shape with #{this.numberOfSides} sides."</code></pre>
               </div>
               <div class="card elixir">
-                <div class="lang">Elixir</div><pre class="code"><code># @ToDo</code></pre>
+                <div class="lang">Elixir</div><pre class="code"><code># Elixir doesn't have classes in the traditional sense
+# But it has structs and modules that serve similar purposes
+defmodule Person do
+  defstruct name: nil, age: nil
+  
+  def new(name, age) do
+    %Person{name: name, age: age}
+  end
+  
+  def greet(person) do
+    "Hello, I'm #{person.name} and I'm #{person.age} years old"
+  end
+end
+
+person = Person.new("John", 30)
+IO.puts Person.greet(person)</code></pre>
               </div>
               <div class="card erlang">
-                <div class="lang">Erlang</div><pre class="code"><code>% @ToDo</code></pre>
+                <div class="lang">Erlang</div><pre class="code"><code>% Erlang doesn't have classes in the traditional sense
+% But it has records and modules that serve similar purposes
+-module(person).
+-export([new/2, greet/1]).
+
+-record(person, {name, age}).
+
+new(Name, Age) -&gt;
+    #person{name=Name, age=Age}.
+
+greet(#person{name=Name, age=Age}) -&gt;
+    io_lib:format("Hello, I'm ~s and I'm ~p years old", [Name, Age]).</code></pre>
               </div>
               <div class="card go">
                 <div class="lang">Go</div><pre class="code"><code>type Shape struct {
@@ -2294,11 +3744,31 @@ func (p *Shape) simpleDescription() string {
 }</code></pre>
               </div>
               <div class="card java">
-                <div class="lang">Java</div><pre class="code"><code>// Generic example for missing Java implementations
-// This placeholder will be replaced with actual examples as needed
-public class Example {
+                <div class="lang">Java</div><pre class="code"><code>// Class declaration in Java
+public class Person {
+    private String name;
+    private int age;
+    
+    public Person(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+    
+    public String getName() {
+        return name;
+    }
+    
+    public int getAge() {
+        return age;
+    }
+    
+    public String greet() {
+        return "Hello, I'm " + name + " and I'm " + age + " years old";
+    }
+    
     public static void main(String[] args) {
-        System.out.println("Example implementation");
+        Person person = new Person("John", 30);
+        System.out.println(person.greet());
     }
 }</code></pre>
               </div>
@@ -2329,7 +3799,37 @@ var person = new Person("John", 30);</code></pre>
 </code></pre>
               </div>
               <div class="card objectivec">
-                <div class="lang">ObjectiveC</div><pre class="code"><code>// @ToDo</code></pre>
+                <div class="lang">ObjectiveC</div><pre class="code"><code>#import &lt;Foundation/Foundation.h&gt;
+
+// Class declaration in Objective-C
+@interface Person : NSObject
+@property (nonatomic, strong) NSString *name;
+@property (nonatomic) int age;
+
+- (instancetype)initWithName:(NSString *)name age:(int)age;
+- (NSString *)greet;
+@end
+
+@implementation Person
+- (instancetype)initWithName:(NSString *)name age:(int)age {
+    self = [super init];
+    if (self) {
+        _name = name;
+        _age = age;
+    }
+    return self;
+}
+
+- (NSString *)greet {
+    return [NSString stringWithFormat:@"Hello, I'm %@ and I'm %d years old", self.name, self.age];
+}
+@end
+
+int main() {
+    Person *person = [[Person alloc] initWithName:@"John" age:30];
+    NSLog(@"%@", [person greet]);
+    return 0;
+}</code></pre>
               </div>
               <div class="card scala">
                 <div class="lang">Scala</div><pre class="code"><code>class Shape {
@@ -2381,19 +3881,105 @@ let person: Person = new Person("John", 30);</code></pre>
             <div class="name">Usage</div>
             <div class="pair">
               <div class="card c">
-                <div class="lang">C</div><pre class="code"><code>// @ToDo</code></pre>
+                <div class="lang">C</div><pre class="code"><code>#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;string.h&gt;
+
+// Usage in C (simulated with structs and functions)
+struct Person {
+    char name[50];
+    int age;
+};
+
+struct Person create_person(const char* name, int age) {
+    struct Person p;
+    strcpy(p.name, name);
+    p.age = age;
+    return p;
+}
+
+void greet(struct Person p) {
+    printf("Hello, I'm %s and I'm %d years old\n", p.name, p.age);
+}
+
+int main() {
+    struct Person person = create_person("John", 30);
+    greet(person);
+    return 0;
+}</code></pre>
               </div>
               <div class="card cpp">
-                <div class="lang">C++</div><pre class="code"><code>// @ToDo</code></pre>
+                <div class="lang">C++</div><pre class="code"><code>#include &lt;iostream&gt;
+#include &lt;string&gt;
+
+// Usage in C++
+class Person {
+private:
+    std::string name;
+    int age;
+    
+public:
+    Person(const std::string& name, int age) : name(name), age(age) {}
+    
+    std::string getName() const { return name; }
+    int getAge() const { return age; }
+    
+    std::string greet() const {
+        return "Hello, I'm " + name + " and I'm " + std::to_string(age) + " years old";
+    }
+};
+
+int main() {
+    Person person("John", 30);
+    std::cout &lt;&lt; person.greet() &lt;&lt; std::endl;
+    return 0;
+}</code></pre>
               </div>
               <div class="card coffeescript">
-                <div class="lang">CoffeeScript</div><pre class="code"><code># @ToDo</code></pre>
+                <div class="lang">CoffeeScript</div><pre class="code"><code># Usage in CoffeeScript
+class Person
+  constructor: (@name, @age) -&gt;
+  
+  greet: -&gt;
+    "Hello, I'm #{@name} and I'm #{@age} years old"
+
+person = new Person "John", 30
+console.log person.greet()</code></pre>
               </div>
               <div class="card elixir">
-                <div class="lang">Elixir</div><pre class="code"><code># @ToDo</code></pre>
+                <div class="lang">Elixir</div><pre class="code"><code># Usage in Elixir
+defmodule Person do
+  defstruct name: nil, age: nil
+  
+  def new(name, age) do
+    %Person{name: name, age: age}
+  end
+  
+  def greet(person) do
+    "Hello, I'm #{person.name} and I'm #{person.age} years old"
+  end
+end
+
+person = Person.new("John", 30)
+IO.puts Person.greet(person)</code></pre>
               </div>
               <div class="card erlang">
-                <div class="lang">Erlang</div><pre class="code"><code>% @ToDo</code></pre>
+                <div class="lang">Erlang</div><pre class="code"><code>% Usage in Erlang
+-module(person).
+-export([new/2, greet/1, start/0]).
+
+-record(person, {name, age}).
+
+new(Name, Age) -&gt;
+    #person{name=Name, age=Age}.
+
+greet(#person{name=Name, age=Age}) -&gt;
+    io_lib:format("Hello, I'm ~s and I'm ~p years old", [Name, Age]).
+
+start() -&gt;
+    Person = new("John", 30),
+    Message = greet(Person),
+    io:format("~s~n", [Message]).</code></pre>
               </div>
               <div class="card go">
                 <div class="lang">Go</div><pre class="code"><code>var shape = new(Shape)
@@ -2403,16 +3989,49 @@ var shapeDescription =
 </code></pre>
               </div>
               <div class="card java">
-                <div class="lang">Java</div><pre class="code"><code>// Generic example for missing Java implementations
-// This placeholder will be replaced with actual examples as needed
-public class Example {
+                <div class="lang">Java</div><pre class="code"><code>// Usage in Java
+public class Person {
+    private String name;
+    private int age;
+    
+    public Person(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+    
+    public String getName() {
+        return name;
+    }
+    
+    public int getAge() {
+        return age;
+    }
+    
+    public String greet() {
+        return "Hello, I'm " + name + " and I'm " + age + " years old";
+    }
+    
     public static void main(String[] args) {
-        System.out.println("Example implementation");
+        Person person = new Person("John", 30);
+        System.out.println(person.greet());
     }
 }</code></pre>
               </div>
               <div class="card javascript">
-                <div class="lang">JavaScript</div><pre class="code"><code>// @ToDo</code></pre>
+                <div class="lang">JavaScript</div><pre class="code"><code>// Usage in JavaScript
+class Person {
+    constructor(name, age) {
+        this.name = name;
+        this.age = age;
+    }
+    
+    greet() {
+        return `Hello, I'm ${this.name} and I'm ${this.age} years old`;
+    }
+}
+
+const person = new Person("John", 30);
+console.log(person.greet());</code></pre>
               </div>
               <div class="card kotlin">
                 <div class="lang">Kotlin</div><pre class="code"><code>var shape = Shape()
@@ -2422,7 +4041,37 @@ var shapeDescription =
 </code></pre>
               </div>
               <div class="card objectivec">
-                <div class="lang">ObjectiveC</div><pre class="code"><code>// @ToDo</code></pre>
+                <div class="lang">ObjectiveC</div><pre class="code"><code>#import &lt;Foundation/Foundation.h&gt;
+
+// Usage in Objective-C
+@interface Person : NSObject
+@property (nonatomic, strong) NSString *name;
+@property (nonatomic) int age;
+
+- (instancetype)initWithName:(NSString *)name age:(int)age;
+- (NSString *)greet;
+@end
+
+@implementation Person
+- (instancetype)initWithName:(NSString *)name age:(int)age {
+    self = [super init];
+    if (self) {
+        _name = name;
+        _age = age;
+    }
+    return self;
+}
+
+- (NSString *)greet {
+    return [NSString stringWithFormat:@"Hello, I'm %@ and I'm %d years old", self.name, self.age];
+}
+@end
+
+int main() {
+    Person *person = [[Person alloc] initWithName:@"John" age:30];
+    NSLog(@"%@", [person greet]);
+    return 0;
+}</code></pre>
               </div>
               <div class="card scala">
                 <div class="lang">Scala</div><pre class="code"><code>var shape = new Shape()
@@ -2437,10 +4086,29 @@ var shapeDescription =
   shape.simpleDescription()</code></pre>
               </div>
               <div class="card toffeescript">
-                <div class="lang">ToffeeScript</div><pre class="code"><code># @ToDo</code></pre>
+                <div class="lang">ToffeeScript</div><pre class="code"><code>var shape = new Shape()
+shape.numberOfSides = 7
+var shapeDescription = shape.simpleDescription()
+</code></pre>
               </div>
               <div class="card typescript">
-                <div class="lang">TypeScript</div><pre class="code"><code>null</code></pre>
+                <div class="lang">TypeScript</div><pre class="code"><code>// Usage in TypeScript
+class Person {
+    private name: string;
+    private age: number;
+    
+    constructor(name: string, age: number) {
+        this.name = name;
+        this.age = age;
+    }
+    
+    greet(): string {
+        return `Hello, I'm ${this.name} and I'm ${this.age} years old`;
+    }
+}
+
+const person: Person = new Person("John", 30);
+console.log(person.greet());</code></pre>
               </div>
             </div>
           </div>
@@ -2448,19 +4116,140 @@ var shapeDescription =
             <div class="name">Subclass</div>
             <div class="pair">
               <div class="card c">
-                <div class="lang">C</div><pre class="code"><code>// @ToDo</code></pre>
+                <div class="lang">C</div><pre class="code"><code>#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+
+// Subclass in C (simulated with structs and function pointers)
+struct Person {
+    char name[50];
+    int age;
+    void (*greet)(struct Person *self);
+};
+
+void person_greet(struct Person *self) {
+    printf("Hello, I'm %s and I'm %d years old\n", self-&gt;name, self-&gt;age);
+}
+
+struct Student {
+    struct Person base;
+    char school[50];
+    void (*greet)(struct Student *self);
+};
+
+void student_greet(struct Student *self) {
+    person_greet(&self-&gt;base);
+    printf("I study at %s\n", self-&gt;school);
+}
+
+int main() {
+    struct Student student = {{"Alice", 20, person_greet}, "MIT", student_greet};
+    student.greet(&student);
+    return 0;
+}
+</code></pre>
               </div>
               <div class="card cpp">
-                <div class="lang">C++</div><pre class="code"><code>// @ToDo</code></pre>
+                <div class="lang">C++</div><pre class="code"><code>#include &lt;iostream&gt;
+#include &lt;string&gt;
+
+// Subclass in C++
+class Person {
+protected:
+    std::string name;
+    int age;
+public:
+    Person(const std::string& name, int age) : name(name), age(age) {}
+    virtual std::string greet() const {
+        return "Hello, I'm " + name + " and I'm " + std::to_string(age) + " years old";
+    }
+};
+
+class Student : public Person {
+    std::string school;
+public:
+    Student(const std::string& name, int age, const std::string& school)
+        : Person(name, age), school(school) {}
+    std::string greet() const override {
+        return Person::greet() + " I study at " + school;
+    }
+};
+
+int main() {
+    Student student("Alice", 20, "MIT");
+    std::cout &lt;&lt; student.greet() &lt;&lt; std::endl;
+    return 0;
+}
+</code></pre>
               </div>
               <div class="card coffeescript">
-                <div class="lang">CoffeeScript</div><pre class="code"><code># @ToDo</code></pre>
+                <div class="lang">CoffeeScript</div><pre class="code"><code># Subclass in CoffeeScript
+class Person
+  constructor: (@name, @age) -&gt;
+
+  greet: -&gt;
+    "Hello, I'm #{@name} and I'm #{@age} years old"
+
+class Student extends Person
+  constructor: (name, age, @school) -&gt;
+    super(name, age)
+
+  greet: -&gt;
+    "#{super()} I study at #{@school}"
+
+student = new Student "Alice", 20, "MIT"
+console.log student.greet()
+</code></pre>
               </div>
               <div class="card elixir">
-                <div class="lang">Elixir</div><pre class="code"><code># @ToDo</code></pre>
+                <div class="lang">Elixir</div><pre class="code"><code># Subclass in Elixir (no direct equivalent, use structs and protocol delegation)
+defmodule Person do
+  defstruct name: nil, age: nil
+
+  def new(name, age), do: %Person{name: name, age: age}
+
+  def greet(%Person{name: name, age: age}) do
+    "Hello, I'm #{name} and I'm #{age} years old"
+  end
+end
+
+defmodule Student do
+  defstruct name: nil, age: nil, school: nil
+
+  def new(name, age, school), do: %Student{name: name, age: age, school: school}
+
+  def greet(%Student{name: name, age: age, school: school}) do
+    person = Person.new(name, age)
+    Person.greet(person) &lt;&gt; " I study at #{school}"
+  end
+end
+
+student = Student.new("Alice", 20, "MIT")
+IO.puts Student.greet(student)
+</code></pre>
               </div>
               <div class="card erlang">
-                <div class="lang">Erlang</div><pre class="code"><code>% @ToDo</code></pre>
+                <div class="lang">Erlang</div><pre class="code"><code>% Subclass in Erlang (no direct equivalent, use records and module delegation)
+-module(subclass).
+-export([new_person/2, new_student/3, greet/1, start/0]).
+
+-record(person, {name, age}).
+-record(student, {person, school}).
+
+new_person(Name, Age) -&gt;
+    #person{name=Name, age=Age}.
+
+new_student(Name, Age, School) -&gt;
+    #student{person=new_person(Name, Age), school=School}.
+
+greet(#person{name=Name, age=Age}) -&gt;
+    io_lib:format("Hello, I'm ~s and I'm ~p years old", [Name, Age]);
+greet(#student{person=P, school=School}) -&gt;
+    [greet(P), io_lib:format(" I study at ~s", [School])].
+
+start() -&gt;
+    Student = new_student("Alice", 20, "MIT"),
+    io:format("~s~n", [greet(Student)]).
+</code></pre>
               </div>
               <div class="card go">
                 <div class="lang">Go</div><pre class="code"><code>type NamedShape struct {
@@ -2501,16 +4290,67 @@ func main() {
 </code></pre>
               </div>
               <div class="card java">
-                <div class="lang">Java</div><pre class="code"><code>// Generic example for missing Java implementations
-// This placeholder will be replaced with actual examples as needed
-public class Example {
+                <div class="lang">Java</div><pre class="code"><code>// Subclass in Java
+class Person {
+    protected String name;
+    protected int age;
+    
+    public Person(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+    
+    public String greet() {
+        return "Hello, I'm " + name + " and I'm " + age + " years old";
+    }
+}
+
+class Student extends Person {
+    private String school;
+    
+    public Student(String name, int age, String school) {
+        super(name, age);
+        this.school = school;
+    }
+    
+    public String greet() {
+        return super.greet() + " I study at " + school;
+    }
+}
+
+public class Main {
     public static void main(String[] args) {
-        System.out.println("Example implementation");
+        Student student = new Student("Alice", 20, "MIT");
+        System.out.println(student.greet());
     }
 }</code></pre>
               </div>
               <div class="card javascript">
-                <div class="lang">JavaScript</div><pre class="code"><code>// @ToDo</code></pre>
+                <div class="lang">JavaScript</div><pre class="code"><code>// Subclass in JavaScript
+class Person {
+    constructor(name, age) {
+        this.name = name;
+        this.age = age;
+    }
+    
+    greet() {
+        return `Hello, I'm ${this.name} and I'm ${this.age} years old`;
+    }
+}
+
+class Student extends Person {
+    constructor(name, age, school) {
+        super(name, age);
+        this.school = school;
+    }
+    
+    greet() {
+        return super.greet() + ` I study at ${this.school}`;
+    }
+}
+
+const student = new Student("Alice", 20, "MIT");
+console.log(student.greet());</code></pre>
               </div>
               <div class="card kotlin">
                 <div class="lang">Kotlin</div><pre class="code"><code>open class NamedShape(val name: String) {
@@ -2538,7 +4378,57 @@ test.simpleDescription()
 </code></pre>
               </div>
               <div class="card objectivec">
-                <div class="lang">ObjectiveC</div><pre class="code"><code>// @ToDo</code></pre>
+                <div class="lang">ObjectiveC</div><pre class="code"><code>#import &lt;Foundation/Foundation.h&gt;
+
+// Subclass in Objective-C
+@interface Person : NSObject
+@property (nonatomic, strong) NSString *name;
+@property (nonatomic) int age;
+
+- (instancetype)initWithName:(NSString *)name age:(int)age;
+- (NSString *)greet;
+@end
+
+@implementation Person
+- (instancetype)initWithName:(NSString *)name age:(int)age {
+    self = [super init];
+    if (self) {
+        _name = name;
+        _age = age;
+    }
+    return self;
+}
+
+- (NSString *)greet {
+    return [NSString stringWithFormat:@"Hello, I'm %@ and I'm %d years old", self.name, self.age];
+}
+@end
+
+@interface Student : Person
+@property (nonatomic, strong) NSString *school;
+
+- (instancetype)initWithName:(NSString *)name age:(int)age school:(NSString *)school;
+@end
+
+@implementation Student
+- (instancetype)initWithName:(NSString *)name age:(int)age school:(NSString *)school {
+    self = [super initWithName:name age:age];
+    if (self) {
+        _school = school;
+    }
+    return self;
+}
+
+- (NSString *)greet {
+    return [NSString stringWithFormat:@"%@ I study at %@", [super greet], self.school];
+}
+@end
+
+int main() {
+    Student *student = [[Student alloc] initWithName:@"Alice" age:20 school:@"MIT"];
+    NSLog(@"%@", [student greet]);
+    return 0;
+}</code></pre>
               </div>
               <div class="card scala">
                 <div class="lang">Scala</div><pre class="code"><code>class NamedShape(var name: String,
@@ -2598,10 +4488,54 @@ test.simpleDescription()
 </code></pre>
               </div>
               <div class="card toffeescript">
-                <div class="lang">ToffeeScript</div><pre class="code"><code># @ToDo</code></pre>
+                <div class="lang">ToffeeScript</div><pre class="code"><code># Subclass in ToffeeScript
+class Person
+  constructor: (@name, @age) -&gt;
+  
+  greet: -&gt;
+    "Hello, I'm #{@name} and I'm #{@age} years old"
+
+class Student extends Person
+  constructor: (name, age, @school) -&gt;
+    super(name, age)
+  
+  greet: -&gt;
+    "#{super()} I study at #{@school}"
+
+student = new Student "Alice", 20, "MIT"
+console.log student.greet()</code></pre>
               </div>
               <div class="card typescript">
-                <div class="lang">TypeScript</div><pre class="code"><code>null</code></pre>
+                <div class="lang">TypeScript</div><pre class="code"><code>// Subclass in TypeScript
+class Person {
+    protected name: string;
+    protected age: number;
+    
+    constructor(name: string, age: number) {
+        this.name = name;
+        this.age = age;
+    }
+    
+    greet(): string {
+        return `Hello, I'm ${this.name} and I'm ${this.age} years old`;
+    }
+}
+
+class Student extends Person {
+    private school: string;
+    
+    constructor(name: string, age: number, school: string) {
+        super(name, age);
+        this.school = school;
+    }
+    
+    greet(): string {
+        return super.greet() + ` I study at ${this.school}`;
+    }
+}
+
+const student: Student = new Student("Alice", 20, "MIT");
+console.log(student.greet());</code></pre>
               </div>
             </div>
           </div>
@@ -2609,19 +4543,136 @@ test.simpleDescription()
             <div class="name">Checking Type</div>
             <div class="pair">
               <div class="card c">
-                <div class="lang">C</div><pre class="code"><code>// @ToDo</code></pre>
+                <div class="lang">C</div><pre class="code"><code>#include &lt;stdio.h&gt;
+
+// Checking type in C (using a type tag in a tagged union)
+typedef enum { TYPE_MOVIE, TYPE_SONG } MediaType;
+
+struct Media {
+    MediaType type;
+    char name[50];
+};
+
+int main() {
+    struct Media library[] = {
+        {TYPE_MOVIE, "Inception"},
+        {TYPE_SONG, "Bohemian Rhapsody"},
+        {TYPE_MOVIE, "Interstellar"}
+    };
+    int count = 3;
+
+    int movieCount = 0, songCount = 0;
+    for (int i = 0; i &lt; count; i++) {
+        if (library[i].type == TYPE_MOVIE) {
+            movieCount++;
+        } else if (library[i].type == TYPE_SONG) {
+            songCount++;
+        }
+    }
+    printf("Movies: %d, Songs: %d\n", movieCount, songCount);
+    return 0;
+}
+</code></pre>
               </div>
               <div class="card cpp">
-                <div class="lang">C++</div><pre class="code"><code>// @ToDo</code></pre>
+                <div class="lang">C++</div><pre class="code"><code>#include &lt;iostream&gt;
+#include &lt;vector&gt;
+#include &lt;typeinfo&gt;
+
+// Checking type in C++
+class MediaItem { public: virtual ~MediaItem() {} };
+class Movie : public MediaItem { public: std::string name; std::string director; };
+class Song  : public MediaItem { public: std::string name; std::string artist; };
+
+int main() {
+    std::vector&lt;MediaItem*&gt; library;
+    Movie* m = new Movie(); m-&gt;name = "Inception"; library.push_back(m);
+    Song*  s = new Song();  s-&gt;name = "Bohemian Rhapsody"; library.push_back(s);
+
+    int movieCount = 0, songCount = 0;
+    for (auto item : library) {
+        if (dynamic_cast&lt;Movie*&gt;(item)) {
+            movieCount++;
+        } else if (dynamic_cast&lt;Song*&gt;(item)) {
+            songCount++;
+        }
+    }
+    std::cout &lt;&lt; "Movies: " &lt;&lt; movieCount &lt;&lt; ", Songs: " &lt;&lt; songCount &lt;&lt; std::endl;
+    return 0;
+}
+</code></pre>
               </div>
               <div class="card coffeescript">
-                <div class="lang">CoffeeScript</div><pre class="code"><code># @ToDo</code></pre>
+                <div class="lang">CoffeeScript</div><pre class="code"><code># Checking type in CoffeeScript
+class Movie
+  constructor: (@name, @director) -&gt;
+
+class Song
+  constructor: (@name, @artist) -&gt;
+
+library = [
+  new Movie("Inception", "Nolan"),
+  new Song("Bohemian Rhapsody", "Queen"),
+  new Movie("Interstellar", "Nolan")
+]
+
+movieCount = 0
+songCount = 0
+
+for item in library
+  if item instanceof Movie
+    movieCount++
+  else if item instanceof Song
+    songCount++
+
+console.log "Movies: #{movieCount}, Songs: #{songCount}"
+</code></pre>
               </div>
               <div class="card elixir">
-                <div class="lang">Elixir</div><pre class="code"><code># @ToDo</code></pre>
+                <div class="lang">Elixir</div><pre class="code"><code># Checking type in Elixir (using structs and pattern matching)
+defmodule Movie do
+  defstruct [:name, :director]
+end
+
+defmodule Song do
+  defstruct [:name, :artist]
+end
+
+library = [
+  %Movie{name: "Inception", director: "Nolan"},
+  %Song{name: "Bohemian Rhapsody", artist: "Queen"},
+  %Movie{name: "Interstellar", director: "Nolan"}
+]
+
+{movie_count, song_count} =
+  Enum.reduce(library, {0, 0}, fn
+    %Movie{}, {m, s} -&gt; {m + 1, s}
+    %Song{},  {m, s} -&gt; {m, s + 1}
+    _,        acc    -&gt; acc
+  end)
+
+IO.puts "Movies: #{movie_count}, Songs: #{song_count}"
+</code></pre>
               </div>
               <div class="card erlang">
-                <div class="lang">Erlang</div><pre class="code"><code>% @ToDo</code></pre>
+                <div class="lang">Erlang</div><pre class="code"><code>% Checking type in Erlang (using tagged tuples)
+-module(checking_type).
+-export([start/0]).
+
+start() -&gt;
+    Library = [
+        {movie, "Inception", "Nolan"},
+        {song, "Bohemian Rhapsody", "Queen"},
+        {movie, "Interstellar", "Nolan"}
+    ],
+    {MovieCount, SongCount} = count_types(Library, 0, 0),
+    io:format("Movies: ~p, Songs: ~p~n", [MovieCount, SongCount]).
+
+count_types([], M, S) -&gt; {M, S};
+count_types([{movie, _, _} | Rest], M, S) -&gt; count_types(Rest, M + 1, S);
+count_types([{song, _, _}  | Rest], M, S) -&gt; count_types(Rest, M, S + 1);
+count_types([_ | Rest], M, S) -&gt; count_types(Rest, M, S).
+</code></pre>
               </div>
               <div class="card go">
                 <div class="lang">Go</div><pre class="code"><code>var movieCount = 0
@@ -2637,16 +4688,65 @@ for _, item := range(library) {
 </code></pre>
               </div>
               <div class="card java">
-                <div class="lang">Java</div><pre class="code"><code>// Generic example for missing Java implementations
-// This placeholder will be replaced with actual examples as needed
-public class Example {
+                <div class="lang">Java</div><pre class="code"><code>// Checking type in Java
+class Animal {
+    public void makeSound() {
+        System.out.println("Some sound");
+    }
+}
+
+class Dog extends Animal {
+    public void makeSound() {
+        System.out.println("Woof");
+    }
+    
+    public void fetch() {
+        System.out.println("Fetching...");
+    }
+}
+
+public class Main {
     public static void main(String[] args) {
-        System.out.println("Example implementation");
+        Animal animal = new Dog();
+        
+        if (animal instanceof Dog) {
+            Dog dog = (Dog) animal;
+            dog.makeSound();
+            dog.fetch();
+        }
     }
 }</code></pre>
               </div>
               <div class="card javascript">
-                <div class="lang">JavaScript</div><pre class="code"><code>// @ToDo</code></pre>
+                <div class="lang">JavaScript</div><pre class="code"><code>// Checking type in JavaScript
+class Animal {
+    makeSound() {
+        console.log("Some sound");
+    }
+}
+
+class Dog extends Animal {
+    makeSound() {
+        console.log("Woof");
+    }
+    
+    fetch() {
+        console.log("Fetching...");
+    }
+}
+
+const animal = new Dog();
+
+if (animal instanceof Dog) {
+    animal.makeSound();
+    animal.fetch();
+}
+
+// Or using typeof for primitive types
+const value = 42;
+if (typeof value === 'number') {
+    console.log("It's a number");
+}</code></pre>
               </div>
               <div class="card kotlin">
                 <div class="lang">Kotlin</div><pre class="code"><code>var movieCount = 0
@@ -2662,7 +4762,43 @@ for (item in library) {
 </code></pre>
               </div>
               <div class="card objectivec">
-                <div class="lang">ObjectiveC</div><pre class="code"><code>// @ToDo</code></pre>
+                <div class="lang">ObjectiveC</div><pre class="code"><code>#import &lt;Foundation/Foundation.h&gt;
+
+// Checking type in Objective-C
+@interface Animal : NSObject
+- (void)makeSound;
+@end
+
+@implementation Animal
+- (void)makeSound {
+    NSLog(@"Some sound");
+}
+@end
+
+@interface Dog : Animal
+- (void)fetch;
+@end
+
+@implementation Dog
+- (void)makeSound {
+    NSLog(@"Woof");
+}
+- (void)fetch {
+    NSLog(@"Fetching...");
+}
+@end
+
+int main() {
+    Animal *animal = [[Dog alloc] init];
+    
+    if ([animal isKindOfClass:[Dog class]]) {
+        Dog *dog = (Dog *)animal;
+        [dog makeSound];
+        [dog fetch];
+    }
+    
+    return 0;
+}</code></pre>
               </div>
               <div class="card scala">
                 <div class="lang">Scala</div><pre class="code"><code>var movieCount = 0
@@ -2690,10 +4826,59 @@ for item in library {
 }</code></pre>
               </div>
               <div class="card toffeescript">
-                <div class="lang">ToffeeScript</div><pre class="code"><code># @ToDo</code></pre>
+                <div class="lang">ToffeeScript</div><pre class="code"><code>class Movie
+  constructor: (@name, @director) -&gt;
+
+class Song
+  constructor: (@name, @artist) -&gt;
+
+library = [
+  new Movie("Inception", "Nolan"),
+  new Song("Bohemian Rhapsody", "Queen"),
+  new Movie("Interstellar", "Nolan")
+]
+
+for item in library
+  if item instanceof Movie
+    console.log "#{item.name} is a movie"
+  else if item instanceof Song
+    console.log "#{item.name} is a song"
+</code></pre>
               </div>
               <div class="card typescript">
-                <div class="lang">TypeScript</div><pre class="code"><code>null</code></pre>
+                <div class="lang">TypeScript</div><pre class="code"><code>// Checking type in TypeScript
+class Animal {
+    makeSound(): void {
+        console.log("Some sound");
+    }
+}
+
+class Dog extends Animal {
+    makeSound(): void {
+        console.log("Woof");
+    }
+    
+    fetch(): void {
+        console.log("Fetching...");
+    }
+}
+
+const animal: Animal = new Dog();
+
+if (animal instanceof Dog) {
+    animal.makeSound();
+    animal.fetch();
+}
+
+// Type guard
+function isDog(obj: any): obj is Dog {
+    return obj instanceof Dog;
+}
+
+if (isDog(animal)) {
+    animal.makeSound();
+    animal.fetch();
+}</code></pre>
               </div>
             </div>
           </div>
@@ -2701,44 +4886,199 @@ for item in library {
             <div class="name">Pattern Matching</div>
             <div class="pair">
               <div class="card c">
-                <div class="lang">C</div><pre class="code"><code>// @ToDo</code></pre>
+                <div class="lang">C</div><pre class="code"><code>#include &lt;stdio.h&gt;
+
+// Pattern matching in C (using switch on a type tag)
+typedef enum { TYPE_INT, TYPE_STRING, TYPE_DOUBLE } ValueType;
+
+struct Value {
+    ValueType type;
+    union {
+        int   i;
+        char* s;
+        double d;
+    };
+};
+
+const char* describe(struct Value v) {
+    switch (v.type) {
+        case TYPE_INT:    return v.i == 1 ? "One" : "Integer";
+        case TYPE_STRING: return "String";
+        case TYPE_DOUBLE: return "Double";
+        default:          return "Unknown";
+    }
+}
+
+int main() {
+    printf("%s\n", describe((struct Value){TYPE_INT, .i = 1}));
+    printf("%s\n", describe((struct Value){TYPE_STRING, .s = "Hello"}));
+    printf("%s\n", describe((struct Value){TYPE_DOUBLE, .d = 3.14}));
+    return 0;
+}
+</code></pre>
               </div>
               <div class="card cpp">
-                <div class="lang">C++</div><pre class="code"><code>// @ToDo</code></pre>
+                <div class="lang">C++</div><pre class="code"><code>#include &lt;iostream&gt;
+#include &lt;string&gt;
+#include &lt;variant&gt;
+
+// Pattern matching in C++ (using std::variant and std::visit, C++17)
+using Value = std::variant&lt;int, std::string, double&gt;;
+
+std::string describe(const Value& val) {
+    return std::visit([](auto&& v) -&gt; std::string {
+        using T = std::decay_t&lt;decltype(v)&gt;;
+        if constexpr (std::is_same_v&lt;T, int&gt;) {
+            return v == 1 ? "One" : "Integer";
+        } else if constexpr (std::is_same_v&lt;T, std::string&gt;) {
+            return v == "Hello" ? "Greeting" : "String";
+        } else {
+            return "Double";
+        }
+    }, val);
+}
+
+int main() {
+    std::cout &lt;&lt; describe(1)            &lt;&lt; std::endl;
+    std::cout &lt;&lt; describe(std::string("Hello")) &lt;&lt; std::endl;
+    std::cout &lt;&lt; describe(3.14)         &lt;&lt; std::endl;
+    return 0;
+}
+</code></pre>
               </div>
               <div class="card coffeescript">
-                <div class="lang">CoffeeScript</div><pre class="code"><code># @ToDo</code></pre>
+                <div class="lang">CoffeeScript</div><pre class="code"><code># Pattern matching in CoffeeScript (using switch or if-else chains)
+describe = (obj) -&gt;
+  switch
+    when obj is 1
+      "One"
+    when obj is "Hello"
+      "Greeting"
+    when typeof obj is 'number'
+      "Number"
+    when typeof obj is 'string'
+      "String"
+    else
+      "Unknown"
+
+console.log describe 1
+console.log describe "Hello"
+console.log describe 3.14
+</code></pre>
               </div>
               <div class="card elixir">
-                <div class="lang">Elixir</div><pre class="code"><code># @ToDo</code></pre>
+                <div class="lang">Elixir</div><pre class="code"><code># Pattern matching in Elixir (native pattern matching with case/function clauses)
+defmodule PatternMatching do
+  def describe(1),                    do: "One"
+  def describe("Hello"),              do: "Greeting"
+  def describe(x) when is_float(x),   do: "Float"
+  def describe(x) when is_integer(x), do: "Integer"
+  def describe(x) when is_binary(x),  do: "String"
+  def describe(_),                    do: "Unknown"
+end
+
+IO.puts PatternMatching.describe(1)
+IO.puts PatternMatching.describe("Hello")
+IO.puts PatternMatching.describe(3.14)
+</code></pre>
               </div>
               <div class="card erlang">
-                <div class="lang">Erlang</div><pre class="code"><code>% @ToDo</code></pre>
+                <div class="lang">Erlang</div><pre class="code"><code>% Pattern matching in Erlang (native pattern matching in function clauses)
+-module(pattern_matching).
+-export([describe/1, start/0]).
+
+describe(1)                -&gt; "One";
+describe(hello)            -&gt; "Greeting";
+describe(X) when is_float(X) -&gt; "Float";
+describe(X) when is_integer(X) -&gt; "Integer";
+describe(X) when is_list(X)    -&gt; "String";
+describe(_)                -&gt; "Unknown".
+
+start() -&gt;
+    io:format("~s~n", [describe(1)]),
+    io:format("~s~n", [describe(hello)]),
+    io:format("~s~n", [describe(3.14)]).
+</code></pre>
               </div>
               <div class="card go">
-                <div class="lang">Go</div><pre class="code"><code>// @ToDo</code></pre>
+                <div class="lang">Go</div><pre class="code"><code>// Pattern matching in Go (using type switch)
+func describe(obj interface{}) string {
+    switch v := obj.(type) {
+    case int:
+        if v == 1 {
+            return "One"
+        }
+        return "Integer"
+    case string:
+        if v == "Hello" {
+            return "Greeting"
+        }
+        return "String"
+    case float64:
+        return "Float"
+    default:
+        return "Unknown"
+    }
+}
+
+func main() {
+    fmt.Println(describe(1))
+    fmt.Println(describe("Hello"))
+    fmt.Println(describe(3.14))
+}
+</code></pre>
               </div>
               <div class="card java">
-                <div class="lang">Java</div><pre class="code"><code>// Generic example for missing Java implementations
-// This placeholder will be replaced with actual examples as needed
-public class Example {
+                <div class="lang">Java</div><pre class="code"><code>// Pattern matching in Java (using instanceof and switch expressions - Java 14+)
+public class PatternMatching {
+    public static String describe(Object obj) {
+        if (obj instanceof Integer i && i == 1) {
+            return "One";
+        } else if (obj instanceof String s && s.equals("Hello")) {
+            return "Greeting";
+        } else if (obj instanceof Long) {
+            return "Long number";
+        } else {
+            return "Unknown";
+        }
+    }
+    
     public static void main(String[] args) {
-        System.out.println("Example implementation");
+        System.out.println(describe(1));
+        System.out.println(describe("Hello"));
+        System.out.println(describe(2L));
     }
 }</code></pre>
               </div>
               <div class="card javascript">
-                <div class="lang">JavaScript</div><pre class="code"><code>// @ToDo</code></pre>
+                <div class="lang">JavaScript</div><pre class="code"><code>// Pattern matching in JavaScript (using switch or if-else chains)
+function describe(obj) {
+    if (obj === 1) {
+        return "One";
+    } else if (obj === "Hello") {
+        return "Greeting";
+    } else if (typeof obj === 'number' && Number.isInteger(obj)) {
+        return "Integer";
+    } else if (typeof obj === 'string') {
+        return "String";
+    } else {
+        return "Unknown";
+    }
+}
+
+console.log(describe(1));
+console.log(describe("Hello"));
+console.log(describe(3.14));</code></pre>
               </div>
               <div class="card kotlin">
                 <div class="lang">Kotlin</div><pre class="code"><code>// Pattern matching in Kotlin
 fun describe(obj: Any): String =
     when (obj) {
-        1 -> "One"
-        "Hello" -> "Greeting"
-        is Long -> "Long number"
-        !is String -> "Not a string"
-        else -> "Unknown"
+        1 -&gt; "One"
+        "Hello" -&gt; "Greeting"
+        is Long -&gt; "Long number"
+        !is String -&gt; "Not a string"
+        else -&gt; "Unknown"
     }
 
 fun main() {
@@ -2748,16 +5088,42 @@ fun main() {
 }</code></pre>
               </div>
               <div class="card objectivec">
-                <div class="lang">ObjectiveC</div><pre class="code"><code>// @ToDo</code></pre>
+                <div class="lang">ObjectiveC</div><pre class="code"><code>#import &lt;Foundation/Foundation.h&gt;
+
+// Pattern matching in Objective-C (using if-else chains)
+NSString* describe(id obj) {
+    if ([obj isKindOfClass:[NSNumber class]]) {
+        if ([obj intValue] == 1) {
+            return @"One";
+        } else {
+            return @"Number";
+        }
+    } else if ([obj isKindOfClass:[NSString class]]) {
+        if ([obj isEqualToString:@"Hello"]) {
+            return @"Greeting";
+        } else {
+            return @"String";
+        }
+    } else {
+        return @"Unknown";
+    }
+}
+
+int main() {
+    NSLog(@"%@", describe(@1));
+    NSLog(@"%@", describe(@"Hello"));
+    NSLog(@"%@", describe(@3.14));
+    return 0;
+}</code></pre>
               </div>
               <div class="card scala">
                 <div class="lang">Scala</div><pre class="code"><code>object PatternMatching extends App {
   def describe(obj: Any): String = obj match {
-    case 1 => "One"
-    case "Hello" => "Greeting"
-    case _: Long => "Long number"
-    case _: Any if !obj.isInstanceOf[String] => "Not a string"
-    case _ => "Unknown"
+    case 1 =&gt; "One"
+    case "Hello" =&gt; "Greeting"
+    case _: Long =&gt; "Long number"
+    case _: Any if !obj.isInstanceOf[String] =&gt; "Not a string"
+    case _ =&gt; "Unknown"
   }
   
   println(describe(1))
@@ -2767,7 +5133,7 @@ fun main() {
               </div>
               <div class="card swift">
                 <div class="lang">Swift</div><pre class="code"><code>// Pattern matching in Swift
-func describe(obj: Any) -> String {
+func describe(obj: Any) -&gt; String {
     switch obj {
     case 1:
         return "One"
@@ -2785,10 +5151,43 @@ print(describe(obj: "Hello"))
 print(describe(obj: 3.14))</code></pre>
               </div>
               <div class="card toffeescript">
-                <div class="lang">ToffeeScript</div><pre class="code"><code># @ToDo</code></pre>
+                <div class="lang">ToffeeScript</div><pre class="code"><code># Pattern matching in ToffeeScript (using switch or if-else chains)
+describe = (obj) -&gt;
+  switch
+    when obj is 1
+      "One"
+    when obj is "Hello"
+      "Greeting"
+    when typeof obj is 'number'
+      "Number"
+    when typeof obj is 'string'
+      "String"
+    else
+      "Unknown"
+
+console.log describe 1
+console.log describe "Hello"
+console.log describe 3.14</code></pre>
               </div>
               <div class="card typescript">
-                <div class="lang">TypeScript</div><pre class="code"><code>null</code></pre>
+                <div class="lang">TypeScript</div><pre class="code"><code>// Pattern matching in TypeScript (using switch or type guards)
+function describe(obj: any): string {
+    if (obj === 1) {
+        return "One";
+    } else if (obj === "Hello") {
+        return "Greeting";
+    } else if (typeof obj === 'number') {
+        return "Number";
+    } else if (typeof obj === 'string') {
+        return "String";
+    } else {
+        return "Unknown";
+    }
+}
+
+console.log(describe(1));
+console.log(describe("Hello"));
+console.log(describe(3.14));</code></pre>
               </div>
             </div>
           </div>
@@ -2796,7 +5195,38 @@ print(describe(obj: 3.14))</code></pre>
             <div class="name">Downcasting</div>
             <div class="pair">
               <div class="card c">
-                <div class="lang">C</div><pre class="code"><code>// @ToDo</code></pre>
+                <div class="lang">C</div><pre class="code"><code>#include &lt;stdio.h&gt;
+
+// Downcasting in C (using a type tag and explicit pointer cast)
+typedef enum { TYPE_ANIMAL, TYPE_DOG } AnimalType;
+
+struct Animal {
+    AnimalType type;
+    void (*makeSound)(void);
+};
+
+struct Dog {
+    struct Animal base;
+    void (*fetch)(void);
+};
+
+void animal_sound(void) { printf("Some sound\n"); }
+void dog_sound(void)    { printf("Woof\n"); }
+void dog_fetch(void)    { printf("Fetching...\n"); }
+
+int main() {
+    struct Dog dog = {{TYPE_DOG, dog_sound}, dog_fetch};
+    struct Animal *animal = (struct Animal *)&dog;
+
+    // Downcast: check type tag then cast
+    if (animal-&gt;type == TYPE_DOG) {
+        struct Dog *d = (struct Dog *)animal;
+        d-&gt;base.makeSound();
+        d-&gt;fetch();
+    }
+    return 0;
+}
+</code></pre>
               </div>
               <div class="card cpp">
                 <div class="lang">C++</div><pre class="code"><code>#include &lt;iostream&gt;
@@ -2817,13 +5247,70 @@ for (auto
 }</code></pre>
               </div>
               <div class="card coffeescript">
-                <div class="lang">CoffeeScript</div><pre class="code"><code># @ToDo</code></pre>
+                <div class="lang">CoffeeScript</div><pre class="code"><code># Downcasting in CoffeeScript (simulated with type checking)
+class Animal
+  makeSound: -&gt; console.log "Some sound"
+
+class Dog extends Animal
+  makeSound: -&gt; console.log "Woof"
+  fetch: -&gt; console.log "Fetching..."
+
+animal = new Dog()
+
+# Simulate downcasting with type checking
+if animal instanceof Dog
+  animal.makeSound()
+  animal.fetch()</code></pre>
               </div>
               <div class="card elixir">
-                <div class="lang">Elixir</div><pre class="code"><code># @ToDo</code></pre>
+                <div class="lang">Elixir</div><pre class="code"><code># Downcasting in Elixir (no direct equivalent, but pattern matching)
+defmodule Animal do
+  defstruct [:type]
+  
+  def make_sound(%{type: :dog}), do: "Woof"
+  def make_sound(_), do: "Some sound"
+end
+
+defmodule Dog do
+  defstruct [:type, :breed]
+  
+  def fetch(%{breed: breed}), do: "Fetching #{breed} style"
+end
+
+# Create a dog
+dog = %Dog{type: :dog, breed: "Golden Retriever"}
+
+# Pattern match to simulate downcasting
+case dog do
+  %Dog{breed: breed} -&gt; 
+    IO.puts Animal.make_sound(dog)
+    IO.puts Dog.fetch(dog)
+  _ -&gt; 
+    IO.puts Animal.make_sound(dog)
+end</code></pre>
               </div>
               <div class="card erlang">
-                <div class="lang">Erlang</div><pre class="code"><code>% @ToDo</code></pre>
+                <div class="lang">Erlang</div><pre class="code"><code>% Downcasting in Erlang (no direct equivalent, but pattern matching)
+-module(animal).
+-export([make_sound/1, handle_animal/1, start/0]).
+
+make_sound({dog, Breed}) -&gt;
+    {woof, Breed};
+make_sound(_) -&gt;
+    some_sound.
+
+handle_animal(Animal) -&gt;
+    case Animal of
+        {dog, Breed} -&gt;
+            {woof, Breed},
+            io:format("Fetching ~p style~n", [Breed]);
+        _ -&gt;
+            some_sound
+    end.
+
+start() -&gt;
+    Dog = {dog, "GoldenRetriever"},
+    handle_animal(Dog).</code></pre>
               </div>
               <div class="card go">
                 <div class="lang">Go</div><pre class="code"><code>for object := range someObjects {
@@ -2832,16 +5319,61 @@ for (auto
 }</code></pre>
               </div>
               <div class="card java">
-                <div class="lang">Java</div><pre class="code"><code>// Generic example for missing Java implementations
-// This placeholder will be replaced with actual examples as needed
-public class Example {
+                <div class="lang">Java</div><pre class="code"><code>// Downcasting in Java
+class Animal {
+    public void makeSound() {
+        System.out.println("Some sound");
+    }
+}
+
+class Dog extends Animal {
+    public void makeSound() {
+        System.out.println("Woof");
+    }
+    
+    public void fetch() {
+        System.out.println("Fetching...");
+    }
+}
+
+public class Main {
     public static void main(String[] args) {
-        System.out.println("Example implementation");
+        Animal animal = new Dog();
+        
+        // Downcasting
+        if (animal instanceof Dog) {
+            Dog dog = (Dog) animal;
+            dog.makeSound();
+            dog.fetch();
+        }
     }
 }</code></pre>
               </div>
               <div class="card javascript">
-                <div class="lang">JavaScript</div><pre class="code"><code>// @ToDo</code></pre>
+                <div class="lang">JavaScript</div><pre class="code"><code>// Downcasting in JavaScript
+class Animal {
+    makeSound() {
+        console.log("Some sound");
+    }
+}
+
+class Dog extends Animal {
+    makeSound() {
+        console.log("Woof");
+    }
+    
+    fetch() {
+        console.log("Fetching...");
+    }
+}
+
+const animal = new Dog();
+
+// Downcasting (type assertion) with instanceof check
+if (animal instanceof Dog) {
+    animal.makeSound();
+    animal.fetch();
+}</code></pre>
               </div>
               <div class="card kotlin">
                 <div class="lang">Kotlin</div><pre class="code"><code>for (current in someObjects) {
@@ -2853,7 +5385,44 @@ public class Example {
 </code></pre>
               </div>
               <div class="card objectivec">
-                <div class="lang">ObjectiveC</div><pre class="code"><code>// @ToDo</code></pre>
+                <div class="lang">ObjectiveC</div><pre class="code"><code>#import &lt;Foundation/Foundation.h&gt;
+
+// Downcasting in Objective-C
+@interface Animal : NSObject
+- (void)makeSound;
+@end
+
+@implementation Animal
+- (void)makeSound {
+    NSLog(@"Some sound");
+}
+@end
+
+@interface Dog : Animal
+- (void)fetch;
+@end
+
+@implementation Dog
+- (void)makeSound {
+    NSLog(@"Woof");
+}
+- (void)fetch {
+    NSLog(@"Fetching...");
+}
+@end
+
+int main() {
+    Animal *animal = [[Dog alloc] init];
+    
+    // Downcasting with type checking
+    if ([animal isKindOfClass:[Dog class]]) {
+        Dog *dog = (Dog *)animal;
+        [dog makeSound];
+        [dog fetch];
+    }
+    
+    return 0;
+}</code></pre>
               </div>
               <div class="card scala">
                 <div class="lang">Scala</div><pre class="code"><code>for (obj &lt;- someObjects) {
@@ -2872,10 +5441,51 @@ public class Example {
 </code></pre>
               </div>
               <div class="card toffeescript">
-                <div class="lang">ToffeeScript</div><pre class="code"><code># @ToDo</code></pre>
+                <div class="lang">ToffeeScript</div><pre class="code"><code># Downcasting in ToffeeScript (simulated with type checking)
+class Animal
+  makeSound: -&gt; console.log "Some sound"
+
+class Dog extends Animal
+  makeSound: -&gt; console.log "Woof"
+  fetch: -&gt; console.log "Fetching..."
+
+animal = new Dog()
+
+# Simulate downcasting with type checking
+if animal instanceof Dog
+  animal.makeSound()
+  animal.fetch()</code></pre>
               </div>
               <div class="card typescript">
-                <div class="lang">TypeScript</div><pre class="code"><code>null</code></pre>
+                <div class="lang">TypeScript</div><pre class="code"><code>// Downcasting in TypeScript
+class Animal {
+    makeSound(): void {
+        console.log("Some sound");
+    }
+}
+
+class Dog extends Animal {
+    makeSound(): void {
+        console.log("Woof");
+    }
+    
+    fetch(): void {
+        console.log("Fetching...");
+    }
+}
+
+const animal: Animal = new Dog();
+
+// Downcasting with type guard
+if (animal instanceof Dog) {
+    animal.makeSound();
+    animal.fetch();
+}
+
+// Or using type assertion (with caution)
+const dog = animal as Dog;
+dog.makeSound();
+dog.fetch();</code></pre>
               </div>
             </div>
           </div>
@@ -2883,19 +5493,116 @@ public class Example {
             <div class="name">Protocol</div>
             <div class="pair">
               <div class="card c">
-                <div class="lang">C</div><pre class="code"><code>// @ToDo</code></pre>
+                <div class="lang">C</div><pre class="code"><code>#include &lt;stdio.h&gt;
+
+// Protocol in C
+// (simulated with a struct of function pointers)
+typedef struct {
+    void (*draw)(void);
+} Drawable;
+
+// Circle "implements" Drawable
+void circle_draw(void) {
+    printf("Drawing a circle\n");
+}
+
+void draw_shape(Drawable *d) {
+    d-&gt;draw();
+}
+
+int main() {
+    Drawable circle = {circle_draw};
+    draw_shape(&circle);
+    return 0;
+}
+</code></pre>
               </div>
               <div class="card cpp">
-                <div class="lang">C++</div><pre class="code"><code>// @ToDo</code></pre>
+                <div class="lang">C++</div><pre class="code"><code>#include &lt;iostream&gt;
+
+// Protocol in C++ (using pure virtual interface)
+class Drawable {
+public:
+    virtual void draw() const = 0;
+    virtual ~Drawable() {}
+};
+
+class Circle : public Drawable {
+public:
+    void draw() const override {
+        std::cout &lt;&lt; "Drawing a circle" &lt;&lt; std::endl;
+    }
+};
+
+void drawShape(const Drawable& d) {
+    d.draw();
+}
+
+int main() {
+    Circle circle;
+    drawShape(circle);
+    return 0;
+}
+</code></pre>
               </div>
               <div class="card coffeescript">
-                <div class="lang">CoffeeScript</div><pre class="code"><code># @ToDo</code></pre>
+                <div class="lang">CoffeeScript</div><pre class="code"><code># Protocol in CoffeeScript (using duck typing)
+class Circle
+  draw: -&gt; console.log "Drawing a circle"
+
+# CoffeeScript uses duck typing — any object with a draw() method qualifies
+drawShape = (shape) -&gt;
+  if typeof shape.draw is 'function'
+    shape.draw()
+
+circle = new Circle()
+drawShape circle
+</code></pre>
               </div>
               <div class="card elixir">
-                <div class="lang">Elixir</div><pre class="code"><code># @ToDo</code></pre>
+                <div class="lang">Elixir</div><pre class="code"><code># Protocol in Elixir (using defprotocol and defimpl)
+defprotocol Drawable do
+  def draw(shape)
+end
+
+defmodule Circle do
+  defstruct []
+end
+
+defimpl Drawable, for: Circle do
+  def draw(_circle) do
+    IO.puts "Drawing a circle"
+  end
+end
+
+def draw_shape(shape) do
+  Drawable.draw(shape)
+end
+
+circle = %Circle{}
+Drawable.draw(circle)
+</code></pre>
               </div>
               <div class="card erlang">
-                <div class="lang">Erlang</div><pre class="code"><code>% @ToDo</code></pre>
+                <div class="lang">Erlang</div><pre class="code"><code>% Protocol in Erlang (simulated with a behaviour)
+-module(protocol).
+-export([start/0]).
+
+% Define a "protocol" as a behaviour
+-callback draw() -&gt; ok.
+
+% Circle "implements" the behaviour
+-module(circle).
+-behaviour(protocol).
+-export([draw/0]).
+
+draw() -&gt;
+    io:format("Drawing a circle~n").
+
+% Usage
+start() -&gt;
+    circle:draw().
+</code></pre>
               </div>
               <div class="card go">
                 <div class="lang">Go</div><pre class="code"><code>type Nameabler interface {
@@ -2907,16 +5614,41 @@ func F(x Nameabler) {
 }</code></pre>
               </div>
               <div class="card java">
-                <div class="lang">Java</div><pre class="code"><code>// Generic example for missing Java implementations
-// This placeholder will be replaced with actual examples as needed
-public class Example {
+                <div class="lang">Java</div><pre class="code"><code>// Protocol in Java (using interface)
+interface Drawable {
+    void draw();
+}
+
+class Circle implements Drawable {
+    public void draw() {
+        System.out.println("Drawing a circle");
+    }
+}
+
+public class Main {
     public static void main(String[] args) {
-        System.out.println("Example implementation");
+        Drawable drawable = new Circle();
+        drawable.draw();
     }
 }</code></pre>
               </div>
               <div class="card javascript">
-                <div class="lang">JavaScript</div><pre class="code"><code>// @ToDo</code></pre>
+                <div class="lang">JavaScript</div><pre class="code"><code>// Protocol in JavaScript (using duck typing / interfaces concept)
+class Circle {
+    draw() {
+        console.log("Drawing a circle");
+    }
+}
+
+// JavaScript uses duck typing - if it walks like a duck and quacks like a duck...
+function drawShape(shape) {
+    if (typeof shape.draw === 'function') {
+        shape.draw();
+    }
+}
+
+const circle = new Circle();
+drawShape(circle);</code></pre>
               </div>
               <div class="card kotlin">
                 <div class="lang">Kotlin</div><pre class="code"><code>interface Nameable {
@@ -2929,7 +5661,27 @@ fun f&lt;T: Nameable&gt;(x: T) {
 </code></pre>
               </div>
               <div class="card objectivec">
-                <div class="lang">ObjectiveC</div><pre class="code"><code>// @ToDo</code></pre>
+                <div class="lang">ObjectiveC</div><pre class="code"><code>#import &lt;Foundation/Foundation.h&gt;
+
+// Protocol in Objective-C
+@protocol Drawable &lt;NSObject&gt;
+- (void)draw;
+@end
+
+@interface Circle : NSObject &lt;Drawable&gt;
+@end
+
+@implementation Circle
+- (void)draw {
+    NSLog(@"Drawing a circle");
+}
+@end
+
+int main() {
+    Circle *circle = [[Circle alloc] init];
+    [circle draw];
+    return 0;
+}</code></pre>
               </div>
               <div class="card scala">
                 <div class="lang">Scala</div><pre class="code"><code>trait Nameable {
@@ -2952,10 +5704,36 @@ func f&lt;T: Nameable&gt;(x: T) {
 </code></pre>
               </div>
               <div class="card toffeescript">
-                <div class="lang">ToffeeScript</div><pre class="code"><code># @ToDo</code></pre>
+                <div class="lang">ToffeeScript</div><pre class="code"><code># Protocol in ToffeeScript (using duck typing)
+class Circle
+  draw: -&gt; console.log "Drawing a circle"
+
+# ToffeeScript uses duck typing
+drawShape = (shape) -&gt;
+  if typeof shape.draw is 'function'
+    shape.draw()
+
+circle = new Circle()
+drawShape circle</code></pre>
               </div>
               <div class="card typescript">
-                <div class="lang">TypeScript</div><pre class="code"><code>null</code></pre>
+                <div class="lang">TypeScript</div><pre class="code"><code>// Protocol in TypeScript (using interface)
+interface Drawable {
+    draw(): void;
+}
+
+class Circle implements Drawable {
+    draw(): void {
+        console.log("Drawing a circle");
+    }
+}
+
+function drawShape(shape: Drawable) {
+    shape.draw();
+}
+
+const circle: Circle = new Circle();
+drawShape(circle);</code></pre>
               </div>
             </div>
           </div>
@@ -2963,19 +5741,82 @@ func f&lt;T: Nameable&gt;(x: T) {
             <div class="name">Extensions</div>
             <div class="pair">
               <div class="card c">
-                <div class="lang">C</div><pre class="code"><code>// @ToDo</code></pre>
+                <div class="lang">C</div><pre class="code"><code>#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+#include &lt;stdlib.h&gt;
+
+// Extensions in C (using utility functions)
+char* reverse_string(const char* str) {
+    int len = strlen(str);
+    char* reversed = malloc(len + 1);
+    for (int i = 0; i &lt; len; i++) {
+        reversed[i] = str[len - 1 - i];
+    }
+    reversed[len] = '\0';
+    return reversed;
+}
+
+int main() {
+    const char* original = "hello";
+    char* reversed = reverse_string(original);
+    printf("%s\n", reversed);
+    free(reversed);
+    return 0;
+}</code></pre>
               </div>
               <div class="card cpp">
-                <div class="lang">C++</div><pre class="code"><code>// @ToDo</code></pre>
+                <div class="lang">C++</div><pre class="code"><code>#include &lt;iostream&gt;
+#include &lt;string&gt;
+#include &lt;algorithm&gt;
+
+// Extensions in C++ (using utility functions or class extensions)
+std::string reverse_string(const std::string& str) {
+    std::string reversed = str;
+    std::reverse(reversed.begin(), reversed.end());
+    return reversed;
+}
+
+int main() {
+    std::string original = "hello";
+    std::string reversed = reverse_string(original);
+    std::cout &lt;&lt; reversed &lt;&lt; std::endl;
+    return 0;
+}</code></pre>
               </div>
               <div class="card coffeescript">
-                <div class="lang">CoffeeScript</div><pre class="code"><code># @ToDo</code></pre>
+                <div class="lang">CoffeeScript</div><pre class="code"><code># Extensions in CoffeeScript (using prototype)
+String::reverse = -&gt; @split('').reverse().join('')
+
+original = "hello"
+console.log original.reverse()</code></pre>
               </div>
               <div class="card elixir">
-                <div class="lang">Elixir</div><pre class="code"><code># @ToDo</code></pre>
+                <div class="lang">Elixir</div><pre class="code"><code># Extensions in Elixir (using modules with functions)
+defmodule StringExt do
+  def reverse(str) do
+    str
+    |&gt; String.graphemes()
+    |&gt; Enum.reverse()
+    |&gt; Enum.join()
+  end
+end
+
+original = "hello"
+reversed = StringExt.reverse(original)
+IO.puts reversed</code></pre>
               </div>
               <div class="card erlang">
-                <div class="lang">Erlang</div><pre class="code"><code>% @ToDo</code></pre>
+                <div class="lang">Erlang</div><pre class="code"><code>% Extensions in Erlang (using modules with functions)
+-module(string_ext).
+-export([reverse/1, start/0]).
+
+reverse(String) -&gt;
+    lists:reverse(String).
+
+start() -&gt;
+    Original = "hello",
+    Reversed = reverse(Original),
+    io:format("~s~n", [Reversed]).</code></pre>
               </div>
               <div class="card go">
                 <div class="lang">Go</div><pre class="code"><code>type double float64
@@ -2997,16 +5838,35 @@ func main() {
 }</code></pre>
               </div>
               <div class="card java">
-                <div class="lang">Java</div><pre class="code"><code>// Generic example for missing Java implementations
-// This placeholder will be replaced with actual examples as needed
-public class Example {
+                <div class="lang">Java</div><pre class="code"><code>// Extensions in Java (using inheritance or utility classes)
+class StringExtensions {
+    public static String reverse(String str) {
+        return new StringBuilder(str).reverse().toString();
+    }
+}
+
+public class Main {
     public static void main(String[] args) {
-        System.out.println("Example implementation");
+        String original = "hello";
+        String reversed = StringExtensions.reverse(original);
+        System.out.println(reversed);
     }
 }</code></pre>
               </div>
               <div class="card javascript">
-                <div class="lang">JavaScript</div><pre class="code"><code>// @ToDo</code></pre>
+                <div class="lang">JavaScript</div><pre class="code"><code>// Extensions in JavaScript (using prototype or utility functions)
+String.prototype.reverse = function() {
+    return this.split('').reverse().join('');
+};
+
+// Or using utility functions
+function reverse(str) {
+    return str.split('').reverse().join('');
+}
+
+const original = "hello";
+console.log(original.reverse()); // Using prototype extension
+console.log(reverse(original));  // Using utility function</code></pre>
               </div>
               <div class="card kotlin">
                 <div class="lang">Kotlin</div><pre class="code"><code>val Double.km: Double get() = this * 1000
@@ -3024,7 +5884,29 @@ println("Three feet is $threeFeet meters")
 </code></pre>
               </div>
               <div class="card objectivec">
-                <div class="lang">ObjectiveC</div><pre class="code"><code>// @ToDo</code></pre>
+                <div class="lang">ObjectiveC</div><pre class="code"><code>#import &lt;Foundation/Foundation.h&gt;
+
+// Extensions in Objective-C (using Categories)
+@interface NSString (ReverseExtension)
+- (NSString *)reversedString;
+@end
+
+@implementation NSString (ReverseExtension)
+- (NSString *)reversedString {
+    NSMutableString *reversed = [[NSMutableString alloc] init];
+    for (NSInteger i = [self length] - 1; i &gt;= 0; i--) {
+        [reversed appendString:[self substringWithRange:NSMakeRange(i, 1)]];
+    }
+    return [reversed copy];
+}
+@end
+
+int main() {
+    NSString *original = @"hello";
+    NSString *reversed = [original reversedString];
+    NSLog(@"%@", reversed);
+    return 0;
+}</code></pre>
               </div>
               <div class="card scala">
                 <div class="lang">Scala</div><pre class="code"><code>object Extensions {
@@ -3064,10 +5946,24 @@ print("Three feet is \(threeFeet) meters")
 </code></pre>
               </div>
               <div class="card toffeescript">
-                <div class="lang">ToffeeScript</div><pre class="code"><code># @ToDo</code></pre>
+                <div class="lang">ToffeeScript</div><pre class="code"><code># Extensions in ToffeeScript (using prototype)
+String::reverse = -&gt; @split('').reverse().join('')
+
+original = "hello"
+console.log original.reverse()</code></pre>
               </div>
               <div class="card typescript">
-                <div class="lang">TypeScript</div><pre class="code"><code>null</code></pre>
+                <div class="lang">TypeScript</div><pre class="code"><code>// Extensions in TypeScript (using interface merging or utility functions)
+interface String {
+    reverse(): string;
+}
+
+String.prototype.reverse = function(): string {
+    return this.split('').reverse().join('');
+};
+
+const original: string = "hello";
+console.log(original.reverse());</code></pre>
               </div>
             </div>
           </div>
