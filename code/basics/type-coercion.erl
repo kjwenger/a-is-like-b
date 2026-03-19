@@ -4,7 +4,7 @@
 -module(example).
 -export([start/0]).
 
-start() ->
+start() -&gt;
     IntNum = 42,
     FloatNum = 3.14,
     % Convert to string

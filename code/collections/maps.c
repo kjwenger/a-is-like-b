@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include &lt;stdio.h&gt;
 // C doesn't have built-in maps
 // Usually implemented with structures or external libraries
 // Example with a simple struct approach:

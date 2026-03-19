@@ -1,8 +1,8 @@
 # Callbacks in CoffeeScript
-callback = (value) ->
+callback = (value) -&gt;
   console.log "Callback called with: #{value}"
 
-processWithCallback = (cb, data) ->
+processWithCallback = (cb, data) -&gt;
   cb(data)
 
 processWithCallback callback, 42

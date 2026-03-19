@@ -1,4 +1,4 @@
-#import <Foundation/Foundation.h>
+#import &lt;Foundation/Foundation.h&gt;
 
 // Downcasting in Objective-C
 @interface Animal : NSObject

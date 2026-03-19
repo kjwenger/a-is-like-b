@@ -2,16 +2,16 @@
 -module(example).
 -export([add/2, multiply/2, apply_operation/3, start/0]).
 
-add(A, B) ->
+add(A, B) -&gt;
     A + B.
 
-multiply(A, B) ->
+multiply(A, B) -&gt;
     A * B.
 
-apply_operation(Op, X, Y) ->
+apply_operation(Op, X, Y) -&gt;
     Op(X, Y).
 
-start() ->
+start() -&gt;
     Operation = fun add/2,
     Result = apply_operation(Operation, 5, 3),
     io:format("Result: ~p~n", [Result]),

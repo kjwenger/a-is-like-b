@@ -5,8 +5,8 @@
 
 -record(person, {name, age}).
 
-new(Name, Age) ->
+new(Name, Age) -&gt;
     #person{name=Name, age=Age}.
 
-greet(#person{name=Name, age=Age}) ->
+greet(#person{name=Name, age=Age}) -&gt;
     io_lib:format("Hello, I'm ~s and I'm ~p years old", [Name, Age]).

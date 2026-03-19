@@ -3,4 +3,4 @@ var sorted = arr.sort(function(a, b) { return a - b; });
 console.log(sorted);
 
 // Or with arrow function (ES6)
-var sorted2 = arr.sort((a, b) => a - b);
+var sorted2 = arr.sort((a, b) =&gt; a - b);

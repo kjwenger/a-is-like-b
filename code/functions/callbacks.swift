@@ -3,7 +3,7 @@ func callback(_ value: Int) {
     print("Callback called with: \(value)")
 }
 
-func processWithCallback(_ cb: (Int) -> Void, _ data: Int) {
+func processWithCallback(_ cb: (Int) -&gt; Void, _ data: Int) {
     cb(data)
 }
 

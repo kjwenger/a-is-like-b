@@ -1,4 +1,4 @@
-add = (a, b) ->
+add = (a, b) -&gt;
   a + b
 
 result = add 5, 3

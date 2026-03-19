@@ -1,4 +1,4 @@
-#import <Foundation/Foundation.h>
+#import &lt;Foundation/Foundation.h&gt;
 
 // Procedures in Objective-C (methods in a class)
 @interface Printer : NSObject

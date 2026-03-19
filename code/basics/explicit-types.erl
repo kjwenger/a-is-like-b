@@ -3,7 +3,7 @@
 -module(example).
 -export([start/0]).
 
-start() ->
+start() -&gt;
     Integer = 42,
     FloatNum = 3.14,
     Boolean = true,

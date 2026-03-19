@@ -1,5 +1,5 @@
 # Procedures in CoffeeScript
-printMessage = ->
+printMessage = -&gt;
   console.log "This is a procedure"
 
 printMessage()

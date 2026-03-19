@@ -1,4 +1,4 @@
-#include <iostream>
+#include &lt;iostream&gt;
 
 // Named arguments in C++ (simulated with structs or initializer lists)
 struct Args {
@@ -8,9 +8,9 @@ struct Args {
 };
 
 void function_with_named_args(Args args) {
-    std::cout << "param1: " << args.param1 
-              << ", param2: " << args.param2 
-              << ", param3: " << args.param3 << std::endl;
+    std::cout &lt;&lt; "param1: " &lt;&lt; args.param1 
+              &lt;&lt; ", param2: " &lt;&lt; args.param2 
+              &lt;&lt; ", param3: " &lt;&lt; args.param3 &lt;&lt; std::endl;
 }
 
 int main() {

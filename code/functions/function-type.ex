@@ -1,8 +1,8 @@
 # Function types in Elixir
-add = fn(a, b) -> a + b end
-multiply = fn(a, b) -> a * b end
+add = fn(a, b) -&gt; a + b end
+multiply = fn(a, b) -&gt; a * b end
 
-apply_operation = fn(op, x, y) -> op.(x, y) end
+apply_operation = fn(op, x, y) -&gt; op.(x, y) end
 
 operation = add
 result = apply_operation.(operation, 5, 3)

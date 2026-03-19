@@ -1,5 +1,5 @@
 // Tuple return in Java (using a simple class)
-public class Pair<T, U> {
+public class Pair&lt;T, U&gt; {
     public final T first;
     public final U second;
     
@@ -10,12 +10,12 @@ public class Pair<T, U> {
 }
 
 public class Example {
-    public static Pair<Integer, Integer> divRem(int a, int b) {
-        return new Pair<>(a / b, a % b);
+    public static Pair&lt;Integer, Integer&gt; divRem(int a, int b) {
+        return new Pair&lt;&gt;(a / b, a % b);
     }
     
     public static void main(String[] args) {
-        Pair<Integer, Integer> result = divRem(10, 3);
+        Pair&lt;Integer, Integer&gt; result = divRem(10, 3);
         System.out.println(result.first + ", " + result.second);
     }
 }

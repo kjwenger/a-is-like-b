@@ -4,4 +4,4 @@ sorted = Enum.sort(arr)
 IO.inspect sorted
 
 # Or with custom sort
-sorted_desc = Enum.sort(arr, &>=/2)
+sorted_desc = Enum.sort(arr, &&gt;=/2)

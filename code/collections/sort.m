@@ -1,4 +1,4 @@
-#import <Foundation/Foundation.h>
+#import &lt;Foundation/Foundation.h&gt;
 
 int main() {
     NSArray *arr = @[@3, @1, @4, @1, @5];

@@ -4,11 +4,11 @@
 -module(example).
 -export([range/2, start/0]).
 
-range(Start, End) when Start > End ->
+range(Start, End) when Start &gt; End -&gt;
     [];
-range(Start, End) ->
+range(Start, End) -&gt;
     [Start | range(Start + 1, End)].
 
-start() ->
+start() -&gt;
     Range = range(0, 4),
-    [io:format("~p~n", [X]) || X <- Range].
+    [io:format("~p~n", [X]) || X &lt;- Range].

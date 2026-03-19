@@ -20,6 +20,6 @@ result = applyOperation(operation, 5, 3);
 console.log("Result: " + result);
 
 // Or with arrow functions
-const arrowAdd = (a, b) => a + b;
+const arrowAdd = (a, b) =&gt; a + b;
 result = applyOperation(arrowAdd, 5, 3);
 console.log("Result: " + result);

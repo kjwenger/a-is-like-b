@@ -6,7 +6,7 @@ public class Example {
     public static void main(String[] args) {
         int[] arr = {1, 2, 3, 4, 5};
         // Or using ArrayList
-        ArrayList<Integer> list = new ArrayList<>();
+        ArrayList&lt;Integer&gt; list = new ArrayList&lt;&gt;();
         list.add(1);
         list.add(2);
         list.add(3);

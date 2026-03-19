@@ -1,5 +1,5 @@
 # Pattern matching in ToffeeScript (using switch or if-else chains)
-describe = (obj) ->
+describe = (obj) -&gt;
   switch
     when obj is 1
       "One"

@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include &lt;stdio.h&gt;
 
 // Named arguments in C (simulated with structs)
 struct Args {

@@ -5,4 +5,4 @@ func sumOf(_ numbers: Int...) -&gt; Int {
     }
     return sum
 }
-sumOf(42, 597, 12)
+print(sumOf(42, 597, 12))

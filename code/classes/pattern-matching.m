@@ -1,4 +1,4 @@
-#import <Foundation/Foundation.h>
+#import &lt;Foundation/Foundation.h&gt;
 
 // Pattern matching in Objective-C (using if-else chains)
 NSString* describe(id obj) {

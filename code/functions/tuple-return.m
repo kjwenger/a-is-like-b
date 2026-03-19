@@ -1,4 +1,4 @@
-#import <Foundation/Foundation.h>
+#import &lt;Foundation/Foundation.h&gt;
 
 // Tuple return in Objective-C (using NSArray or custom class)
 @interface Pair : NSObject

@@ -1,5 +1,5 @@
-#import <Foundation/Foundation.h>
-#include <stdarg.h>
+#import &lt;Foundation/Foundation.h&gt;
+#include &lt;stdarg.h&gt;
 
 // Variable number of arguments in Objective-C
 int sumOfIntegers(int count, ...) {
@@ -7,7 +7,7 @@ int sumOfIntegers(int count, ...) {
     va_start(args, count);
 
     int sum = 0;
-    for (int i = 0; i < count; i++) {
+    for (int i = 0; i &lt; count; i++) {
         sum += va_arg(args, int);
     }
 

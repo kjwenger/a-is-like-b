@@ -1,9 +1,9 @@
 # Protocol in ToffeeScript (using duck typing)
 class Circle
-  draw: -> console.log "Drawing a circle"
+  draw: -&gt; console.log "Drawing a circle"
 
 # ToffeeScript uses duck typing
-drawShape = (shape) ->
+drawShape = (shape) -&gt;
   if typeof shape.draw is 'function'
     shape.draw()
 

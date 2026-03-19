@@ -1,10 +1,10 @@
 # Downcasting in CoffeeScript (simulated with type checking)
 class Animal
-  makeSound: -> console.log "Some sound"
+  makeSound: -&gt; console.log "Some sound"
 
 class Dog extends Animal
-  makeSound: -> console.log "Woof"
-  fetch: -> console.log "Fetching..."
+  makeSound: -&gt; console.log "Woof"
+  fetch: -&gt; console.log "Fetching..."
 
 animal = new Dog()
 

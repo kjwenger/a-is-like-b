@@ -1,0 +1,17 @@
+# Pattern matching in CoffeeScript (using switch or if-else chains)
+describe = (obj) -&gt;
+  switch
+    when obj is 1
+      "One"
+    when obj is "Hello"
+      "Greeting"
+    when typeof obj is 'number'
+      "Number"
+    when typeof obj is 'string'
+      "String"
+    else
+      "Unknown"
+
+console.log describe 1
+console.log describe "Hello"
+console.log describe 3.14

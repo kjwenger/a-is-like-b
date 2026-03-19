@@ -1,11 +1,11 @@
 // Pattern matching in Kotlin
 fun describe(obj: Any): String =
     when (obj) {
-        1 -> "One"
-        "Hello" -> "Greeting"
-        is Long -> "Long number"
-        !is String -> "Not a string"
-        else -> "Unknown"
+        1 -&gt; "One"
+        "Hello" -&gt; "Greeting"
+        is Long -&gt; "Long number"
+        !is String -&gt; "Not a string"
+        else -&gt; "Unknown"
     }
 
 fun main() {

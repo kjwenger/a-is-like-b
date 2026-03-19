@@ -1,4 +1,4 @@
-#import <Foundation/Foundation.h>
+#import &lt;Foundation/Foundation.h&gt;
 
 // Named arguments in Objective-C (using named parameters)
 @interface Example : NSObject

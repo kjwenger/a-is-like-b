@@ -1,5 +1,5 @@
 object FunctionTypes extends App {
-  type FuncType = (Int, Int) => Int
+  type FuncType = (Int, Int) =&gt; Int
   
   def add(a: Int, b: Int): Int = a + b
   def multiply(a: Int, b: Int): Int = a * b

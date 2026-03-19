@@ -3,6 +3,6 @@
 -module(example).
 -export([start/0]).
 
-start() ->
+start() -&gt;
     Arr = [1, 2, 3, 4, 5],
     io:format("~p~n", [Arr]).

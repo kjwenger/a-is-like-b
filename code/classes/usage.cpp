@@ -1,5 +1,5 @@
-#include <iostream>
-#include <string>
+#include &lt;iostream&gt;
+#include &lt;string&gt;
 
 // Usage in C++
 class Person {
@@ -20,6 +20,6 @@ public:
 
 int main() {
     Person person("John", 30);
-    std::cout << person.greet() << std::endl;
+    std::cout &lt;&lt; person.greet() &lt;&lt; std::endl;
     return 0;
 }

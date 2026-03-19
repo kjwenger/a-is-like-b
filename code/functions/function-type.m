@@ -1,4 +1,4 @@
-#import <Foundation/Foundation.h>
+#import &lt;Foundation/Foundation.h&gt;
 
 // Function types in Objective-C
 typedef int (*FuncType)(int, int);

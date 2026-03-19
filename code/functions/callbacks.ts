@@ -3,7 +3,7 @@ function callback(value: number): void {
     console.log(`Callback called with: ${value}`);
 }
 
-function processWithCallback(cb: (value: number) => void, data: number): void {
+function processWithCallback(cb: (value: number) =&gt; void, data: number): void {
     cb(data);
 }
 

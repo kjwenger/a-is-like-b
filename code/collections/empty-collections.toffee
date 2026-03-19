@@ -1,0 +1,5 @@
+# Empty collections in ToffeeScript
+emptyArr = []
+emptyObj = {}
+console.log emptyArr.length
+console.log Object.keys(emptyObj).length

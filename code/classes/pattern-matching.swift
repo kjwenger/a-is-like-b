@@ -1,5 +1,5 @@
 // Pattern matching in Swift
-func describe(obj: Any) -> String {
+func describe(obj: Any) -&gt; String {
     switch obj {
     case 1:
         return "One"

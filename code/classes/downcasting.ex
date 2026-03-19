@@ -17,9 +17,9 @@ dog = %Dog{type: :dog, breed: "Golden Retriever"}
 
 # Pattern match to simulate downcasting
 case dog do
-  %Dog{breed: breed} -> 
+  %Dog{breed: breed} -&gt; 
     IO.puts Animal.make_sound(dog)
     IO.puts Dog.fetch(dog)
-  _ -> 
+  _ -&gt; 
     IO.puts Animal.make_sound(dog)
 end

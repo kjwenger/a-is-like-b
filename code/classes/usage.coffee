@@ -1,8 +1,8 @@
 # Usage in CoffeeScript
 class Person
-  constructor: (@name, @age) ->
+  constructor: (@name, @age) -&gt;
   
-  greet: ->
+  greet: -&gt;
     "Hello, I'm #{@name} and I'm #{@age} years old"
 
 person = new Person "John", 30

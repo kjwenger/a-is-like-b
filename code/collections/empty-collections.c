@@ -1,5 +1,5 @@
-#include <stdio.h>
-#include <stdlib.h>
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
 
 // Empty collections in C
 int *empty_arr = NULL; // or malloc(0)

@@ -1,5 +1,5 @@
-#include <stdio.h>
-#include <stdbool.h>
+#include &lt;stdio.h&gt;
+#include &lt;stdbool.h&gt;
 
 int integer = 42;
 long longInteger = 42L;

@@ -10,4 +10,4 @@ function processWithCallback(cb, data) {
 processWithCallback(callback, 42);
 
 // Or with arrow function
-processWithCallback((value) => console.log(`Callback called with: ${value}`), 42);
+processWithCallback((value) =&gt; console.log(`Callback called with: ${value}`), 42);

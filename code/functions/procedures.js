@@ -5,4 +5,4 @@ function printMessage() {
 printMessage();
 
 // Or using arrow functions
-var printArrow = () => console.log("This is a procedure");
+var printArrow = () =&gt; console.log("This is a procedure");

@@ -2,9 +2,9 @@
 defmodule StringExt do
   def reverse(str) do
     str
-    |> String.graphemes()
-    |> Enum.reverse()
-    |> Enum.join()
+    |&gt; String.graphemes()
+    |&gt; Enum.reverse()
+    |&gt; Enum.join()
   end
 end
 

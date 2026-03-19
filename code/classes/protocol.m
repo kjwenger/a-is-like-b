@@ -1,11 +1,11 @@
-#import <Foundation/Foundation.h>
+#import &lt;Foundation/Foundation.h&gt;
 
 // Protocol in Objective-C
-@protocol Drawable <NSObject>
+@protocol Drawable &lt;NSObject&gt;
 - (void)draw;
 @end
 
-@interface Circle : NSObject <Drawable>
+@interface Circle : NSObject &lt;Drawable&gt;
 @end
 
 @implementation Circle

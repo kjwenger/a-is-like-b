@@ -2,7 +2,7 @@
 -module(example).
 -export([start/0]).
 
-start() ->
+start() -&gt;
     Multiline = "This is a\n"
                 "multiline\n"
                 "string",

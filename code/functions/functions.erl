@@ -2,9 +2,9 @@
 -module(math).
 -export([add/2, start/0]).
 
-add(A, B) ->
+add(A, B) -&gt;
     A + B.
 
-start() ->
+start() -&gt;
     Result = add(5, 3),
     io:format("~p~n", [Result]).

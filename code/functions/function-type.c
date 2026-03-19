@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include &lt;stdio.h&gt;
 
 // Function types in C
 typedef int (*FuncType)(int, int);

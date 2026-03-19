@@ -1,4 +1,4 @@
-#import <Foundation/Foundation.h>
+#import &lt;Foundation/Foundation.h&gt;
 
 // Extensions in Objective-C (using Categories)
 @interface NSString (ReverseExtension)
@@ -8,7 +8,7 @@
 @implementation NSString (ReverseExtension)
 - (NSString *)reversedString {
     NSMutableString *reversed = [[NSMutableString alloc] init];
-    for (NSInteger i = [self length] - 1; i >= 0; i--) {
+    for (NSInteger i = [self length] - 1; i &gt;= 0; i--) {
         [reversed appendString:[self substringWithRange:NSMakeRange(i, 1)]];
     }
     return [reversed copy];

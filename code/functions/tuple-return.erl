@@ -2,5 +2,5 @@
 -module(math).
 -export([div_rem/2]).
 
-div_rem(A, B) ->
+div_rem(A, B) -&gt;
     {A div B, A rem B}.

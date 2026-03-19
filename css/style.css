@@ -17,6 +17,32 @@ body * {
     background-color: white;
 }
 
+.section[style] {
+    padding: 0.4em 1em;
+}
+
+.section[style] .card {
+    flex: 0 1 auto;
+    margin: 0 4px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 6px;
+}
+
+.section[style] .lang {
+    white-space: nowrap;
+    order: 2;
+}
+
+.section[style] .lang br {
+    display: none;
+}
+
+.section[style] input {
+    order: 1;
+}
+
 .title {
     font-size: 2.7em;
     color: #888;

@@ -1,9 +1,9 @@
-#include <stdio.h>
-#include <stdlib.h>
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
 
 int intNum = 42;
-double doubleNum = (double)intNum; // explicit conversion
-intNum = (int)3.14; // explicit conversion
+double doubleNum = (double)intNum;
+intNum = (int)3.14;
 char str[20];
-sprintf(str, "%d", intNum); // int to string
-intNum = atoi("42"); // string to int
+sprintf(str, "%d", intNum);
+intNum = atoi("42");

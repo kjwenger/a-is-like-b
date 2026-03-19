@@ -1,0 +1,16 @@
+# Subclass in CoffeeScript
+class Person
+  constructor: (@name, @age) -&gt;
+
+  greet: -&gt;
+    "Hello, I'm #{@name} and I'm #{@age} years old"
+
+class Student extends Person
+  constructor: (name, age, @school) -&gt;
+    super(name, age)
+
+  greet: -&gt;
+    "#{super()} I study at #{@school}"
+
+student = new Student "Alice", 20, "MIT"
+console.log student.greet()
