@@ -1,4 +1,3 @@
-// Protocol in Java (using interface)
 interface Drawable {
     void draw();
 }

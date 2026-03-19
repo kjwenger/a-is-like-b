@@ -1,4 +1,3 @@
-// Maps in Java
 import java.util.HashMap;
 import java.util.Map;
 

@@ -1,4 +1,3 @@
-// Type coercion in Java
 public class Example {
     public static void main(String[] args) {
         int intNum = 42;

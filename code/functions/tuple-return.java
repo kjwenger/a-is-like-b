@@ -1,4 +1,3 @@
-// Tuple return in Java (using a simple class)
 public class Pair&lt;T, U&gt; {
     public final T first;
     public final U second;

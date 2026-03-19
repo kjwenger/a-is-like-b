@@ -1,4 +1,3 @@
-// Pattern matching in Java (using instanceof and switch expressions - Java 14+)
 public class PatternMatching {
     public static String describe(Object obj) {
         if (obj instanceof Integer i && i == 1) {

@@ -1,4 +1,3 @@
-// Named arguments in Java (simulated with Builder pattern or setters)
 public class Example {
     private int param1 = 0;
     private int param2 = 0;

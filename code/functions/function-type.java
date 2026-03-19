@@ -1,4 +1,3 @@
-// Function types in Java
 interface FuncType {
     int apply(int a, int b);
 }

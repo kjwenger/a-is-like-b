@@ -1,4 +1,3 @@
-// Subclass in Java
 class Person {
     protected String name;
     protected int age;

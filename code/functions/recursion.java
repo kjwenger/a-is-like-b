@@ -1,4 +1,3 @@
-// Recursion in Java
 public class Example {
     public static int factorial(int n) {
         return n &lt;= 1 ? 1 : n * factorial(n - 1);

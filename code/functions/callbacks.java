@@ -1,4 +1,3 @@
-// Callbacks in Java
 interface Callback {
     void call(int value);
 }

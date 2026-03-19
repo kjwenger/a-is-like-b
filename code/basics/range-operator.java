@@ -1,6 +1,3 @@
-// Range operator in Java
-// Java doesn't have a range operator
-// Use loops or IntStream instead
 public class Example {
     public static void main(String[] args) {
         for (int i = 0; i &lt; 5; i++) {
